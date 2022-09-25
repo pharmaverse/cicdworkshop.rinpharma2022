@@ -28,3 +28,6 @@
 ^admiralext.*\.tgz$
 ^staged_dependencies.yaml$
 ^README.Rmd$
+^cicdworkshop\.Rcheck$
+^cicdworkshop.*\.tar\.gz$
+^cicdworkshop.*\.tgz$

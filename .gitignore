@@ -47,3 +47,6 @@ admiralext*.tgz
 
 # MacOS
 .DS_Store
+cicdworkshop.Rcheck/
+cicdworkshop*.tar.gz
+cicdworkshop*.tgz

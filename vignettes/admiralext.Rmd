@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(admiraldev)
 ```
 
 Introduction to how to use the package extension...
