@@ -56,12 +56,12 @@ navbar:
   components:
     getstarted:
       text: Get Started
-      href: articles/admiralext.html
+      href: articles/cicd.html
     reference:
       text: Reference
       href: reference/index.html
     articles:
       text: User Guides
       menu:
-      - text: Creating ADXX
-        href: articles/adxx.html
+      - text: Resources for CI/CD
+        href: articles/cicd_resources.html

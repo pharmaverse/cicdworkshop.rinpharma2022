@@ -1,5 +1,5 @@
 ---
-title: "admiral package extension Template"
+title: "CI/CD Workshop"
 output: md_document
 date: '2022-06-27'
 ---
@@ -37,7 +37,7 @@ admiral_homepage <- "https://pharmaverse.github.io/admiral"
 
 <!-- Please do not edit the README.md file as it is auto-generated. Only edit the README.Rmd file -->
 
-# admiral package extension Template <img src="man/figures/logo.png" align="right" width="200" style="margin-left:50px;"/>
+# CI/CD Workshop <img src="man/figures/logo.png" align="right" width="200" style="margin-left:50px;"/>
 
 <!-- badges: start -->
 [<img src="http://pharmaverse.org/shields/admiral.svg">](https://pharmaverse.org)

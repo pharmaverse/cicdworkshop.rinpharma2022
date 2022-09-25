@@ -1,9 +1,9 @@
 ---
-title: "Creating ADXX"
+title: "Resources for CI/CD"
 output: 
   rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating ADSL}
+  %\VignetteIndexEntry{Resources for CI/CD}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -17,4 +17,4 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-This article describes creating an `ADXX` ADaM.
+Resources for CI/CD
