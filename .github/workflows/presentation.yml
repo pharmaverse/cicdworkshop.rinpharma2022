@@ -26,5 +26,7 @@ jobs:
         with:
           target: gh-pages
           path: presentation
+          GITHUB_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+          GITHUB_USERNAME: 'github-actions[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
