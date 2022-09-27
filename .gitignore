@@ -41,12 +41,22 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-admiralext.Rcheck/
-admiralext*.tar.gz
-admiralext*.tgz
 
 # MacOS
 .DS_Store
+
+# R check and build artifacts
 cicdworkshop.Rcheck/
 cicdworkshop*.tar.gz
 cicdworkshop*.tgz
+
+# Quarto files
+*.pdf
+_cache
+_book
+cache
+*_cache
+*_files
+_freeze
+/.quarto/
+_site
