@@ -1,4 +1,4 @@
 library(testthat)
-library(admiralext)
+library(cicdworkshop)
 
-test_check("admiralext")
+test_check("cicdworkshop")

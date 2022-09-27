@@ -3,27 +3,17 @@ Type: Package
 Title: Demo Package for R/Pharma CI/CD Workshop
 Version: 0.0.1
 Authors@R: c(
-    person("Open", "Source", email = "admiralext@pharmaverse.com", role = c("aut", "cre")))
+    person("Open", "Source", email = "cicdworkshop@noreply.pharmaverse.com", role = c("aut", "cre")))
 Description: This package is intended to demo CI/CD pipelines on GitHub.
 License: Apache License (>= 2)
-URL: https://pharmaverse.github.io/admiraltemplate, https://github.com/pharmaverse/admiraltemplate
+URL: https://pharmaverse.github.io/cicdworkshop.rinpharma2022, https://github.com/pharmaverse/cicdworkshop.rinpharma2022
 Encoding: UTF-8
 Language: en-US
-LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Depends: R (>= 3.5)
 Imports:
-    dplyr,
-    hms,
-    lifecycle,
-    lubridate,
-    magrittr,
-    purrr,
-    rlang,
-    stringr,
-    tidyr,
-    tidyselect
+    lifecycle
 Suggests:
     devtools,
     lintr,

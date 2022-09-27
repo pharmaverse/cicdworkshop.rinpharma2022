@@ -1,4 +1,4 @@
-# admiralext 0.0.1
+# cicdworkshopext 0.0.1
 
 ## New Features
 
@@ -6,18 +6,17 @@
 
 ## Updates of Existing Functions
 
- - Updates that you have made for this version (#ISSUE-NUMBER)
+- Updates that you have made for this version (#ISSUE-NUMBER)
 
 ## Breaking Changes
 
- - Deprecated functions. (#ISSUE-NUMBER)
- - Bug Fixes (#ISSUE-NUMBER)
+- Deprecated functions. (#ISSUE-NUMBER)
+- Bug Fixes (#ISSUE-NUMBER)
 
 ## Documentation
 
- - Stuff that you did (#ISSUE-NUMBER)
+- Stuff that you did (#ISSUE-NUMBER)
 
 ## Various
 
- - Stuff that you did (#ISSUE-NUMBER)
-
+- Stuff that you did (#ISSUE-NUMBER)
