@@ -8,6 +8,9 @@ on:
 
 name: Publish Presentation
 
+env:
+  QUARTO_DIR: presentation
+
 jobs:
   publish:
     name: Build & Deploy
@@ -21,19 +24,25 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install the quarto R package
-        run: install.packages("quarto")
-        shell: Rscript {0}
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+
+      - name: Install Quarto
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 2
+          extra-packages: any::quarto
+          working-directory: ${{ env.QUARTO_DIR }}
 
       - name: Render Quarto Project
-        run: quarto render
+        run: quarto render --output-dir _site
         shell: bash
-        working-directory: presentation
+        working-directory: ${{ env.QUARTO_DIR }}
 
-      - name: Publish Presentation
+      - name: Publish Project
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./presentation/_site
-          destination_dir: presentation
+          publish_dir: ./${{ env.QUARTO_DIR }}/_site
+          destination_dir: ${{ env.QUARTO_DIR }}
           force_orphan: true
