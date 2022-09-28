@@ -10,11 +10,14 @@ format:
     logo: https://avatars.githubusercontent.com/u/84541169
     css: assets/css/styles.css
     footer: <https://pharmaverse.org>
+    theme: sky
 ---
 
-## Hello, There
+## Hello CI/CD
 
-This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
+ 
+
+This workshop will show you how to implement simple CI/CD workflows for a R package
 
 -   Presenting code and LaTeX equations
 -   Including computations in slide output
@@ -23,6 +26,19 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 -   Printing to PDF
 
 ...and much more
+
+## Why use CI/CD for a R package?
+
+Two uses cases for discussion:
+
+1. [{admiral}](https://pharmaverse.github.io/admiral/index.html)
+2. NEST
+
+## admiral
+
+
+
+## NEST
 
 ## Pretty Code {auto-animate="true"}
 

@@ -6,3 +6,6 @@
 README.*
 ^\.lintr$
 ^presentation$
+^cicdworkshop\.Rcheck$
+^cicdworkshop.*\.tar\.gz$
+^cicdworkshop.*\.tgz$
