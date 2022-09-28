@@ -21,12 +21,15 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Render Quarto Project
+        run: quarto render
+        shell: bash
+        working-directory: presentation
+
+      - name: Publish Presentation
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target: gh-pages
-          path: presentation
-          GITHUB_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
-          GITHUB_USERNAME: 'github-actions[bot]'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./presentation/_site
+          destination_dir: presentation
+          force_orphan: true
