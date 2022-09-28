@@ -1,10 +1,80 @@
 [
   {
-    "objectID": "index.html#hello-there",
-    "href": "index.html#hello-there",
+    "objectID": "index.html#hello-cicd",
+    "href": "index.html#hello-cicd",
     "title": "CI/CD Workshop",
-    "section": "Hello, There",
-    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
+    "section": "Hello CI/CD",
+    "text": "Hello CI/CD\n\nThis workshop/presentation will both discuss and show you how to implement simple CI/CD workflows for a R package"
+  },
+  {
+    "objectID": "index.html#setup-for-workshop",
+    "href": "index.html#setup-for-workshop",
+    "title": "CI/CD Workshop",
+    "section": "Setup for Workshop",
+    "text": "Setup for Workshop\n\nUse Template from CI/CD Workshop at R/Pharma conference 2022\nClone into your RStudio Session and switch to dev branch\nOn GitHub, set up a Pull Request of dev branch into main"
+  },
+  {
+    "objectID": "index.html#flow-for-workshop",
+    "href": "index.html#flow-for-workshop",
+    "title": "CI/CD Workshop",
+    "section": "Flow for Workshop",
+    "text": "Flow for Workshop\n\nDiscuss the need for the Workflow\nLook at internal workings of Workflow\nIn the dev bracnh:\n\nCopy Code from Presentation and place into .github/workflows folder\nPush up into dev branch\nWatch GitHub give you feedback on the workflow\nAddress Feedback and push back up to dev branch."
+  },
+  {
+    "objectID": "index.html#why-use-cicd-for-a-r-package",
+    "href": "index.html#why-use-cicd-for-a-r-package",
+    "title": "CI/CD Workshop",
+    "section": "Why use CI/CD for a R package?",
+    "text": "Why use CI/CD for a R package?\n\n\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\n\n\nTwo uses cases for discussion:\n\n{admiral}\nNEST"
+  },
+  {
+    "objectID": "index.html#admiral",
+    "href": "index.html#admiral",
+    "title": "CI/CD Workshop",
+    "section": "admiral",
+    "text": "admiral"
+  },
+  {
+    "objectID": "index.html#admiral-cicd",
+    "href": "index.html#admiral-cicd",
+    "title": "CI/CD Workshop",
+    "section": "admiral CI/CD",
+    "text": "admiral CI/CD"
+  },
+  {
+    "objectID": "index.html#nest",
+    "href": "index.html#nest",
+    "title": "CI/CD Workshop",
+    "section": "NEST",
+    "text": "NEST"
+  },
+  {
+    "objectID": "index.html#nest-cicd",
+    "href": "index.html#nest-cicd",
+    "title": "CI/CD Workshop",
+    "section": "NEST CI/CD",
+    "text": "NEST CI/CD"
+  },
+  {
+    "objectID": "index.html#the-8-workflows-we-are-going-to-implement",
+    "href": "index.html#the-8-workflows-we-are-going-to-implement",
+    "title": "CI/CD Workshop",
+    "section": "The 8 Workflows we are going to implement",
+    "text": "The 8 Workflows we are going to implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\nR-CMD Check\nLinks\nReason 1\nReason 1\nR-CMD Check\nR-CMD Check\nR-CMD Check\nR-CMD Check"
+  },
+  {
+    "objectID": "index.html#r-cmd-checks",
+    "href": "index.html#r-cmd-checks",
+    "title": "CI/CD Workshop",
+    "section": "R-CMD Checks",
+    "text": "R-CMD Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n\non:\n  workflow_dispatch:\n  workflow_call:\n    inputs:\n      error-on:\n        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()\n        required: false\n        default: note\n        type: string\n  push:\n    branches:\n      - main\n      - devel\n  pull_request:\n    branches:\n      - main\n      - devel\n\nname: R CMD Check\n\nconcurrency:\n  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  R-CMD-check:\n    runs-on: ${{ matrix.config.os }}\n    name: ${{ matrix.config.os }} (${{ matrix.config.r }})\n    if: >\n      !contains(github.event.commits[0].message, '[skip r-cmd-check]')\n    strategy:\n      fail-fast: false\n      matrix:\n        config:\n          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}\n          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}\n          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}\n\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      R_KEEP_PKG_SOURCE: true\n      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true\n      R_REPOS: ${{ matrix.config.repos }}\n\n    steps:\n      ##################### BEGIN boilerplate steps #####################\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n\n      - name: Checkout repository\n        uses: actions/checkout@v3\n        with:\n          ref: ${{ steps.branch-name.outputs.head_ref_branch }}\n\n      - name: Setup R\n        uses: r-lib/actions/setup-r@v1\n        with:\n          r-version: ${{ matrix.config.r }}\n          http-user-agent: ${{ matrix.config.http-user-agent }}\n          use-public-rspm: true\n\n      - name: Restore cache\n        uses: actions/cache@v3\n        with:\n          path: |\n            ${{ env.R_LIBS_USER }}\n            ~/.staged.dependencies\n          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}\n          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}\n\n      - name: Run Staged dependencies\n        uses: insightsengineering/staged-dependencies-action@v1\n        with:\n          run-system-dependencies: true\n          enable-check: false\n          renv-restore: false\n          cran-repos: \"CRAN=${{ matrix.config.repos }}\"\n        env:\n          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      #####################c#####################\n\n      - name: Check\n        env:\n          _R_CHECK_CRAN_INCOMING_REMOTE_: false\n          _R_CHECK_FORCE_SUGGESTS_: false\n        run: |\n          if (!requireNamespace(\"rcmdcheck\", quietly = TRUE)) install.packages(\"rcmdcheck\")\n          options(crayon.enabled = TRUE)\n          check_error_on <- \"${{ inputs.error-on }}\"\n          if (check_error_on == \"\") {\n            check_error_on <- \"note\"\n          }\n          rcmdcheck::rcmdcheck(\n            args = c(\"--no-manual\", \"--as-cran\"),\n            error_on = check_error_on,\n            check_dir = \"check\"\n          )\n        shell: Rscript {0}\n\n      - name: Upload check results\n        if: failure()\n        uses: actions/upload-artifact@main\n        with:\n          name: ${{ runner.os }}-r${{ matrix.config.r }}-results\n          path: check\n\nLearn more: File Location: r-cmd-check.yml"
+  },
+  {
+    "objectID": "index.html#the-next-workflow",
+    "href": "index.html#the-next-workflow",
+    "title": "CI/CD Workshop",
+    "section": "The Next Workflow",
+    "text": "The Next Workflow\n\n\n1 2 3 4 5 6 7 8\n\n\n\non:\n  workflow_dispatch:\n  workflow_call:\n    inputs:\n      error-on:\n        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()\n        required: false\n        default: note\n        type: string\n  push:\n    branches:\n      - main\n      - devel\n  pull_request:\n    branches:\n      - main\n      - devel\n\nname: R CMD Check\n\nconcurrency:\n  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  R-CMD-check:\n    runs-on: ${{ matrix.config.os }}\n    name: ${{ matrix.config.os }} (${{ matrix.config.r }})\n    if: >\n      !contains(github.event.commits[0].message, '[skip r-cmd-check]')\n    strategy:\n      fail-fast: false\n      matrix:\n        config:\n          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}\n          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}\n          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}\n\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      R_KEEP_PKG_SOURCE: true\n      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true\n      R_REPOS: ${{ matrix.config.repos }}\n\n    steps:\n      ##################### BEGIN boilerplate steps #####################\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n\n      - name: Checkout repository\n        uses: actions/checkout@v3\n        with:\n          ref: ${{ steps.branch-name.outputs.head_ref_branch }}\n\n      - name: Setup R\n        uses: r-lib/actions/setup-r@v1\n        with:\n          r-version: ${{ matrix.config.r }}\n          http-user-agent: ${{ matrix.config.http-user-agent }}\n          use-public-rspm: true\n\n      - name: Restore cache\n        uses: actions/cache@v3\n        with:\n          path: |\n            ${{ env.R_LIBS_USER }}\n            ~/.staged.dependencies\n          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}\n          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}\n\n      - name: Run Staged dependencies\n        uses: insightsengineering/staged-dependencies-action@v1\n        with:\n          run-system-dependencies: true\n          enable-check: false\n          renv-restore: false\n          cran-repos: \"CRAN=${{ matrix.config.repos }}\"\n        env:\n          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      #####################c#####################\n\n      - name: Check\n        env:\n          _R_CHECK_CRAN_INCOMING_REMOTE_: false\n          _R_CHECK_FORCE_SUGGESTS_: false\n        run: |\n          if (!requireNamespace(\"rcmdcheck\", quietly = TRUE)) install.packages(\"rcmdcheck\")\n          options(crayon.enabled = TRUE)\n          check_error_on <- \"${{ inputs.error-on }}\"\n          if (check_error_on == \"\") {\n            check_error_on <- \"note\"\n          }\n          rcmdcheck::rcmdcheck(\n            args = c(\"--no-manual\", \"--as-cran\"),\n            error_on = check_error_on,\n            check_dir = \"check\"\n          )\n        shell: Rscript {0}\n\n      - name: Upload check results\n        if: failure()\n        uses: actions/upload-artifact@main\n        with:\n          name: ${{ runner.os }}-r${{ matrix.config.r }}-results\n          path: check\n\nLearn more: File Location: r-cmd-check.yml"
   },
   {
     "objectID": "index.html#pretty-code",
@@ -25,6 +95,6 @@
     "href": "index.html#line-highlighting",
     "title": "CI/CD Workshop",
     "section": "Line Highlighting",
-    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting\n\n\n\n\nhttps://pharmaverse.org"
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting\n\n\n\n\nhttps://github.com/pharmaverse/cicdworkshop.rinpharma2022"
   }
 ]
