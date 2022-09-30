@@ -1,5 +1,5 @@
 ---
-title: "CI/CD Workshop"
+title: "CI/CD Workshop for R Packages"
 subtitle: "R in Pharma, 2022"
 format:
   revealjs: 
@@ -13,29 +13,38 @@ format:
     from: markdown+emoji
 ---
 
+
+
+
 ## Hello CI/CD
 
 <br>
 
-This workshop/presentation will both discuss and show you how to implement simple CI/CD workflows for a R package
+This workshop/presentation will both discuss and show you how to implement 8 simple CI/CD workflows for a R package
 
 
 ## Setup for Workshop
 
+::: {.incremental}
 - Use Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)
 - Clone into your RStudio Session and switch to `dev` branch
+- Install `{devtools}`
+- Use `devtools::install_dev_deps()` to get all necessary packages
 - On GitHub, set up a Pull Request of `dev` branch into `main`
+:::
 
 ## Flow for Workshop
 
+::: {.incremental}
 - Discuss the need for the Workflow
 - Look at internal workings of Workflow
-- In the dev bracnh:
+- In your dev branch:
     - Copy Code from Presentation and place into `.github/workflows` folder
     - Push up into dev branch
     - Watch GitHub give you feedback on the workflow
     - Address Feedback and push back up to dev branch.
-
+    - Discuss Successful Implementation
+:::
 
 ## Why use CI/CD for a R package?
 
@@ -47,24 +56,53 @@ This workshop/presentation will both discuss and show you how to implement simpl
 - Reason 1 :heavy_check_mark:
 :::
 
-Two uses cases for discussion:
+## Two uses cases for discussion:
 
-1. [{admiral}](https://pharmaverse.github.io/admiral/index.html)
-2. NEST
+- [{admiral}](https://pharmaverse.github.io/admiral/index.html)
 
+  Something what about what about
 
----
+- NEST
+
+  Something what about what about
 
 ## admiral
 
 
 ## admiral CI/CD
 
-
-
 ## NEST
 
 ## NEST CI/CD
+
+## The R Package for the Workshop
+
+```{.r eval=FALSE}
+
+#' Hello Workshop Attendees
+#'
+#' Welcomes the CI/CD workshop attendees
+#' @author Yourself
+#' @details Greet workshop attendees
+#' @return Happy Message
+#' @export
+#' @examples
+#' hello()
+hello <- function() {
+  message("Welcome to the cicdworkshop!")
+}
+
+```
+
+## The R Package for the Workshop
+
+Package is super lean to help focus on the CI/CD part.
+
+- One Function
+- One Test
+- One Vignette
+- One Man Page/Function Documentation
+- One 
 
 ## The 8 Workflows we are going to implement
 
@@ -76,13 +114,33 @@ Two uses cases for discussion:
 
 ::: {.incremental}
 1. R-CMD Check
-1. Links
-1. Reason 1
-1. Reason 1
-1. R-CMD Check
-1. R-CMD Check
-1. R-CMD Check
-1. R-CMD Check
+1. Linters
+1. Documentation
+1. Website Links
+1. Publishing a pkgdown site
+1. Template Scripts
+1. Test Coverage
+1. Spelling Checks
+:::
+
+## R-CMD Checks
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks the Package Build?
+<br>
+
+
+::: {.incremental}
+- Check to make sure it runs on multiple versions of R
+- Check to make sure it runs on multiple snapshots of R packages
+- Check to make sure it runs on different OS
+- Check integrity of code from contributor
 :::
 
 
@@ -209,7 +267,19 @@ jobs:
 Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
-## The Next Workflow
+## R-CMD Checks
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 
+
+![](images/success_rcmd.png)
+
+## Linters
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
