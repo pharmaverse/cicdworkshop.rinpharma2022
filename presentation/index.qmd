@@ -8,7 +8,7 @@ format:
       buttons: false
     preview-links: auto
     logo: https://avatars.githubusercontent.com/u/84541169
-    footer: <https://github.com/pharmaverse/cicdworkshop.rinpharma2022>
+    footer: <[CI-CD GitHub](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)>
     theme: [moon, custom.scss]
     from: markdown+emoji
 ---
@@ -26,11 +26,11 @@ This workshop/presentation will both discuss and show you how to implement 8 sim
 ## Setup for Workshop
 
 ::: {.incremental}
-- Use Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)
-- Clone into your RStudio Session and switch to `dev` branch
-- Install `{devtools}`
-- Use `devtools::install_dev_deps()` to get all necessary packages
-- On GitHub, set up a Pull Request of `dev` branch into `main`
+- Use GitHub Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)
+- Clone into your RStudio Session and switch to `devel` branch
+- Install the `{devtools}` package.
+- Use `devtools::install_dev_deps()` to quickly get all necessary packages
+- On GitHub, set up a Pull Request of `devel` branch into `main`
 :::
 
 ## Flow for Workshop
@@ -98,12 +98,10 @@ hello <- function() {
 
 Package is super lean to help focus on the CI/CD part.
 
-- One Function
-- One Test
-- One Vignette
-- One Man Page/Function Documentation
-- One 
-
+```{r}
+library(fs)
+tree <- dir_tree("../",recurse=1)
+```
 ## The 8 Workflows we are going to implement
 
 ::: {.absolute top="0" left="100%"}
@@ -111,19 +109,20 @@ Package is super lean to help focus on the CI/CD part.
 1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
 :::
 :::
-
+<!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
+ 
 ::: {.incremental}
-1. R-CMD Check
-1. Linters
-1. Documentation
-1. Website Links
-1. Publishing a pkgdown site
-1. Template Scripts
-1. Test Coverage
-1. Spelling Checks
+1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "yellow")` 
+1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "yellow")` 
+1. Documentation &nbsp; &nbsp;`r fontawesome::fa("book", "yellow")` 
+1. Website Links &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
+1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "yellow")`
+1. Template Scripts &nbsp; &nbsp;`r fontawesome::fa("scroll", "yellow")`
+1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "yellow")`
+1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "yellow")`
 :::
 
-## R-CMD Checks
+## R-CMD Checks `r fontawesome::fa("code", "yellow")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
