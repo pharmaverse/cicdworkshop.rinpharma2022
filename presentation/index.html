@@ -402,11 +402,11 @@
 <h2>Setup for Workshop</h2>
 <div>
 <ul>
-<li class="fragment">Use Template from <a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI/CD Workshop at R/Pharma conference 2022</a></li>
-<li class="fragment">Clone into your RStudio Session and switch to <code>dev</code> branch</li>
-<li class="fragment">Install <code>{devtools}</code></li>
-<li class="fragment">Use <code>devtools::install_dev_deps()</code> to get all necessary packages</li>
-<li class="fragment">On GitHub, set up a Pull Request of <code>dev</code> branch into <code>main</code></li>
+<li class="fragment">Use GitHub Template from <a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI/CD Workshop at R/Pharma conference 2022</a></li>
+<li class="fragment">Clone into your RStudio Session and switch to <code>devel</code> branch</li>
+<li class="fragment">Install the <code>{devtools}</code> package.</li>
+<li class="fragment">Use <code>devtools::install_dev_deps()</code> to quickly get all necessary packages</li>
+<li class="fragment">On GitHub, set up a Pull Request of <code>devel</code> branch into <code>main</code></li>
 </ul>
 </div>
 </section>
@@ -479,13 +479,38 @@
 <section id="the-r-package-for-the-workshop-1" class="slide level2">
 <h2>The R Package for the Workshop</h2>
 <p>Package is super lean to help focus on the CI/CD part.</p>
-<ul>
-<li>One Function</li>
-<li>One Test</li>
-<li>One Vignette</li>
-<li>One Man Page/Function Documentation</li>
-<li>One</li>
-</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>../
+├── DESCRIPTION
+├── LICENSE.md
+├── NAMESPACE
+├── NEWS.md
+├── R
+│   ├── cicdworkshop-package.R
+│   └── hello.R
+├── README.md
+├── _pkgdown.yml
+├── cicdworkshop.Rproj
+├── inst
+│   └── WORDLIST
+├── man
+│   ├── cicdworkshop-package.Rd
+│   └── hello.Rd
+├── presentation
+│   ├── _quarto.yml
+│   ├── _site
+│   ├── custom.scss
+│   ├── images
+│   ├── index.qmd
+│   └── index.rmarkdown
+├── tests
+│   └── testthat
+└── vignettes
+    ├── cicd-intro.Rmd
+    └── cicd-resources.Rmd</code></pre>
+</div>
+</div>
 </section>
 <section id="the-8-workflows-we-are-going-to-implement" class="slide level2">
 <h2>The 8 Workflows we are going to implement</h2>
@@ -494,21 +519,22 @@
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
 </div>
 </div>
+<!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
 <div>
 <ol type="1">
-<li class="fragment">R-CMD Check</li>
-<li class="fragment">Linters</li>
-<li class="fragment">Documentation</li>
-<li class="fragment">Website Links</li>
-<li class="fragment">Publishing a pkgdown site</li>
-<li class="fragment">Template Scripts</li>
-<li class="fragment">Test Coverage</li>
-<li class="fragment">Spelling Checks</li>
+<li class="fragment">R-CMD Check &nbsp; &nbsp; <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M414.8 40.79L286.8 488.8C281.9 505.8 264.2 515.6 247.2 510.8C230.2 505.9 220.4 488.2 225.2 471.2L353.2 23.21C358.1 6.216 375.8-3.624 392.8 1.232C409.8 6.087 419.6 23.8 414.8 40.79H414.8zM518.6 121.4L630.6 233.4C643.1 245.9 643.1 266.1 630.6 278.6L518.6 390.6C506.1 403.1 485.9 403.1 473.4 390.6C460.9 378.1 460.9 357.9 473.4 345.4L562.7 256L473.4 166.6C460.9 154.1 460.9 133.9 473.4 121.4C485.9 108.9 506.1 108.9 518.6 121.4V121.4zM166.6 166.6L77.25 256L166.6 345.4C179.1 357.9 179.1 378.1 166.6 390.6C154.1 403.1 133.9 403.1 121.4 390.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4L121.4 121.4C133.9 108.9 154.1 108.9 166.6 121.4C179.1 133.9 179.1 154.1 166.6 166.6V166.6z"></path></svg></li>
+<li class="fragment">Linters &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M256 0v128h128L256 0zM224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272 416h-160C103.2 416 96 408.8 96 400C96 391.2 103.2 384 112 384h160c8.836 0 16 7.162 16 16C288 408.8 280.8 416 272 416zM272 352h-160C103.2 352 96 344.8 96 336C96 327.2 103.2 320 112 320h160c8.836 0 16 7.162 16 16C288 344.8 280.8 352 272 352zM288 272C288 280.8 280.8 288 272 288h-160C103.2 288 96 280.8 96 272C96 263.2 103.2 256 112 256h160C280.8 256 288 263.2 288 272z"></path></svg></li>
+<li class="fragment">Documentation &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"></path></svg></li>
+<li class="fragment">Website Links &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></li>
+<li class="fragment">Publishing a pkgdown site &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M319.1 351.1c-35.35 0-64 28.66-64 64.01s28.66 64.01 64 64.01c35.34 0 64-28.66 64-64.01S355.3 351.1 319.1 351.1zM320 191.1c-70.25 0-137.9 25.6-190.5 72.03C116.3 275.7 115 295.9 126.7 309.2C138.5 322.4 158.7 323.7 171.9 312C212.8 275.9 265.4 256 320 256s107.3 19.88 148.1 56C474.2 317.4 481.8 320 489.3 320c8.844 0 17.66-3.656 24-10.81C525 295.9 523.8 275.7 510.5 264C457.9 217.6 390.3 191.1 320 191.1zM630.2 156.7C546.3 76.28 436.2 32 320 32S93.69 76.28 9.844 156.7c-12.75 12.25-13.16 32.5-.9375 45.25c12.22 12.78 32.47 13.12 45.25 .9375C125.1 133.1 220.4 96 320 96s193.1 37.97 265.8 106.9C592.1 208.8 600 211.8 608 211.8c8.406 0 16.81-3.281 23.09-9.844C643.3 189.2 642.9 168.1 630.2 156.7z"></path></svg></li>
+<li class="fragment">Template Scripts &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M48 32C21.5 32 0 53.5 0 80v64C0 152.9 7.125 160 16 160H96V80C96 53.5 74.5 32 48 32zM256 380.6V320h224V128c0-53-43-96-96-96H111.6C121.8 45.38 128 61.88 128 80V384c0 38.88 34.62 69.63 74.75 63.13C234.3 442 256 412.5 256 380.6zM288 352v32c0 52.88-43 96-96 96h272c61.88 0 112-50.13 112-112c0-8.875-7.125-16-16-16H288z"></path></svg></li>
+<li class="fragment">Test Coverage &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M176 8C182.6 8 188.4 11.1 190.9 18.09L220.3 92.05L296.4 68.93C302.7 67.03 309.5 69.14 313.6 74.27C314.1 74.85 314.5 75.45 314.9 76.08C297.8 84.32 282.7 96.93 271.4 113.3L230.4 172.5C203.1 181.4 180.6 203.5 172.6 233.4L152.7 307.4L117.4 339.9C112.6 344.4 105.5 345.4 99.64 342.6C93.73 339.7 90.16 333.6 90.62 327L96.21 247.6L17.56 235.4C11.08 234.4 5.871 229.6 4.413 223.2C2.954 216.8 5.54 210.1 10.94 206.4L76.5 161.3L37.01 92.18C33.76 86.49 34.31 79.39 38.4 74.27C42.48 69.14 49.28 67.03 55.55 68.93L131.7 92.05L161.1 18.09C163.6 11.1 169.4 8 176 8L176 8zM384.2 99.67L519.8 135.1C552.5 144.7 576.1 173.1 578.8 206.8L585.7 290.7C602.9 304.2 611.3 327 605.3 349.4L570.1 480.8C565.5 497.8 547.1 507.1 530.9 503.4L515.5 499.3C498.4 494.7 488.3 477.1 492.8 460.1L501.1 429.1L253.8 362.9L245.6 393.8C240.1 410.9 223.4 421 206.4 416.4L190.9 412.3C173.8 407.7 163.7 390.2 168.3 373.1L203.5 241.7C209.5 219.3 228.2 203.8 249.8 200.7L297.7 131.5C316.9 103.6 351.6 90.92 384.2 99.67L384.2 99.67zM367.7 161.5C361.1 159.7 354.2 162.3 350.4 167.8L318.1 214.5L519.6 268.5L515 211.1C514.5 205.2 509.8 199.6 503.2 197.8L367.7 161.5zM268.3 308.8C281.1 312.2 294.3 304.6 297.7 291.8C301.2 279 293.6 265.9 280.8 262.4C267.1 259 254.8 266.6 251.4 279.4C247.9 292.2 255.5 305.4 268.3 308.8zM528 328.7C515.2 325.3 502.1 332.9 498.6 345.7C495.2 358.5 502.8 371.6 515.6 375.1C528.4 378.5 541.6 370.9 545 358.1C548.4 345.3 540.8 332.1 528 328.7z"></path></svg></li>
+<li class="fragment">Spelling Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"></path></svg></li>
 </ol>
 </div>
 </section>
 <section id="r-cmd-checks" class="slide level2">
-<h2>R-CMD Checks</h2>
+<h2>R-CMD Checks <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M414.8 40.79L286.8 488.8C281.9 505.8 264.2 515.6 247.2 510.8C230.2 505.9 220.4 488.2 225.2 471.2L353.2 23.21C358.1 6.216 375.8-3.624 392.8 1.232C409.8 6.087 419.6 23.8 414.8 40.79H414.8zM518.6 121.4L630.6 233.4C643.1 245.9 643.1 266.1 630.6 278.6L518.6 390.6C506.1 403.1 485.9 403.1 473.4 390.6C460.9 378.1 460.9 357.9 473.4 345.4L562.7 256L473.4 166.6C460.9 154.1 460.9 133.9 473.4 121.4C485.9 108.9 506.1 108.9 518.6 121.4V121.4zM166.6 166.6L77.25 256L166.6 345.4C179.1 357.9 179.1 378.1 166.6 390.6C154.1 403.1 133.9 403.1 121.4 390.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4L121.4 121.4C133.9 108.9 154.1 108.9 166.6 121.4C179.1 133.9 179.1 154.1 166.6 166.6V166.6z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
@@ -529,136 +555,6 @@
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
-</div>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a>on<span class="sc">:</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  workflow_dispatch<span class="sc">:</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  workflow_call<span class="sc">:</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>    inputs<span class="sc">:</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>      error<span class="sc">-</span>on<span class="sc">:</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>        description<span class="sc">:</span> Input <span class="cf">for</span> the <span class="st">'error_on'</span> parameter <span class="cf">in</span> rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>()</span>
-<span id="cb2-8"><a href="#cb2-8"></a>        required<span class="sc">:</span> false</span>
-<span id="cb2-9"><a href="#cb2-9"></a>        default<span class="sc">:</span> note</span>
-<span id="cb2-10"><a href="#cb2-10"></a>        type<span class="sc">:</span> string</span>
-<span id="cb2-11"><a href="#cb2-11"></a>  push<span class="sc">:</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>    branches<span class="sc">:</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>      <span class="sc">-</span> main</span>
-<span id="cb2-14"><a href="#cb2-14"></a>      <span class="sc">-</span> devel</span>
-<span id="cb2-15"><a href="#cb2-15"></a>  pull_request<span class="sc">:</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>    branches<span class="sc">:</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>      <span class="sc">-</span> main</span>
-<span id="cb2-18"><a href="#cb2-18"></a>      <span class="sc">-</span> devel</span>
-<span id="cb2-19"><a href="#cb2-19"></a></span>
-<span id="cb2-20"><a href="#cb2-20"></a>name<span class="sc">:</span> R CMD Check</span>
-<span id="cb2-21"><a href="#cb2-21"></a></span>
-<span id="cb2-22"><a href="#cb2-22"></a>concurrency<span class="sc">:</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a>  group<span class="sc">:</span> r<span class="sc">-</span>cmd<span class="sc">-</span>check<span class="sc">-</span><span class="er">$</span>{{ github.event.pull_request.number <span class="sc">||</span> github.ref }}</span>
-<span id="cb2-24"><a href="#cb2-24"></a>  cancel<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>progress<span class="sc">:</span> true</span>
-<span id="cb2-25"><a href="#cb2-25"></a></span>
-<span id="cb2-26"><a href="#cb2-26"></a>jobs<span class="sc">:</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>  R<span class="sc">-</span>CMD<span class="sc">-</span>check<span class="sc">:</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }}</span>
-<span id="cb2-29"><a href="#cb2-29"></a>    name<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }} (<span class="sc">$</span>{{ matrix.config.r }})</span>
-<span id="cb2-30"><a href="#cb2-30"></a>    <span class="cf">if</span><span class="sc">:</span> <span class="er">&gt;</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a>      <span class="sc">!</span><span class="fu">contains</span>(github.event.commits[<span class="dv">0</span>].message, <span class="st">'[skip r-cmd-check]'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32"></a>    strategy<span class="sc">:</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a>      fail<span class="sc">-</span>fast<span class="sc">:</span> false</span>
-<span id="cb2-34"><a href="#cb2-34"></a>      matrix<span class="sc">:</span></span>
-<span id="cb2-35"><a href="#cb2-35"></a>        config<span class="sc">:</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'3.6'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2020-02-29/'</span>}</span>
-<span id="cb2-37"><a href="#cb2-37"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'4.0'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2021-03-31/'</span>}</span>
-<span id="cb2-38"><a href="#cb2-38"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="fl">-20.04</span>, r<span class="sc">:</span> <span class="st">'release'</span>, repos<span class="sc">:</span> <span class="st">'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'</span>}</span>
-<span id="cb2-39"><a href="#cb2-39"></a></span>
-<span id="cb2-40"><a href="#cb2-40"></a>    env<span class="sc">:</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a>      GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
-<span id="cb2-42"><a href="#cb2-42"></a>      R_KEEP_PKG_SOURCE<span class="sc">:</span> true</span>
-<span id="cb2-43"><a href="#cb2-43"></a>      R_REMOTES_NO_ERRORS_FROM_WARNINGS<span class="sc">:</span> true</span>
-<span id="cb2-44"><a href="#cb2-44"></a>      R_REPOS<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.repos }}</span>
-<span id="cb2-45"><a href="#cb2-45"></a></span>
-<span id="cb2-46"><a href="#cb2-46"></a>    steps<span class="sc">:</span></span>
-<span id="cb2-47"><a href="#cb2-47"></a>      <span class="do">##################### </span><span class="re">BEGIN</span><span class="do"> boilerplate steps #####################</span></span>
-<span id="cb2-48"><a href="#cb2-48"></a>      <span class="sc">-</span> name<span class="sc">:</span> Get branch names</span>
-<span id="cb2-49"><a href="#cb2-49"></a>        id<span class="sc">:</span> branch<span class="sc">-</span>name</span>
-<span id="cb2-50"><a href="#cb2-50"></a>        uses<span class="sc">:</span> tj<span class="sc">-</span>actions<span class="sc">/</span>branch<span class="sc">-</span>names<span class="sc">@</span>v5<span class="fl">.4</span></span>
-<span id="cb2-51"><a href="#cb2-51"></a></span>
-<span id="cb2-52"><a href="#cb2-52"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout repository</span>
-<span id="cb2-53"><a href="#cb2-53"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v3</span>
-<span id="cb2-54"><a href="#cb2-54"></a>        with<span class="sc">:</span></span>
-<span id="cb2-55"><a href="#cb2-55"></a>          ref<span class="sc">:</span> <span class="er">$</span>{{ steps.branch<span class="sc">-</span>name.outputs.head_ref_branch }}</span>
-<span id="cb2-56"><a href="#cb2-56"></a></span>
-<span id="cb2-57"><a href="#cb2-57"></a>      <span class="sc">-</span> name<span class="sc">:</span> Setup R</span>
-<span id="cb2-58"><a href="#cb2-58"></a>        uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">@</span>v1</span>
-<span id="cb2-59"><a href="#cb2-59"></a>        with<span class="sc">:</span></span>
-<span id="cb2-60"><a href="#cb2-60"></a>          r<span class="sc">-</span>version<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.r }}</span>
-<span id="cb2-61"><a href="#cb2-61"></a>          http<span class="sc">-</span>user<span class="sc">-</span>agent<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.http<span class="sc">-</span>user<span class="sc">-</span>agent }}</span>
-<span id="cb2-62"><a href="#cb2-62"></a>          use<span class="sc">-</span>public<span class="sc">-</span>rspm<span class="sc">:</span> true</span>
-<span id="cb2-63"><a href="#cb2-63"></a></span>
-<span id="cb2-64"><a href="#cb2-64"></a>      <span class="sc">-</span> name<span class="sc">:</span> Restore cache</span>
-<span id="cb2-65"><a href="#cb2-65"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>cache<span class="sc">@</span>v3</span>
-<span id="cb2-66"><a href="#cb2-66"></a>        with<span class="sc">:</span></span>
-<span id="cb2-67"><a href="#cb2-67"></a>          path<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb2-68"><a href="#cb2-68"></a>            <span class="er">$</span>{{ env.R_LIBS_USER }}</span>
-<span id="cb2-69"><a href="#cb2-69"></a>            <span class="sc">~</span><span class="er">/</span>.staged.dependencies</span>
-<span id="cb2-70"><a href="#cb2-70"></a>          key<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}<span class="sc">-</span><span class="er">$</span>{{ <span class="fu">hashFiles</span>(<span class="st">'DESCRIPTION'</span>) }}</span>
-<span id="cb2-71"><a href="#cb2-71"></a>          restore<span class="sc">-</span>keys<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}</span>
-<span id="cb2-72"><a href="#cb2-72"></a></span>
-<span id="cb2-73"><a href="#cb2-73"></a>      <span class="sc">-</span> name<span class="sc">:</span> Run Staged dependencies</span>
-<span id="cb2-74"><a href="#cb2-74"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>staged<span class="sc">-</span>dependencies<span class="sc">-</span>action<span class="sc">@</span>v1</span>
-<span id="cb2-75"><a href="#cb2-75"></a>        with<span class="sc">:</span></span>
-<span id="cb2-76"><a href="#cb2-76"></a>          run<span class="sc">-</span>system<span class="sc">-</span>dependencies<span class="sc">:</span> true</span>
-<span id="cb2-77"><a href="#cb2-77"></a>          enable<span class="sc">-</span>check<span class="sc">:</span> false</span>
-<span id="cb2-78"><a href="#cb2-78"></a>          renv<span class="sc">-</span>restore<span class="sc">:</span> false</span>
-<span id="cb2-79"><a href="#cb2-79"></a>          cran<span class="sc">-</span>repos<span class="sc">:</span> <span class="st">"CRAN=${{ matrix.config.repos }}"</span></span>
-<span id="cb2-80"><a href="#cb2-80"></a>        env<span class="sc">:</span></span>
-<span id="cb2-81"><a href="#cb2-81"></a>          GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
-<span id="cb2-82"><a href="#cb2-82"></a>      <span class="do">#####################c#####################</span></span>
-<span id="cb2-83"><a href="#cb2-83"></a></span>
-<span id="cb2-84"><a href="#cb2-84"></a>      <span class="sc">-</span> name<span class="sc">:</span> Check</span>
-<span id="cb2-85"><a href="#cb2-85"></a>        env<span class="sc">:</span></span>
-<span id="cb2-86"><a href="#cb2-86"></a>          _R_CHECK_CRAN_INCOMING_REMOTE_<span class="sc">:</span> false</span>
-<span id="cb2-87"><a href="#cb2-87"></a>          _R_CHECK_FORCE_SUGGESTS_<span class="sc">:</span> false</span>
-<span id="cb2-88"><a href="#cb2-88"></a>        run<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb2-89"><a href="#cb2-89"></a>          <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"rcmdcheck"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"rcmdcheck"</span>)</span>
-<span id="cb2-90"><a href="#cb2-90"></a>          <span class="fu">options</span>(<span class="at">crayon.enabled =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-91"><a href="#cb2-91"></a>          check_error_on <span class="ot">&lt;-</span> <span class="st">"${{ inputs.error-on }}"</span></span>
-<span id="cb2-92"><a href="#cb2-92"></a>          <span class="cf">if</span> (check_error_on <span class="sc">==</span> <span class="st">""</span>) {</span>
-<span id="cb2-93"><a href="#cb2-93"></a>            check_error_on <span class="ot">&lt;-</span> <span class="st">"note"</span></span>
-<span id="cb2-94"><a href="#cb2-94"></a>          }</span>
-<span id="cb2-95"><a href="#cb2-95"></a>          rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>(</span>
-<span id="cb2-96"><a href="#cb2-96"></a>            <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"--no-manual"</span>, <span class="st">"--as-cran"</span>),</span>
-<span id="cb2-97"><a href="#cb2-97"></a>            <span class="at">error_on =</span> check_error_on,</span>
-<span id="cb2-98"><a href="#cb2-98"></a>            <span class="at">check_dir =</span> <span class="st">"check"</span></span>
-<span id="cb2-99"><a href="#cb2-99"></a>          )</span>
-<span id="cb2-100"><a href="#cb2-100"></a>        shell<span class="sc">:</span> Rscript {<span class="dv">0</span>}</span>
-<span id="cb2-101"><a href="#cb2-101"></a></span>
-<span id="cb2-102"><a href="#cb2-102"></a>      <span class="sc">-</span> name<span class="sc">:</span> Upload check results</span>
-<span id="cb2-103"><a href="#cb2-103"></a>        <span class="cf">if</span><span class="sc">:</span> <span class="fu">failure</span>()</span>
-<span id="cb2-104"><a href="#cb2-104"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>upload<span class="sc">-</span>artifact<span class="sc">@</span>main</span>
-<span id="cb2-105"><a href="#cb2-105"></a>        with<span class="sc">:</span></span>
-<span id="cb2-106"><a href="#cb2-106"></a>          name<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">$</span>{{ matrix.config.r }}<span class="sc">-</span>results</span>
-<span id="cb2-107"><a href="#cb2-107"></a>          path<span class="sc">:</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
-</div>
-</section>
-<section id="r-cmd-checks-2" class="slide level2">
-<h2>R-CMD Checks</h2>
-<div class="absolute" style="top: 0px; left: 100%; ">
-<div class="sectionhead">
-<p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
-</div>
-</div>
-<ul>
-<li>Success!</li>
-</ul>
-
-<img data-src="images/success_rcmd.png" class="r-stretch"></section>
-<section id="linters" class="slide level2">
-<h2>Linters</h2>
-<div class="absolute" style="top: 0px; left: 100%; ">
-<div class="sectionhead">
-<p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
 </div>
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a></span>
@@ -772,26 +668,138 @@
 <p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
 </div>
 </section>
-<section id="pretty-code" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pretty Code</h2>
+<section id="r-cmd-checks-2" class="slide level2">
+<h2>R-CMD Checks</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
+</div>
+</div>
 <ul>
-<li>Over 20 syntax highlighting themes available</li>
-<li>Default theme optimized for accessibility</li>
+<li>Success!</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>  </span>
-<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>  })</span>
-<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="images/success_rcmd.png" class="r-stretch"></section>
+<section id="linters" class="slide level2">
+<h2>Linters</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a>on<span class="sc">:</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  workflow_dispatch<span class="sc">:</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  workflow_call<span class="sc">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    inputs<span class="sc">:</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>      error<span class="sc">-</span>on<span class="sc">:</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>        description<span class="sc">:</span> Input <span class="cf">for</span> the <span class="st">'error_on'</span> parameter <span class="cf">in</span> rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>()</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        required<span class="sc">:</span> false</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        default<span class="sc">:</span> note</span>
+<span id="cb4-10"><a href="#cb4-10"></a>        type<span class="sc">:</span> string</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  push<span class="sc">:</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>    branches<span class="sc">:</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>      <span class="sc">-</span> main</span>
+<span id="cb4-14"><a href="#cb4-14"></a>      <span class="sc">-</span> devel</span>
+<span id="cb4-15"><a href="#cb4-15"></a>  pull_request<span class="sc">:</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>    branches<span class="sc">:</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>      <span class="sc">-</span> main</span>
+<span id="cb4-18"><a href="#cb4-18"></a>      <span class="sc">-</span> devel</span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a>name<span class="sc">:</span> R CMD Check</span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a>concurrency<span class="sc">:</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  group<span class="sc">:</span> r<span class="sc">-</span>cmd<span class="sc">-</span>check<span class="sc">-</span><span class="er">$</span>{{ github.event.pull_request.number <span class="sc">||</span> github.ref }}</span>
+<span id="cb4-24"><a href="#cb4-24"></a>  cancel<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>progress<span class="sc">:</span> true</span>
+<span id="cb4-25"><a href="#cb4-25"></a></span>
+<span id="cb4-26"><a href="#cb4-26"></a>jobs<span class="sc">:</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>  R<span class="sc">-</span>CMD<span class="sc">-</span>check<span class="sc">:</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }}</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    name<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }} (<span class="sc">$</span>{{ matrix.config.r }})</span>
+<span id="cb4-30"><a href="#cb4-30"></a>    <span class="cf">if</span><span class="sc">:</span> <span class="er">&gt;</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a>      <span class="sc">!</span><span class="fu">contains</span>(github.event.commits[<span class="dv">0</span>].message, <span class="st">'[skip r-cmd-check]'</span>)</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    strategy<span class="sc">:</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a>      fail<span class="sc">-</span>fast<span class="sc">:</span> false</span>
+<span id="cb4-34"><a href="#cb4-34"></a>      matrix<span class="sc">:</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a>        config<span class="sc">:</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'3.6'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2020-02-29/'</span>}</span>
+<span id="cb4-37"><a href="#cb4-37"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'4.0'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2021-03-31/'</span>}</span>
+<span id="cb4-38"><a href="#cb4-38"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="fl">-20.04</span>, r<span class="sc">:</span> <span class="st">'release'</span>, repos<span class="sc">:</span> <span class="st">'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'</span>}</span>
+<span id="cb4-39"><a href="#cb4-39"></a></span>
+<span id="cb4-40"><a href="#cb4-40"></a>    env<span class="sc">:</span></span>
+<span id="cb4-41"><a href="#cb4-41"></a>      GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
+<span id="cb4-42"><a href="#cb4-42"></a>      R_KEEP_PKG_SOURCE<span class="sc">:</span> true</span>
+<span id="cb4-43"><a href="#cb4-43"></a>      R_REMOTES_NO_ERRORS_FROM_WARNINGS<span class="sc">:</span> true</span>
+<span id="cb4-44"><a href="#cb4-44"></a>      R_REPOS<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.repos }}</span>
+<span id="cb4-45"><a href="#cb4-45"></a></span>
+<span id="cb4-46"><a href="#cb4-46"></a>    steps<span class="sc">:</span></span>
+<span id="cb4-47"><a href="#cb4-47"></a>      <span class="do">##################### </span><span class="re">BEGIN</span><span class="do"> boilerplate steps #####################</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a>      <span class="sc">-</span> name<span class="sc">:</span> Get branch names</span>
+<span id="cb4-49"><a href="#cb4-49"></a>        id<span class="sc">:</span> branch<span class="sc">-</span>name</span>
+<span id="cb4-50"><a href="#cb4-50"></a>        uses<span class="sc">:</span> tj<span class="sc">-</span>actions<span class="sc">/</span>branch<span class="sc">-</span>names<span class="sc">@</span>v5<span class="fl">.4</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a></span>
+<span id="cb4-52"><a href="#cb4-52"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout repository</span>
+<span id="cb4-53"><a href="#cb4-53"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v3</span>
+<span id="cb4-54"><a href="#cb4-54"></a>        with<span class="sc">:</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a>          ref<span class="sc">:</span> <span class="er">$</span>{{ steps.branch<span class="sc">-</span>name.outputs.head_ref_branch }}</span>
+<span id="cb4-56"><a href="#cb4-56"></a></span>
+<span id="cb4-57"><a href="#cb4-57"></a>      <span class="sc">-</span> name<span class="sc">:</span> Setup R</span>
+<span id="cb4-58"><a href="#cb4-58"></a>        uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">@</span>v1</span>
+<span id="cb4-59"><a href="#cb4-59"></a>        with<span class="sc">:</span></span>
+<span id="cb4-60"><a href="#cb4-60"></a>          r<span class="sc">-</span>version<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.r }}</span>
+<span id="cb4-61"><a href="#cb4-61"></a>          http<span class="sc">-</span>user<span class="sc">-</span>agent<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.http<span class="sc">-</span>user<span class="sc">-</span>agent }}</span>
+<span id="cb4-62"><a href="#cb4-62"></a>          use<span class="sc">-</span>public<span class="sc">-</span>rspm<span class="sc">:</span> true</span>
+<span id="cb4-63"><a href="#cb4-63"></a></span>
+<span id="cb4-64"><a href="#cb4-64"></a>      <span class="sc">-</span> name<span class="sc">:</span> Restore cache</span>
+<span id="cb4-65"><a href="#cb4-65"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>cache<span class="sc">@</span>v3</span>
+<span id="cb4-66"><a href="#cb4-66"></a>        with<span class="sc">:</span></span>
+<span id="cb4-67"><a href="#cb4-67"></a>          path<span class="sc">:</span> <span class="er">|</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a>            <span class="er">$</span>{{ env.R_LIBS_USER }}</span>
+<span id="cb4-69"><a href="#cb4-69"></a>            <span class="sc">~</span><span class="er">/</span>.staged.dependencies</span>
+<span id="cb4-70"><a href="#cb4-70"></a>          key<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}<span class="sc">-</span><span class="er">$</span>{{ <span class="fu">hashFiles</span>(<span class="st">'DESCRIPTION'</span>) }}</span>
+<span id="cb4-71"><a href="#cb4-71"></a>          restore<span class="sc">-</span>keys<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}</span>
+<span id="cb4-72"><a href="#cb4-72"></a></span>
+<span id="cb4-73"><a href="#cb4-73"></a>      <span class="sc">-</span> name<span class="sc">:</span> Run Staged dependencies</span>
+<span id="cb4-74"><a href="#cb4-74"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>staged<span class="sc">-</span>dependencies<span class="sc">-</span>action<span class="sc">@</span>v1</span>
+<span id="cb4-75"><a href="#cb4-75"></a>        with<span class="sc">:</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a>          run<span class="sc">-</span>system<span class="sc">-</span>dependencies<span class="sc">:</span> true</span>
+<span id="cb4-77"><a href="#cb4-77"></a>          enable<span class="sc">-</span>check<span class="sc">:</span> false</span>
+<span id="cb4-78"><a href="#cb4-78"></a>          renv<span class="sc">-</span>restore<span class="sc">:</span> false</span>
+<span id="cb4-79"><a href="#cb4-79"></a>          cran<span class="sc">-</span>repos<span class="sc">:</span> <span class="st">"CRAN=${{ matrix.config.repos }}"</span></span>
+<span id="cb4-80"><a href="#cb4-80"></a>        env<span class="sc">:</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>          GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
+<span id="cb4-82"><a href="#cb4-82"></a>      <span class="do">#####################c#####################</span></span>
+<span id="cb4-83"><a href="#cb4-83"></a></span>
+<span id="cb4-84"><a href="#cb4-84"></a>      <span class="sc">-</span> name<span class="sc">:</span> Check</span>
+<span id="cb4-85"><a href="#cb4-85"></a>        env<span class="sc">:</span></span>
+<span id="cb4-86"><a href="#cb4-86"></a>          _R_CHECK_CRAN_INCOMING_REMOTE_<span class="sc">:</span> false</span>
+<span id="cb4-87"><a href="#cb4-87"></a>          _R_CHECK_FORCE_SUGGESTS_<span class="sc">:</span> false</span>
+<span id="cb4-88"><a href="#cb4-88"></a>        run<span class="sc">:</span> <span class="er">|</span></span>
+<span id="cb4-89"><a href="#cb4-89"></a>          <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"rcmdcheck"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"rcmdcheck"</span>)</span>
+<span id="cb4-90"><a href="#cb4-90"></a>          <span class="fu">options</span>(<span class="at">crayon.enabled =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-91"><a href="#cb4-91"></a>          check_error_on <span class="ot">&lt;-</span> <span class="st">"${{ inputs.error-on }}"</span></span>
+<span id="cb4-92"><a href="#cb4-92"></a>          <span class="cf">if</span> (check_error_on <span class="sc">==</span> <span class="st">""</span>) {</span>
+<span id="cb4-93"><a href="#cb4-93"></a>            check_error_on <span class="ot">&lt;-</span> <span class="st">"note"</span></span>
+<span id="cb4-94"><a href="#cb4-94"></a>          }</span>
+<span id="cb4-95"><a href="#cb4-95"></a>          rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>(</span>
+<span id="cb4-96"><a href="#cb4-96"></a>            <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"--no-manual"</span>, <span class="st">"--as-cran"</span>),</span>
+<span id="cb4-97"><a href="#cb4-97"></a>            <span class="at">error_on =</span> check_error_on,</span>
+<span id="cb4-98"><a href="#cb4-98"></a>            <span class="at">check_dir =</span> <span class="st">"check"</span></span>
+<span id="cb4-99"><a href="#cb4-99"></a>          )</span>
+<span id="cb4-100"><a href="#cb4-100"></a>        shell<span class="sc">:</span> Rscript {<span class="dv">0</span>}</span>
+<span id="cb4-101"><a href="#cb4-101"></a></span>
+<span id="cb4-102"><a href="#cb4-102"></a>      <span class="sc">-</span> name<span class="sc">:</span> Upload check results</span>
+<span id="cb4-103"><a href="#cb4-103"></a>        <span class="cf">if</span><span class="sc">:</span> <span class="fu">failure</span>()</span>
+<span id="cb4-104"><a href="#cb4-104"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>upload<span class="sc">-</span>artifact<span class="sc">@</span>main</span>
+<span id="cb4-105"><a href="#cb4-105"></a>        with<span class="sc">:</span></span>
+<span id="cb4-106"><a href="#cb4-106"></a>          name<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">$</span>{{ matrix.config.r }}<span class="sc">-</span>results</span>
+<span id="cb4-107"><a href="#cb4-107"></a>          path<span class="sc">:</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
+<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
 </div>
 </section>
-<section id="code-animations" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Code Animations</h2>
+<section id="pretty-code" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pretty Code</h2>
 <ul>
 <li>Over 20 syntax highlighting themes available</li>
 <li>Default theme optimized for accessibility</li>
@@ -802,12 +810,30 @@
 <span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
 <span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb5-7" class="hljs-ln-code"><a href="#cb5-7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb5-8" class="hljs-ln-code"><a href="#cb5-8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb5-9" class="hljs-ln-code"><a href="#cb5-9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb5-10" class="hljs-ln-code"><a href="#cb5-10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb5-11" class="hljs-ln-code"><a href="#cb5-11"></a>  })</span>
-<span id="cb5-12" class="hljs-ln-code"><a href="#cb5-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7" class="hljs-ln-code"><a href="#cb5-7"></a>  })</span>
+<span id="cb5-8" class="hljs-ln-code"><a href="#cb5-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
+</div>
+</section>
+<section id="code-animations" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Code Animations</h2>
+<ul>
+<li>Over 20 syntax highlighting themes available</li>
+<li>Default theme optimized for accessibility</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a>  </span>
+<span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb6-9" class="hljs-ln-code"><a href="#cb6-9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb6-10" class="hljs-ln-code"><a href="#cb6-10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb6-11" class="hljs-ln-code"><a href="#cb6-11"></a>  })</span>
+<span id="cb6-12" class="hljs-ln-code"><a href="#cb6-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
 </div>
@@ -818,23 +844,23 @@
 <li>Highlight specific lines for emphasis</li>
 <li>Incrementally highlight additional lines</li>
 </ul>
-<div class="sourceCode" id="cb6" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb6-6"><a href="#cb6-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb6-7"><a href="#cb6-7"></a>ax.plot(theta, r)</span>
-<span id="cb6-8"><a href="#cb6-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb6-9"><a href="#cb6-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb6-10"><a href="#cb6-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb7-6"><a href="#cb7-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb7-7"><a href="#cb7-7"></a>ax.plot(theta, r)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb7-9"><a href="#cb7-9"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb7-10"><a href="#cb7-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
 </div>
 
 
 <img src="https://avatars.githubusercontent.com/u/84541169" class="slide-logo r-stretch"><div class="footer footer-default">
-<p><a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022" class="uri">https://github.com/pharmaverse/cicdworkshop.rinpharma2022</a></p>
+<p>&lt;<a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI-CD GitHub</a>&gt;</p>
 </div>
 </section>
     </div>
@@ -1050,6 +1076,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -11,7 +11,7 @@
     "href": "index.html#setup-for-workshop",
     "title": "CI/CD Workshop for R Packages",
     "section": "Setup for Workshop",
-    "text": "Setup for Workshop\n\n\nUse Template from CI/CD Workshop at R/Pharma conference 2022\nClone into your RStudio Session and switch to dev branch\nInstall {devtools}\nUse devtools::install_dev_deps() to get all necessary packages\nOn GitHub, set up a Pull Request of dev branch into main"
+    "text": "Setup for Workshop\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\nClone into your RStudio Session and switch to devel branch\nInstall the {devtools} package.\nUse devtools::install_dev_deps() to quickly get all necessary packages\nOn GitHub, set up a Pull Request of devel branch into main"
   },
   {
     "objectID": "index.html#flow-for-workshop",
@@ -74,21 +74,21 @@
     "href": "index.html#the-r-package-for-the-workshop-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
-    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\nOne Function\nOne Test\nOne Vignette\nOne Man Page/Function Documentation\nOne"
+    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\n\n../\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── images\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   └── testthat\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
   },
   {
     "objectID": "index.html#the-8-workflows-we-are-going-to-implement",
     "href": "index.html#the-8-workflows-we-are-going-to-implement",
     "title": "CI/CD Workshop for R Packages",
     "section": "The 8 Workflows we are going to implement",
-    "text": "The 8 Workflows we are going to implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\nR-CMD Check\nLinters\nDocumentation\nWebsite Links\nPublishing a pkgdown site\nTemplate Scripts\nTest Coverage\nSpelling Checks"
+    "text": "The 8 Workflows we are going to implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\n\nR-CMD Check     \nLinters    \nDocumentation    \nWebsite Links    \nPublishing a pkgdown site    \nTemplate Scripts    \nTest Coverage    \nSpelling Checks"
   },
   {
     "objectID": "index.html#r-cmd-checks",
     "href": "index.html#r-cmd-checks",
     "title": "CI/CD Workshop for R Packages",
-    "section": "R-CMD Checks",
-    "text": "R-CMD Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OS\nCheck integrity of code from contributor"
+    "section": "R-CMD Checks ",
+    "text": "R-CMD Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OS\nCheck integrity of code from contributor"
   },
   {
     "objectID": "index.html#r-cmd-checks-1",
@@ -130,6 +130,6 @@
     "href": "index.html#line-highlighting",
     "title": "CI/CD Workshop for R Packages",
     "section": "Line Highlighting",
-    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting\n\n\n\n\nhttps://github.com/pharmaverse/cicdworkshop.rinpharma2022"
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting\n\n\n\n\n<CI-CD GitHub>"
   }
 ]
