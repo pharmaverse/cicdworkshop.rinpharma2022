@@ -9,6 +9,6 @@ R in Pharma 2022 CI/CD workshop repository.
 #### a) Test is failing
 #### b) 
 
-### 1) Fix Broken link after implementing the GitHub Action for the package
+### 2) Fix Broken link after implementing the GitHub Action for the package
 
 
