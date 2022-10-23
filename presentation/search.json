@@ -18,7 +18,7 @@
     "href": "index.html#flow-for-workshop",
     "title": "CI/CD Workshop for R Packages",
     "section": "Flow for Workshop",
-    "text": "Flow for Workshop\n\n\nDiscuss the need for the Workflow\nLook at internal workings of Workflow\nIn your dev branch:\n\nCopy Code from Presentation and place into .github/workflows folder\nPush up into dev branch\nWatch GitHub give you feedback on the workflow\nAddress Feedback and push back up to dev branch.\nDiscuss Successful Implementation"
+    "text": "Flow for Workshop\n\n\nDiscuss the need for the Workflow\nIn your dev branch:\n\nCopy Code from Presentation and place into .github/workflows folder\nPush up into dev branch\nWatch GitHub give you feedback on the workflow\nAddress Feedback and push back up to dev branch.\nDiscuss Successful Implementation\n\nChecks can take a few minutes, so we will discuss while they are running."
   },
   {
     "objectID": "index.html#why-use-cicd-for-a-r-package",
@@ -74,7 +74,7 @@
     "href": "index.html#the-r-package-for-the-workshop-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
-    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\n\n../\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── images\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   └── testthat\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
+    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\n\n../\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── images\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   ├── testthat\n│   └── testthat.R\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
   },
   {
     "objectID": "index.html#the-8-workflows-we-are-going-to-implement",
