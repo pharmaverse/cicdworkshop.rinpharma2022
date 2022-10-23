@@ -1,6 +1,6 @@
 test_that("hello cicdworkshop greets the attendees", {
   expect_message(
     hello(),
-    "^Welcome to the cicdworkshop!\\n"
+    "^Welcome to the workshop!\\n"
   )
 })

@@ -4,6 +4,7 @@
 ^docs$
 ^\.github$
 README.*
+LICENSE.*
 ^\.lintr$
 ^presentation$
 ^cicdworkshop\.Rcheck$

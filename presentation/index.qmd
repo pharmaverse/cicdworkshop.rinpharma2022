@@ -37,13 +37,13 @@ This workshop/presentation will both discuss and show you how to implement 8 sim
 
 ::: {.incremental}
 - Discuss the need for the Workflow
-- Look at internal workings of Workflow
 - In your dev branch:
     - Copy Code from Presentation and place into `.github/workflows` folder
     - Push up into dev branch
     - Watch GitHub give you feedback on the workflow
     - Address Feedback and push back up to dev branch.
     - Discuss Successful Implementation
+- Checks can take a few minutes, so we will discuss while they are running. 
 :::
 
 ## Why use CI/CD for a R package?

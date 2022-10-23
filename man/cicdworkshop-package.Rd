@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Open Source \email{cicdworkshop@noreply.pharmaverse.com}
+\strong{Maintainer}: Open Source \email{osauthor@noreply.pharmaverse.com}
 
 }
 \concept{internal}
