@@ -1,1 +1,1 @@
-linters: linters_with_defaults(line_length_linter(100), object_usage_linter=NULL, cyclocomp_linter(complexity_limit = 20))
+linters: linters_with_defaults(line_length_linter(100), object_usage_linter=NULL, cyclocomp_linter(complexity_limit = 2))

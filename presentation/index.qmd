@@ -13,14 +13,11 @@ format:
     from: markdown+emoji
 ---
 
-
-
-
 ## Hello CI/CD
 
 <br>
 
-This workshop/presentation will both discuss and show you how to implement 8 simple CI/CD workflows for a R package
+This workshop will both discuss and show you how to implement 8 simple CI/CD workflows for a R package
 
 
 ## Setup for Workshop
@@ -33,18 +30,20 @@ This workshop/presentation will both discuss and show you how to implement 8 sim
 - On GitHub, set up a Pull Request of `devel` branch into `main`
 :::
 
-## Flow for Workshop
+## Flow for Workshop redux
 
-::: {.incremental}
-- Discuss the need for the Workflow
-- In your dev branch:
-    - Copy Code from Presentation and place into `.github/workflows` folder
-    - Push up into dev branch
-    - Watch GitHub give you feedback on the workflow
-    - Address Feedback and push back up to dev branch.
-    - Discuss Successful Implementation
+```{mermaid}
+flowchart TD
+  A(Discuss the need <br> for the Workflow)
+  --> B(Copy Code and place <br> into .github/workflows folder)
+  B --> C(Push up into devel branch)
+  C --> D(Watch GitHub give you <br> feedback on the workflow)
+  D --> E(Address Feedback and <br> fix in the devel branch)
+  E --> F(Discuss successful implementation)
+  F --> A[Discuss the need <br> for the Workflow]
+```
+
 - Checks can take a few minutes, so we will discuss while they are running. 
-:::
 
 ## Why use CI/CD for a R package?
 
@@ -55,25 +54,6 @@ This workshop/presentation will both discuss and show you how to implement 8 sim
 - Reason 1 :heavy_check_mark:
 - Reason 1 :heavy_check_mark:
 :::
-
-## Two uses cases for discussion:
-
-- [{admiral}](https://pharmaverse.github.io/admiral/index.html)
-
-  Something what about what about
-
-- NEST
-
-  Something what about what about
-
-## admiral
-
-
-## admiral CI/CD
-
-## NEST
-
-## NEST CI/CD
 
 ## The R Package for the Workshop
 
@@ -113,13 +93,14 @@ tree <- dir_tree("../",recurse=1)
  
 ::: {.incremental}
 1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "yellow")` 
+1. Website Links &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
+1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "yellow")`
 1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "yellow")` 
 1. Documentation &nbsp; &nbsp;`r fontawesome::fa("book", "yellow")` 
-1. Website Links &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
 1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "yellow")`
 1. Template Scripts &nbsp; &nbsp;`r fontawesome::fa("scroll", "yellow")`
 1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "yellow")`
-1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "yellow")`
+
 :::
 
 ## R-CMD Checks `r fontawesome::fa("code", "yellow")`
@@ -143,7 +124,7 @@ Why have a workflow that checks the Package Build?
 :::
 
 
-## R-CMD Checks
+## R-CMD Workflow
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -153,7 +134,7 @@ Why have a workflow that checks the Package Build?
 
 ``` {.r}
 
-on:
+oon:
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -162,10 +143,6 @@ on:
         required: false
         default: note
         type: string
-  push:
-    branches:
-      - main
-      - devel
   pull_request:
     branches:
       - main
@@ -187,8 +164,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}
           - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}
+          - {os: ubuntu-latest, r: '4.1', repos: 'https://cran.microsoft.com/snapshot/2022-03-10/'}
           - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}
 
     env:
@@ -203,10 +180,12 @@ jobs:
         id: branch-name
         uses: tj-actions/branch-names@v5.4
 
-      - name: Checkout repository
+      - name: Checkout repo (PR) 🛎
         uses: actions/checkout@v3
+        if: github.event_name == 'pull_request'
         with:
           ref: ${{ steps.branch-name.outputs.head_ref_branch }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
@@ -259,7 +238,6 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
-
 ```
 
 ::: footer
@@ -278,7 +256,27 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 
 ![](images/success_rcmd.png)
 
-## Linters
+## Links
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1]{style="opacity:0.25"} 2 [3 4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks Links in your Package?
+<br>
+
+
+::: {.incremental}
+- Check to make sure it runs on multiple versions of R
+- Check to make sure it runs on multiple snapshots of R packages
+- Check to make sure it runs on different OS
+- Check integrity of code from contributor
+:::
+
+## Link Workflow
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -287,114 +285,123 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 :::
 
 ``` {.r}
+---
+name: Check URLs
 
 on:
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-      error-on:
-        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()
-        required: false
-        default: note
-        type: string
-  push:
+  pull_request:
     branches:
       - main
       - devel
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: links-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  links:
+    name: Validate Links
+    runs-on: ubuntu-20.04
+    if: >
+      !contains(github.event.commits[0].message, '[skip links]')
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Check URLs in docs
+        uses: lycheeverse/lychee-action@v1.5.1
+        with:
+          fail: true
+          jobSummary: true
+          format: markdown
+          output: links-results.md
+          args: >-
+            --exclude-private
+            --exclude "https://github.com.*.git|lycheeverse.*"
+            --verbose
+            --no-progress
+            ${{ inputs.additional_args }}
+            **/*.md
+            **/*.html
+            **/*.Rmd
+            **/*.yaml
+            **/*.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+::: footer
+Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+:::
+
+## Spell Checks
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+``` {.r}
+---
+name: Spellcheck
+
+on:
   pull_request:
     branches:
       - main
       - devel
 
-name: R CMD Check
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Spellcheck
+    container:
+      image: rocker/tidyverse:4.1.2
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-concurrency:
-  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+      - name: Run Spelling Check test
+        uses: insightsengineering/r-spellcheck-action@v2
+```
+
+::: footer
+Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+:::
+
+## Linters
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+``` {.r}
+---
+name: Spellcheck
+
+on:
+  pull_request:
+    branches:
+      - main
+      - devel
 
 jobs:
-  R-CMD-check:
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-    if: >
-      !contains(github.event.commits[0].message, '[skip r-cmd-check]')
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}
-          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}
-          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}
-
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      R_KEEP_PKG_SOURCE: true
-      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
-      R_REPOS: ${{ matrix.config.repos }}
-
+  check:
+    runs-on: ubuntu-latest
+    name: Spellcheck
+    container:
+      image: rocker/tidyverse:4.1.2
     steps:
-      ##################### BEGIN boilerplate steps #####################
-      - name: Get branch names
-        id: branch-name
-        uses: tj-actions/branch-names@v5.4
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ steps.branch-name.outputs.head_ref_branch }}
-
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v1
-        with:
-          r-version: ${{ matrix.config.r }}
-          http-user-agent: ${{ matrix.config.http-user-agent }}
-          use-public-rspm: true
-
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ env.R_LIBS_USER }}
-            ~/.staged.dependencies
-          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}
-          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}
-
-      - name: Run Staged dependencies
-        uses: insightsengineering/staged-dependencies-action@v1
-        with:
-          run-system-dependencies: true
-          enable-check: false
-          renv-restore: false
-          cran-repos: "CRAN=${{ matrix.config.repos }}"
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      #####################c#####################
-
-      - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
-          _R_CHECK_FORCE_SUGGESTS_: false
-        run: |
-          if (!requireNamespace("rcmdcheck", quietly = TRUE)) install.packages("rcmdcheck")
-          options(crayon.enabled = TRUE)
-          check_error_on <- "${{ inputs.error-on }}"
-          if (check_error_on == "") {
-            check_error_on <- "note"
-          }
-          rcmdcheck::rcmdcheck(
-            args = c("--no-manual", "--as-cran"),
-            error_on = check_error_on,
-            check_dir = "check"
-          )
-        shell: Rscript {0}
-
-      - name: Upload check results
-        if: failure()
-        uses: actions/upload-artifact@main
-        with:
-          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: check
-
+      - name: Run Spelling Check test
+        uses: insightsengineering/r-spellcheck-action@v2
 ```
 
 ::: footer
