@@ -4,7 +4,7 @@
     "href": "index.html#hello-cicd",
     "title": "CI/CD Workshop for R Packages",
     "section": "Hello CI/CD",
-    "text": "Hello CI/CD\n\nThis workshop/presentation will both discuss and show you how to implement 8 simple CI/CD workflows for a R package"
+    "text": "Hello CI/CD\n\nThis workshop will both discuss and show you how to implement 8 simple CI/CD workflows for a R package"
   },
   {
     "objectID": "index.html#setup-for-workshop",
@@ -14,11 +14,11 @@
     "text": "Setup for Workshop\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\nClone into your RStudio Session and switch to devel branch\nInstall the {devtools} package.\nUse devtools::install_dev_deps() to quickly get all necessary packages\nOn GitHub, set up a Pull Request of devel branch into main"
   },
   {
-    "objectID": "index.html#flow-for-workshop",
-    "href": "index.html#flow-for-workshop",
+    "objectID": "index.html#flow-for-workshop-redux",
+    "href": "index.html#flow-for-workshop-redux",
     "title": "CI/CD Workshop for R Packages",
-    "section": "Flow for Workshop",
-    "text": "Flow for Workshop\n\n\nDiscuss the need for the Workflow\nIn your dev branch:\n\nCopy Code from Presentation and place into .github/workflows folder\nPush up into dev branch\nWatch GitHub give you feedback on the workflow\nAddress Feedback and push back up to dev branch.\nDiscuss Successful Implementation\n\nChecks can take a few minutes, so we will discuss while they are running."
+    "section": "Flow for Workshop redux",
+    "text": "Flow for Workshop redux\n\n\n\n\nflowchart TD\n  A(Discuss the need <br> for the Workflow)\n  --> B(Copy Code and place <br> into .github/workflows folder)\n  B --> C(Push up into devel branch)\n  C --> D(Watch GitHub give you <br> feedback on the workflow)\n  D --> E(Address Feedback and <br> fix in the devel branch)\n  E --> F(Discuss successful implementation)\n  F --> A[Discuss the need <br> for the Workflow]\n\n\n\n\n\n\n\n\n\nChecks can take a few minutes, so we will discuss while they are running."
   },
   {
     "objectID": "index.html#why-use-cicd-for-a-r-package",
@@ -26,41 +26,6 @@
     "title": "CI/CD Workshop for R Packages",
     "section": "Why use CI/CD for a R package?",
     "text": "Why use CI/CD for a R package?\n\n\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️"
-  },
-  {
-    "objectID": "index.html#two-uses-cases-for-discussion",
-    "href": "index.html#two-uses-cases-for-discussion",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Two uses cases for discussion:",
-    "text": "Two uses cases for discussion:\n\n{admiral}\nSomething what about what about\nNEST\nSomething what about what about"
-  },
-  {
-    "objectID": "index.html#admiral",
-    "href": "index.html#admiral",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "admiral",
-    "text": "admiral"
-  },
-  {
-    "objectID": "index.html#admiral-cicd",
-    "href": "index.html#admiral-cicd",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "admiral CI/CD",
-    "text": "admiral CI/CD"
-  },
-  {
-    "objectID": "index.html#nest",
-    "href": "index.html#nest",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "NEST",
-    "text": "NEST"
-  },
-  {
-    "objectID": "index.html#nest-cicd",
-    "href": "index.html#nest-cicd",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "NEST CI/CD",
-    "text": "NEST CI/CD"
   },
   {
     "objectID": "index.html#the-r-package-for-the-workshop",
@@ -74,14 +39,14 @@
     "href": "index.html#the-r-package-for-the-workshop-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
-    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\n\n../\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── images\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   ├── testthat\n│   └── testthat.R\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
+    "text": "The R Package for the Workshop\nPackage is super lean to help focus on the CI/CD part.\n\n\n../\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   ├── hello.R\n│   └── linter_ex.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── images\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   ├── testthat\n│   └── testthat.R\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
   },
   {
     "objectID": "index.html#the-8-workflows-we-are-going-to-implement",
     "href": "index.html#the-8-workflows-we-are-going-to-implement",
     "title": "CI/CD Workshop for R Packages",
     "section": "The 8 Workflows we are going to implement",
-    "text": "The 8 Workflows we are going to implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\n\nR-CMD Check     \nLinters    \nDocumentation    \nWebsite Links    \nPublishing a pkgdown site    \nTemplate Scripts    \nTest Coverage    \nSpelling Checks"
+    "text": "The 8 Workflows we are going to implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\n\nR-CMD Check     \nWebsite Links    \nSpelling Checks    \nLinters    \nDocumentation    \nPublishing a pkgdown site    \nTemplate Scripts    \nTest Coverage"
   },
   {
     "objectID": "index.html#r-cmd-checks",
@@ -91,25 +56,46 @@
     "text": "R-CMD Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OS\nCheck integrity of code from contributor"
   },
   {
+    "objectID": "index.html#r-cmd-workflow",
+    "href": "index.html#r-cmd-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "R-CMD Workflow",
+    "text": "R-CMD Workflow\n\n\n1 2 3 4 5 6 7 8\n\n\n\noon:\n  workflow_dispatch:\n  workflow_call:\n    inputs:\n      error-on:\n        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()\n        required: false\n        default: note\n        type: string\n  pull_request:\n    branches:\n      - main\n      - devel\n\nname: R CMD Check\n\nconcurrency:\n  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  R-CMD-check:\n    runs-on: ${{ matrix.config.os }}\n    name: ${{ matrix.config.os }} (${{ matrix.config.r }})\n    if: >\n      !contains(github.event.commits[0].message, '[skip r-cmd-check]')\n    strategy:\n      fail-fast: false\n      matrix:\n        config:\n          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}\n          - {os: ubuntu-latest, r: '4.1', repos: 'https://cran.microsoft.com/snapshot/2022-03-10/'}\n          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}\n\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      R_KEEP_PKG_SOURCE: true\n      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true\n      R_REPOS: ${{ matrix.config.repos }}\n\n    steps:\n      ##################### BEGIN boilerplate steps #####################\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n\n      - name: Checkout repo (PR) 🛎\n        uses: actions/checkout@v3\n        if: github.event_name == 'pull_request'\n        with:\n          ref: ${{ steps.branch-name.outputs.head_ref_branch }}\n          repository: ${{ github.event.pull_request.head.repo.full_name }}\n\n      - name: Setup R\n        uses: r-lib/actions/setup-r@v1\n        with:\n          r-version: ${{ matrix.config.r }}\n          http-user-agent: ${{ matrix.config.http-user-agent }}\n          use-public-rspm: true\n\n      - name: Restore cache\n        uses: actions/cache@v3\n        with:\n          path: |\n            ${{ env.R_LIBS_USER }}\n            ~/.staged.dependencies\n          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}\n          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}\n\n      - name: Run Staged dependencies\n        uses: insightsengineering/staged-dependencies-action@v1\n        with:\n          run-system-dependencies: true\n          enable-check: false\n          renv-restore: false\n          cran-repos: \"CRAN=${{ matrix.config.repos }}\"\n        env:\n          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      #####################c#####################\n\n      - name: Check\n        env:\n          _R_CHECK_CRAN_INCOMING_REMOTE_: false\n          _R_CHECK_FORCE_SUGGESTS_: false\n        run: |\n          if (!requireNamespace(\"rcmdcheck\", quietly = TRUE)) install.packages(\"rcmdcheck\")\n          options(crayon.enabled = TRUE)\n          check_error_on <- \"${{ inputs.error-on }}\"\n          if (check_error_on == \"\") {\n            check_error_on <- \"note\"\n          }\n          rcmdcheck::rcmdcheck(\n            args = c(\"--no-manual\", \"--as-cran\"),\n            error_on = check_error_on,\n            check_dir = \"check\"\n          )\n        shell: Rscript {0}\n\n      - name: Upload check results\n        if: failure()\n        uses: actions/upload-artifact@main\n        with:\n          name: ${{ runner.os }}-r${{ matrix.config.r }}-results\n          path: check\n\nLearn more: File Location: r-cmd-check.yml"
+  },
+  {
     "objectID": "index.html#r-cmd-checks-1",
     "href": "index.html#r-cmd-checks-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "R-CMD Checks",
-    "text": "R-CMD Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n\non:\n  workflow_dispatch:\n  workflow_call:\n    inputs:\n      error-on:\n        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()\n        required: false\n        default: note\n        type: string\n  push:\n    branches:\n      - main\n      - devel\n  pull_request:\n    branches:\n      - main\n      - devel\n\nname: R CMD Check\n\nconcurrency:\n  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  R-CMD-check:\n    runs-on: ${{ matrix.config.os }}\n    name: ${{ matrix.config.os }} (${{ matrix.config.r }})\n    if: >\n      !contains(github.event.commits[0].message, '[skip r-cmd-check]')\n    strategy:\n      fail-fast: false\n      matrix:\n        config:\n          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}\n          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}\n          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}\n\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      R_KEEP_PKG_SOURCE: true\n      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true\n      R_REPOS: ${{ matrix.config.repos }}\n\n    steps:\n      ##################### BEGIN boilerplate steps #####################\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n\n      - name: Checkout repository\n        uses: actions/checkout@v3\n        with:\n          ref: ${{ steps.branch-name.outputs.head_ref_branch }}\n\n      - name: Setup R\n        uses: r-lib/actions/setup-r@v1\n        with:\n          r-version: ${{ matrix.config.r }}\n          http-user-agent: ${{ matrix.config.http-user-agent }}\n          use-public-rspm: true\n\n      - name: Restore cache\n        uses: actions/cache@v3\n        with:\n          path: |\n            ${{ env.R_LIBS_USER }}\n            ~/.staged.dependencies\n          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}\n          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}\n\n      - name: Run Staged dependencies\n        uses: insightsengineering/staged-dependencies-action@v1\n        with:\n          run-system-dependencies: true\n          enable-check: false\n          renv-restore: false\n          cran-repos: \"CRAN=${{ matrix.config.repos }}\"\n        env:\n          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      #####################c#####################\n\n      - name: Check\n        env:\n          _R_CHECK_CRAN_INCOMING_REMOTE_: false\n          _R_CHECK_FORCE_SUGGESTS_: false\n        run: |\n          if (!requireNamespace(\"rcmdcheck\", quietly = TRUE)) install.packages(\"rcmdcheck\")\n          options(crayon.enabled = TRUE)\n          check_error_on <- \"${{ inputs.error-on }}\"\n          if (check_error_on == \"\") {\n            check_error_on <- \"note\"\n          }\n          rcmdcheck::rcmdcheck(\n            args = c(\"--no-manual\", \"--as-cran\"),\n            error_on = check_error_on,\n            check_dir = \"check\"\n          )\n        shell: Rscript {0}\n\n      - name: Upload check results\n        if: failure()\n        uses: actions/upload-artifact@main\n        with:\n          name: ${{ runner.os }}-r${{ matrix.config.r }}-results\n          path: check\n\nLearn more: File Location: r-cmd-check.yml"
+    "text": "R-CMD Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n\nSuccess!"
   },
   {
-    "objectID": "index.html#r-cmd-checks-2",
-    "href": "index.html#r-cmd-checks-2",
+    "objectID": "index.html#links",
+    "href": "index.html#links",
     "title": "CI/CD Workshop for R Packages",
-    "section": "R-CMD Checks",
-    "text": "R-CMD Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n\nSuccess!"
+    "section": "Links",
+    "text": "Links\n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks Links in your Package? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OS\nCheck integrity of code from contributor"
+  },
+  {
+    "objectID": "index.html#link-workflow",
+    "href": "index.html#link-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Link Workflow",
+    "text": "Link Workflow\n\n\n1 2 3 4 5 6 7 8\n\n\n---\nname: Check URLs\n\non:\n  pull_request:\n    branches:\n      - main\n      - devel\n  workflow_dispatch:\n  workflow_call:\n\nconcurrency:\n  group: links-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  links:\n    name: Validate Links\n    runs-on: ubuntu-20.04\n    if: >\n      !contains(github.event.commits[0].message, '[skip links]')\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n\n      - name: Check URLs in docs\n        uses: lycheeverse/lychee-action@v1.5.1\n        with:\n          fail: true\n          jobSummary: true\n          format: markdown\n          output: links-results.md\n          args: >-\n            --exclude-private\n            --exclude \"https://github.com.*.git|lycheeverse.*\"\n            --verbose\n            --no-progress\n            ${{ inputs.additional_args }}\n            **/*.md\n            **/*.html\n            **/*.Rmd\n            **/*.yaml\n            **/*.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\nLearn more: File Location: r-cmd-check.yml"
+  },
+  {
+    "objectID": "index.html#spell-checks",
+    "href": "index.html#spell-checks",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Spell Checks",
+    "text": "Spell Checks\n\n\n1 2 3 4 5 6 7 8\n\n\n---\nname: Spellcheck\n\non:\n  pull_request:\n    branches:\n      - main\n      - devel\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    name: Spellcheck\n    container:\n      image: rocker/tidyverse:4.1.2\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v2\n\n      - name: Run Spelling Check test\n        uses: insightsengineering/r-spellcheck-action@v2\n\nLearn more: File Location: r-cmd-check.yml"
   },
   {
     "objectID": "index.html#linters",
     "href": "index.html#linters",
     "title": "CI/CD Workshop for R Packages",
     "section": "Linters",
-    "text": "Linters\n\n\n1 2 3 4 5 6 7 8\n\n\n\non:\n  workflow_dispatch:\n  workflow_call:\n    inputs:\n      error-on:\n        description: Input for the 'error_on' parameter in rcmdcheck::rcmdcheck()\n        required: false\n        default: note\n        type: string\n  push:\n    branches:\n      - main\n      - devel\n  pull_request:\n    branches:\n      - main\n      - devel\n\nname: R CMD Check\n\nconcurrency:\n  group: r-cmd-check-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: true\n\njobs:\n  R-CMD-check:\n    runs-on: ${{ matrix.config.os }}\n    name: ${{ matrix.config.os }} (${{ matrix.config.r }})\n    if: >\n      !contains(github.event.commits[0].message, '[skip r-cmd-check]')\n    strategy:\n      fail-fast: false\n      matrix:\n        config:\n          - {os: ubuntu-latest, r: '3.6', repos: 'https://cran.microsoft.com/snapshot/2020-02-29/'}\n          - {os: ubuntu-latest, r: '4.0', repos: 'https://cran.microsoft.com/snapshot/2021-03-31/'}\n          - {os: ubuntu-20.04, r: 'release', repos: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'}\n\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      R_KEEP_PKG_SOURCE: true\n      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true\n      R_REPOS: ${{ matrix.config.repos }}\n\n    steps:\n      ##################### BEGIN boilerplate steps #####################\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n\n      - name: Checkout repository\n        uses: actions/checkout@v3\n        with:\n          ref: ${{ steps.branch-name.outputs.head_ref_branch }}\n\n      - name: Setup R\n        uses: r-lib/actions/setup-r@v1\n        with:\n          r-version: ${{ matrix.config.r }}\n          http-user-agent: ${{ matrix.config.http-user-agent }}\n          use-public-rspm: true\n\n      - name: Restore cache\n        uses: actions/cache@v3\n        with:\n          path: |\n            ${{ env.R_LIBS_USER }}\n            ~/.staged.dependencies\n          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }}\n          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}\n\n      - name: Run Staged dependencies\n        uses: insightsengineering/staged-dependencies-action@v1\n        with:\n          run-system-dependencies: true\n          enable-check: false\n          renv-restore: false\n          cran-repos: \"CRAN=${{ matrix.config.repos }}\"\n        env:\n          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n      #####################c#####################\n\n      - name: Check\n        env:\n          _R_CHECK_CRAN_INCOMING_REMOTE_: false\n          _R_CHECK_FORCE_SUGGESTS_: false\n        run: |\n          if (!requireNamespace(\"rcmdcheck\", quietly = TRUE)) install.packages(\"rcmdcheck\")\n          options(crayon.enabled = TRUE)\n          check_error_on <- \"${{ inputs.error-on }}\"\n          if (check_error_on == \"\") {\n            check_error_on <- \"note\"\n          }\n          rcmdcheck::rcmdcheck(\n            args = c(\"--no-manual\", \"--as-cran\"),\n            error_on = check_error_on,\n            check_dir = \"check\"\n          )\n        shell: Rscript {0}\n\n      - name: Upload check results\n        if: failure()\n        uses: actions/upload-artifact@main\n        with:\n          name: ${{ runner.os }}-r${{ matrix.config.r }}-results\n          path: check\n\nLearn more: File Location: r-cmd-check.yml"
+    "text": "Linters\n\n\n1 2 3 4 5 6 7 8\n\n\n---\nname: Spellcheck\n\non:\n  pull_request:\n    branches:\n      - main\n      - devel\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    name: Spellcheck\n    container:\n      image: rocker/tidyverse:4.1.2\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v2\n\n      - name: Run Spelling Check test\n        uses: insightsengineering/r-spellcheck-action@v2\n\nLearn more: File Location: r-cmd-check.yml"
   },
   {
     "objectID": "index.html#pretty-code",
