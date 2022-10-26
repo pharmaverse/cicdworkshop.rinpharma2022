@@ -30,12 +30,11 @@ This workshop will both discuss and show you how to implement 8 simple CI/CD wor
 - On GitHub, set up a Pull Request of `devel` branch into `main`
 :::
 
-## Flow for Workshop redux
+## Flow for Workshop
 
 ```{mermaid}
 flowchart TD
-  A(Discuss the need <br> for the Workflow)
-  --> B(Copy Code and place <br> into .github/workflows folder)
+  A(Discuss the need <br> for the Workflow) --> B(Copy Code and place <br> into .github/workflows folder)
   B --> C(Push up into devel branch)
   C --> D(Watch GitHub give you <br> feedback on the workflow)
   D --> E(Address Feedback and <br> fix in the devel branch)
@@ -43,16 +42,17 @@ flowchart TD
   F --> A[Discuss the need <br> for the Workflow]
 ```
 
-- Checks can take a few minutes, so we will discuss while they are running. 
+::: footer
+::: 
 
 ## Why use CI/CD for a R package?
 
 ::: {.incremental}
-- Reason 1 :heavy_check_mark:
-- Reason 1 :heavy_check_mark:
-- Reason 1 :heavy_check_mark:
-- Reason 1 :heavy_check_mark:
-- Reason 1 :heavy_check_mark:
+- Multiple Contributors on your R Package :keyboard:
+- User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "yellow")` 
+- Faster turnaround on Pull Requests :heavy_check_mark:
+- Flag coding issues for the contributor `r fontawesome::fa("flag", "yellow")` 
+- Enforce coding style conventions `r fontawesome::fa("pencil-square", "green")`
 :::
 
 ## The R Package for the Workshop
