@@ -1,0 +1,21 @@
+on:
+  push:
+  pull_request:
+
+name: R CMD check
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.2.1
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Build package
+        run: R CMD build .
+
+      - name: Check package
+        run: R CMD check *.tar.gz

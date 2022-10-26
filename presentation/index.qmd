@@ -146,15 +146,11 @@ jobs:
   check:
     name: Check
     runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.2.1
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
-
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Install R deps
-        uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Build package
         run: R CMD build .
@@ -207,34 +203,23 @@ Why have a workflow that checks Links in your Package?
 :::
 :::
 
-``` {.r}
----
+``` yaml
 name: Check URLs
 
 on:
   pull_request:
-    branches:
-      - main
-      - devel
-  workflow_dispatch:
-  workflow_call:
-
-concurrency:
-  group: links-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  push:
 
 jobs:
   links:
     name: Validate Links
-    runs-on: ubuntu-20.04
-    if: >
-      !contains(github.event.commits[0].message, '[skip links]')
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Check URLs in docs
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1
         with:
           fail: true
           jobSummary: true
@@ -245,12 +230,7 @@ jobs:
             --exclude "https://github.com.*.git|lycheeverse.*"
             --verbose
             --no-progress
-            ${{ inputs.additional_args }}
             **/*.md
-            **/*.html
-            **/*.Rmd
-            **/*.yaml
-            **/*.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -268,24 +248,21 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 :::
 
 ``` {.r}
----
 name: Spellcheck
 
 on:
   pull_request:
-    branches:
-      - main
-      - devel
+  push:
 
 jobs:
   check:
     runs-on: ubuntu-latest
     name: Spellcheck
     container:
-      image: rocker/tidyverse:4.1.2
+      image: rocker/tidyverse:4.2.1
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Run Spelling Check test
         uses: insightsengineering/r-spellcheck-action@v2
