@@ -24,7 +24,5 @@ Suggests:
     roxygen2,
     spelling,
     styler,
-    usethis,
-    covr,
-    testthat
+    covr
 VignetteBuilder: knitr
