@@ -18,6 +18,8 @@ a) R/Pharma link is broken
 a) The word **Linked** is spelled as **linke** in `News.md`
 
 ### Linter
+4) Fix issue for cyclomatic complexity identified by the lintr
+a) `linter_ex.R` has multiple nested if statements 
 
 ### Documentation
 
