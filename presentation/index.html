@@ -538,7 +538,7 @@
 <li class="fragment">Check to make sure it runs on multiple versions of R</li>
 <li class="fragment">Check to make sure it runs on multiple snapshots of R packages</li>
 <li class="fragment">Check to make sure it runs on different OS</li>
-<li class="fragment">Check integrity of code from contributor</li>
+<li class="fragment">Check integrity of code from contributors before you review the Pull Request</li>
 </ul>
 </div>
 </section>
@@ -550,7 +550,7 @@
 </div>
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a>oon<span class="sc">:</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>on<span class="sc">:</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  workflow_dispatch<span class="sc">:</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  workflow_call<span class="sc">:</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>    inputs<span class="sc">:</span></span>
@@ -779,7 +779,7 @@
 <h2>Linters</h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
-<p><span style="opacity:0.25">1 2</span> 3 <span style="opacity:0.25">4 5 6 7 8</span></p>
+<p><span style="opacity:0.25">1 2 3</span> 4 <span style="opacity:0.25">5 6 7 8</span></p>
 </div>
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="sc">---</span></span>
@@ -805,66 +805,6 @@
 <span id="cb6-21"><a href="#cb6-21"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>r<span class="sc">-</span>spellcheck<span class="sc">-</span>action<span class="sc">@</span>v2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
-</div>
-</section>
-<section id="pretty-code" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pretty Code</h2>
-<ul>
-<li>Over 20 syntax highlighting themes available</li>
-<li>Default theme optimized for accessibility</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a>  </span>
-<span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a>  })</span>
-<span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
-</div>
-</section>
-<section id="code-animations" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Code Animations</h2>
-<ul>
-<li>Over 20 syntax highlighting themes available</li>
-<li>Default theme optimized for accessibility</li>
-</ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a>  </span>
-<span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb8-9" class="hljs-ln-code"><a href="#cb8-9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb8-10" class="hljs-ln-code"><a href="#cb8-10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb8-11" class="hljs-ln-code"><a href="#cb8-11"></a>  })</span>
-<span id="cb8-12" class="hljs-ln-code"><a href="#cb8-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
-</div>
-</section>
-<section id="line-highlighting" class="slide level2">
-<h2>Line Highlighting</h2>
-<ul>
-<li>Highlight specific lines for emphasis</li>
-<li>Incrementally highlight additional lines</li>
-</ul>
-<div class="sourceCode" id="cb9" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb9-5"><a href="#cb9-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb9-6"><a href="#cb9-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb9-7"><a href="#cb9-7"></a>ax.plot(theta, r)</span>
-<span id="cb9-8"><a href="#cb9-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb9-9"><a href="#cb9-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb9-10"><a href="#cb9-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
 </div>
 
 
