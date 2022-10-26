@@ -120,7 +120,7 @@ Why have a workflow that checks the Package Build?
 - Check to make sure it runs on multiple versions of R
 - Check to make sure it runs on multiple snapshots of R packages
 - Check to make sure it runs on different OS
-- Check integrity of code from contributor
+- Check integrity of code from contributors before you review the Pull Request
 :::
 
 
@@ -134,7 +134,7 @@ Why have a workflow that checks the Package Build?
 
 ``` {.r}
 
-oon:
+on:
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -376,7 +376,7 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
-[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+[1 2 3]{style="opacity:0.25"} 4 [5 6 7 8]{style="opacity:0.25"}
 :::
 :::
 
@@ -408,68 +408,4 @@ jobs:
 Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
-## Pretty Code {auto-animate="true"}
 
--   Over 20 syntax highlighting themes available
--   Default theme optimized for accessibility
-
-``` r
-# Define a server for the Shiny app
-function(input, output) {
-  
-  # Fill in the spot we created for a plot
-  output$phonePlot <- renderPlot({
-    # Render a barplot
-  })
-}
-```
-
-::: footer
-Learn more: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting)
-:::
-
-## Code Animations {auto-animate="true"}
-
--   Over 20 syntax highlighting themes available
--   Default theme optimized for accessibility
-
-``` r
-# Define a server for the Shiny app
-function(input, output) {
-  
-  # Fill in the spot we created for a plot
-  output$phonePlot <- renderPlot({
-    # Render a barplot
-    barplot(WorldPhones[,input$region]*1000, 
-            main=input$region,
-            ylab="Number of Telephones",
-            xlab="Year")
-  })
-}
-```
-
-::: footer
-Learn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations)
-:::
-
-## Line Highlighting
-
--   Highlight specific lines for emphasis
--   Incrementally highlight additional lines
-
-``` {.python code-line-numbers="4-5|7|10"}
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-::: footer
-Learn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#line-highlighting)
-:::
