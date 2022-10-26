@@ -19,7 +19,7 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Build package
-        runs: R CMD build .
+        run: R CMD build .
 
       - name: Check package
-        runs: R CMD check *.tar.gz
+        run: R CMD check *.tar.gz
