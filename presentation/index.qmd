@@ -236,7 +236,7 @@ jobs:
 ```
 
 ::: footer
-Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+Advanced Usage: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
 ## Spell Checks
@@ -247,7 +247,7 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 :::
 :::
 
-``` {.r}
+```yaml
 name: Spellcheck
 
 on:
@@ -280,28 +280,29 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 :::
 :::
 
-``` {.r}
----
-name: Spellcheck
+```yaml
+name: Lint Code Base
 
 on:
+  push:
   pull_request:
-    branches:
-      - main
-      - devel
 
 jobs:
-  check:
+  build:
+    name: Lint Code Base
     runs-on: ubuntu-latest
-    name: Spellcheck
-    container:
-      image: rocker/tidyverse:4.1.2
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Run Spelling Check test
-        uses: insightsengineering/r-spellcheck-action@v2
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_R: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ::: footer
