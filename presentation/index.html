@@ -413,15 +413,14 @@
 </ul>
 </div>
 </section>
-<section id="flow-for-workshop-redux" class="slide level2">
-<h2>Flow for Workshop redux</h2>
+<section id="flow-for-workshop" class="slide level2">
+<h2>Flow for Workshop</h2>
 <div class="cell" data-reveal="true">
 <div class="cell-output-display">
 <div>
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  A(Discuss the need &lt;br&gt; for the Workflow)
-  --&gt; B(Copy Code and place &lt;br&gt; into .github/workflows folder)
+  A(Discuss the need &lt;br&gt; for the Workflow) --&gt; B(Copy Code and place &lt;br&gt; into .github/workflows folder)
   B --&gt; C(Push up into devel branch)
   C --&gt; D(Watch GitHub give you &lt;br&gt; feedback on the workflow)
   D --&gt; E(Address Feedback and &lt;br&gt; fix in the devel branch)
@@ -435,19 +434,19 @@
 </div>
 </div>
 </div>
-<ul>
-<li>Checks can take a few minutes, so we will discuss while they are running.</li>
-</ul>
+<div class="footer">
+
+</div>
 </section>
 <section id="why-use-cicd-for-a-r-package" class="slide level2">
 <h2>Why use CI/CD for a R package?</h2>
 <div>
 <ul>
-<li class="fragment">Reason 1 <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
-<li class="fragment">Reason 1 <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
-<li class="fragment">Reason 1 <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
-<li class="fragment">Reason 1 <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
-<li class="fragment">Reason 1 <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
+<li class="fragment">Multiple Contributors on your R Package <span class="emoji" data-emoji="keyboard">⌨️</span></li>
+<li class="fragment">User base on multiple types of OS and multiple versions of R <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M0 383.9l64 .0404c17.75 0 32-14.29 32-32.03V128.3L0 128.3V383.9zM48 320.1c8.75 0 16 7.118 16 15.99c0 8.742-7.25 15.99-16 15.99S32 344.8 32 336.1C32 327.2 39.25 320.1 48 320.1zM348.8 64c-7.941 0-15.66 2.969-21.52 8.328L228.9 162.3C228.8 162.5 228.8 162.7 228.6 162.7C212 178.3 212.3 203.2 226.5 218.7c12.75 13.1 39.38 17.62 56.13 2.75C282.8 221.3 282.9 221.3 283 221.2l79.88-73.1c6.5-5.871 16.75-5.496 22.62 1c6 6.496 5.5 16.62-1 22.62l-26.12 23.87L504 313.7c2.875 2.496 5.5 4.996 7.875 7.742V127.1c-40.98-40.96-96.48-63.88-154.4-63.88L348.8 64zM334.6 217.4l-30 27.49c-29.75 27.11-75.25 24.49-101.8-4.371C176 211.2 178.1 165.7 207.3 138.9L289.1 64H282.5C224.7 64 169.1 87.08 128.2 127.9L128 351.8l18.25 .0369l90.5 81.82c27.5 22.37 67.75 18.12 90-9.246l18.12 15.24c15.88 12.1 39.38 10.5 52.38-5.371l31.38-38.6l5.374 4.498c13.75 11 33.88 9.002 45-4.748l9.538-11.78c11.12-13.75 9.036-33.78-4.694-44.93L334.6 217.4zM544 128.4v223.6c0 17.62 14.25 32.05 31.1 32.05L640 384V128.1L544 128.4zM592 352c-8.75 0-16-7.246-16-15.99c0-8.875 7.25-15.99 16-15.99S608 327.2 608 336.1C608 344.8 600.8 352 592 352z"></path></svg></li>
+<li class="fragment">Faster turnaround on Pull Requests <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
+<li class="fragment">Flag coding issues for the contributor <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M64 496C64 504.8 56.75 512 48 512h-32C7.25 512 0 504.8 0 496V32c0-17.75 14.25-32 32-32s32 14.25 32 32V496zM476.3 0c-6.365 0-13.01 1.35-19.34 4.233c-45.69 20.86-79.56 27.94-107.8 27.94c-59.96 0-94.81-31.86-163.9-31.87C160.9 .3055 131.6 4.867 96 15.75v350.5c32-9.984 59.87-14.1 84.85-14.1c73.63 0 124.9 31.78 198.6 31.78c31.91 0 68.02-5.971 111.1-23.09C504.1 355.9 512 344.4 512 332.1V30.73C512 11.1 495.3 0 476.3 0z"></path></svg></li>
+<li class="fragment">Enforce coding style conventions <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM325.8 139.7C310.1 124.1 284.8 124.1 269.2 139.7L247.8 161.1L318.7 232.1L340.1 210.7C355.8 195 355.8 169.7 340.1 154.1L325.8 139.7zM111.5 303.8L96.48 363.1C95.11 369.4 96.71 375.2 100.7 379.2C104.7 383.1 110.4 384.7 115.9 383.4L176 368.3C181.6 366.9 186.8 364 190.9 359.9L296.1 254.7L225.1 183.8L119.9 288.1C115.8 293.1 112.9 298.2 111.5 303.8z"></path></svg></li>
 </ul>
 </div>
 </section>

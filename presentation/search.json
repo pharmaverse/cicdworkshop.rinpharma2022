@@ -14,18 +14,18 @@
     "text": "Setup for Workshop\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\nClone into your RStudio Session and switch to devel branch\nInstall the {devtools} package.\nUse devtools::install_dev_deps() to quickly get all necessary packages\nOn GitHub, set up a Pull Request of devel branch into main"
   },
   {
-    "objectID": "index.html#flow-for-workshop-redux",
-    "href": "index.html#flow-for-workshop-redux",
+    "objectID": "index.html#flow-for-workshop",
+    "href": "index.html#flow-for-workshop",
     "title": "CI/CD Workshop for R Packages",
-    "section": "Flow for Workshop redux",
-    "text": "Flow for Workshop redux\n\n\n\n\nflowchart TD\n  A(Discuss the need <br> for the Workflow)\n  --> B(Copy Code and place <br> into .github/workflows folder)\n  B --> C(Push up into devel branch)\n  C --> D(Watch GitHub give you <br> feedback on the workflow)\n  D --> E(Address Feedback and <br> fix in the devel branch)\n  E --> F(Discuss successful implementation)\n  F --> A[Discuss the need <br> for the Workflow]\n\n\n\n\n\n\n\n\n\nChecks can take a few minutes, so we will discuss while they are running."
+    "section": "Flow for Workshop",
+    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss the need <br> for the Workflow) --> B(Copy Code and place <br> into .github/workflows folder)\n  B --> C(Push up into devel branch)\n  C --> D(Watch GitHub give you <br> feedback on the workflow)\n  D --> E(Address Feedback and <br> fix in the devel branch)\n  E --> F(Discuss successful implementation)\n  F --> A[Discuss the need <br> for the Workflow]"
   },
   {
     "objectID": "index.html#why-use-cicd-for-a-r-package",
     "href": "index.html#why-use-cicd-for-a-r-package",
     "title": "CI/CD Workshop for R Packages",
     "section": "Why use CI/CD for a R package?",
-    "text": "Why use CI/CD for a R package?\n\n\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️\nReason 1 ✔️"
+    "text": "Why use CI/CD for a R package?\n\n\nMultiple Contributors on your R Package ⌨️\nUser base on multiple types of OS and multiple versions of R \nFaster turnaround on Pull Requests ✔️\nFlag coding issues for the contributor \nEnforce coding style conventions"
   },
   {
     "objectID": "index.html#the-r-package-for-the-workshop",
