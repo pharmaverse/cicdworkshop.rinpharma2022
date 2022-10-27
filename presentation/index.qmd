@@ -1,6 +1,13 @@
 ---
 title: "CI/CD Workshop for R Packages"
 subtitle: "R in Pharma, 2022"
+execute:
+  echo: false
+  warning: false
+  error: false
+  eval: true
+  output: asis
+  comment: ''
 format:
   revealjs: 
     slide-number: true
@@ -9,9 +16,17 @@ format:
     preview-links: auto
     logo: https://avatars.githubusercontent.com/u/84541169
     footer: <[CI-CD GitHub](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)>
-    theme: [moon, custom.scss]
+    theme: [simple, custom.scss]
     from: markdown+emoji
 ---
+
+```{r}
+render_file <- function(filepath, language = "yaml") {
+  cat(paste0("```", language, "\n"))
+  cat(readLines(filepath), sep = '\n')
+  cat("```\n")
+}
+```
 
 ## Hello CI/CD
 
@@ -57,31 +72,23 @@ flowchart TD
 
 ## The R Package for the Workshop
 
-```{.r eval=FALSE}
-
-#' Hello Workshop Attendees
-#'
-#' Welcomes the CI/CD workshop attendees
-#' @author Yourself
-#' @details Greet workshop attendees
-#' @return Happy Message
-#' @export
-#' @examples
-#' hello()
-hello <- function() {
-  message("Welcome to the cicdworkshop!")
-}
-
+```{r}
+render_file(file.path('..', 'R', 'hello.R'), "r")
 ```
 
+<!--
 ## The R Package for the Workshop
 
 Package is super lean to help focus on the CI/CD part.
 
 ```{r}
+cat(paste0("```bash\n"))
 library(fs)
-tree <- dir_tree("../",recurse=1)
+tree <- dir_tree("..", recurse = 1)
+cat("```")
 ```
+-->
+
 ## The 8 Workflows we are going to implement
 
 ::: {.absolute top="0" left="100%"}
@@ -93,12 +100,12 @@ tree <- dir_tree("../",recurse=1)
  
 ::: {.incremental}
 1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "yellow")` 
-1. Website Links &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
+1. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
 1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "yellow")`
 1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "yellow")` 
-1. Documentation &nbsp; &nbsp;`r fontawesome::fa("book", "yellow")` 
+1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "yellow")` 
 1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "yellow")`
-1. Template Scripts &nbsp; &nbsp;`r fontawesome::fa("scroll", "yellow")`
+1. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "yellow")`
 1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "yellow")`
 
 :::
@@ -126,41 +133,18 @@ Why have a workflow that checks the Package Build?
 
 ## R-CMD Workflow
 
-**Note:**: This workflow takes approximately 5-7 minutes to complete the first time.
-It's faster the next time around as it caches dependencies.
-
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
 1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
 :::
 :::
 
-```yaml
-on:
-  push:
-  pull_request:
-
-name: R CMD check
-
-jobs:
-  check:
-    name: Check
-    runs-on: ubuntu-latest
-    container:
-      image: rocker/tidyverse:4.2.1
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - name: Build package
-        run: R CMD build .
-
-      - name: Check package
-        run: R CMD check *.tar.gz
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'r-cmd-check.yml'))
 ```
 
 ::: footer
-Advanced Usage: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+Advanced Usage: [AdmiralCI's R CMD Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
 ## R-CMD Checks
@@ -171,11 +155,11 @@ Advanced Usage: [File Location: r-cmd-check.yml](https://raw.githubusercontent.c
 :::
 :::
 
-- Success! 
+- Success!
 
 ![](images/success_rcmd.png)
 
-## Links
+## Links & URLs
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -195,7 +179,7 @@ Why have a workflow that checks Links in your Package?
 - Check integrity of code from contributor
 :::
 
-## Link Workflow
+## Links Workflow
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -203,43 +187,15 @@ Why have a workflow that checks Links in your Package?
 :::
 :::
 
-``` yaml
-name: Check URLs
-
-on:
-  pull_request:
-  push:
-
-jobs:
-  links:
-    name: Validate Links
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Check URLs in docs
-        uses: lycheeverse/lychee-action@v1
-        with:
-          fail: true
-          jobSummary: true
-          format: markdown
-          output: links-results.md
-          args: >-
-            --exclude-private
-            --exclude "https://github.com.*.git|lycheeverse.*"
-            --verbose
-            --no-progress
-            **/*.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'links.yml'))
 ```
 
 ::: footer
-Advanced Usage: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+Advanced Usage: [AdmiralCI's Link Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/links.yml)
 :::
 
-## Spell Checks
+## Spelling Checks
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -247,29 +203,12 @@ Advanced Usage: [File Location: r-cmd-check.yml](https://raw.githubusercontent.c
 :::
 :::
 
-```yaml
-name: Spellcheck
-
-on:
-  pull_request:
-  push:
-
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    name: Spellcheck
-    container:
-      image: rocker/tidyverse:4.2.1
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Run Spelling Check test
-        uses: insightsengineering/r-spellcheck-action@v2
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
 ```
 
 ::: footer
-Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+Advanced Usage: [AdmiralCI's Spellcheck Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml)
 :::
 
 ## Linters
@@ -280,33 +219,75 @@ Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/p
 :::
 :::
 
-```yaml
-name: Lint Code Base
-
-on:
-  push:
-  pull_request:
-
-jobs:
-  build:
-    name: Lint Code Base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_R: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'linter.yml'))
 ```
 
 ::: footer
-Learn more: [File Location: r-cmd-check.yml](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
+Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml)
 :::
 
 
+## Manual Pages
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4]{style="opacity:0.25"} 5 [6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'roxygen.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/man-pages.yml)
+:::
+
+## Publishing a pkgdown site
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'pkgdown.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml)
+:::
+
+## Style
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 []{style="opacity:0.25"}
+:::
+:::
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'style.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml)
+:::
+
+## Test Coverage
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6]{style="opacity:0.25"} 7 [8]{style="opacity:0.25"}
+:::
+:::
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'coverage.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `covr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/coverage.yml)
+:::

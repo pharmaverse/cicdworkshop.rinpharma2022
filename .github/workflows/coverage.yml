@@ -1,0 +1,18 @@
+name: Coverage
+on:
+  push: {branches: [main]}
+  pull_request: {branches: [main]}
+jobs:
+  covr:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.2.1
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install covr
+        run: if (!require("covr")) install.packages("covr")
+        shell: Rscript {0}
+      - name: Run coverage
+        run: covr::package_coverage(quiet = FALSE)
+        shell: Rscript {0}
