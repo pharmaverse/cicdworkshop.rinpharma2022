@@ -5,8 +5,7 @@ on:
 jobs:
   covr:
     runs-on: ubuntu-latest
-    container:
-      image: rocker/tidyverse:4.2.1
+    container: {image: "rocker/tidyverse:4.2.1"}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3

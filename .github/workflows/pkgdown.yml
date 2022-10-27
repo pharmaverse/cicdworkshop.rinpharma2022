@@ -5,7 +5,7 @@ on:
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
-    container: {image: rocker/tidyverse:4.2.1}
+    container: {image: "rocker/tidyverse:4.2.1"}
     env: {GITHUB_PAT: "${{ secrets.GITHUB_TOKEN }}"}
     steps:
       - name: Checkout repo
