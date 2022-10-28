@@ -3,7 +3,7 @@
 #' Cyclomatic Complexity Example
 #' @author Yourself
 #' @details Demonstrates cyclomatic complexity
-#' @return Surprised Message
+#' @return Surprised Message!
 #' @export
 #' @examples
 #' linter_ex()
