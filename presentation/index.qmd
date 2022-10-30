@@ -43,11 +43,14 @@ This workshop will both discuss and show you how to implement 8 **simple** CI/CD
 
 <br>
 
+::: {.incremental}
 * Setting up GitHub and RStudio (20 mins)
+  - Totally fine to sit back and watch the magic as well
 * Discussion on Flow of the Workshop (5 mins)
-* Discussion on why CI/CD can be helpful for developing software projects (10 mins)
+* Discussion on why CI/CD can be helpful for developing software projects and our background (10 mins)
 * Work through the 8 workflows (remainder of the workshop)
-* Break for 10 mins after the 2 worfklows
+* Break for 5 mins after 2 worfklows
+:::
 
 ## Preparation for the Workshop
 
@@ -61,7 +64,7 @@ This workshop will both discuss and show you how to implement 8 **simple** CI/CD
 - Set up GitHub to Run our CI/CD checks through GitHub Actions
 - Set up RStudio Cloud Classroom for both ease of access and setup
 - Quick overview of **bare bones** R package as our learning tool
-- We will do each step with you 
+- We will do each step with you both for Setup and Workflows
 
 :::
 
@@ -129,9 +132,6 @@ flowchart TD
 ::: footer
 ::: 
 
-## Jargon Review
-
-??
 
 ## Why use CI/CD for a R package?
 
@@ -139,17 +139,19 @@ flowchart TD
 - Multiple Contributors on your R Package :keyboard:
 - User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "blue")` 
 - Faster turnaround on Pull Requests :heavy_check_mark:
-- Flag coding issues for the contributor `r fontawesome::fa("flag", "yellow")` 
-- Enforce coding style conventions `r fontawesome::fa("pencil-square", "red")`
+- Flag coding issues for the contributor `r fontawesome::fa("flag", "red")` 
+- Enforce coding style conventions `r fontawesome::fa("pencil-square", "green")`
+- New functions with poor test coverage `r fontawesome::fa("car-burst", "green")`
+- Documentation with typos, broken links code snippets not conforming to style. `r fontawesome::fa("scroll", "red")`
 :::
 
 ## The R Package for the Workshop
 
 ```{r}
-render_file(file.path('..', 'R', 'hello.R'), "r")
+render_file(file.path('..', 'DESCRIPTION'), "r")
 ```
 
-<!--
+
 ## The R Package for the Workshop
 
 Package is super lean to help focus on the CI/CD part.
@@ -160,7 +162,7 @@ library(fs)
 tree <- dir_tree("..", recurse = 1)
 cat("```")
 ```
--->
+
 
 ## The 8 Workflows we are going to implement
 
@@ -172,18 +174,18 @@ cat("```")
 <!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
  
 ::: {.incremental}
-1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "yellow")` 
-1. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "yellow")`
-1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "yellow")`
-1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "yellow")` 
-1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "yellow")` 
-1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "yellow")`
-1. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "yellow")`
-1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "yellow")`
+1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "red")` 
+1. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "green")`
+1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "blue")`
+1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")` 
+1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")` 
+1. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "red")`
+1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "green")`
+1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "blue")`
 
 :::
 
-## R-CMD Checks `r fontawesome::fa("code", "yellow")`
+## R-CMD Checks `r fontawesome::fa("code", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -204,7 +206,7 @@ Why have a workflow that checks the Package Build?
 :::
 
 
-## R-CMD Workflow
+## R-CMD Workflow `r fontawesome::fa("code", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -220,7 +222,7 @@ render_file(file.path('..', '.github', 'workflows', 'r-cmd-check.yml'))
 Advanced Usage: [AdmiralCI's R CMD Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
-## R-CMD Checks
+## R-CMD Checks `r fontawesome::fa("code", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -228,11 +230,25 @@ Advanced Usage: [AdmiralCI's R CMD Check Workflow](https://raw.githubusercontent
 :::
 :::
 
-- Success!
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## R-CMD Checks `r fontawesome::fa("code", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! We have our first Workflows running in our Pull Request!
 
 ![](images/success_rcmd.png)
 
-## Links & URLs
+## Links & URLs `r fontawesome::fa("link", "green")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -246,13 +262,12 @@ Why have a workflow that checks Links in your Package?
 
 
 ::: {.incremental}
-- Check to make sure it runs on multiple versions of R
-- Check to make sure it runs on multiple snapshots of R packages
-- Check to make sure it runs on different OS
-- Check integrity of code from contributor
+- Cited resources for function development stay current and up to date.
+- Internal or External website updates cause link breakage
+- Contributors type in a link incorrectly
 :::
 
-## Links Workflow
+## Links Workflow `r fontawesome::fa("link", "green")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -268,7 +283,46 @@ render_file(file.path('..', '.github', 'workflows', 'links.yml'))
 Advanced Usage: [AdmiralCI's Link Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/links.yml)
 :::
 
-## Spelling Checks
+## Links & URLs `r fontawesome::fa("link", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1]{style="opacity:0.25"} 2 [3 4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Links & URLs `r fontawesome::fa("link", "green")`
+
+- Success! We have two Workflows running in our Pull Request!
+
+![](images/success_rcmd.png)
+
+## Spelling Checks `r fontawesome::fa("pen", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks the spelling in your package?
+<br>
+
+
+::: {.incremental}
+- Industry-specific jargon and acronyms 
+- Contributors speak different languages
+- Focus on the important parts of a Pull Request
+:::
+
+## Spelling Workflow `r fontawesome::fa("pen", "blue")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -280,11 +334,56 @@ Advanced Usage: [AdmiralCI's Link Check Workflow](https://raw.githubusercontent.
 render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
 ```
 
+## Spelling Checks `r fontawesome::fa("pen", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Spelling Checks `r fontawesome::fa("pen", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 3 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
 ::: footer
 Advanced Usage: [AdmiralCI's Spellcheck Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml)
 :::
 
-## Linters
+## Linter `r fontawesome::fa("file-lines", "red")` 
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3]{style="opacity:0.25"} 4 [5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that runs a Linter in your Package?
+<br>
+
+
+::: {.incremental}
+- ...
+- ...
+- ...
+:::
+
+## Linter Workflow `r fontawesome::fa("file-lines", "red")` 
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -300,8 +399,52 @@ render_file(file.path('..', '.github', 'workflows', 'linter.yml'))
 Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml)
 :::
 
+## Linter `r fontawesome::fa("file-lines", "red")` 
 
-## Manual Pages
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3]{style="opacity:0.25"} 4 [5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Linter `r fontawesome::fa("file-lines", "red")` 
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3]{style="opacity:0.25"} 4 [5 6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 4 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+
+## Manual Pages `r fontawesome::fa("book", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4]{style="opacity:0.25"} 5 [6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks your Manual pages in your Package?
+<br>
+
+::: {.incremental}
+- ...
+- ...
+- ...
+:::
+
+## Manual Pages Workflow `r fontawesome::fa("book", "green")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -317,7 +460,34 @@ render_file(file.path('..', '.github', 'workflows', 'roxygen.yml'))
 Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/man-pages.yml)
 :::
 
-## Publishing a pkgdown site
+## Manual Pages `r fontawesome::fa("book", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4]{style="opacity:0.25"} 5 [6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Manual Pages `r fontawesome::fa("book", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4]{style="opacity:0.25"} 5 [6 7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 5 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+
+## Style `r fontawesome::fa("scroll", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -325,21 +495,24 @@ Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.c
 :::
 :::
 
-```{r}
-render_file(file.path('..', '.github', 'workflows', 'pkgdown.yml'))
-```
+<br>
+Why have a workflow that checks your Code Style in your Package?
+<br>
 
-::: footer
-Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml)
+::: {.incremental}
+- ...
+- ...
+- ...
 :::
 
-## Style
+## Style Workflow `r fontawesome::fa("scroll", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
-[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 []{style="opacity:0.25"}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
 :::
 :::
+
 
 ```{r}
 render_file(file.path('..', '.github', 'workflows', 'style.yml'))
@@ -349,7 +522,51 @@ render_file(file.path('..', '.github', 'workflows', 'style.yml'))
 Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml)
 :::
 
-## Test Coverage
+## Style `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Style `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 6 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+## Test Coverage `r fontawesome::fa("car-burst", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6]{style="opacity:0.25"} 7 [8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks the Test Coverage in your Package?
+<br>
+
+::: {.incremental}
+- ...
+- ...
+- ...
+:::
+
+## Test Coverage `r fontawesome::fa("car-burst", "green")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -364,3 +581,99 @@ render_file(file.path('..', '.github', 'workflows', 'coverage.yml'))
 ::: footer
 Advanced Usage: [AdmiralCI's `covr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/coverage.yml)
 :::
+
+## Test Coverage `r fontawesome::fa("car-burst", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6]{style="opacity:0.25"} 7 [8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Test Coverage `r fontawesome::fa("car-burst", "green")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6]{style="opacity:0.25"} 7 [8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 7 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 [ ]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks the publishes your website of your Package?
+<br>
+
+::: {.incremental}
+- ...
+- ...
+- ...
+:::
+
+## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 [ ]{style="opacity:0.25"}
+:::
+:::
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'pkgdown.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml)
+:::
+ 
+## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 [ ]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `/github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 [ ]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 8 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+
+## We got 8! What's next?
+
+- Further Reading
+- Advanced Examples
+  - rlib
+  - others
+- Presentation built with Quarto
+
