@@ -1,6 +1,6 @@
 ---
 title: "CI/CD Workshop for R Packages"
-subtitle: "R in Pharma, 2022"
+subtitle: "R in Pharma, November 4th, 2022"
 execute:
   echo: false
   warning: false
@@ -32,18 +32,87 @@ render_file <- function(filepath, language = "yaml") {
 
 <br>
 
-This workshop will both discuss and show you how to implement 8 simple CI/CD workflows for a R package
+This workshop will both discuss and show you how to implement 8 **simple** CI/CD workflows for a **bare bones** R package
 
+::: {.incremental}
+* Emphasis on the **simple** and the **bare bones**
+* A bare bones R packages means we can focus on the workflows
+::: 
 
-## Setup for Workshop
+## What to expect for next 3 hours?
+
+<br>
+
+* Setting up GitHub and RStudio (20 mins)
+* Discussion on Flow of the Workshop (5 mins)
+* Discussion on why CI/CD can be helpful for developing software projects (10 mins)
+* Work through the 8 workflows (remainder of the workshop)
+* Break for 10 mins after the 2 worfklows
+
+## Preparation for the Workshop
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[Setup]{style="opacity:0.25"}
+:::
+:::
+
+::: {.incremental}
+- Set up GitHub to Run our CI/CD checks through GitHub Actions
+- Set up RStudio Cloud Classroom for both ease of access and setup
+- Quick overview of **bare bones** R package as our learning tool
+- We will do each step with you 
+
+:::
+
+## GitHub
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[Setup]{style="opacity:0.25"}
+:::
+:::
 
 ::: {.incremental}
 - Use GitHub Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)
-- Clone into your RStudio Session and switch to `devel` branch
+  - Templates are great ways to help "set things" up without all the baggage of     forking a repo.
+  - Copy the template to your personal area on GitHub
+  - Mark as public.  Private repos will cost you money.
+- Create a new branch called `devel`
+- Set up a [Personal Access Token ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+:::
+
+## RStudio Cloud
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[Setup]{style="opacity:0.25"}
+:::
+:::
+
+::: {.incremental}
+- We recommend using RStudio Cloud for ease of use.  However, okay to use other RStudio infrastructure, but harder for us to diagnose or help.
+- Sharing the RStudio Classroom link in Chat
+- Using `https` link, clone into your RStudio Session
 - Install the `{devtools}` package.
 - Use `devtools::install_dev_deps()` to quickly get all necessary packages
-- On GitHub, set up a Pull Request of `devel` branch into `main`
+::: 
+
+## Link GitHub and RStudio 
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[Setup]{style="opacity:0.25"}
 :::
+:::
+- Using Git Tab switch to `devel` branch
+- Let's do a test commit 
+  - Modify the `README.md` file
+  - Click Commit button > click check box > add a message
+  - Push up the Commit to GitHub 
+  - Verify Push was completed (might need a refresh)
+- Good practice to Pull Down 
+
 
 ## Flow for Workshop
 
@@ -60,14 +129,18 @@ flowchart TD
 ::: footer
 ::: 
 
+## Jargon Review
+
+??
+
 ## Why use CI/CD for a R package?
 
 ::: {.incremental}
 - Multiple Contributors on your R Package :keyboard:
-- User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "yellow")` 
+- User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "blue")` 
 - Faster turnaround on Pull Requests :heavy_check_mark:
 - Flag coding issues for the contributor `r fontawesome::fa("flag", "yellow")` 
-- Enforce coding style conventions `r fontawesome::fa("pencil-square", "green")`
+- Enforce coding style conventions `r fontawesome::fa("pencil-square", "red")`
 :::
 
 ## The R Package for the Workshop
