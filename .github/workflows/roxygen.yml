@@ -10,8 +10,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Roxygen check
         run: |
+          git config --global --add safe.directory $(pwd)
           R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"
-          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then
+          if [ -n `git status -s | grep -E "man|DESCRIPTION"` ]; then
             echo "Manual pages are not up-to-date with roxygen comments!" && exit 1
           fi
           echo "Manual pages are up-to-date with roxygen comments"
