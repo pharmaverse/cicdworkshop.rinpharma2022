@@ -9,15 +9,17 @@ execute:
   output: asis
   comment: ''
 format:
-  revealjs: 
+  revealjs:
     slide-number: true
-    chalkboard: 
+    chalkboard:
       buttons: false
     preview-links: auto
     logo: https://avatars.githubusercontent.com/u/84541169
     footer: <[CI-CD GitHub](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)>
     theme: [simple, custom.scss]
     from: markdown+emoji
+    link-external-icon: true
+    link-external-newwindow: true
 ---
 
 ```{r}
@@ -37,7 +39,7 @@ This workshop will both discuss and show you how to implement 8 **simple** CI/CD
 ::: {.incremental}
 * Emphasis on the **simple** and the **bare bones**
 * A bare bones R packages means we can focus on the workflows
-::: 
+:::
 
 ## What to expect for next 3 hours?
 
@@ -78,11 +80,11 @@ This workshop will both discuss and show you how to implement 8 **simple** CI/CD
 
 ::: {.incremental}
 - Use GitHub Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022)
-  - Templates are great ways to help "set things" up without all the baggage of     forking a repo.
+  - Templates are great ways to help "set things" up without all the baggage of forking a repo
   - Copy the template to your personal area on GitHub
-  - Mark as public.  Private repos will cost you money.
+  - Mark as public (private repos will cost you money)
 - Create a new branch called `devel`
-- Set up a [Personal Access Token ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- Set up a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 :::
 
 ## RStudio Cloud
@@ -99,23 +101,25 @@ This workshop will both discuss and show you how to implement 8 **simple** CI/CD
 - Using `https` link, clone into your RStudio Session
 - Install the `{devtools}` package.
 - Use `devtools::install_dev_deps()` to quickly get all necessary packages
-::: 
+:::
 
-## Link GitHub and RStudio 
+## Link GitHub and RStudio
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
 [Setup]{style="opacity:0.25"}
 :::
 :::
-- Using Git Tab switch to `devel` branch
-- Let's do a test commit 
-  - Modify the `README.md` file
-  - Click Commit button > click check box > add a message
-  - Push up the Commit to GitHub 
-  - Verify Push was completed (might need a refresh)
-- Good practice to Pull Down 
 
+::: {.incremental}
+- Using Git Tab switch to `devel` branch
+- Let's do a test commit
+  - Modify the `README.md` file by adding today's date
+  - Click Commit button > click check box > add a message
+  - Push up the Commit to GitHub
+  - Verify Push was completed (might need a refresh)
+- Good practice to Pull Down
+:::
 
 ## Flow for Workshop
 
@@ -130,16 +134,16 @@ flowchart TD
 ```
 
 ::: footer
-::: 
+:::
 
 
 ## Why use CI/CD for a R package?
 
 ::: {.incremental}
 - Multiple Contributors on your R Package :keyboard:
-- User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "blue")` 
+- User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "blue")`
 - Faster turnaround on Pull Requests :heavy_check_mark:
-- Flag coding issues for the contributor `r fontawesome::fa("flag", "red")` 
+- Flag coding issues for the contributor `r fontawesome::fa("flag", "red")`
 - Enforce coding style conventions `r fontawesome::fa("pencil-square", "green")`
 - New functions with poor test coverage `r fontawesome::fa("car-burst", "green")`
 - Documentation with typos, broken links code snippets not conforming to style. `r fontawesome::fa("scroll", "red")`
@@ -172,13 +176,13 @@ cat("```")
 :::
 :::
 <!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
- 
+
 ::: {.incremental}
-1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "red")` 
+1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "red")`
 1. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "green")`
 1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "blue")`
-1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")` 
-1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")` 
+1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")`
+1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")`
 1. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "red")`
 1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "green")`
 1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "blue")`
@@ -317,7 +321,7 @@ Why have a workflow that checks the spelling in your package?
 
 
 ::: {.incremental}
-- Industry-specific jargon and acronyms 
+- Industry-specific jargon and acronyms
 - Contributors speak different languages
 - Focus on the important parts of a Pull Request
 :::
@@ -364,7 +368,7 @@ render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
 Advanced Usage: [AdmiralCI's Spellcheck Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml)
 :::
 
-## Linter `r fontawesome::fa("file-lines", "red")` 
+## Linter `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -383,7 +387,7 @@ Why have a workflow that runs a Linter in your Package?
 - ...
 :::
 
-## Linter Workflow `r fontawesome::fa("file-lines", "red")` 
+## Linter Workflow `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -399,7 +403,7 @@ render_file(file.path('..', '.github', 'workflows', 'linter.yml'))
 Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml)
 :::
 
-## Linter `r fontawesome::fa("file-lines", "red")` 
+## Linter `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -413,7 +417,7 @@ Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com
 * Let's fix that issue in RStudio
 * Commit, Push and let's see if our fix is working!
 
-## Linter `r fontawesome::fa("file-lines", "red")` 
+## Linter `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
 ::: {.sectionhead}
@@ -641,7 +645,7 @@ render_file(file.path('..', '.github', 'workflows', 'pkgdown.yml'))
 ::: footer
 Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml)
 :::
- 
+
 ## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
 
 ::: {.absolute top="0" left="100%"}
@@ -650,7 +654,7 @@ Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.c
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
