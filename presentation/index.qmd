@@ -234,7 +234,7 @@ Advanced Usage: [AdmiralCI's R CMD Check Workflow](https://raw.githubusercontent
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
@@ -295,7 +295,7 @@ Advanced Usage: [AdmiralCI's Link Check Workflow](https://raw.githubusercontent.
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub identify the issue with the package
 * Let's fix that issue in RStudio
@@ -346,7 +346,7 @@ render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
@@ -411,7 +411,7 @@ Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
@@ -472,7 +472,7 @@ Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.c
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
@@ -534,7 +534,7 @@ Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.co
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
@@ -594,7 +594,7 @@ Advanced Usage: [AdmiralCI's `covr` Workflow](https://raw.githubusercontent.com/
 :::
 :::
 
-* Copy the workflow into your `/github/workflows` folder
+* Copy the workflow into your `.github/workflows` folder
 * Commit and Push up to your `devel` branch
 * Let GitHub Identify the issue with the package
 * Let's fix that issue in RStudio
