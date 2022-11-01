@@ -139,14 +139,23 @@ flowchart TD
 
 ## Why use CI/CD for a R package?
 
+::: columns
+::: {.column width="45%"}
 ::: {.incremental}
 - Multiple Contributors on your R Package :keyboard:
 - User base on multiple types of OS and multiple versions of R `r fontawesome::fa("handshake", "blue")`
 - Faster turnaround on Pull Requests :heavy_check_mark:
+:::
+:::
+
+::: {.column width="45%"}
+::: {.incremental}
 - Flag coding issues for the contributor `r fontawesome::fa("flag", "red")`
 - Enforce coding style conventions `r fontawesome::fa("pencil-square", "green")`
 - New functions with poor test coverage `r fontawesome::fa("car-burst", "green")`
 - Documentation with typos, broken links code snippets not conforming to style. `r fontawesome::fa("scroll", "red")`
+:::
+:::
 :::
 
 ## The R Package for the Workshop
@@ -177,16 +186,24 @@ cat("```")
 :::
 <!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
 
+::: columns
+::: {.column width="45%"}
 ::: {.incremental}
 1. R-CMD Check &nbsp; &nbsp; `r fontawesome::fa("code", "red")`
-1. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "green")`
-1. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "blue")`
-1. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")`
-1. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")`
-1. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "red")`
-1. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "green")`
-1. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "blue")`
+2. Links & URLs &nbsp; &nbsp;`r fontawesome::fa("link", "green")`
+3. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "blue")`
+4. Linters  &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")`
+:::
+:::
 
+::: {.column width="45%"}
+::: {.incremental}
+5. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")`
+6. Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "red")`
+7. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "green")`
+8. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "blue")`
+:::
+:::
 :::
 
 ## R-CMD Checks `r fontawesome::fa("code", "red")`
