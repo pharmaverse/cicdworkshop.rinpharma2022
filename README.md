@@ -23,8 +23,8 @@ a) `linter_ex.R` has multiple nested if statements
 
 ### Documentation
 
-### Publishing pkgdown site
-
-### Template Script
+### Styler
 
 ### Test Coverage
+
+### Publishing pkgdown site
