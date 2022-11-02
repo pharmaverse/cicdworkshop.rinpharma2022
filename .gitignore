@@ -36,7 +36,7 @@ vignettes/*.pdf
 *.knit.md
 
 # Web Documentation files
-/docs/*
+docs/*
 !/docs/pkgdown.yml
 
 # R Environment Variables
@@ -58,5 +58,5 @@ cache
 *_cache
 *_files
 _freeze
-/.quarto/
+.quarto/
 _site
