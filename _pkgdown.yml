@@ -12,3 +12,8 @@ repo:
     user: https://github.com/
 news:
   cran_dates: true
+navbar:
+  components:
+    presentation:
+      text: Presentation
+      href: presentation/index.html

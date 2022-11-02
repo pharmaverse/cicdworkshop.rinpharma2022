@@ -385,6 +385,68 @@ render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
 Advanced Usage: [AdmiralCI's Spellcheck Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml)
 :::
 
+## Style `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+<br>
+Why have a workflow that checks your Code Style in your Package?
+<br>
+
+::: {.incremental}
+- Ensures that everyone is using the same style guide
+- The code is more legible to developers who use the same guide
+- PR reviews are faster when everyone is using the same style
+:::
+
+## Style Workflow `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+
+```{r}
+render_file(file.path('..', '.github', 'workflows', 'style.yml'))
+```
+
+::: footer
+Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml)
+:::
+
+## Style `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+* Copy the workflow into your `.github/workflows` folder
+* Commit and Push up to your `devel` branch
+* Let GitHub Identify the issue with the package
+* Let's fix that issue in RStudio
+* Commit, Push and let's see if our fix is working!
+
+## Style `r fontawesome::fa("scroll", "red")`
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
+:::
+:::
+
+- Success! 6 Workflows running on our Pull Request!
+
+![](images/success_rcmd.png)
+
+
 ## Linter `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
@@ -504,68 +566,6 @@ Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.c
 :::
 
 - Success! 5 Workflows running on our Pull Request!
-
-![](images/success_rcmd.png)
-
-
-## Style `r fontawesome::fa("scroll", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
-:::
-:::
-
-<br>
-Why have a workflow that checks your Code Style in your Package?
-<br>
-
-::: {.incremental}
-- Ensures that everyone is using the same style guide
-- The code is more legible to developers who use the same guide
-- PR reviews are faster when everyone is using the same style
-:::
-
-## Style Workflow `r fontawesome::fa("scroll", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
-:::
-:::
-
-
-```{r}
-render_file(file.path('..', '.github', 'workflows', 'style.yml'))
-```
-
-::: footer
-Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml)
-:::
-
-## Style `r fontawesome::fa("scroll", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
-## Style `r fontawesome::fa("scroll", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
-:::
-:::
-
-- Success! 6 Workflows running on our Pull Request!
 
 ![](images/success_rcmd.png)
 
