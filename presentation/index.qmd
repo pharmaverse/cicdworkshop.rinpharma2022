@@ -399,9 +399,9 @@ Why have a workflow that runs a Linter in your Package?
 
 
 ::: {.incremental}
-- ...
-- ...
-- ...
+- Static code analysis can be performed without compiling the code
+- Potential bugs can be discovered by the linter
+- Code best practices are enforced by the linter
 :::
 
 ## Linter Workflow `r fontawesome::fa("file-lines", "red")`
@@ -460,9 +460,9 @@ Why have a workflow that checks your Manual pages in your Package?
 <br>
 
 ::: {.incremental}
-- ...
-- ...
-- ...
+- To make sure that all documentation is up-to-date
+- Ensure that checks run without errors and warnings
+- Makes sure everyone is using the same version of `{roxygen2}`
 :::
 
 ## Manual Pages Workflow `r fontawesome::fa("book", "green")`
@@ -521,9 +521,9 @@ Why have a workflow that checks your Code Style in your Package?
 <br>
 
 ::: {.incremental}
-- ...
-- ...
-- ...
+- Ensures that everyone is using the same style guide
+- The code is more legible to developers who use the same guide
+- PR reviews are faster when everyone is using the same style
 :::
 
 ## Style Workflow `r fontawesome::fa("scroll", "red")`
@@ -582,9 +582,8 @@ Why have a workflow that checks the Test Coverage in your Package?
 <br>
 
 ::: {.incremental}
-- ...
-- ...
-- ...
+- Most validation frameworks prefer higher code coverage
+- Builds user confidence by ensuring a social contract between devs and users
 :::
 
 ## Test Coverage `r fontawesome::fa("car-burst", "green")`
@@ -638,13 +637,15 @@ Advanced Usage: [AdmiralCI's `covr` Workflow](https://raw.githubusercontent.com/
 :::
 
 <br>
-Why have a workflow that checks the publishes your website of your Package?
+Why have a workflow that publishes a website for your Package?
 <br>
 
 ::: {.incremental}
-- ...
-- ...
-- ...
+- Provides a specific destination for all your users
+- Ensure that your internal documentation is in sync with external documentation
+- Good documentation is like pizza 🍕:
+  - When it's good, it's good
+  - When it's bad, it's still better than nothing!
 :::
 
 ## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
