@@ -5,26 +5,28 @@ R in Pharma 2022 CI/CD workshop repository.
 
 ## Exercises:
 
-### R-CMD 
-1) Fix issues identified by R-CMD GitHub Action check
-a) Test is failing
+**Exercise 1:** Fix issues identified by R-CMD GitHub Action check
+**Solution:** Test is failing for `hello.R`
 
-### Links
-2) Fix Broken link after implementing the GitHub Action for the package
-a) R/Pharma link is broken
+**Exercise 2:** Fix Broken link after implementing the GitHub Action for the package
+**Solution:** R/Pharma link is broken in `News.md`
 
-### Spelling
-3) Fix Spelling error after implementing the GitHub Action for the package
-a) The word **Linked** is spelled as **linke** in `News.md`
+**Exercise 3:** Fix Spelling error after implementing the GitHub Action for the package
+**Solution:** The word **Linked** is misspelled as **linke** in `News.md`
 
-### Linter
-4) Fix issue for cyclomatic complexity identified by the lintr
-a) `linter_ex.R` has multiple nested if statements 
+**Exercise 4:** Fix styler issue after implementing the GitHub Action for the package
+**Solution:**  
 
-### Documentation
+**Exercise 5:** Fix issue for cyclomatic complexity identified by the lintr
+**Solution:** `linter_ex.R` has multiple nested if statements and cycolemtic complexity is set to
 
-### Styler
+**Exercise 6:**  Documentation
+**Solution:** 
 
-### Test Coverage
+**Exercise 7:**  Test Coverage
+**Solution:** 
 
-### Publishing pkgdown site
+**Exercise 8:**  Publishing pkgdown site
+**Solution:** 
+
+
