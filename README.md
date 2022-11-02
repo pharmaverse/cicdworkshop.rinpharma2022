@@ -91,28 +91,43 @@ Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespa
 
 ### Exercise 7
 
-Test Coverage
+Increase code coverage for the package.
 
 <details><summary>Click here for a hint 🔎</summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and <code>R/linter_ex.R</code>.
+Add a simple unit test for the <code>linter_ex()</code> function defined in the <code>R/linter_ex.R</code> file.
 </details>
 
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))</code> to automatically update all man pages.
+Run <code>covr::package_coverage()</code> to note the current code coverage.
+
+Create a new file called <code>tests/testthat/test-linter_ex.R</code> and add the following to it:
+
+<pre>
+test_that("linter_ex is surprised", {
+  expect_message(
+    linter_ex("lint"),
+    "^Whoa!\\n"
+  )
+})
+</pre>
+
+Run tests locally by executing <code>devtools::test()</code> to make sure that the tests succeed.
+
+Then, run <code>covr::package_coverage()</code> to see that the code coverage has increased.
 </details>
 
 ### Exercise 8
 
-Publishing pkgdown site
+Publish a website for your package using GitHub Pages.
 
 <details><summary>Click here for a hint 🔎</summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and <code>R/linter_ex.R</code>.
+Update the <code>_pkgdown.yml</code> and add the <b>pkgdown</b> workflow.
 </details>
 
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))</code> to automatically update all man pages.
+Update the <code>url</code> by replacing <code>pharmaverse</code> with your GitHub username.
 </details>
