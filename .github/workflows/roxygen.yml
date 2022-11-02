@@ -2,7 +2,7 @@ name: ROxygen
 on:
   pull_request: {branches: ['main']}
 jobs:
-  check:
+  ManPages:
     runs-on: ubuntu-latest
     container: {image: "rocker/tidyverse:4.2.1"}
     steps:

@@ -2,7 +2,7 @@ name: Lint Code Base
 on:
   pull_request: {branches: ['main']}
 jobs:
-  lint:
+  Linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

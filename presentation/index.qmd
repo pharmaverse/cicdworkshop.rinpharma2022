@@ -25,7 +25,7 @@ format:
 ```{r}
 render_file <- function(filepath, language = "yaml") {
   cat(paste0("```", language, "\n"))
-  cat(readLines(filepath), sep = '\n')
+  cat(readLines(filepath), sep = "\n")
   cat("```\n")
 }
 ```
@@ -161,7 +161,7 @@ flowchart TD
 ## The R Package for the Workshop
 
 ```{r}
-render_file(file.path('..', 'DESCRIPTION'), "r")
+render_file(file.path("..", "DESCRIPTION"), "r")
 ```
 
 
@@ -236,7 +236,7 @@ Why have a workflow that checks the Package Build?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'r-cmd-check.yml'))
+render_file(file.path("..", ".github", "workflows", "r-cmd-check.yml"))
 ```
 
 ::: footer
@@ -297,7 +297,7 @@ Why have a workflow that checks Links in your Package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'links.yml'))
+render_file(file.path("..", ".github", "workflows", "links.yml"))
 ```
 
 ::: footer
@@ -352,7 +352,7 @@ Why have a workflow that checks the spelling in your package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'spellcheck.yml'))
+render_file(file.path("..", ".github", "workflows", "spellcheck.yml"))
 ```
 
 ## Spelling Checks `r fontawesome::fa("pen", "blue")`
@@ -413,7 +413,7 @@ Why have a workflow that checks your Code Style in your Package?
 
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'style.yml'))
+render_file(file.path("..", ".github", "workflows", "style.yml"))
 ```
 
 ::: footer
@@ -475,7 +475,7 @@ Why have a workflow that runs a Linter in your Package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'linter.yml'))
+render_file(file.path("..", ".github", "workflows", "linter.yml"))
 ```
 
 ::: footer
@@ -536,7 +536,7 @@ Why have a workflow that checks your Manual pages in your Package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'roxygen.yml'))
+render_file(file.path("..", ".github", "workflows", "roxygen.yml"))
 ```
 
 ::: footer
@@ -595,7 +595,7 @@ Why have a workflow that checks the Test Coverage in your Package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'coverage.yml'))
+render_file(file.path("..", ".github", "workflows", "coverage.yml"))
 ```
 
 ::: footer
@@ -657,7 +657,7 @@ Why have a workflow that publishes a website for your Package?
 :::
 
 ```{r}
-render_file(file.path('..', '.github', 'workflows', 'pkgdown.yml'))
+render_file(file.path("..", ".github", "workflows", "pkgdown.yml"))
 ```
 
 ::: footer

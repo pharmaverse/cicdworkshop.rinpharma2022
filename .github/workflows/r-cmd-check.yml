@@ -2,7 +2,7 @@ name: R CMD check
 on:
   pull_request: {branches: ['main']}
 jobs:
-  check:
+  Check:
     runs-on: ubuntu-latest
     container: {image: "rocker/tidyverse:4.2.1"}
     steps:

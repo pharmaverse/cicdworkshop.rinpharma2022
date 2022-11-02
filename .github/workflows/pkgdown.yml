@@ -3,7 +3,7 @@ on:
   pull_request: {branches: ['main']}
   push: {branches: ['main']}
 jobs:
-  pkgdown:
+  Generate:
     runs-on: ubuntu-latest
     container: {image: "rocker/tidyverse:4.2.1"}
     env: {GITHUB_PAT: "${{ secrets.GITHUB_TOKEN }}"}
