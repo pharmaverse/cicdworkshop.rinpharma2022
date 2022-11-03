@@ -6,14 +6,15 @@ jobs:
   Generate:
     runs-on: ubuntu-latest
     container: {image: "rocker/tidyverse:4.2.1"}
-    env: {GITHUB_PAT: "${{ secrets.GITHUB_TOKEN }}"}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Build site
         run: pkgdown::build_site_github_pages(install = TRUE)
         shell: Rscript {0}
-      - name: Deploy to GitHub pages 🚀
+      - name: Deploy to GitHub pages
         if: github.event_name == 'push'
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with: {clean: false, folder: docs}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
