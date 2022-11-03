@@ -74,7 +74,8 @@ The issue is manifested in the <code>R/hello.R</code> file.
 
 <details><summary>Click here for the solution ✅</summary>
 Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/hello.R</code> file for the <code>linter_ex()</code> function.
-Run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
+Run <code>styler::style_file("R/hello.R")</code> to fix style issues, if any.
+Then, run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
 </details>
 
 ### Exercise 6
@@ -104,7 +105,7 @@ Add a simple unit test for the <code>linter_ex()</code> function defined in the 
 <details><summary>Click here for the solution ✅</summary>
 Run <code>covr::package_coverage()</code> to note the current code coverage.
 
-Create a new file called <code>tests/testthat/test-linter_ex.R</code> and add the following to it:
+In the <code>tests/testthat/test-hello.R</code> file, add the following test:
 
 <pre>
 test_that("linter_ex is surprised", {

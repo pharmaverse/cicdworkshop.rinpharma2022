@@ -158,11 +158,11 @@ cat("```")
 
 ```{mermaid}
 flowchart TD
-  A(Discuss workflow <br> purpose) --> B(Create workflow)
-  B --> C(Push workflow)
-  C --> D(Observe feedback)
-  D --> E(Address feedback)
-  E --> F(Discuss successful implementation)
+  A(Discuss workflow <br> purpose) --> B(Create <br> workflow)
+  B --> C(Push <br> workflow)
+  C --> D(Observe <br> feedback)
+  D --> E(Address <br> feedback)
+  E --> F(Discuss <br> implementation)
   F --> A
 ```
 
