@@ -1,0 +1,12 @@
+name: Spellcheck
+on:
+  pull_request: {branches: ['main']}
+jobs:
+  Spelling:
+    runs-on: ubuntu-latest
+    container: {image: "rocker/tidyverse:4.2.1"}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Run Spelling Check test
+        uses: insightsengineering/r-spellcheck-action@v2

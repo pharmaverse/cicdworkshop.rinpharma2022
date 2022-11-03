@@ -1,0 +1,17 @@
+name: R CMD check
+on:
+  pull_request: {branches: ['main']}
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+    container: {image: "rocker/tidyverse:4.2.1"}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: devtools::install_dev_deps()
+        shell: Rscript {0}
+      - name: Build package
+        run: R CMD build .
+      - name: Check package
+        run: R CMD check --no-manual *.tar.gz

@@ -1,0 +1,20 @@
+name: Check URLs
+on:
+  pull_request: {branches: ['main']}
+jobs:
+  Links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Check URLs in docs
+        uses: lycheeverse/lychee-action@v1.5.1
+        with:
+          fail: true
+          jobSummary: true
+          format: markdown
+          output: links-results.md
+          args: >-
+            --exclude "https://github.com.*.git|lycheeverse.*"
+            --no-progress **/*.md **/*.Rmd
+        env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}

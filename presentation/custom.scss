@@ -1,8 +1,6 @@
 /*-- scss:defaults --*/
 
-$code-color: #9af6d1;
-$code-block-bg: #2d545e;
-$code-block-border-color: #000000;
+$code-color: #ff2405;
 
 /*-- scss:rules --*/
 
@@ -41,4 +39,9 @@ $code-block-border-color: #000000;
   border: 2px solid;
 }
 
-
+.reveal pre.sourceCode code {
+    background-color: #fff;
+    padding: 6px 9px;
+    max-height: 550px;
+    white-space: pre;
+}

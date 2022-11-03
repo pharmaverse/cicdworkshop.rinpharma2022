@@ -1,0 +1,19 @@
+name: ROxygen
+on:
+  pull_request: {branches: ['main']}
+jobs:
+  ManPages:
+    runs-on: ubuntu-latest
+    container: {image: "rocker/tidyverse:4.2.1"}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Roxygen check
+        run: |
+          git config --global --add safe.directory $(pwd)
+          R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"
+          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then
+            echo "❌ Manual pages are NOT up-to-date ❌" && exit 1
+          fi
+          echo "Manual pages are up-to-date 😇"
+        shell: bash

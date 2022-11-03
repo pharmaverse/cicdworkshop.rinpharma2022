@@ -2,13 +2,14 @@ url: https://pharmaverse.github.io/cicdworkshop.rinpharma2022
 
 template:
   bootstrap: 5
-  params:
-    bootswatch: flatly
-repo:
-  url:
-    home: https://github.com/pharmaverse/cicdworkshop.rinpharma2022
-    source: https://github.com/pharmaverse/cicdworkshop.rinpharma2022/blob/main/
-    issue: https://github.com/pharmaverse/cicdworkshop.rinpharma2022/issues/
-    user: https://github.com/
+  bootswatch: flatly
+
 news:
   cran_dates: true
+navbar:
+  structure:
+    left: [presentation, reference, articles, news]
+  components:
+    presentation:
+      text: Presentation
+      href: presentation/index.html
