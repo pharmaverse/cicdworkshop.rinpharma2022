@@ -109,7 +109,7 @@
     "href": "index.html#link-url-checks",
     "title": "CI/CD Workshop for R Packages",
     "section": "Link & URL Checks ",
-    "text": "Link & URL Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks Links in your Package? \n\n\nCited resources for function development stay current and up to date.\nInternal or External website updates cause link breakage\nContributors type in a link incorrectly"
+    "text": "Link & URL Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks Links in your Package? \n\n\nCited resources for function development stay current and up to date\nInternal or External website updates cause link breakage\nContributors type in a link incorrectly"
   },
   {
     "objectID": "index.html#link-check-workflow",
