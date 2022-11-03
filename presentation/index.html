@@ -6,7 +6,7 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.189">
 
   <title>CI/CD Workshop for R Packages</title>
@@ -53,44 +53,44 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
+        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
     div.sourceCode
-      { color: #f8f8f2;  }
+      { color: #003b4f; background-color: #f1f3f5; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #f8f8f2; } /* Normal */
-    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
-    code span.an { color: #d4d0ab; } /* Annotation */
-    code span.at { color: #00e0e0; } /* Attribute */
-    code span.bn { color: #d4d0ab; } /* BaseN */
-    code span.bu { color: #abe338; } /* BuiltIn */
-    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #abe338; } /* Char */
-    code span.cn { color: #ffd700; } /* Constant */
-    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
-    code span.cv { color: #ffd700; } /* CommentVar */
-    code span.do { color: #f8f8f2; } /* Documentation */
-    code span.dt { color: #ffa07a; } /* DataType */
-    code span.dv { color: #d4d0ab; } /* DecVal */
-    code span.er { color: #f07178; text-decoration: underline; } /* Error */
-    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
-    code span.fl { color: #d4d0ab; } /* Float */
-    code span.fu { color: #ffa07a; } /* Function */
-    code span.im { color: #abe338; } /* Import */
-    code span.in { color: #d4d0ab; } /* Information */
-    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
-    code span.op { color: #ffa07a; } /* Operator */
-    code span.ot { color: #00e0e0; } /* Other */
-    code span.pp { color: #dcc6e0; } /* Preprocessor */
-    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
-    code span.sc { color: #abe338; } /* SpecialChar */
-    code span.ss { color: #abe338; } /* SpecialString */
-    code span.st { color: #abe338; } /* String */
-    code span.va { color: #00e0e0; } /* Variable */
-    code span.vs { color: #abe338; } /* VerbatimString */
-    code span.wa { color: #dcc6e0; } /* Warning */
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -387,29 +387,115 @@
   <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="center">
   <h1 class="title">CI/CD Workshop for R Packages</h1>
-  <p class="subtitle">R in Pharma, 2022</p>
+  <p class="subtitle"></p><p>R/Pharma</p>
+<p>November 4th, 2022</p><p></p>
 </section>
 
 <section id="hello-cicd" class="slide level2">
-<h2>Hello CI/CD</h2>
+<h2>Hello CI/CD 👋</h2>
 <p><br></p>
-<p>This workshop will both discuss and show you how to implement 8 simple CI/CD workflows for a R package</p>
-</section>
-<section id="setup-for-workshop" class="slide level2">
-<h2>Setup for Workshop</h2>
+<p>This workshop aims to discuss and show you how to implement 8 <strong>simple</strong> CI/CD workflows for a <strong>bare bones</strong> R package 📦</p>
 <div>
 <ul>
-<li class="fragment">Use GitHub Template from <a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI/CD Workshop at R/Pharma conference 2022</a></li>
-<li class="fragment">Clone into your RStudio Session and switch to <code>devel</code> branch</li>
-<li class="fragment">Install the <code>{devtools}</code> package.</li>
-<li class="fragment">Use <code>devtools::install_dev_deps()</code> to quickly get all necessary packages</li>
-<li class="fragment">On GitHub, set up a Pull Request of <code>devel</code> branch into <code>main</code></li>
+<li class="fragment">Emphasis on the <strong>simple</strong> and the <strong>bare bones</strong> 🦴</li>
+<li class="fragment">Which means that we can focus on the workflows 🎯</li>
+</ul>
+</div>
+</section>
+<section id="what-to-expect-for-next-3-hours" class="slide level2">
+<h2>What to expect for next 3 hours?</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">Setting up GitHub and RStudio (20 mins) 🎬
+<ul>
+<li class="fragment">Totally fine to sit back and watch the magic as well 🪄</li>
+</ul></li>
+<li class="fragment">Discussion on Flow of the Workshop (5 mins) 🌊</li>
+<li class="fragment">Discussion on why CI/CD is helpful for developing software and our background (10 mins) 💪</li>
+<li class="fragment">Work through the 8 workflows 🏗</li>
+<li class="fragment">Break for 5 mins after every 2 worfklows ☕️</li>
+</ul>
+</div>
+</section>
+<section id="preparation-for-the-workshop" class="slide level2">
+<h2>Preparation for the Workshop</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">Setup</span></p>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Set up GitHub to run our CI/CD checks through GitHub Actions <svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></li>
+<li class="fragment">Set up RStudio Cloud Classroom for both ease of access and setup <svg aria-hidden="true" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M32 32C14.3 32 0 46.3 0 64V288 448c0 17.7 14.3 32 32 32s32-14.3 32-32V320h95.3L261.8 466.4c10.1 14.5 30.1 18 44.6 7.9s18-30.1 7.9-44.6L230.1 309.5C282.8 288.1 320 236.4 320 176c0-79.5-64.5-144-144-144H32zM176 256H64V96H176c44.2 0 80 35.8 80 80s-35.8 80-80 80z"></path></svg></li>
+<li class="fragment">Quick overview of the <strong>bare bones</strong> R package as our learning tool <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg></li>
+<li class="fragment">We will do each step with you both for Setup and Workflows <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:purple;overflow:visible;position:relative;"><path d="M543.9 251.4c0-1.1 .1-2.2 .1-3.4c0-48.6-39.4-88-88-88l-40 0H320l-16 0 0 0v16 72c0 22.1-17.9 40-40 40s-40-17.9-40-40V128h.4c4-36 34.5-64 71.6-64H408c2.8 0 5.6 .2 8.3 .5l40.1-40.1c21.9-21.9 57.3-21.9 79.2 0l78.1 78.1c21.9 21.9 21.9 57.3 0 79.2l-69.7 69.7zM192 128V248c0 39.8 32.2 72 72 72s72-32.2 72-72V192h80l40 0c30.9 0 56 25.1 56 56c0 27.2-19.4 49.9-45.2 55c8.2 8.6 13.2 20.2 13.2 33c0 26.5-21.5 48-48 48h-2.7c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48H224c-.9 0-1.8 0-2.7-.1l-37.7 37.7c-21.9 21.9-57.3 21.9-79.2 0L26.3 407.6c-21.9-21.9-21.9-57.3 0-79.2L96 258.7V224c0-53 43-96 96-96z"></path></svg></li>
+</ul>
+</div>
+</section>
+<section id="github-setup" class="slide level2">
+<h2>GitHub Setup</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">Setup</span></p>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Use GitHub Template from <a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI/CD Workshop at R/Pharma conference 2022</a>
+<ul>
+<li class="fragment">Copy the template to your personal account on GitHub <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:purple;overflow:visible;position:relative;"><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"></path></svg></li>
+<li class="fragment">Mark your repository as public (private repos will cost you money) <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144v48H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64H144V144z"></path></svg></li>
+</ul></li>
+<li class="fragment">Create a new branch called <code>devel</code> 🪵</li>
+<li class="fragment">Set up a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> 🔑</li>
+</ul>
+</div>
+</section>
+<section id="rstudio-cloud-setup" class="slide level2">
+<h2>RStudio Cloud Setup</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">Setup</span></p>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">We recommend using RStudio Cloud for ease of use ☁️
+<ul>
+<li class="fragment">We’ll share the RStudio Classroom link in Chat 🔗</li>
+<li class="fragment">However, okay to use other RStudio infrastructure <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM344 152c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm96-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zM344 408c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm104-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"></path></svg></li>
+</ul></li>
+<li class="fragment">Clone your repo into RStudio with the <code>https</code> link <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:indigo;overflow:visible;position:relative;"><path d="M64 464H288C296.8 464 304 456.8 304 448V384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224C0 188.7 28.65 160 64 160H128V208H64C55.16 208 48 215.2 48 224V448C48 456.8 55.16 464 64 464zM160 64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224C188.7 352 160 323.3 160 288V64zM224 304H448C456.8 304 464 296.8 464 288V64C464 55.16 456.8 48 448 48H224C215.2 48 208 55.16 208 64V288C208 296.8 215.2 304 224 304z"></path></svg></li>
+<li class="fragment">Install the <code>{devtools}</code> package ⏬</li>
+<li class="fragment">Use <code>devtools::install_dev_deps()</code> to install all necessary packages <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></li>
+</ul>
+</div>
+</section>
+<section id="link-github-and-rstudio" class="slide level2">
+<h2>Link GitHub and RStudio</h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">Setup</span></p>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Use the <code>Git</code> tab to switch to the <code>devel</code> branch</li>
+<li class="fragment">Create a test commit 🧪
+<ul>
+<li class="fragment">Modify the <code>README.md</code> file by adding today’s date 📆</li>
+<li class="fragment">Click on the <code>Commit</code> button &gt; Stage <code>README.md</code> &gt; Add a message 📜</li>
+<li class="fragment">Push the commit to GitHub ⬆️</li>
+<li class="fragment">Verify the was completed on GitHub (might need a refresh) 🔍</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -420,12 +506,12 @@
 <div>
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  A(Discuss the need &lt;br&gt; for the Workflow) --&gt; B(Copy Code and place &lt;br&gt; into .github/workflows folder)
-  B --&gt; C(Push up into devel branch)
-  C --&gt; D(Watch GitHub give you &lt;br&gt; feedback on the workflow)
-  D --&gt; E(Address Feedback and &lt;br&gt; fix in the devel branch)
+  A(Discuss workflow &lt;br&gt; purpose) --&gt; B(Create workflow)
+  B --&gt; C(Push workflow)
+  C --&gt; D(Observe feedback)
+  D --&gt; E(Address feedback)
   E --&gt; F(Discuss successful implementation)
-  F --&gt; A[Discuss the need &lt;br&gt; for the Workflow]
+  F --&gt; A
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -440,93 +526,125 @@
 </section>
 <section id="why-use-cicd-for-a-r-package" class="slide level2">
 <h2>Why use CI/CD for a R package?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
 <div>
 <ul>
-<li class="fragment">Multiple Contributors on your R Package <span class="emoji" data-emoji="keyboard">⌨️</span></li>
-<li class="fragment">User base on multiple types of OS and multiple versions of R <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M0 383.9l64 .0404c17.75 0 32-14.29 32-32.03V128.3L0 128.3V383.9zM48 320.1c8.75 0 16 7.118 16 15.99c0 8.742-7.25 15.99-16 15.99S32 344.8 32 336.1C32 327.2 39.25 320.1 48 320.1zM348.8 64c-7.941 0-15.66 2.969-21.52 8.328L228.9 162.3C228.8 162.5 228.8 162.7 228.6 162.7C212 178.3 212.3 203.2 226.5 218.7c12.75 13.1 39.38 17.62 56.13 2.75C282.8 221.3 282.9 221.3 283 221.2l79.88-73.1c6.5-5.871 16.75-5.496 22.62 1c6 6.496 5.5 16.62-1 22.62l-26.12 23.87L504 313.7c2.875 2.496 5.5 4.996 7.875 7.742V127.1c-40.98-40.96-96.48-63.88-154.4-63.88L348.8 64zM334.6 217.4l-30 27.49c-29.75 27.11-75.25 24.49-101.8-4.371C176 211.2 178.1 165.7 207.3 138.9L289.1 64H282.5C224.7 64 169.1 87.08 128.2 127.9L128 351.8l18.25 .0369l90.5 81.82c27.5 22.37 67.75 18.12 90-9.246l18.12 15.24c15.88 12.1 39.38 10.5 52.38-5.371l31.38-38.6l5.374 4.498c13.75 11 33.88 9.002 45-4.748l9.538-11.78c11.12-13.75 9.036-33.78-4.694-44.93L334.6 217.4zM544 128.4v223.6c0 17.62 14.25 32.05 31.1 32.05L640 384V128.1L544 128.4zM592 352c-8.75 0-16-7.246-16-15.99c0-8.875 7.25-15.99 16-15.99S608 327.2 608 336.1C608 344.8 600.8 352 592 352z"></path></svg></li>
-<li class="fragment">Faster turnaround on Pull Requests <span class="emoji" data-emoji="heavy_check_mark">✔️</span></li>
-<li class="fragment">Flag coding issues for the contributor <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M64 496C64 504.8 56.75 512 48 512h-32C7.25 512 0 504.8 0 496V32c0-17.75 14.25-32 32-32s32 14.25 32 32V496zM476.3 0c-6.365 0-13.01 1.35-19.34 4.233c-45.69 20.86-79.56 27.94-107.8 27.94c-59.96 0-94.81-31.86-163.9-31.87C160.9 .3055 131.6 4.867 96 15.75v350.5c32-9.984 59.87-14.1 84.85-14.1c73.63 0 124.9 31.78 198.6 31.78c31.91 0 68.02-5.971 111.1-23.09C504.1 355.9 512 344.4 512 332.1V30.73C512 11.1 495.3 0 476.3 0z"></path></svg></li>
-<li class="fragment">Enforce coding style conventions <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM325.8 139.7C310.1 124.1 284.8 124.1 269.2 139.7L247.8 161.1L318.7 232.1L340.1 210.7C355.8 195 355.8 169.7 340.1 154.1L325.8 139.7zM111.5 303.8L96.48 363.1C95.11 369.4 96.71 375.2 100.7 379.2C104.7 383.1 110.4 384.7 115.9 383.4L176 368.3C181.6 366.9 186.8 364 190.9 359.9L296.1 254.7L225.1 183.8L119.9 288.1C115.8 293.1 112.9 298.2 111.5 303.8z"></path></svg></li>
+<li class="fragment">Multiple Contributors on your R Package ⌨️</li>
+<li class="fragment">User base on multiple OSes and multiple R versions <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M144 160c-44.2 0-80-35.8-80-80S99.8 0 144 0s80 35.8 80 80s-35.8 80-80 80zm368 0c-44.2 0-80-35.8-80-80s35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM416 224c0 53-43 96-96 96s-96-43-96-96s43-96 96-96s96 43 96 96zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg></li>
+<li class="fragment">Faster turnaround on Pull Requests ☑️</li>
 </ul>
+</div>
+</div><div class="column" style="width:45%;">
+<div>
+<ul>
+<li class="fragment">Catch issues (bugs) early on <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7 .7 1.3 1.4 1.9 2.1c14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4c.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7 .7-1.4 1.3-2.1 1.9c6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H416c0 24.6-5.5 47.8-15.4 68.6c2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16V479.2c-34.5-3.4-65.8-17.8-90.3-39.6L86.6 502.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H96.3c1.1-14.1 5-27.5 11.1-39.5c-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"></path></svg></li>
+<li class="fragment">Enforce style conventions and preferences <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM325.8 139.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-21.4 21.4-71-71 21.4-21.4c15.6-15.6 40.9-15.6 56.6 0zM119.9 289L225.1 183.8l71 71L190.9 359.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"></path></svg></li>
+<li class="fragment">Measure test coverage for new code <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></li>
+<li class="fragment">Keep docs up-to-date <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <section id="the-r-package-for-the-workshop" class="slide level2">
 <h2>The R Package for the Workshop</h2>
-<div class="sourceCode" id="cb1" data-eval="FALSE"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#' Hello Workshop Attendees</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#'</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#' Welcomes the CI/CD workshop attendees</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#' @author Yourself</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#' @details Greet workshop attendees</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#' @return Happy Message</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co">#' @export</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#' @examples</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#' hello()</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">message</span>(<span class="st">"Welcome to the cicdworkshop!"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">Type</span><span class="kw">:</span><span class="at"> Package</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> cicdworkshop</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> Demo Package for R/Pharma CI/CD Workshop</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.1</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="at">    person("Open", "Source", , "osauthor@noreply.pharmaverse.com", role = c("aut", "cre"))</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> Intended to demo CI/CD pipelines on GitHub.</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> Apache License (&gt;= 2)</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">URL</span><span class="kw">:</span><span class="at"> https://pharmaverse.github.io/cicdworkshop.rinpharma2022</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">Depends</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="at">    R (&gt;= 3.5)</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">Imports</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="at">    lifecycle</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">Suggests</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="at">    covr,</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="at">    devtools,</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="at">    knitr,</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="at">    lintr,</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="at">    pkgdown,</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="at">    rmarkdown,</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="at">    roxygen2,</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="at">    spelling,</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="at">    styler,</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="at">    testthat</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">VignetteBuilder</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="at">    knitr</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">Language</span><span class="kw">:</span><span class="at"> en-US</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="the-r-package-for-the-workshop-1" class="slide level2">
 <h2>The R Package for the Workshop</h2>
-<p>Package is super lean to help focus on the CI/CD part.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>../
-├── DESCRIPTION
-├── LICENSE.md
-├── NAMESPACE
-├── NEWS.md
-├── R
-│   ├── cicdworkshop-package.R
-│   ├── hello.R
-│   └── linter_ex.R
-├── README.md
-├── _pkgdown.yml
-├── cicdworkshop.Rproj
-├── inst
-│   └── WORDLIST
-├── man
-│   ├── cicdworkshop-package.Rd
-│   └── hello.Rd
-├── presentation
-│   ├── _quarto.yml
-│   ├── _site
-│   ├── custom.scss
-│   ├── images
-│   ├── index.qmd
-│   └── index.rmarkdown
-├── tests
-│   ├── testthat
-│   └── testthat.R
-└── vignettes
-    ├── cicd-intro.Rmd
-    └── cicd-resources.Rmd</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">..</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">├──</span> DESCRIPTION</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">├──</span> LICENSE.md</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="ex">├──</span> NAMESPACE</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">├──</span> NEWS.md</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="ex">├──</span> R</span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="ex">│</span>   ├── cicdworkshop-package.R</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">│</span>   ├── hello.R</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">│</span>   └── linter_ex.R</span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">├──</span> README.md</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">├──</span> _pkgdown.yml</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">├──</span> cicdworkshop.Rproj</span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="ex">├──</span> inst</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">│</span>   └── WORDLIST</span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">├──</span> man</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">│</span>   ├── cicdworkshop-package.Rd</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="ex">│</span>   └── hello.Rd</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="ex">├──</span> presentation</span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="ex">│</span>   ├── _quarto.yml</span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="ex">│</span>   ├── _site</span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="ex">│</span>   ├── custom.scss</span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="ex">│</span>   ├── images</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="ex">│</span>   ├── index.qmd</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="ex">│</span>   └── index.rmarkdown</span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="ex">├──</span> tests</span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="ex">│</span>   ├── testthat</span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="ex">│</span>   └── testthat.R</span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="ex">└──</span> vignettes</span>
+<span id="cb2-29"><a href="#cb2-29"></a>    <span class="ex">├──</span> cicd-intro.Rmd</span>
+<span id="cb2-30"><a href="#cb2-30"></a>    <span class="ex">└──</span> cicd-resources.Rmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-8-workflows-we-are-going-to-implement" class="slide level2">
-<h2>The 8 Workflows we are going to implement</h2>
+<section id="the-8-workflows-well-implement" class="slide level2">
+<h2>The 8 workflows we’ll implement</h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
 </div>
 </div>
 <!-- https://fontawesome.com/icons/file-lines?s=solid&f=classic  -->
+<div class="columns">
+<div class="column" style="width:45%;">
 <div>
 <ol type="1">
-<li class="fragment">R-CMD Check &nbsp; &nbsp; <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M414.8 40.79L286.8 488.8C281.9 505.8 264.2 515.6 247.2 510.8C230.2 505.9 220.4 488.2 225.2 471.2L353.2 23.21C358.1 6.216 375.8-3.624 392.8 1.232C409.8 6.087 419.6 23.8 414.8 40.79H414.8zM518.6 121.4L630.6 233.4C643.1 245.9 643.1 266.1 630.6 278.6L518.6 390.6C506.1 403.1 485.9 403.1 473.4 390.6C460.9 378.1 460.9 357.9 473.4 345.4L562.7 256L473.4 166.6C460.9 154.1 460.9 133.9 473.4 121.4C485.9 108.9 506.1 108.9 518.6 121.4V121.4zM166.6 166.6L77.25 256L166.6 345.4C179.1 357.9 179.1 378.1 166.6 390.6C154.1 403.1 133.9 403.1 121.4 390.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4L121.4 121.4C133.9 108.9 154.1 108.9 166.6 121.4C179.1 133.9 179.1 154.1 166.6 166.6V166.6z"></path></svg></li>
-<li class="fragment">Website Links &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></li>
-<li class="fragment">Spelling Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"></path></svg></li>
-<li class="fragment">Linters &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M256 0v128h128L256 0zM224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272 416h-160C103.2 416 96 408.8 96 400C96 391.2 103.2 384 112 384h160c8.836 0 16 7.162 16 16C288 408.8 280.8 416 272 416zM272 352h-160C103.2 352 96 344.8 96 336C96 327.2 103.2 320 112 320h160c8.836 0 16 7.162 16 16C288 344.8 280.8 352 272 352zM288 272C288 280.8 280.8 288 272 288h-160C103.2 288 96 280.8 96 272C96 263.2 103.2 256 112 256h160C280.8 256 288 263.2 288 272z"></path></svg></li>
-<li class="fragment">Documentation &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"></path></svg></li>
-<li class="fragment">Publishing a pkgdown site &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M319.1 351.1c-35.35 0-64 28.66-64 64.01s28.66 64.01 64 64.01c35.34 0 64-28.66 64-64.01S355.3 351.1 319.1 351.1zM320 191.1c-70.25 0-137.9 25.6-190.5 72.03C116.3 275.7 115 295.9 126.7 309.2C138.5 322.4 158.7 323.7 171.9 312C212.8 275.9 265.4 256 320 256s107.3 19.88 148.1 56C474.2 317.4 481.8 320 489.3 320c8.844 0 17.66-3.656 24-10.81C525 295.9 523.8 275.7 510.5 264C457.9 217.6 390.3 191.1 320 191.1zM630.2 156.7C546.3 76.28 436.2 32 320 32S93.69 76.28 9.844 156.7c-12.75 12.25-13.16 32.5-.9375 45.25c12.22 12.78 32.47 13.12 45.25 .9375C125.1 133.1 220.4 96 320 96s193.1 37.97 265.8 106.9C592.1 208.8 600 211.8 608 211.8c8.406 0 16.81-3.281 23.09-9.844C643.3 189.2 642.9 168.1 630.2 156.7z"></path></svg></li>
-<li class="fragment">Template Scripts &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M48 32C21.5 32 0 53.5 0 80v64C0 152.9 7.125 160 16 160H96V80C96 53.5 74.5 32 48 32zM256 380.6V320h224V128c0-53-43-96-96-96H111.6C121.8 45.38 128 61.88 128 80V384c0 38.88 34.62 69.63 74.75 63.13C234.3 442 256 412.5 256 380.6zM288 352v32c0 52.88-43 96-96 96h272c61.88 0 112-50.13 112-112c0-8.875-7.125-16-16-16H288z"></path></svg></li>
-<li class="fragment">Test Coverage &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M176 8C182.6 8 188.4 11.1 190.9 18.09L220.3 92.05L296.4 68.93C302.7 67.03 309.5 69.14 313.6 74.27C314.1 74.85 314.5 75.45 314.9 76.08C297.8 84.32 282.7 96.93 271.4 113.3L230.4 172.5C203.1 181.4 180.6 203.5 172.6 233.4L152.7 307.4L117.4 339.9C112.6 344.4 105.5 345.4 99.64 342.6C93.73 339.7 90.16 333.6 90.62 327L96.21 247.6L17.56 235.4C11.08 234.4 5.871 229.6 4.413 223.2C2.954 216.8 5.54 210.1 10.94 206.4L76.5 161.3L37.01 92.18C33.76 86.49 34.31 79.39 38.4 74.27C42.48 69.14 49.28 67.03 55.55 68.93L131.7 92.05L161.1 18.09C163.6 11.1 169.4 8 176 8L176 8zM384.2 99.67L519.8 135.1C552.5 144.7 576.1 173.1 578.8 206.8L585.7 290.7C602.9 304.2 611.3 327 605.3 349.4L570.1 480.8C565.5 497.8 547.1 507.1 530.9 503.4L515.5 499.3C498.4 494.7 488.3 477.1 492.8 460.1L501.1 429.1L253.8 362.9L245.6 393.8C240.1 410.9 223.4 421 206.4 416.4L190.9 412.3C173.8 407.7 163.7 390.2 168.3 373.1L203.5 241.7C209.5 219.3 228.2 203.8 249.8 200.7L297.7 131.5C316.9 103.6 351.6 90.92 384.2 99.67L384.2 99.67zM367.7 161.5C361.1 159.7 354.2 162.3 350.4 167.8L318.1 214.5L519.6 268.5L515 211.1C514.5 205.2 509.8 199.6 503.2 197.8L367.7 161.5zM268.3 308.8C281.1 312.2 294.3 304.6 297.7 291.8C301.2 279 293.6 265.9 280.8 262.4C267.1 259 254.8 266.6 251.4 279.4C247.9 292.2 255.5 305.4 268.3 308.8zM528 328.7C515.2 325.3 502.1 332.9 498.6 345.7C495.2 358.5 502.8 371.6 515.6 375.1C528.4 378.5 541.6 370.9 545 358.1C548.4 345.3 540.8 332.1 528 328.7z"></path></svg></li>
+<li class="fragment">R CMD Check &nbsp; &nbsp; <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></li>
+<li class="fragment">Link &amp; URL Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></li>
+<li class="fragment">Spelling Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg></li>
+<li class="fragment">Linter &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"></path></svg></li>
 </ol>
 </div>
+</div><div class="column" style="width:45%;">
+<div>
+<ol start="5" type="1">
+<li class="fragment">Manual Pages &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></li>
+<li class="fragment">Code Style &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"></path></svg></li>
+<li class="fragment">Test Coverage &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></li>
+<li class="fragment">Publishing a pkgdown site &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"></path></svg></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
-<section id="r-cmd-checks" class="slide level2">
-<h2>R-CMD Checks <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M414.8 40.79L286.8 488.8C281.9 505.8 264.2 515.6 247.2 510.8C230.2 505.9 220.4 488.2 225.2 471.2L353.2 23.21C358.1 6.216 375.8-3.624 392.8 1.232C409.8 6.087 419.6 23.8 414.8 40.79H414.8zM518.6 121.4L630.6 233.4C643.1 245.9 643.1 266.1 630.6 278.6L518.6 390.6C506.1 403.1 485.9 403.1 473.4 390.6C460.9 378.1 460.9 357.9 473.4 345.4L562.7 256L473.4 166.6C460.9 154.1 460.9 133.9 473.4 121.4C485.9 108.9 506.1 108.9 518.6 121.4V121.4zM166.6 166.6L77.25 256L166.6 345.4C179.1 357.9 179.1 378.1 166.6 390.6C154.1 403.1 133.9 403.1 121.4 390.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4L121.4 121.4C133.9 108.9 154.1 108.9 166.6 121.4C179.1 133.9 179.1 154.1 166.6 166.6V166.6z"></path></svg></h2>
+<section id="r-cmd-check" class="slide level2">
+<h2>R CMD Check <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
@@ -542,136 +660,51 @@
 </ul>
 </div>
 </section>
-<section id="r-cmd-workflow" class="slide level2">
-<h2>R-CMD Workflow</h2>
+<section id="r-cmd-check-workflow" class="slide level2">
+<h2>R CMD Check Workflow <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a>on<span class="sc">:</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  workflow_dispatch<span class="sc">:</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  workflow_call<span class="sc">:</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>    inputs<span class="sc">:</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>      error<span class="sc">-</span>on<span class="sc">:</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>        description<span class="sc">:</span> Input <span class="cf">for</span> the <span class="st">'error_on'</span> parameter <span class="cf">in</span> rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>()</span>
-<span id="cb3-8"><a href="#cb3-8"></a>        required<span class="sc">:</span> false</span>
-<span id="cb3-9"><a href="#cb3-9"></a>        default<span class="sc">:</span> note</span>
-<span id="cb3-10"><a href="#cb3-10"></a>        type<span class="sc">:</span> string</span>
-<span id="cb3-11"><a href="#cb3-11"></a>  pull_request<span class="sc">:</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a>    branches<span class="sc">:</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>      <span class="sc">-</span> main</span>
-<span id="cb3-14"><a href="#cb3-14"></a>      <span class="sc">-</span> devel</span>
-<span id="cb3-15"><a href="#cb3-15"></a></span>
-<span id="cb3-16"><a href="#cb3-16"></a>name<span class="sc">:</span> R CMD Check</span>
-<span id="cb3-17"><a href="#cb3-17"></a></span>
-<span id="cb3-18"><a href="#cb3-18"></a>concurrency<span class="sc">:</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a>  group<span class="sc">:</span> r<span class="sc">-</span>cmd<span class="sc">-</span>check<span class="sc">-</span><span class="er">$</span>{{ github.event.pull_request.number <span class="sc">||</span> github.ref }}</span>
-<span id="cb3-20"><a href="#cb3-20"></a>  cancel<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>progress<span class="sc">:</span> true</span>
-<span id="cb3-21"><a href="#cb3-21"></a></span>
-<span id="cb3-22"><a href="#cb3-22"></a>jobs<span class="sc">:</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a>  R<span class="sc">-</span>CMD<span class="sc">-</span>check<span class="sc">:</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }}</span>
-<span id="cb3-25"><a href="#cb3-25"></a>    name<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.os }} (<span class="sc">$</span>{{ matrix.config.r }})</span>
-<span id="cb3-26"><a href="#cb3-26"></a>    <span class="cf">if</span><span class="sc">:</span> <span class="er">&gt;</span></span>
-<span id="cb3-27"><a href="#cb3-27"></a>      <span class="sc">!</span><span class="fu">contains</span>(github.event.commits[<span class="dv">0</span>].message, <span class="st">'[skip r-cmd-check]'</span>)</span>
-<span id="cb3-28"><a href="#cb3-28"></a>    strategy<span class="sc">:</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a>      fail<span class="sc">-</span>fast<span class="sc">:</span> false</span>
-<span id="cb3-30"><a href="#cb3-30"></a>      matrix<span class="sc">:</span></span>
-<span id="cb3-31"><a href="#cb3-31"></a>        config<span class="sc">:</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'4.0'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2021-03-31/'</span>}</span>
-<span id="cb3-33"><a href="#cb3-33"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="sc">-</span>latest, r<span class="sc">:</span> <span class="st">'4.1'</span>, repos<span class="sc">:</span> <span class="st">'https://cran.microsoft.com/snapshot/2022-03-10/'</span>}</span>
-<span id="cb3-34"><a href="#cb3-34"></a>          <span class="sc">-</span> {os<span class="sc">:</span> ubuntu<span class="fl">-20.04</span>, r<span class="sc">:</span> <span class="st">'release'</span>, repos<span class="sc">:</span> <span class="st">'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'</span>}</span>
-<span id="cb3-35"><a href="#cb3-35"></a></span>
-<span id="cb3-36"><a href="#cb3-36"></a>    env<span class="sc">:</span></span>
-<span id="cb3-37"><a href="#cb3-37"></a>      GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
-<span id="cb3-38"><a href="#cb3-38"></a>      R_KEEP_PKG_SOURCE<span class="sc">:</span> true</span>
-<span id="cb3-39"><a href="#cb3-39"></a>      R_REMOTES_NO_ERRORS_FROM_WARNINGS<span class="sc">:</span> true</span>
-<span id="cb3-40"><a href="#cb3-40"></a>      R_REPOS<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.repos }}</span>
-<span id="cb3-41"><a href="#cb3-41"></a></span>
-<span id="cb3-42"><a href="#cb3-42"></a>    steps<span class="sc">:</span></span>
-<span id="cb3-43"><a href="#cb3-43"></a>      <span class="do">##################### </span><span class="re">BEGIN</span><span class="do"> boilerplate steps #####################</span></span>
-<span id="cb3-44"><a href="#cb3-44"></a>      <span class="sc">-</span> name<span class="sc">:</span> Get branch names</span>
-<span id="cb3-45"><a href="#cb3-45"></a>        id<span class="sc">:</span> branch<span class="sc">-</span>name</span>
-<span id="cb3-46"><a href="#cb3-46"></a>        uses<span class="sc">:</span> tj<span class="sc">-</span>actions<span class="sc">/</span>branch<span class="sc">-</span>names<span class="sc">@</span>v5<span class="fl">.4</span></span>
-<span id="cb3-47"><a href="#cb3-47"></a></span>
-<span id="cb3-48"><a href="#cb3-48"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout <span class="fu">repo</span> (PR) 🛎</span>
-<span id="cb3-49"><a href="#cb3-49"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v3</span>
-<span id="cb3-50"><a href="#cb3-50"></a>        <span class="cf">if</span><span class="sc">:</span> github.event_name <span class="sc">==</span> <span class="st">'pull_request'</span></span>
-<span id="cb3-51"><a href="#cb3-51"></a>        with<span class="sc">:</span></span>
-<span id="cb3-52"><a href="#cb3-52"></a>          ref<span class="sc">:</span> <span class="er">$</span>{{ steps.branch<span class="sc">-</span>name.outputs.head_ref_branch }}</span>
-<span id="cb3-53"><a href="#cb3-53"></a>          repository<span class="sc">:</span> <span class="er">$</span>{{ github.event.pull_request.head.repo.full_name }}</span>
-<span id="cb3-54"><a href="#cb3-54"></a></span>
-<span id="cb3-55"><a href="#cb3-55"></a>      <span class="sc">-</span> name<span class="sc">:</span> Setup R</span>
-<span id="cb3-56"><a href="#cb3-56"></a>        uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">@</span>v1</span>
-<span id="cb3-57"><a href="#cb3-57"></a>        with<span class="sc">:</span></span>
-<span id="cb3-58"><a href="#cb3-58"></a>          r<span class="sc">-</span>version<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.r }}</span>
-<span id="cb3-59"><a href="#cb3-59"></a>          http<span class="sc">-</span>user<span class="sc">-</span>agent<span class="sc">:</span> <span class="er">$</span>{{ matrix.config.http<span class="sc">-</span>user<span class="sc">-</span>agent }}</span>
-<span id="cb3-60"><a href="#cb3-60"></a>          use<span class="sc">-</span>public<span class="sc">-</span>rspm<span class="sc">:</span> true</span>
-<span id="cb3-61"><a href="#cb3-61"></a></span>
-<span id="cb3-62"><a href="#cb3-62"></a>      <span class="sc">-</span> name<span class="sc">:</span> Restore cache</span>
-<span id="cb3-63"><a href="#cb3-63"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>cache<span class="sc">@</span>v3</span>
-<span id="cb3-64"><a href="#cb3-64"></a>        with<span class="sc">:</span></span>
-<span id="cb3-65"><a href="#cb3-65"></a>          path<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb3-66"><a href="#cb3-66"></a>            <span class="er">$</span>{{ env.R_LIBS_USER }}</span>
-<span id="cb3-67"><a href="#cb3-67"></a>            <span class="sc">~</span><span class="er">/</span>.staged.dependencies</span>
-<span id="cb3-68"><a href="#cb3-68"></a>          key<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}<span class="sc">-</span><span class="er">$</span>{{ <span class="fu">hashFiles</span>(<span class="st">'DESCRIPTION'</span>) }}</span>
-<span id="cb3-69"><a href="#cb3-69"></a>          restore<span class="sc">-</span>keys<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">-</span><span class="er">$</span>{{ matrix.config.r }}</span>
-<span id="cb3-70"><a href="#cb3-70"></a></span>
-<span id="cb3-71"><a href="#cb3-71"></a>      <span class="sc">-</span> name<span class="sc">:</span> Run Staged dependencies</span>
-<span id="cb3-72"><a href="#cb3-72"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>staged<span class="sc">-</span>dependencies<span class="sc">-</span>action<span class="sc">@</span>v1</span>
-<span id="cb3-73"><a href="#cb3-73"></a>        with<span class="sc">:</span></span>
-<span id="cb3-74"><a href="#cb3-74"></a>          run<span class="sc">-</span>system<span class="sc">-</span>dependencies<span class="sc">:</span> true</span>
-<span id="cb3-75"><a href="#cb3-75"></a>          enable<span class="sc">-</span>check<span class="sc">:</span> false</span>
-<span id="cb3-76"><a href="#cb3-76"></a>          renv<span class="sc">-</span>restore<span class="sc">:</span> false</span>
-<span id="cb3-77"><a href="#cb3-77"></a>          cran<span class="sc">-</span>repos<span class="sc">:</span> <span class="st">"CRAN=${{ matrix.config.repos }}"</span></span>
-<span id="cb3-78"><a href="#cb3-78"></a>        env<span class="sc">:</span></span>
-<span id="cb3-79"><a href="#cb3-79"></a>          GITHUB_PAT<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span>
-<span id="cb3-80"><a href="#cb3-80"></a>      <span class="do">#####################c#####################</span></span>
-<span id="cb3-81"><a href="#cb3-81"></a></span>
-<span id="cb3-82"><a href="#cb3-82"></a>      <span class="sc">-</span> name<span class="sc">:</span> Check</span>
-<span id="cb3-83"><a href="#cb3-83"></a>        env<span class="sc">:</span></span>
-<span id="cb3-84"><a href="#cb3-84"></a>          _R_CHECK_CRAN_INCOMING_REMOTE_<span class="sc">:</span> false</span>
-<span id="cb3-85"><a href="#cb3-85"></a>          _R_CHECK_FORCE_SUGGESTS_<span class="sc">:</span> false</span>
-<span id="cb3-86"><a href="#cb3-86"></a>        run<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb3-87"><a href="#cb3-87"></a>          <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"rcmdcheck"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"rcmdcheck"</span>)</span>
-<span id="cb3-88"><a href="#cb3-88"></a>          <span class="fu">options</span>(<span class="at">crayon.enabled =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-89"><a href="#cb3-89"></a>          check_error_on <span class="ot">&lt;-</span> <span class="st">"${{ inputs.error-on }}"</span></span>
-<span id="cb3-90"><a href="#cb3-90"></a>          <span class="cf">if</span> (check_error_on <span class="sc">==</span> <span class="st">""</span>) {</span>
-<span id="cb3-91"><a href="#cb3-91"></a>            check_error_on <span class="ot">&lt;-</span> <span class="st">"note"</span></span>
-<span id="cb3-92"><a href="#cb3-92"></a>          }</span>
-<span id="cb3-93"><a href="#cb3-93"></a>          rcmdcheck<span class="sc">::</span><span class="fu">rcmdcheck</span>(</span>
-<span id="cb3-94"><a href="#cb3-94"></a>            <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"--no-manual"</span>, <span class="st">"--as-cran"</span>),</span>
-<span id="cb3-95"><a href="#cb3-95"></a>            <span class="at">error_on =</span> check_error_on,</span>
-<span id="cb3-96"><a href="#cb3-96"></a>            <span class="at">check_dir =</span> <span class="st">"check"</span></span>
-<span id="cb3-97"><a href="#cb3-97"></a>          )</span>
-<span id="cb3-98"><a href="#cb3-98"></a>        shell<span class="sc">:</span> Rscript {<span class="dv">0</span>}</span>
-<span id="cb3-99"><a href="#cb3-99"></a></span>
-<span id="cb3-100"><a href="#cb3-100"></a>      <span class="sc">-</span> name<span class="sc">:</span> Upload check results</span>
-<span id="cb3-101"><a href="#cb3-101"></a>        <span class="cf">if</span><span class="sc">:</span> <span class="fu">failure</span>()</span>
-<span id="cb3-102"><a href="#cb3-102"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>upload<span class="sc">-</span>artifact<span class="sc">@</span>main</span>
-<span id="cb3-103"><a href="#cb3-103"></a>        with<span class="sc">:</span></span>
-<span id="cb3-104"><a href="#cb3-104"></a>          name<span class="sc">:</span> <span class="er">$</span>{{ runner.os }}<span class="sc">-</span>r<span class="sc">$</span>{{ matrix.config.r }}<span class="sc">-</span>results</span>
-<span id="cb3-105"><a href="#cb3-105"></a>          path<span class="sc">:</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> R CMD check</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">  </span><span class="fu">Check</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out repository</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> devtools::install_dev_deps()</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build package</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD build .</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check package</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD check --no-manual *.tar.gz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">AdmiralCI’s R CMD Check Workflow</a></p>
 </div>
 </section>
-<section id="r-cmd-checks-1" class="slide level2">
-<h2>R-CMD Checks</h2>
+<section id="r-cmd-check-1" class="slide level2">
+<h2>R CMD Check <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
 </div>
 </div>
 <ul>
-<li>Success!</li>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
 </ul>
-
-<img data-src="images/success_rcmd.png" class="r-stretch"></section>
-<section id="links" class="slide level2">
-<h2>Links</h2>
+</section>
+<section id="link-url-checks" class="slide level2">
+<h2>Link &amp; URL Checks <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
@@ -680,132 +713,430 @@
 <p><br> Why have a workflow that checks Links in your Package? <br></p>
 <div>
 <ul>
-<li class="fragment">Check to make sure it runs on multiple versions of R</li>
-<li class="fragment">Check to make sure it runs on multiple snapshots of R packages</li>
-<li class="fragment">Check to make sure it runs on different OS</li>
-<li class="fragment">Check integrity of code from contributor</li>
+<li class="fragment">Cited resources for function development stay current and up to date.</li>
+<li class="fragment">Internal or External website updates cause link breakage</li>
+<li class="fragment">Contributors type in a link incorrectly</li>
 </ul>
 </div>
 </section>
-<section id="link-workflow" class="slide level2">
-<h2>Link Workflow</h2>
+<section id="link-check-workflow" class="slide level2">
+<h2>Link Check Workflow <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="sc">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>name<span class="sc">:</span> Check URLs</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>on<span class="sc">:</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  pull_request<span class="sc">:</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>    branches<span class="sc">:</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>      <span class="sc">-</span> main</span>
-<span id="cb4-8"><a href="#cb4-8"></a>      <span class="sc">-</span> devel</span>
-<span id="cb4-9"><a href="#cb4-9"></a>  workflow_dispatch<span class="sc">:</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  workflow_call<span class="sc">:</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a>concurrency<span class="sc">:</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>  group<span class="sc">:</span> links<span class="sc">-</span><span class="er">$</span>{{ github.event.pull_request.number <span class="sc">||</span> github.ref }}</span>
-<span id="cb4-14"><a href="#cb4-14"></a>  cancel<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>progress<span class="sc">:</span> true</span>
-<span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a>jobs<span class="sc">:</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>  links<span class="sc">:</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a>    name<span class="sc">:</span> Validate Links</span>
-<span id="cb4-19"><a href="#cb4-19"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> ubuntu<span class="fl">-20.04</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>    <span class="cf">if</span><span class="sc">:</span> <span class="er">&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>      <span class="sc">!</span><span class="fu">contains</span>(github.event.commits[<span class="dv">0</span>].message, <span class="st">'[skip links]'</span>)</span>
-<span id="cb4-22"><a href="#cb4-22"></a>    steps<span class="sc">:</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout repo</span>
-<span id="cb4-24"><a href="#cb4-24"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v3</span>
-<span id="cb4-25"><a href="#cb4-25"></a></span>
-<span id="cb4-26"><a href="#cb4-26"></a>      <span class="sc">-</span> name<span class="sc">:</span> Check URLs <span class="cf">in</span> docs</span>
-<span id="cb4-27"><a href="#cb4-27"></a>        uses<span class="sc">:</span> lycheeverse<span class="sc">/</span>lychee<span class="sc">-</span>action<span class="sc">@</span>v1.<span class="fl">5.1</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a>        with<span class="sc">:</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a>          fail<span class="sc">:</span> true</span>
-<span id="cb4-30"><a href="#cb4-30"></a>          jobSummary<span class="sc">:</span> true</span>
-<span id="cb4-31"><a href="#cb4-31"></a>          format<span class="sc">:</span> markdown</span>
-<span id="cb4-32"><a href="#cb4-32"></a>          output<span class="sc">:</span> links<span class="sc">-</span>results.md</span>
-<span id="cb4-33"><a href="#cb4-33"></a>          args<span class="sc">:</span> <span class="er">&gt;</span><span class="sc">-</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a>            <span class="sc">--</span>exclude<span class="sc">-</span>private</span>
-<span id="cb4-35"><a href="#cb4-35"></a>            <span class="sc">--</span>exclude <span class="st">"https://github.com.*.git|lycheeverse.*"</span></span>
-<span id="cb4-36"><a href="#cb4-36"></a>            <span class="sc">--</span>verbose</span>
-<span id="cb4-37"><a href="#cb4-37"></a>            <span class="sc">--</span>no<span class="sc">-</span>progress</span>
-<span id="cb4-38"><a href="#cb4-38"></a>            <span class="sc">$</span>{{ inputs.additional_args }}</span>
-<span id="cb4-39"><a href="#cb4-39"></a>            <span class="sc">**</span><span class="er">/*</span>.md</span>
-<span id="cb4-40"><a href="#cb4-40"></a>            <span class="sc">**</span><span class="er">/*</span>.html</span>
-<span id="cb4-41"><a href="#cb4-41"></a>            <span class="sc">**</span><span class="er">/*</span>.Rmd</span>
-<span id="cb4-42"><a href="#cb4-42"></a>            <span class="sc">**</span><span class="er">/*</span>.yaml</span>
-<span id="cb4-43"><a href="#cb4-43"></a>            <span class="sc">**</span><span class="er">/*</span>.yml</span>
-<span id="cb4-44"><a href="#cb4-44"></a>        env<span class="sc">:</span></span>
-<span id="cb4-45"><a href="#cb4-45"></a>          GITHUB_TOKEN<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="fu">Links</span><span class="kw">:</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs in docs</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> lycheeverse/lychee-action@v1.5.1</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="at">          </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="at">          </span><span class="fu">jobSummary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">          </span><span class="fu">format</span><span class="kw">:</span><span class="at"> markdown</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="at">          </span><span class="fu">output</span><span class="kw">:</span><span class="at"> links-results.md</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="fu">          args</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>            --exclude "https://github.com.*.git|lycheeverse.*"</span>
+<span id="cb4-19"><a href="#cb4-19"></a>            --no-progress **/*.md **/*.Rmd</span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> </span><span class="st">"${{ secrets.GITHUB_TOKEN }}"</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/links.yml">AdmiralCI’s Link Check Workflow</a></p>
 </div>
 </section>
-<section id="spell-checks" class="slide level2">
-<h2>Spell Checks</h2>
+<section id="link-url-checks-1" class="slide level2">
+<h2>Link &amp; URL Checks <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="spelling-checks" class="slide level2">
+<h2>Spelling Checks <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p><span style="opacity:0.25">1 2</span> 3 <span style="opacity:0.25">4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="sc">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>name<span class="sc">:</span> Spellcheck</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>on<span class="sc">:</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  pull_request<span class="sc">:</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>    branches<span class="sc">:</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>      <span class="sc">-</span> main</span>
-<span id="cb5-8"><a href="#cb5-8"></a>      <span class="sc">-</span> devel</span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>jobs<span class="sc">:</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>  check<span class="sc">:</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> ubuntu<span class="sc">-</span>latest</span>
-<span id="cb5-13"><a href="#cb5-13"></a>    name<span class="sc">:</span> Spellcheck</span>
-<span id="cb5-14"><a href="#cb5-14"></a>    container<span class="sc">:</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a>      image<span class="sc">:</span> rocker<span class="sc">/</span>tidyverse<span class="sc">:</span><span class="dv">4</span>.<span class="fl">1.2</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a>    steps<span class="sc">:</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout repo</span>
-<span id="cb5-18"><a href="#cb5-18"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v2</span>
-<span id="cb5-19"><a href="#cb5-19"></a></span>
-<span id="cb5-20"><a href="#cb5-20"></a>      <span class="sc">-</span> name<span class="sc">:</span> Run Spelling Check test</span>
-<span id="cb5-21"><a href="#cb5-21"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>r<span class="sc">-</span>spellcheck<span class="sc">-</span>action<span class="sc">@</span>v2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
+<p><br> Why have a workflow that checks the spelling in your package? <br></p>
+<div>
+<ul>
+<li class="fragment">Industry-specific jargon and acronyms</li>
+<li class="fragment">Contributors speak different languages</li>
+<li class="fragment">Focus on the important parts of a Pull Request</li>
+</ul>
 </div>
 </section>
-<section id="linters" class="slide level2">
-<h2>Linters</h2>
+<section id="spelling-workflow" class="slide level2">
+<h2>Spelling Workflow <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2</span> 3 <span style="opacity:0.25">4 5 6 7 8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spellcheck</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="at">  </span><span class="fu">Spelling</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Spelling Check test</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> insightsengineering/r-spellcheck-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spelling-checks-1" class="slide level2">
+<h2>Spelling Checks <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2</span> 3 <span style="opacity:0.25">4 5 6 7 8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml">AdmiralCI’s Spellcheck Workflow</a></p>
+</div>
+</section>
+<section id="code-style" class="slide level2">
+<h2>Code Style <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5</span> 6 <span style="opacity:0.25">7 8</span></p>
+</div>
+</div>
+<p><br> Why have a workflow that checks your Code Style in your Package? <br></p>
+<div>
+<ul>
+<li class="fragment">Ensures that everyone is using the same style guide</li>
+<li class="fragment">The code is more legible to developers who use the same guide</li>
+<li class="fragment">PR reviews are faster when everyone is using the same style</li>
+</ul>
+</div>
+</section>
+<section id="code-style-workflow" class="slide level2">
+<h2>Code Style Workflow <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5</span> 6 <span style="opacity:0.25">7 8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Style</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="at">  </span><span class="fu">Style</span><span class="kw">:</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install styler</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("styler")) install.packages("styler")</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run styler</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> styler::style_pkg(dry = "fail")</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml">AdmiralCI’s <code>styler</code> Workflow</a></p>
+</div>
+</section>
+<section id="code-style-1" class="slide level2">
+<h2>Code Style <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5</span> 6 <span style="opacity:0.25">7 8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="linter" class="slide level2">
+<h2>Linter <svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"></path></svg></h2>
 <div class="absolute" style="top: 0px; left: 100%; ">
 <div class="sectionhead">
 <p><span style="opacity:0.25">1 2 3</span> 4 <span style="opacity:0.25">5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="sc">---</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>name<span class="sc">:</span> Spellcheck</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a>on<span class="sc">:</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  pull_request<span class="sc">:</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>    branches<span class="sc">:</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>      <span class="sc">-</span> main</span>
-<span id="cb6-8"><a href="#cb6-8"></a>      <span class="sc">-</span> devel</span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a>jobs<span class="sc">:</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a>  check<span class="sc">:</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> ubuntu<span class="sc">-</span>latest</span>
-<span id="cb6-13"><a href="#cb6-13"></a>    name<span class="sc">:</span> Spellcheck</span>
-<span id="cb6-14"><a href="#cb6-14"></a>    container<span class="sc">:</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a>      image<span class="sc">:</span> rocker<span class="sc">/</span>tidyverse<span class="sc">:</span><span class="dv">4</span>.<span class="fl">1.2</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a>    steps<span class="sc">:</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a>      <span class="sc">-</span> name<span class="sc">:</span> Checkout repo</span>
-<span id="cb6-18"><a href="#cb6-18"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v2</span>
-<span id="cb6-19"><a href="#cb6-19"></a></span>
-<span id="cb6-20"><a href="#cb6-20"></a>      <span class="sc">-</span> name<span class="sc">:</span> Run Spelling Check test</span>
-<span id="cb6-21"><a href="#cb6-21"></a>        uses<span class="sc">:</span> insightsengineering<span class="sc">/</span>r<span class="sc">-</span>spellcheck<span class="sc">-</span>action<span class="sc">@</span>v2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>Learn more: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">File Location: r-cmd-check.yml</a></p>
+<p><br> Why have a workflow that runs a Linter in your Package? <br></p>
+<div>
+<ul>
+<li class="fragment">Static code analysis can be performed without compiling the code</li>
+<li class="fragment">Potential bugs can be discovered by the linter</li>
+<li class="fragment">Code best practices are enforced by the linter</li>
+</ul>
 </div>
+</section>
+<section id="linter-workflow" class="slide level2">
+<h2>Linter Workflow <svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3</span> 4 <span style="opacity:0.25">5 6 7 8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">  </span><span class="fu">Linter</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout Code</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">fetch-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">0</span><span class="kw">}</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> github/super-linter/slim@v4</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="at">          </span><span class="fu">VALIDATE_ALL_CODEBASE</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="at">          </span><span class="fu">VALIDATE_R</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="at">          </span><span class="fu">DEFAULT_BRANCH</span><span class="kw">:</span><span class="at"> ${{ github.event.repository.default_branch }}</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="at">          </span><span class="fu">LINTR_ERROR_ON_LINT</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml">AdmiralCI’s <code>lintr</code> Workflow</a></p>
+</div>
+</section>
+<section id="linter-1" class="slide level2">
+<h2>Linter <svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3</span> 4 <span style="opacity:0.25">5 6 7 8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="manual-pages" class="slide level2">
+<h2>Manual Pages <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4</span> 5 <span style="opacity:0.25">6 7 8</span></p>
+</div>
+</div>
+<p><br> Why have a workflow that checks your Manual pages in your Package? <br></p>
+<div>
+<ul>
+<li class="fragment">To make sure that all documentation is up-to-date</li>
+<li class="fragment">Ensure that checks run without errors and warnings</li>
+<li class="fragment">Makes sure everyone is using the same version of <code>{roxygen2}</code></li>
+</ul>
+</div>
+</section>
+<section id="manual-pages-workflow" class="slide level2">
+<h2>Manual Pages Workflow <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4</span> 5 <span style="opacity:0.25">6 7 8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ROxygen</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="at">  </span><span class="fu">ManPages</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Roxygen check</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>          git config --global --add safe.directory $(pwd)</span>
+<span id="cb8-14"><a href="#cb8-14"></a>          R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"</span>
+<span id="cb8-15"><a href="#cb8-15"></a>          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then</span>
+<span id="cb8-16"><a href="#cb8-16"></a>            echo "❌ Manual pages are NOT up-to-date ❌" &amp;&amp; exit 1</span>
+<span id="cb8-17"><a href="#cb8-17"></a>          fi</span>
+<span id="cb8-18"><a href="#cb8-18"></a>          echo "Manual pages are up-to-date 😇"</span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/man-pages.yml">AdmiralCI’s <code>roxygen</code> Workflow</a></p>
+</div>
+</section>
+<section id="manual-pages-1" class="slide level2">
+<h2>Manual Pages <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4</span> 5 <span style="opacity:0.25">6 7 8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="test-coverage" class="slide level2">
+<h2>Test Coverage <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6</span> 7 <span style="opacity:0.25">8</span></p>
+</div>
+</div>
+<p><br> Why have a workflow that checks the Test Coverage in your Package? <br></p>
+<div>
+<ul>
+<li class="fragment">Most validation frameworks prefer higher code coverage</li>
+<li class="fragment">Builds user confidence by ensuring a social contract between devs and users</li>
+</ul>
+</div>
+</section>
+<section id="test-coverage-1" class="slide level2">
+<h2>Test Coverage <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6</span> 7 <span style="opacity:0.25">8</span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Coverage</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]}</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]}</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="at">  </span><span class="fu">Coverage</span><span class="kw">:</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install covr</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("covr")) install.packages("covr")</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run coverage</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> covr::package_coverage(quiet = FALSE)</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/coverage.yml">AdmiralCI’s <code>covr</code> Workflow</a></p>
+</div>
+</section>
+<section id="test-coverage-2" class="slide level2">
+<h2>Test Coverage <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6</span> 7 <span style="opacity:0.25">8</span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="publishing-a-pkgdown-site" class="slide level2">
+<h2>Publishing a pkgdown site <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6 7</span> 8 <span style="opacity:0.25"></span></p>
+</div>
+</div>
+<p><br> Why have a workflow that publishes a website for your Package? <br></p>
+<div>
+<ul>
+<li class="fragment">Provides a specific destination for all your users</li>
+<li class="fragment">Ensure that your internal documentation is in sync with external documentation</li>
+<li class="fragment">Good documentation is like pizza 🍕:
+<ul>
+<li class="fragment">When it’s good, it’s good</li>
+<li class="fragment">When it’s bad, it’s still better than nothing!</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="publishing-a-pkgdown-site-1" class="slide level2">
+<h2>Publishing a pkgdown site <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6 7</span> 8 <span style="opacity:0.25"></span></p>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pkgdown</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="at">  </span><span class="fu">Generate</span><span class="kw">:</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">GITHUB_PAT</span><span class="kw">:</span><span class="at"> </span><span class="st">"${{ secrets.GITHUB_TOKEN }}"</span><span class="kw">}</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build site</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pkgdown::build_site_github_pages()</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub pages 🚀</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> github.event_name == 'push'</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> JamesIves/github-pages-deploy-action@v4.4.1</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">clean</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="kw">,</span><span class="at"> </span><span class="fu">folder</span><span class="kw">:</span><span class="at"> docs</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml">AdmiralCI’s <code>pkgdown</code> Workflow</a></p>
+</div>
+</section>
+<section id="publishing-a-pkgdown-site-2" class="slide level2">
+<h2>Publishing a pkgdown site <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"></path></svg></h2>
+<div class="absolute" style="top: 0px; left: 100%; ">
+<div class="sectionhead">
+<p><span style="opacity:0.25">1 2 3 4 5 6 7</span> 8 <span style="opacity:0.25"></span></p>
+</div>
+</div>
+<ul>
+<li>Copy the workflow into your <code>.github/workflows</code> folder</li>
+<li>Commit and Push up to your <code>devel</code> branch</li>
+<li>Let GitHub Identify the issue with the package</li>
+<li>Let’s fix that issue in RStudio</li>
+<li>Commit, Push and let’s see if our fix is working!</li>
+</ul>
+</section>
+<section id="we-got-8-whats-next" class="slide level2">
+<h2>We got 8! What’s next?</h2>
+<ul>
+<li>Further Reading
+<ul>
+<li><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">GitHub Actions</a></li>
+<li><a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a></li>
+</ul></li>
+<li>Advanced Examples
+<ul>
+<li><a href="https://github.com/r-lib/actions">r-lib/actions</a></li>
+<li><a href="https://github.com/pharmaverse/admiralci"><code>{admiralci}</code></a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+</ul></li>
+<li>Presentation built with <a href="https://quarto.org/">Quarto</a></li>
+</ul>
 
 
 <img src="https://avatars.githubusercontent.com/u/84541169" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -1162,6 +1493,22 @@
           return popup.innerHTML;
         });
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              // default icon
+              link.classList.add("external");
+          }
+        }
     });
     </script>
     
