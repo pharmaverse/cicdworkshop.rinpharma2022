@@ -172,7 +172,7 @@ render_file(file.path("..", "DESCRIPTION"), "yaml")
 ```{r}
 cat(paste0("```bash\n"))
 library(fs)
-tree <- dir_tree(regexp = "presentation", invert = T, recurse = 1)
+tree <- dir_tree("..", regexp = "presentation", invert = T, recurse = 1)
 cat("```")
 ```
 
