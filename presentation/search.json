@@ -67,7 +67,7 @@
     "href": "index.html#the-r-package-for-the-workshop-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
-    "text": "The R Package for the Workshop\n..\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   ├── hello.R\n│   └── linter_ex.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n├── presentation\n│   ├── _quarto.yml\n│   ├── _site\n│   ├── custom.scss\n│   ├── index.qmd\n│   └── index.rmarkdown\n├── tests\n│   ├── testthat\n│   └── testthat.R\n└── vignettes\n    ├── cicd-intro.Rmd\n    └── cicd-resources.Rmd"
+    "text": "The R Package for the Workshop\n.\n├── _quarto.yml\n├── _site\n├── custom.scss\n├── index.qmd\n├── index.rmarkdown\n└── workflows\n    ├── coverage.yml\n    ├── links.yml\n    ├── linter.yml\n    ├── pkgdown.yml\n    ├── r-cmd-check.yml\n    ├── roxygen.yml\n    ├── spellcheck.yml\n    └── style.yml"
   },
   {
     "objectID": "index.html#the-8-workflows-well-implement",
