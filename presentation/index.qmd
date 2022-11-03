@@ -172,7 +172,7 @@ render_file(file.path("..", "DESCRIPTION"), "yaml")
 ```{r}
 cat(paste0("```bash\n"))
 library(fs)
-tree <- dir_tree("..", recurse = 1)
+tree <- dir_tree(regexp = "presentation", invert = T, recurse = 1)
 cat("```")
 ```
 
@@ -236,7 +236,7 @@ Why have a workflow that checks the Package Build?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "r-cmd-check.yml"))
+render_file(file.path("workflows", "r-cmd-check.yml"))
 ```
 
 ::: footer
@@ -285,7 +285,7 @@ Why have a workflow that checks Links in your Package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "links.yml"))
+render_file(file.path("workflows", "links.yml"))
 ```
 
 ::: footer
@@ -334,7 +334,7 @@ Why have a workflow that checks the spelling in your package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "spellcheck.yml"))
+render_file(file.path("workflows", "spellcheck.yml"))
 ```
 
 ## Spelling Checks `r fontawesome::fa("pen", "blue")`
@@ -383,7 +383,7 @@ Why have a workflow that checks your Code Style in your Package?
 
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "style.yml"))
+render_file(file.path("workflows", "style.yml"))
 ```
 
 ::: footer
@@ -432,7 +432,7 @@ Why have a workflow that runs a Linter in your Package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "linter.yml"))
+render_file(file.path("workflows", "linter.yml"))
 ```
 
 ::: footer
@@ -480,7 +480,7 @@ Why have a workflow that checks your Manual pages in your Package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "roxygen.yml"))
+render_file(file.path("workflows", "roxygen.yml"))
 ```
 
 ::: footer
@@ -527,7 +527,7 @@ Why have a workflow that checks the Test Coverage in your Package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "coverage.yml"))
+render_file(file.path("workflows", "coverage.yml"))
 ```
 
 ::: footer
@@ -577,7 +577,7 @@ Why have a workflow that publishes a website for your Package?
 :::
 
 ```{r}
-render_file(file.path("..", ".github", "workflows", "pkgdown.yml"))
+render_file(file.path("workflows", "pkgdown.yml"))
 ```
 
 ::: footer
