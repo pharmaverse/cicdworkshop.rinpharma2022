@@ -60,14 +60,14 @@
     "href": "index.html#the-r-package-for-the-workshop-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
-    "text": "The R Package for the Workshop\n..\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   ├── hello.R\n│   └── linter_ex.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n└── tests\n    ├── testthat\n    └── testthat.R"
+    "text": "The R Package for the Workshop\n..\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n└── tests\n    ├── testthat\n    └── testthat.R"
   },
   {
     "objectID": "index.html#flow-for-workshop",
     "href": "index.html#flow-for-workshop",
     "title": "CI/CD Workshop for R Packages",
     "section": "Flow for Workshop",
-    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss workflow <br> purpose) --> B(Create workflow)\n  B --> C(Push workflow)\n  C --> D(Observe feedback)\n  D --> E(Address feedback)\n  E --> F(Discuss successful implementation)\n  F --> A"
+    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss workflow <br> purpose) --> B(Create <br> workflow)\n  B --> C(Push <br> workflow)\n  C --> D(Observe <br> feedback)\n  D --> E(Address <br> feedback)\n  E --> F(Discuss <br> implementation)\n  F --> A"
   },
   {
     "objectID": "index.html#why-use-cicd-for-a-r-package",
@@ -179,7 +179,7 @@
     "href": "index.html#test-coverage-1",
     "title": "CI/CD Workshop for R Packages",
     "section": "Test Coverage ",
-    "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Coverage\non:\n  pull_request: {branches: [main]}\njobs:\n  Coverage:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install covr\n        run: if (!require(\"covr\")) install.packages(\"covr\")\n        shell: Rscript {0}\n      - name: Run coverage\n        run: covr::package_coverage(quiet = FALSE)\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s covr Workflow"
+    "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Test Coverage\non:\n  pull_request: {branches: [main]}\njobs:\n  Coverage:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install covr\n        run: if (!require(\"covr\")) install.packages(\"covr\")\n        shell: Rscript {0}\n      - name: Run coverage\n        run: covr::package_coverage(quiet = FALSE)\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s covr Workflow"
   },
   {
     "objectID": "index.html#publishing-a-pkgdown-site",

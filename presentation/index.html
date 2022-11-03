@@ -561,19 +561,18 @@
 <span id="cb2-5"><a href="#cb2-5"></a><span class="ex">├──</span> NEWS.md</span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="ex">├──</span> R</span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="ex">│</span>   ├── cicdworkshop-package.R</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">│</span>   ├── hello.R</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">│</span>   └── linter_ex.R</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">├──</span> README.md</span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">├──</span> _pkgdown.yml</span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">├──</span> cicdworkshop.Rproj</span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="ex">├──</span> inst</span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">│</span>   └── WORDLIST</span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">├──</span> man</span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">│</span>   ├── cicdworkshop-package.Rd</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="ex">│</span>   └── hello.Rd</span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="ex">└──</span> tests</span>
-<span id="cb2-19"><a href="#cb2-19"></a>    <span class="ex">├──</span> testthat</span>
-<span id="cb2-20"><a href="#cb2-20"></a>    <span class="ex">└──</span> testthat.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">│</span>   └── hello.R</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">├──</span> README.md</span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">├──</span> _pkgdown.yml</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">├──</span> cicdworkshop.Rproj</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">├──</span> inst</span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="ex">│</span>   └── WORDLIST</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">├──</span> man</span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">│</span>   ├── cicdworkshop-package.Rd</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">│</span>   └── hello.Rd</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="ex">└──</span> tests</span>
+<span id="cb2-18"><a href="#cb2-18"></a>    <span class="ex">├──</span> testthat</span>
+<span id="cb2-19"><a href="#cb2-19"></a>    <span class="ex">└──</span> testthat.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="flow-for-workshop" class="slide level2">
 <h2>Flow for Workshop</h2>
@@ -582,11 +581,11 @@
 <div>
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  A(Discuss workflow &lt;br&gt; purpose) --&gt; B(Create workflow)
-  B --&gt; C(Push workflow)
-  C --&gt; D(Observe feedback)
-  D --&gt; E(Address feedback)
-  E --&gt; F(Discuss successful implementation)
+  A(Discuss workflow &lt;br&gt; purpose) --&gt; B(Create &lt;br&gt; workflow)
+  B --&gt; C(Push &lt;br&gt; workflow)
+  C --&gt; D(Observe &lt;br&gt; feedback)
+  D --&gt; E(Address &lt;br&gt; feedback)
+  E --&gt; F(Discuss &lt;br&gt; implementation)
   F --&gt; A
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
@@ -940,7 +939,7 @@
 <p><span style="opacity:0.25">1 2 3 4 5 6</span> 7 <span style="opacity:0.25">8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Coverage</span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test Coverage</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">on</span><span class="kw">:</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]}</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
