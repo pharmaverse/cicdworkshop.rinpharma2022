@@ -257,20 +257,6 @@ render_file(file.path("workflows", "r-cmd-check.yml"))
 Advanced Usage: [AdmiralCI's R CMD Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml)
 :::
 
-## R CMD Check `r fontawesome::fa("code", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-1 [2 3 4 5 6 7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
 ## Link & URL Checks `r fontawesome::fa("link", "green")`
 
 ::: {.absolute top="0" left="100%"}
@@ -306,20 +292,6 @@ render_file(file.path("workflows", "links.yml"))
 Advanced Usage: [AdmiralCI's Link Check Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/links.yml)
 :::
 
-## Link & URL Checks `r fontawesome::fa("link", "green")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1]{style="opacity:0.25"} 2 [3 4 5 6 7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
 ## Spelling Checks `r fontawesome::fa("pen", "blue")`
 
 ::: {.absolute top="0" left="100%"}
@@ -350,20 +322,6 @@ Why have a workflow that checks the spelling in your package?
 ```{r}
 render_file(file.path("workflows", "spellcheck.yml"))
 ```
-
-## Spelling Checks `r fontawesome::fa("pen", "blue")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2]{style="opacity:0.25"} 3 [4 5 6 7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
 
 ::: footer
 Advanced Usage: [AdmiralCI's Spellcheck Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml)
@@ -404,20 +362,6 @@ render_file(file.path("workflows", "style.yml"))
 Advanced Usage: [AdmiralCI's `styler` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml)
 :::
 
-## Code Style `r fontawesome::fa("scroll", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5]{style="opacity:0.25"} 6 [7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
 ## Linter `r fontawesome::fa("file-lines", "red")`
 
 ::: {.absolute top="0" left="100%"}
@@ -453,20 +397,6 @@ render_file(file.path("workflows", "linter.yml"))
 Advanced Usage: [AdmiralCI's `lintr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml)
 :::
 
-## Linter `r fontawesome::fa("file-lines", "red")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3]{style="opacity:0.25"} 4 [5 6 7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
 ## Manual Pages `r fontawesome::fa("book", "green")`
 
 ::: {.absolute top="0" left="100%"}
@@ -501,20 +431,6 @@ render_file(file.path("workflows", "roxygen.yml"))
 Advanced Usage: [AdmiralCI's `roxygen` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/man-pages.yml)
 :::
 
-## Manual Pages `r fontawesome::fa("book", "green")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4]{style="opacity:0.25"} 5 [6 7 8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
-
 ## Test Coverage `r fontawesome::fa("car-burst", "green")`
 
 ::: {.absolute top="0" left="100%"}
@@ -547,20 +463,6 @@ render_file(file.path("workflows", "coverage.yml"))
 ::: footer
 Advanced Usage: [AdmiralCI's `covr` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/coverage.yml)
 :::
-
-## Test Coverage `r fontawesome::fa("car-burst", "green")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5 6]{style="opacity:0.25"} 7 [8]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
 
 ## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
 
@@ -597,20 +499,6 @@ render_file(file.path("workflows", "pkgdown.yml"))
 ::: footer
 Advanced Usage: [AdmiralCI's `pkgdown` Workflow](https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml)
 :::
-
-## Publishing a pkgdown site `r fontawesome::fa("wifi", "blue")`
-
-::: {.absolute top="0" left="100%"}
-::: {.sectionhead}
-[1 2 3 4 5 6 7]{style="opacity:0.25"} 8 [ ]{style="opacity:0.25"}
-:::
-:::
-
-* Copy the workflow into your `.github/workflows` folder
-* Commit and Push up to your `devel` branch
-* Let GitHub Identify the issue with the package
-* Let's fix that issue in RStudio
-* Commit, Push and let's see if our fix is working!
 
 ## We got 8! What's next?
 
