@@ -98,13 +98,6 @@
     "text": "R CMD Check Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: R CMD check\non:\n  pull_request: {branches: ['main']}\njobs:\n  Check:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n      - name: Install dependencies\n        run: devtools::install_dev_deps()\n        shell: Rscript {0}\n      - name: Build package\n        run: R CMD build .\n      - name: Check package\n        run: R CMD check --no-manual *.tar.gz\n\nAdvanced Usage: AdmiralCI’s R CMD Check Workflow"
   },
   {
-    "objectID": "index.html#r-cmd-check-1",
-    "href": "index.html#r-cmd-check-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "R CMD Check ",
-    "text": "R CMD Check \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
-  },
-  {
     "objectID": "index.html#link-url-checks",
     "href": "index.html#link-url-checks",
     "title": "CI/CD Workshop for R Packages",
@@ -119,13 +112,6 @@
     "text": "Link Check Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Check URLs\non:\n  pull_request: {branches: ['main']}\njobs:\n  Links:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Check URLs in docs\n        uses: lycheeverse/lychee-action@v1.5.1\n        with:\n          fail: true\n          jobSummary: true\n          format: markdown\n          output: links-results.md\n          args: >-\n            --exclude \"https://github.com.*.git|lycheeverse.*\"\n            --no-progress **/*.md **/*.Rmd\n        env: {GITHUB_TOKEN: \"${{ secrets.GITHUB_TOKEN }}\"}\n\nAdvanced Usage: AdmiralCI’s Link Check Workflow"
   },
   {
-    "objectID": "index.html#link-url-checks-1",
-    "href": "index.html#link-url-checks-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Link & URL Checks ",
-    "text": "Link & URL Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
-  },
-  {
     "objectID": "index.html#spelling-checks",
     "href": "index.html#spelling-checks",
     "title": "CI/CD Workshop for R Packages",
@@ -137,14 +123,7 @@
     "href": "index.html#spelling-workflow",
     "title": "CI/CD Workshop for R Packages",
     "section": "Spelling Workflow ",
-    "text": "Spelling Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Spellcheck\non:\n  pull_request: {branches: ['main']}\njobs:\n  Spelling:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Run Spelling Check test\n        uses: insightsengineering/r-spellcheck-action@v2"
-  },
-  {
-    "objectID": "index.html#spelling-checks-1",
-    "href": "index.html#spelling-checks-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Spelling Checks ",
-    "text": "Spelling Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!\n\n\nAdvanced Usage: AdmiralCI’s Spellcheck Workflow"
+    "text": "Spelling Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Spellcheck\non:\n  pull_request: {branches: ['main']}\njobs:\n  Spelling:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Run Spelling Check test\n        uses: insightsengineering/r-spellcheck-action@v2\n\nAdvanced Usage: AdmiralCI’s Spellcheck Workflow"
   },
   {
     "objectID": "index.html#code-style",
@@ -161,13 +140,6 @@
     "text": "Code Style Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Style\non:\n  pull_request: {branches: ['main']}\njobs:\n  Style:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install styler\n        run: if (!require(\"styler\")) install.packages(\"styler\")\n        shell: Rscript {0}\n      - name: Run styler\n        run: styler::style_pkg(dry = \"fail\")\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s styler Workflow"
   },
   {
-    "objectID": "index.html#code-style-1",
-    "href": "index.html#code-style-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Code Style ",
-    "text": "Code Style \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
-  },
-  {
     "objectID": "index.html#linter",
     "href": "index.html#linter",
     "title": "CI/CD Workshop for R Packages",
@@ -180,13 +152,6 @@
     "title": "CI/CD Workshop for R Packages",
     "section": "Linter Workflow ",
     "text": "Linter Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Lint Code Base\non:\n  pull_request: {branches: ['main']}\njobs:\n  Linter:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v3\n        with: {fetch-depth: 0}\n      - name: Lint Code Base\n        uses: github/super-linter/slim@v4\n        env:\n          VALIDATE_ALL_CODEBASE: false\n          VALIDATE_R: true\n          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          LINTR_ERROR_ON_LINT: true\n\nAdvanced Usage: AdmiralCI’s lintr Workflow"
-  },
-  {
-    "objectID": "index.html#linter-1",
-    "href": "index.html#linter-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Linter ",
-    "text": "Linter \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
   },
   {
     "objectID": "index.html#manual-pages",
@@ -203,13 +168,6 @@
     "text": "Manual Pages Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: ROxygen\non:\n  pull_request: {branches: ['main']}\njobs:\n  ManPages:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Roxygen check\n        run: |\n          git config --global --add safe.directory $(pwd)\n          R -s -e \"roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))\"\n          if [[ -n `git status -s | grep -E \"man|DESCRIPTION\"` ]]; then\n            echo \"❌ Manual pages are NOT up-to-date ❌\" && exit 1\n          fi\n          echo \"Manual pages are up-to-date 😇\"\n        shell: bash\n\nAdvanced Usage: AdmiralCI’s roxygen Workflow"
   },
   {
-    "objectID": "index.html#manual-pages-1",
-    "href": "index.html#manual-pages-1",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Manual Pages ",
-    "text": "Manual Pages \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
-  },
-  {
     "objectID": "index.html#test-coverage",
     "href": "index.html#test-coverage",
     "title": "CI/CD Workshop for R Packages",
@@ -224,13 +182,6 @@
     "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Coverage\non:\n  pull_request: {branches: [main]}\njobs:\n  Coverage:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install covr\n        run: if (!require(\"covr\")) install.packages(\"covr\")\n        shell: Rscript {0}\n      - name: Run coverage\n        run: covr::package_coverage(quiet = FALSE)\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s covr Workflow"
   },
   {
-    "objectID": "index.html#test-coverage-2",
-    "href": "index.html#test-coverage-2",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Test Coverage ",
-    "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
-  },
-  {
     "objectID": "index.html#publishing-a-pkgdown-site",
     "href": "index.html#publishing-a-pkgdown-site",
     "title": "CI/CD Workshop for R Packages",
@@ -243,13 +194,6 @@
     "title": "CI/CD Workshop for R Packages",
     "section": "Publishing a pkgdown site ",
     "text": "Publishing a pkgdown site \n\n\n1 2 3 4 5 6 7 8 \n\n\nname: pkgdown\non:\n  pull_request: {branches: ['main']}\n  push: {branches: ['main']}\njobs:\n  Generate:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Build site\n        run: pkgdown::build_site_github_pages(install = TRUE, dest_dir = \"public\")\n        shell: Rscript {0}\n      - name: Deploy to GitHub pages\n        if: github.event_name == 'push'\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          keep_files: true\n\nAdvanced Usage: AdmiralCI’s pkgdown Workflow"
-  },
-  {
-    "objectID": "index.html#publishing-a-pkgdown-site-2",
-    "href": "index.html#publishing-a-pkgdown-site-2",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Publishing a pkgdown site ",
-    "text": "Publishing a pkgdown site \n\n\n1 2 3 4 5 6 7 8 \n\n\n\nCopy the workflow into your .github/workflows folder\nCommit and Push up to your devel branch\nLet GitHub Identify the issue with the package\nLet’s fix that issue in RStudio\nCommit, Push and let’s see if our fix is working!"
   },
   {
     "objectID": "index.html#we-got-8-whats-next",
