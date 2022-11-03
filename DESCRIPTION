@@ -1,28 +1,30 @@
-Package: cicdworkshop
 Type: Package
+Package: cicdworkshop
 Title: Demo Package for R/Pharma CI/CD Workshop
 Version: 0.0.1
-Authors@R: c(
-    person("Open", "Source", email = "osauthor@noreply.pharmaverse.com", role = c("aut", "cre")))
+Authors@R: 
+    person("Open", "Source", , "osauthor@noreply.pharmaverse.com", role = c("aut", "cre"))
 Description: Intended to demo CI/CD pipelines on GitHub.
 License: Apache License (>= 2)
-URL: https://pharmaverse.github.io/cicdworkshop.rinpharma2022, https://github.com/pharmaverse/cicdworkshop.rinpharma2022
-Encoding: UTF-8
-Language: en-US
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
-Depends: R (>= 3.5)
-Imports:
+URL: https://pharmaverse.github.io/cicdworkshop.rinpharma2022
+Depends: 
+    R (>= 3.5)
+Imports: 
     lifecycle
 Suggests:
+    covr,
     devtools,
+    knitr,
     lintr,
     pkgdown,
-    testthat,
-    knitr,
     rmarkdown,
     roxygen2,
     spelling,
     styler,
-    covr
-VignetteBuilder: knitr
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
