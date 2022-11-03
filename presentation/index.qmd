@@ -285,7 +285,7 @@ Why have a workflow that checks Links in your Package?
 
 
 ::: {.incremental}
-- Cited resources for function development stay current and up to date.
+- Cited resources for function development stay current and up to date
 - Internal or External website updates cause link breakage
 - Contributors type in a link incorrectly
 :::
