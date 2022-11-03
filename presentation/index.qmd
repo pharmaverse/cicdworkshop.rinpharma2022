@@ -236,7 +236,7 @@ Why have a workflow that checks the Package Build?
 ::: {.incremental}
 - Check to make sure it runs on multiple versions of R
 - Check to make sure it runs on multiple snapshots of R packages
-- Check to make sure it runs on different OS
+- Check to make sure it runs on different OSes
 - Check integrity of code from contributors before you review the Pull Request
 :::
 
