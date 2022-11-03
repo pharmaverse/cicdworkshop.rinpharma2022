@@ -49,20 +49,6 @@
     "text": "Link GitHub and RStudio\n\n\nSetup\n\n\n\n\nCreate a test commit 🧪\n\nModify the README.md file by adding today’s date 📆\nClick on the Commit button > Stage README.md > Add a message 📜\nPush the commit to GitHub ⬆️\nVerify the was completed on GitHub (might need a refresh) 🔍"
   },
   {
-    "objectID": "index.html#flow-for-workshop",
-    "href": "index.html#flow-for-workshop",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Flow for Workshop",
-    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss workflow <br> purpose) --> B(Create workflow)\n  B --> C(Push workflow)\n  C --> D(Observe feedback)\n  D --> E(Address feedback)\n  E --> F(Discuss successful implementation)\n  F --> A"
-  },
-  {
-    "objectID": "index.html#why-use-cicd-for-a-r-package",
-    "href": "index.html#why-use-cicd-for-a-r-package",
-    "title": "CI/CD Workshop for R Packages",
-    "section": "Why use CI/CD for a R package?",
-    "text": "Why use CI/CD for a R package?\n\n\n\n\nMultiple Contributors on your R Package ⌨️\nUser base on multiple OSes and multiple R versions \nFaster turnaround on Pull Requests ☑️\n\n\n\n\n\nCatch issues (bugs) early on \nEnforce style conventions and preferences \nMeasure test coverage for new code \nKeep docs up-to-date"
-  },
-  {
     "objectID": "index.html#the-r-package-for-the-workshop",
     "href": "index.html#the-r-package-for-the-workshop",
     "title": "CI/CD Workshop for R Packages",
@@ -75,6 +61,20 @@
     "title": "CI/CD Workshop for R Packages",
     "section": "The R Package for the Workshop",
     "text": "The R Package for the Workshop\n..\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   ├── cicdworkshop-package.R\n│   ├── hello.R\n│   └── linter_ex.R\n├── README.md\n├── _pkgdown.yml\n├── cicdworkshop.Rproj\n├── inst\n│   └── WORDLIST\n├── man\n│   ├── cicdworkshop-package.Rd\n│   └── hello.Rd\n└── tests\n    ├── testthat\n    └── testthat.R"
+  },
+  {
+    "objectID": "index.html#flow-for-workshop",
+    "href": "index.html#flow-for-workshop",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Flow for Workshop",
+    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss workflow <br> purpose) --> B(Create workflow)\n  B --> C(Push workflow)\n  C --> D(Observe feedback)\n  D --> E(Address feedback)\n  E --> F(Discuss successful implementation)\n  F --> A"
+  },
+  {
+    "objectID": "index.html#why-use-cicd-for-a-r-package",
+    "href": "index.html#why-use-cicd-for-a-r-package",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Why use CI/CD for a R package?",
+    "text": "Why use CI/CD for a R package?\n\n\n\n\nMultiple Contributors on your R Package ⌨️\nUser base on multiple OSes and multiple R versions \nFaster turnaround on Pull Requests ☑️\n\n\n\n\n\nCatch issues (bugs) early on \nEnforce style conventions and preferences \nMeasure test coverage for new code \nKeep docs up-to-date"
   },
   {
     "objectID": "index.html#the-8-workflows-well-implement",
