@@ -138,6 +138,22 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
   - Verify the was completed on GitHub (might need a refresh) 🔍
 :::
 
+## The R Package for the Workshop
+
+```{r}
+render_file(file.path("..", "DESCRIPTION"), "yaml")
+```
+
+
+## The R Package for the Workshop
+
+```{r}
+cat(paste0("```bash\n"))
+library(fs)
+tree <- dir_tree("..", regexp = "presentation", invert = T, recurse = 1)
+cat("```")
+```
+
 ## Flow for Workshop
 
 ```{mermaid}
@@ -174,23 +190,6 @@ flowchart TD
 :::
 :::
 :::
-
-## The R Package for the Workshop
-
-```{r}
-render_file(file.path("..", "DESCRIPTION"), "yaml")
-```
-
-
-## The R Package for the Workshop
-
-```{r}
-cat(paste0("```bash\n"))
-library(fs)
-tree <- dir_tree("..", regexp = "presentation", invert = T, recurse = 1)
-cat("```")
-```
-
 
 ## The 8 workflows we'll implement
 
