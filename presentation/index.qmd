@@ -100,8 +100,9 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
 ::: {.incremental}
 - We recommend using RStudio Cloud for ease of use ☁️
   - We'll share the RStudio Classroom link in Chat 🔗
-  - However, okay to use other RStudio infrastructure `r fontawesome::fa("server", "white")`
-- Clone your repo into RStudio with the `https` link `r fontawesome::fa("clone", "indigo")`
+  - However, it's okay to use other RStudio infrastructure `r fontawesome::fa("server", "white")`
+- Start a new project in RStudio Cloud Classroom 📁
+  - With the `https` link to your repo `r fontawesome::fa("clone", "indigo")`
 - Install the `{devtools}` package ⏬
 - Use `devtools::install_dev_deps()` to install all necessary packages `r fontawesome::fa("book", "blue")`
 :::
@@ -115,7 +116,21 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
 :::
 
 ::: {.incremental}
+- Init your `git` credentials on your project 🔐
+  - `git config --global user.name "Your Name"`
+  - `git config --global user.email "youremail@yourdomain.com"`
 - Use the `Git` tab to switch to the `devel` branch
+:::
+
+## Link GitHub and RStudio
+
+::: {.absolute top="0" left="100%"}
+::: {.sectionhead}
+[Setup]{style="opacity:0.25"}
+:::
+:::
+
+::: {.incremental}
 - Create a test commit 🧪
   - Modify the `README.md` file by adding today's date 📆
   - Click on the `Commit` button > Stage `README.md` > Add a message 📜
