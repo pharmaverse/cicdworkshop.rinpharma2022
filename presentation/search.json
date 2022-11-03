@@ -88,7 +88,7 @@
     "href": "index.html#r-cmd-check",
     "title": "CI/CD Workshop for R Packages",
     "section": "R CMD Check ",
-    "text": "R CMD Check \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OS\nCheck integrity of code from contributors before you review the Pull Request"
+    "text": "R CMD Check \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OSes\nCheck integrity of code from contributors before you review the Pull Request"
   },
   {
     "objectID": "index.html#r-cmd-check-workflow",
