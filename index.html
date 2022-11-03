@@ -105,7 +105,7 @@ One or more words are misspelled in the <code>NEWS.md</code> file.
 <details><summary>
 Click here for the solution ✅
 </summary>
-The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>. Simply run <code>spelling::update_wordlist(confirm=“Yes”)</code> to fix all spellings.
+The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>. Fix the spelling first in the <code>NEWS.md</code> file. Next, simply run <code>spelling::update_wordlist(confirm=“Yes”)</code> to add technical jargon to the wordlist.
 </details>
 </div>
 <div class="section level3">
@@ -130,12 +130,12 @@ Simply run <code>styler::style_file(“R/hello.R”)</code> to automatically sty
 <details><summary>
 Click here for a hint 🔎
 </summary>
-The issue is manifested in the <code>R/linter_ex.R</code> file.
+The issue is manifested in the <code>R/hello.R</code> file.
 </details><p><br></p>
 <details><summary>
 Click here for the solution ✅
 </summary>
-Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/linter_ex.R</code> file. Run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
+Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/hello.R</code> file for the <code>linter_ex()</code> function. Run <code>styler::style_file(“R/hello.R”)</code> to fix style issues, if any. Then, run <code><a href="https://lintr.r-lib.org/reference/lint.html" class="external-link">lintr::lint_package()</a></code> iteratively to determine whether the issue has been resolved.
 </details>
 </div>
 <div class="section level3">
@@ -145,8 +145,8 @@ Reduce the number of if statements to reduce the cyclomatic complexity in the <c
 <details><summary>
 Click here for a hint 🔎
 </summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and <code>R/linter_ex.R</code>.
-</details><p><br></p>
+Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()/code&gt; function.
+</code></details><p><br></p>
 <details><summary>
 Click here for the solution ✅
 </summary>
@@ -160,12 +160,12 @@ Simply run <code>roxygen2::roxygenize(‘.’, roclets = c(‘rd’, ‘collate�
 <details><summary>
 Click here for a hint 🔎
 </summary>
-Add a simple unit test for the <code>linter_ex()</code> function defined in the <code>R/linter_ex.R</code> file.
+Add a simple unit test for the <code>linter_ex()</code> function defined in the <code>R/hello.R</code> file.
 </details><p><br></p>
 <details><summary>
 Click here for the solution ✅
-</summary><p>Run <code>covr::package_coverage()</code> to note the current code coverage.</p>
-<p>Create a new file called <code>tests/testthat/test-linter_ex.R</code> and add the following to it:</p>
+</summary><p>Run <code><a href="http://covr.r-lib.org/reference/package_coverage.html" class="external-link">covr::package_coverage()</a></code> to note the current code coverage.</p>
+<p>In the <code>tests/testthat/test-hello.R</code> file, add the following test:</p>
 <pre>
 test_that("linter_ex is surprised", {
   expect_message(
@@ -175,7 +175,7 @@ test_that("linter_ex is surprised", {
 })
 </pre>
 <p>Run tests locally by executing <code><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">devtools::test()</a></code> to make sure that the tests succeed.</p>
-Then, run <code>covr::package_coverage()</code> to see that the code coverage has increased.
+Then, run <code><a href="http://covr.r-lib.org/reference/package_coverage.html" class="external-link">covr::package_coverage()</a></code> to see that the code coverage has increased.
 </details>
 </div>
 <div class="section level3">
