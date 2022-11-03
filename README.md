@@ -43,8 +43,9 @@ One or more words are misspelled in the <code>NEWS.md</code> file.
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>. 
-Simply run <code>spelling::update_wordlist(confirm="Yes")</code> to fix all spellings.
+The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>.
+Fix the spelling first in the `NEWS.md` file.
+Next, simply run <code>spelling::update_wordlist(confirm="Yes")</code> to add technical jargon to the wordlist.
 </details>
 
 ### Exercise 4
@@ -66,13 +67,14 @@ Simply run <code>styler::style_file("R/hello.R")</code> to automatically style t
 Reduce the cyclomatic complexity identified by the **Lint Code Base** workflow.
 
 <details><summary>Click here for a hint 🔎</summary>
-The issue is manifested in the <code>R/linter_ex.R</code> file.
+The issue is manifested in the <code>R/hello.R</code> file.
 </details>
 
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/linter_ex.R</code> file. Run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
+Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/hello.R</code> file for the <code>linter_ex()</code> function.
+Run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
 </details>
 
 ### Exercise 6
@@ -80,7 +82,7 @@ Reduce the number of if statements to reduce the cyclomatic complexity in the <c
 Update man pages based on the errors reported by the **ROxygen** workflow.
 
 <details><summary>Click here for a hint 🔎</summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and <code>R/linter_ex.R</code>.
+Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()/code> function.
 </details>
 
 <br/>
@@ -94,7 +96,7 @@ Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespa
 Increase code coverage for the package.
 
 <details><summary>Click here for a hint 🔎</summary>
-Add a simple unit test for the <code>linter_ex()</code> function defined in the <code>R/linter_ex.R</code> file.
+Add a simple unit test for the <code>linter_ex()</code> function defined in the <code>R/hello.R</code> file.
 </details>
 
 <br/>
