@@ -83,7 +83,7 @@ Then, run <code>lintr::lint_package()</code> iteratively to determine whether th
 Update man pages based on the errors reported by the **ROxygen** workflow.
 
 <details><summary>Click here for a hint 🔎</summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()/code> function.
+Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()</code> function.
 </details>
 
 <br/>
