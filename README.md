@@ -43,8 +43,9 @@ One or more words are misspelled in the <code>NEWS.md</code> file.
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>.
-Fix the spelling first in the `NEWS.md` file.
+The word <code>link</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>.
+The word <code>strangephrase</code> should be <code>strange phrase</code> in <code>NEWS.md</code>.
+Fix the spelling first in the <code>NEWS.md</code> file.
 Next, simply run <code>spelling::update_wordlist(confirm="Yes")</code> to add technical jargon to the wordlist.
 </details>
 
@@ -89,7 +90,7 @@ Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</cod
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))</code> to automatically update all man pages.
+Simply run <code>roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))</code> or <code>devtools::document()</code> to automatically update all man pages.
 </details>
 
 ### Exercise 7
@@ -132,5 +133,5 @@ Update the <code>_pkgdown.yml</code> and add the <b>pkgdown</b> workflow.
 <br/>
 
 <details><summary>Click here for the solution ✅</summary>
-Update the <code>url</code> by replacing <code>pharmaverse</code> with your GitHub username.
+Update the <code>url</code> by replacing <code>pharmaverse</code> with your GitHub username and repository name.
 </details>
