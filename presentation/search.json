@@ -25,21 +25,21 @@
     "href": "index.html#github-setup",
     "title": "CI/CD Workshop for R Packages",
     "section": "GitHub Setup",
-    "text": "GitHub Setup\n\n\nSetup\n\n\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\n\nCopy the template to your personal account on GitHub \nMark your repository as public (private repos will cost you money) \n\nCreate a new branch called devel 🪵\nSet up a Personal Access Token 🔑"
+    "text": "GitHub Setup\n\n\nSetup\n\n\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\n\nCopy the template to your personal account on GitHub \nMark your repository as public (private repos will cost you money) \n\nCreate a new branch called devel within GitHub 🪵\nSet up a Personal Access Token 🔑"
   },
   {
     "objectID": "index.html#rstudio-cloud-setup",
     "href": "index.html#rstudio-cloud-setup",
     "title": "CI/CD Workshop for R Packages",
     "section": "RStudio Cloud Setup",
-    "text": "RStudio Cloud Setup\n\n\nSetup\n\n\n\n\nWe recommend using RStudio Cloud for ease of use ☁️\n\nWe’ll share the RStudio Classroom link in Chat 🔗\nHowever, it’s okay to use other RStudio infrastructure \n\nStart a new project in RStudio Cloud Classroom 📁\n\nWith the https link to your repo \n\nInstall the {devtools} package ⏬\nUse devtools::install_dev_deps() to install all necessary packages"
+    "text": "RStudio Cloud Setup\n\n\nSetup\n\n\n\n\nWe recommend using RStudio Cloud for ease of use ☁️\n\nWe’ll share the RStudio Classroom link in Chat 🔗\nHowever, it’s okay to use other RStudio infrastructure \n\nStart a new project in RStudio Cloud 📁\n\nWith the https link to your repo \n\nInstall the {devtools} package ⏬\nUse devtools::install_dev_deps() to install all necessary packages"
   },
   {
     "objectID": "index.html#link-github-and-rstudio",
     "href": "index.html#link-github-and-rstudio",
     "title": "CI/CD Workshop for R Packages",
     "section": "Link GitHub and RStudio",
-    "text": "Link GitHub and RStudio\n\n\nSetup\n\n\n\n\nInit your git credentials on your project 🔐\n\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"youremail@yourdomain.com\"\n\nUse the Git tab to switch to the devel branch"
+    "text": "Link GitHub and RStudio\n\n\nSetup\n\n\n\n\nInitialize your git credentials 🔐\ngit config --global user.name \"Your GitHub username\"\ngit config --global user.email \"your@email.id\"\nUse the Git tab to switch to the devel branch 🎛"
   },
   {
     "objectID": "index.html#link-github-and-rstudio-1",

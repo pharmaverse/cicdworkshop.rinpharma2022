@@ -454,7 +454,7 @@
 <li class="fragment">Copy the template to your personal account on GitHub <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:purple;overflow:visible;position:relative;"><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"></path></svg></li>
 <li class="fragment">Mark your repository as public (private repos will cost you money) <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144v48H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64H144V144z"></path></svg></li>
 </ul></li>
-<li class="fragment">Create a new branch called <code>devel</code> 🪵</li>
+<li class="fragment">Create a new branch called <code>devel</code> within GitHub 🪵</li>
 <li class="fragment">Set up a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> 🔑</li>
 </ul>
 </div>
@@ -473,7 +473,7 @@
 <li class="fragment">We’ll share the RStudio Classroom link in Chat 🔗</li>
 <li class="fragment">However, it’s okay to use other RStudio infrastructure <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM344 152c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm96-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zM344 408c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm104-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"></path></svg></li>
 </ul></li>
-<li class="fragment">Start a new project in RStudio Cloud Classroom 📁
+<li class="fragment">Start a new project in RStudio Cloud 📁
 <ul>
 <li class="fragment">With the <code>https</code> link to your repo <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:indigo;overflow:visible;position:relative;"><path d="M64 464H288C296.8 464 304 456.8 304 448V384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224C0 188.7 28.65 160 64 160H128V208H64C55.16 208 48 215.2 48 224V448C48 456.8 55.16 464 64 464zM160 64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224C188.7 352 160 323.3 160 288V64zM224 304H448C456.8 304 464 296.8 464 288V64C464 55.16 456.8 48 448 48H224C215.2 48 208 55.16 208 64V288C208 296.8 215.2 304 224 304z"></path></svg></li>
 </ul></li>
@@ -491,12 +491,10 @@
 </div>
 <div>
 <ul>
-<li class="fragment">Init your <code>git</code> credentials on your project 🔐
-<ul>
-<li class="fragment"><code>git config --global user.name "Your Name"</code></li>
-<li class="fragment"><code>git config --global user.email "youremail@yourdomain.com"</code></li>
-</ul></li>
-<li class="fragment">Use the <code>Git</code> tab to switch to the <code>devel</code> branch</li>
+<li class="fragment"><p>Initialize your <code>git</code> credentials 🔐</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your GitHub username"</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email.id"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>Use the <code>Git</code> tab to switch to the <code>devel</code> branch 🎛</p></li>
 </ul>
 </div>
 </section>
@@ -521,58 +519,58 @@
 </section>
 <section id="the-r-package-for-the-workshop" class="slide level2">
 <h2>The R Package for the Workshop</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">Type</span><span class="kw">:</span><span class="at"> Package</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> cicdworkshop</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> Demo Package for R/Pharma CI/CD Workshop</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.1</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="at">    person("Open", "Source", , "osauthor@noreply.pharmaverse.com", role = c("aut", "cre"))</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> Intended to demo CI/CD pipelines on GitHub.</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> Apache License (&gt;= 2)</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">URL</span><span class="kw">:</span><span class="at"> https://pharmaverse.github.io/cicdworkshop.rinpharma2022</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">Depends</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="at">    R (&gt;= 3.5)</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">Imports</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="at">    lifecycle</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">Suggests</span><span class="kw">:</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="at">    covr,</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="at">    devtools,</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="at">    knitr,</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="at">    lintr,</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="at">    pkgdown,</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="at">    rmarkdown,</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="at">    roxygen2,</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="at">    spelling,</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="at">    styler,</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="at">    testthat</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">VignetteBuilder</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="at">    knitr</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">Language</span><span class="kw">:</span><span class="at"> en-US</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">Type</span><span class="kw">:</span><span class="at"> Package</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> cicdworkshop</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> Demo Package for R/Pharma CI/CD Workshop</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.1</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="at">    person("Open", "Source", , "osauthor@noreply.pharmaverse.com", role = c("aut", "cre"))</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> Intended to demo CI/CD pipelines on GitHub.</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> Apache License (&gt;= 2)</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">URL</span><span class="kw">:</span><span class="at"> https://pharmaverse.github.io/cicdworkshop.rinpharma2022</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">Depends</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="at">    R (&gt;= 3.5)</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="fu">Imports</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="at">    lifecycle</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="fu">Suggests</span><span class="kw">:</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="at">    covr,</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="at">    devtools,</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="at">    knitr,</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="at">    lintr,</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="at">    pkgdown,</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="at">    rmarkdown,</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="at">    roxygen2,</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="at">    spelling,</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="at">    styler,</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="at">    testthat</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="fu">VignetteBuilder</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="at">    knitr</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="fu">Language</span><span class="kw">:</span><span class="at"> en-US</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="the-r-package-for-the-workshop-1" class="slide level2">
 <h2>The R Package for the Workshop</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">..</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">├──</span> DESCRIPTION</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">├──</span> LICENSE.md</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="ex">├──</span> NAMESPACE</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">├──</span> NEWS.md</span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="ex">├──</span> R</span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="ex">│</span>   ├── cicdworkshop-package.R</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">│</span>   └── hello.R</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">├──</span> README.md</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">├──</span> _pkgdown.yml</span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">├──</span> cicdworkshop.Rproj</span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">├──</span> inst</span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="ex">│</span>   └── WORDLIST</span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">├──</span> man</span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">│</span>   ├── cicdworkshop-package.Rd</span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">│</span>   └── hello.Rd</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="ex">└──</span> tests</span>
-<span id="cb2-18"><a href="#cb2-18"></a>    <span class="ex">├──</span> testthat</span>
-<span id="cb2-19"><a href="#cb2-19"></a>    <span class="ex">└──</span> testthat.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">..</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">├──</span> DESCRIPTION</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">├──</span> LICENSE.md</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">├──</span> NAMESPACE</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">├──</span> NEWS.md</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="ex">├──</span> R</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="ex">│</span>   ├── cicdworkshop-package.R</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">│</span>   └── hello.R</span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">├──</span> README.md</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">├──</span> _pkgdown.yml</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="ex">├──</span> cicdworkshop.Rproj</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="ex">├──</span> inst</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="ex">│</span>   └── WORDLIST</span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="ex">├──</span> man</span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="ex">│</span>   ├── cicdworkshop-package.Rd</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="ex">│</span>   └── hello.Rd</span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="ex">└──</span> tests</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    <span class="ex">├──</span> testthat</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="ex">└──</span> testthat.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="flow-for-workshop" class="slide level2">
 <h2>Flow for Workshop</h2>
@@ -676,23 +674,23 @@
 <p>1 <span style="opacity:0.25">2 3 4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> R CMD check</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="at">  </span><span class="fu">Check</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out repository</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> devtools::install_dev_deps()</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build package</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD build .</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check package</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD check --no-manual *.tar.gz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> R CMD check</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="fu">Check</span><span class="kw">:</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out repository</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> devtools::install_dev_deps()</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build package</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD build .</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check package</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> R CMD check --no-manual *.tar.gz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/r-cmd-check.yml">AdmiralCI’s R CMD Check Workflow</a></p>
 </div>
@@ -720,26 +718,26 @@
 <p><span style="opacity:0.25">1</span> 2 <span style="opacity:0.25">3 4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="fu">Links</span><span class="kw">:</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs in docs</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> lycheeverse/lychee-action@v1.5.1</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="at">          </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="at">          </span><span class="fu">jobSummary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="at">          </span><span class="fu">format</span><span class="kw">:</span><span class="at"> markdown</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="at">          </span><span class="fu">output</span><span class="kw">:</span><span class="at"> links-results.md</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="fu">          args</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a>            --exclude "https://github.com.*.git|lycheeverse.*"</span>
-<span id="cb4-19"><a href="#cb4-19"></a>            --no-progress **/*.md **/*.Rmd</span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> </span><span class="st">"${{ secrets.GITHUB_TOKEN }}"</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="at">  </span><span class="fu">Links</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check URLs in docs</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> lycheeverse/lychee-action@v1.5.1</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="at">          </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="at">          </span><span class="fu">jobSummary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="at">          </span><span class="fu">format</span><span class="kw">:</span><span class="at"> markdown</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="at">          </span><span class="fu">output</span><span class="kw">:</span><span class="at"> links-results.md</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="fu">          args</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>            --exclude "https://github.com.*.git|lycheeverse.*"</span>
+<span id="cb5-19"><a href="#cb5-19"></a>            --no-progress **/*.md **/*.Rmd</span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> </span><span class="st">"${{ secrets.GITHUB_TOKEN }}"</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/links.yml">AdmiralCI’s Link Check Workflow</a></p>
 </div>
@@ -767,18 +765,18 @@
 <p><span style="opacity:0.25">1 2</span> 3 <span style="opacity:0.25">4 5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spellcheck</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="at">  </span><span class="fu">Spelling</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Spelling Check test</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> insightsengineering/r-spellcheck-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spellcheck</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="at">  </span><span class="fu">Spelling</span><span class="kw">:</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Spelling Check test</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> insightsengineering/r-spellcheck-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/spellcheck.yml">AdmiralCI’s Spellcheck Workflow</a></p>
 </div>
@@ -806,22 +804,22 @@
 <p><span style="opacity:0.25">1 2 3 4 5</span> 6 <span style="opacity:0.25">7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Style</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="at">  </span><span class="fu">Style</span><span class="kw">:</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install styler</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("styler")) install.packages("styler")</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run styler</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> styler::style_pkg(dry = "fail")</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Style</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">  </span><span class="fu">Style</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install styler</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("styler")) install.packages("styler")</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run styler</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> styler::style_pkg(dry = "fail")</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/style.yml">AdmiralCI’s <code>styler</code> Workflow</a></p>
 </div>
@@ -849,24 +847,24 @@
 <p><span style="opacity:0.25">1 2 3</span> 4 <span style="opacity:0.25">5 6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="at">  </span><span class="fu">Linter</span><span class="kw">:</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout Code</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">fetch-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">0</span><span class="kw">}</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> github/super-linter/slim@v4</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a><span class="at">          </span><span class="fu">VALIDATE_ALL_CODEBASE</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="at">          </span><span class="fu">VALIDATE_R</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="at">          </span><span class="fu">DEFAULT_BRANCH</span><span class="kw">:</span><span class="at"> ${{ github.event.repository.default_branch }}</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="at">          </span><span class="fu">LINTR_ERROR_ON_LINT</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="at">  </span><span class="fu">Linter</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout Code</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">fetch-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">0</span><span class="kw">}</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint Code Base</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> github/super-linter/slim@v4</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="at">          </span><span class="fu">VALIDATE_ALL_CODEBASE</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="at">          </span><span class="fu">VALIDATE_R</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="at">          </span><span class="fu">DEFAULT_BRANCH</span><span class="kw">:</span><span class="at"> ${{ github.event.repository.default_branch }}</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="at">          </span><span class="fu">LINTR_ERROR_ON_LINT</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/lintr.yml">AdmiralCI’s <code>lintr</code> Workflow</a></p>
 </div>
@@ -894,25 +892,25 @@
 <p><span style="opacity:0.25">1 2 3 4</span> 5 <span style="opacity:0.25">6 7 8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ROxygen</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="at">  </span><span class="fu">ManPages</span><span class="kw">:</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Roxygen check</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a>          git config --global --add safe.directory $(pwd)</span>
-<span id="cb8-14"><a href="#cb8-14"></a>          R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"</span>
-<span id="cb8-15"><a href="#cb8-15"></a>          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then</span>
-<span id="cb8-16"><a href="#cb8-16"></a>            echo "❌ Manual pages are NOT up-to-date ❌" &amp;&amp; exit 1</span>
-<span id="cb8-17"><a href="#cb8-17"></a>          fi</span>
-<span id="cb8-18"><a href="#cb8-18"></a>          echo "Manual pages are up-to-date 😇"</span>
-<span id="cb8-19"><a href="#cb8-19"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ROxygen</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="at">  </span><span class="fu">ManPages</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Roxygen check</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>          git config --global --add safe.directory $(pwd)</span>
+<span id="cb9-14"><a href="#cb9-14"></a>          R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"</span>
+<span id="cb9-15"><a href="#cb9-15"></a>          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then</span>
+<span id="cb9-16"><a href="#cb9-16"></a>            echo "❌ Manual pages are NOT up-to-date ❌" &amp;&amp; exit 1</span>
+<span id="cb9-17"><a href="#cb9-17"></a>          fi</span>
+<span id="cb9-18"><a href="#cb9-18"></a>          echo "Manual pages are up-to-date 😇"</span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/man-pages.yml">AdmiralCI’s <code>roxygen</code> Workflow</a></p>
 </div>
@@ -939,22 +937,22 @@
 <p><span style="opacity:0.25">1 2 3 4 5 6</span> 7 <span style="opacity:0.25">8</span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test Coverage</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]}</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="at">  </span><span class="fu">Coverage</span><span class="kw">:</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install covr</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("covr")) install.packages("covr")</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run coverage</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> covr::package_coverage(quiet = FALSE)</span></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test Coverage</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]}</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="at">  </span><span class="fu">Coverage</span><span class="kw">:</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install covr</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> if (!require("covr")) install.packages("covr")</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run coverage</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> covr::package_coverage(quiet = FALSE)</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/coverage.yml">AdmiralCI’s <code>covr</code> Workflow</a></p>
 </div>
@@ -986,26 +984,26 @@
 <p><span style="opacity:0.25">1 2 3 4 5 6 7</span> 8 <span style="opacity:0.25"></span></p>
 </div>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pkgdown</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="at">  </span><span class="fu">Generate</span><span class="kw">:</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build site</span></span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pkgdown::build_site_github_pages(install = TRUE, dest_dir = "public")</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub pages</span></span>
-<span id="cb10-16"><a href="#cb10-16"></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> github.event_name == 'push'</span></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v3</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="at">          </span><span class="fu">keep_files</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pkgdown</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'main'</span><span class="kw">]}</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="at">  </span><span class="fu">Generate</span><span class="kw">:</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"rocker/tidyverse:4.2.1"</span><span class="kw">}</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repo</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build site</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pkgdown::build_site_github_pages(install = TRUE, dest_dir = "public")</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> Rscript {0}</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub pages</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> github.event_name == 'push'</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v3</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="at">          </span><span class="fu">keep_files</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Advanced Usage: <a href="https://raw.githubusercontent.com/pharmaverse/admiralci/main/.github/workflows/pkgdown.yml">AdmiralCI’s <code>pkgdown</code> Workflow</a></p>
 </div>
