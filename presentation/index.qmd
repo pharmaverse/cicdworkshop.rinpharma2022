@@ -85,7 +85,7 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
 - Use GitHub Template from [CI/CD Workshop at R/Pharma conference 2022](https://github.com/pharmaverse/cicdworkshop.rinpharma2022) 
   - Copy the template to your personal account on GitHub `r fontawesome::fa("copy", "purple")`
   - Mark your repository as public (private repos will cost you money) `r fontawesome::fa("unlock", "blue")`
-- Create a new branch called `devel` 🪵
+- Create a new branch called `devel` within GitHub 🪵
 - Set up a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) 🔑
 :::
 
@@ -101,7 +101,7 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
 - We recommend using RStudio Cloud for ease of use ☁️
   - We'll share the RStudio Classroom link in Chat 🔗
   - However, it's okay to use other RStudio infrastructure `r fontawesome::fa("server", "white")`
-- Start a new project in RStudio Cloud Classroom 📁
+- Start a new project in RStudio Cloud 📁
   - With the `https` link to your repo `r fontawesome::fa("clone", "indigo")`
 - Install the `{devtools}` package ⏬
 - Use `devtools::install_dev_deps()` to install all necessary packages `r fontawesome::fa("book", "blue")`
@@ -116,10 +116,14 @@ This workshop aims to discuss and show you how to implement 8 **simple** CI/CD w
 :::
 
 ::: {.incremental}
-- Init your `git` credentials on your project 🔐
-  - `git config --global user.name "Your Name"`
-  - `git config --global user.email "youremail@yourdomain.com"`
-- Use the `Git` tab to switch to the `devel` branch
+- Initialize your `git` credentials 🔐
+
+  ```bash
+  git config --global user.name "Your GitHub username"
+  git config --global user.email "your@email.id"
+  ```
+
+- Use the `Git` tab to switch to the `devel` branch 🎛
 :::
 
 ## Link GitHub and RStudio
