@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "index.html#hello-cicd",
+    "href": "index.html#hello-cicd",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Hello CI/CD 👋",
+    "text": "Hello CI/CD 👋\n\nThis workshop aims to discuss and show you how to implement 8 simple CI/CD workflows for a bare bones R package 📦\n\n\nEmphasis on the simple and the bare bones 🦴\nWhich means that we can focus on the workflows 🎯"
+  },
+  {
+    "objectID": "index.html#what-to-expect-for-next-3-hours",
+    "href": "index.html#what-to-expect-for-next-3-hours",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "What to expect for next 3 hours?",
+    "text": "What to expect for next 3 hours?\n\n\n\nSetting up GitHub and RStudio (20 mins) 🎬\n\nTotally fine to sit back and watch the magic as well 🪄\n\nDiscussion on Flow of the Workshop (5 mins) 🌊\nDiscussion on why CI/CD is helpful for developing software and our background (10 mins) 💪\nWork through the 8 workflows 🏗\nBreak for 5 mins after every 2 worfklows ☕️"
+  },
+  {
+    "objectID": "index.html#preparation-for-the-workshop",
+    "href": "index.html#preparation-for-the-workshop",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Preparation for the Workshop",
+    "text": "Preparation for the Workshop\n\n\nSetup\n\n\n\n\nSet up GitHub to run our CI/CD checks through GitHub Actions \nSet up RStudio Cloud Classroom for both ease of access and setup \nQuick overview of the bare bones R package as our learning tool \nWe will do each step with you both for Setup and Workflows"
+  },
+  {
+    "objectID": "index.html#github-setup",
+    "href": "index.html#github-setup",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "GitHub Setup",
+    "text": "GitHub Setup\n\n\nSetup\n\n\n\n\nUse GitHub Template from CI/CD Workshop at R/Pharma conference 2022\n\nCopy the template to your personal account on GitHub \nMark your repository as public (private repos will cost you money) \n\nCreate a new branch called devel within GitHub 🪵\nSet up a Personal Access Token 🔑"
+  },
+  {
+    "objectID": "index.html#rstudio-cloud-setup",
+    "href": "index.html#rstudio-cloud-setup",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "RStudio Cloud Setup",
+    "text": "RStudio Cloud Setup\n\n\nSetup\n\n\n\n\nWe recommend using RStudio Cloud for ease of use ☁️\n\nWe’ll share the RStudio Classroom link in Chat 🔗\nHowever, it’s okay to use other RStudio infrastructure \n\nStart a new project in RStudio Cloud 📁\n\nWith the https link to your repo \n\nInstall the {devtools} package ⏬\nUse devtools::install_dev_deps() to install all necessary packages"
+  },
+  {
+    "objectID": "index.html#link-github-and-rstudio",
+    "href": "index.html#link-github-and-rstudio",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Link GitHub and RStudio",
+    "text": "Link GitHub and RStudio\n\n\nSetup\n\n\n\n\nInitialize your git credentials 🔐\ngit config --global user.name \"Your GitHub username\"\ngit config --global user.email \"your@email.id\"\nUse the Git tab to switch to the devel branch 🎛"
+  },
+  {
+    "objectID": "index.html#link-github-and-rstudio-1",
+    "href": "index.html#link-github-and-rstudio-1",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Link GitHub and RStudio",
+    "text": "Link GitHub and RStudio\n\n\nSetup\n\n\n\n\nCreate a test commit 🧪\n\nModify the README.md file by adding today’s date 📆\nClick on the Commit button > Stage README.md > Add a message 📜\nPush the commit to GitHub ⬆️\nVerify the was completed on GitHub (might need a refresh) 🔍"
+  },
+  {
+    "objectID": "index.html#the-r-package-for-the-workshop",
+    "href": "index.html#the-r-package-for-the-workshop",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "The R Package for the Workshop",
+    "text": "The R Package for the Workshop\nType: Package\nPackage: cicdworkshop\nTitle: Demo Package for R/Pharma CI/CD Workshop\nVersion: 0.0.1\nAuthors@R: \n    person(\"Open\", \"Source\", , \"osauthor@noreply.pharmaverse.com\", role = c(\"aut\", \"cre\"))\nDescription: Intended to demo CI/CD pipelines on GitHub.\nLicense: Apache License (>= 2)\nURL: https://pharmaverse.github.io/cicdworkshop.rinpharma2022\nDepends: \n    R (>= 3.5)\nImports: \n    lifecycle\nSuggests:\n    covr,\n    devtools,\n    knitr,\n    lintr,\n    pkgdown,\n    rmarkdown,\n    roxygen2,\n    spelling,\n    styler,\n    testthat\nVignetteBuilder: \n    knitr\nEncoding: UTF-8\nLanguage: en-US\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.2.1"
+  },
+  {
+    "objectID": "index.html#the-r-package-for-the-workshop-1",
+    "href": "index.html#the-r-package-for-the-workshop-1",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "The R Package for the Workshop",
+    "text": "The R Package for the Workshop\n..\n├── DESCRIPTION\n├── LICENSE.md\n├── NAMESPACE\n├── NEWS.md\n├── R\n│   └── hello.R\n├── README.md\n├── _pkgdown.yml\n├── inst\n│   └── WORDLIST\n├── man\n│   └── hello.Rd\n└── tests\n    ├── testthat\n    └── testthat.R"
+  },
+  {
+    "objectID": "index.html#flow-for-workshop",
+    "href": "index.html#flow-for-workshop",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Flow for Workshop",
+    "text": "Flow for Workshop\n\n\n\n\nflowchart TD\n  A(Discuss workflow <br> purpose) --> B(Create <br> workflow)\n  B --> C(Push <br> workflow)\n  C --> D(Observe <br> feedback)\n  D --> E(Address <br> feedback)\n  E --> F(Discuss <br> implementation)\n  F --> A"
+  },
+  {
+    "objectID": "index.html#why-use-cicd-for-a-r-package",
+    "href": "index.html#why-use-cicd-for-a-r-package",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Why use CI/CD for a R package?",
+    "text": "Why use CI/CD for a R package?\n\n\n\n\nMultiple Contributors on your R Package ⌨️\nUser base on multiple OSes and multiple R versions \nFaster turnaround on Pull Requests ☑️\n\n\n\n\n\nCatch issues (bugs) early on \nEnforce style conventions and preferences \nMeasure test coverage for new code \nKeep docs up-to-date"
+  },
+  {
+    "objectID": "index.html#the-8-workflows-well-implement",
+    "href": "index.html#the-8-workflows-well-implement",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "The 8 workflows we’ll implement",
+    "text": "The 8 workflows we’ll implement\n\n\n1 2 3 4 5 6 7 8\n\n\n\n\n\n\n\nR CMD Check     \nLink & URL Checks    \nSpelling Checks    \nLinter    \n\n\n\n\n\nManual Pages    \nCode Style    \nTest Coverage    \nPublishing a pkgdown site"
+  },
+  {
+    "objectID": "index.html#r-cmd-check",
+    "href": "index.html#r-cmd-check",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "R CMD Check ",
+    "text": "R CMD Check \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Package Build? \n\n\nCheck to make sure it runs on multiple versions of R\nCheck to make sure it runs on multiple snapshots of R packages\nCheck to make sure it runs on different OSes\nCheck integrity of code from contributors before you review the Pull Request"
+  },
+  {
+    "objectID": "index.html#r-cmd-check-workflow",
+    "href": "index.html#r-cmd-check-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "R CMD Check Workflow ",
+    "text": "R CMD Check Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: R CMD check\non:\n  pull_request: {branches: ['main']}\njobs:\n  Check:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n      - name: Install dependencies\n        run: devtools::install_dev_deps()\n        shell: Rscript {0}\n      - name: Build package\n        run: R CMD build .\n      - name: Check package\n        run: R CMD check --no-manual *.tar.gz\n\nAdvanced Usage: AdmiralCI’s R CMD Check Workflow"
+  },
+  {
+    "objectID": "index.html#link-url-checks",
+    "href": "index.html#link-url-checks",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Link & URL Checks ",
+    "text": "Link & URL Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks Links in your Package? \n\n\nCited resources for function development stay current and up to date\nInternal or External website updates cause link breakage\nContributors type in a link incorrectly"
+  },
+  {
+    "objectID": "index.html#link-check-workflow",
+    "href": "index.html#link-check-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Link Check Workflow ",
+    "text": "Link Check Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Check URLs\non:\n  pull_request: {branches: ['main']}\njobs:\n  Links:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Check URLs in docs\n        uses: lycheeverse/lychee-action@v1.5.1\n        with:\n          fail: true\n          jobSummary: true\n          format: markdown\n          output: links-results.md\n          args: >-\n            --exclude \"https://github.com.*.git|lycheeverse.*\"\n            --no-progress **/*.md **/*.Rmd\n        env: {GITHUB_TOKEN: \"${{ secrets.GITHUB_TOKEN }}\"}\n\nAdvanced Usage: AdmiralCI’s Link Check Workflow"
+  },
+  {
+    "objectID": "index.html#spelling-checks",
+    "href": "index.html#spelling-checks",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Spelling Checks ",
+    "text": "Spelling Checks \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the spelling in your package? \n\n\nIndustry-specific jargon and acronyms\nContributors speak different languages\nFocus on the important parts of a Pull Request"
+  },
+  {
+    "objectID": "index.html#spelling-workflow",
+    "href": "index.html#spelling-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Spelling Workflow ",
+    "text": "Spelling Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Spellcheck\non:\n  pull_request: {branches: ['main']}\njobs:\n  Spelling:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Run Spelling Check test\n        uses: insightsengineering/r-spellcheck-action@v2\n\nAdvanced Usage: AdmiralCI’s Spellcheck Workflow"
+  },
+  {
+    "objectID": "index.html#code-style",
+    "href": "index.html#code-style",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Code Style ",
+    "text": "Code Style \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks your Code Style in your Package? \n\n\nEnsures that everyone is using the same style guide\nThe code is more legible to developers who use the same guide\nPR reviews are faster when everyone is using the same style"
+  },
+  {
+    "objectID": "index.html#code-style-workflow",
+    "href": "index.html#code-style-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Code Style Workflow ",
+    "text": "Code Style Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Style\non:\n  pull_request: {branches: ['main']}\njobs:\n  Style:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install styler\n        run: if (!require(\"styler\")) install.packages(\"styler\")\n        shell: Rscript {0}\n      - name: Run styler\n        run: styler::style_pkg(dry = \"fail\")\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s styler Workflow"
+  },
+  {
+    "objectID": "index.html#linter",
+    "href": "index.html#linter",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Linter ",
+    "text": "Linter \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that runs a Linter in your Package? \n\n\nStatic code analysis can be performed without compiling the code\nPotential bugs can be discovered by the linter\nCode best practices are enforced by the linter"
+  },
+  {
+    "objectID": "index.html#linter-workflow",
+    "href": "index.html#linter-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Linter Workflow ",
+    "text": "Linter Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Lint Code Base\non:\n  pull_request: {branches: ['main']}\njobs:\n  Linter:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v3\n        with: {fetch-depth: 0}\n      - name: Lint Code Base\n        uses: github/super-linter/slim@v4\n        env:\n          VALIDATE_ALL_CODEBASE: false\n          VALIDATE_R: true\n          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          LINTR_ERROR_ON_LINT: true\n\nAdvanced Usage: AdmiralCI’s lintr Workflow"
+  },
+  {
+    "objectID": "index.html#manual-pages",
+    "href": "index.html#manual-pages",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Manual Pages ",
+    "text": "Manual Pages \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks your Manual pages in your Package? \n\n\nTo make sure that all documentation is up-to-date\nEnsure that checks run without errors and warnings\nMakes sure everyone is using the same version of {roxygen2}"
+  },
+  {
+    "objectID": "index.html#manual-pages-workflow",
+    "href": "index.html#manual-pages-workflow",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Manual Pages Workflow ",
+    "text": "Manual Pages Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: ROxygen\non:\n  pull_request: {branches: ['main']}\njobs:\n  ManPages:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Roxygen check\n        run: |\n          git config --global --add safe.directory $(pwd)\n          R -s -e \"roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))\"\n          if [[ -n `git status -s | grep -E \"man|DESCRIPTION\"` ]]; then\n            echo \"❌ Manual pages are NOT up-to-date ❌\" && exit 1\n          fi\n          echo \"Manual pages are up-to-date 😇\"\n        shell: bash\n\nAdvanced Usage: AdmiralCI’s roxygen Workflow"
+  },
+  {
+    "objectID": "index.html#test-coverage",
+    "href": "index.html#test-coverage",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Test Coverage ",
+    "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\n Why have a workflow that checks the Test Coverage in your Package? \n\n\nMost validation frameworks prefer higher code coverage\nBuilds user confidence by ensuring a social contract between devs and users"
+  },
+  {
+    "objectID": "index.html#test-coverage-1",
+    "href": "index.html#test-coverage-1",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Test Coverage ",
+    "text": "Test Coverage \n\n\n1 2 3 4 5 6 7 8\n\n\nname: Test Coverage\non:\n  pull_request: {branches: [main]}\njobs:\n  Coverage:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Install covr\n        run: if (!require(\"covr\")) install.packages(\"covr\")\n        shell: Rscript {0}\n      - name: Run coverage\n        run: covr::package_coverage(quiet = FALSE)\n        shell: Rscript {0}\n\nAdvanced Usage: AdmiralCI’s covr Workflow"
+  },
+  {
+    "objectID": "index.html#publishing-a-pkgdown-site",
+    "href": "index.html#publishing-a-pkgdown-site",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Publishing a pkgdown site ",
+    "text": "Publishing a pkgdown site \n\n\n1 2 3 4 5 6 7 8 \n\n\n Why have a workflow that publishes a website for your Package? \n\n\nProvides a specific destination for all your users\nEnsure that your internal documentation is in sync with external documentation\nGood documentation is like pizza 🍕:\n\nWhen it’s good, it’s good\nWhen it’s bad, it’s still better than nothing!"
+  },
+  {
+    "objectID": "index.html#publishing-a-pkgdown-site-1",
+    "href": "index.html#publishing-a-pkgdown-site-1",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "Publishing a pkgdown site ",
+    "text": "Publishing a pkgdown site \n\n\n1 2 3 4 5 6 7 8 \n\n\nname: pkgdown\non:\n  pull_request: {branches: ['main']}\n  push: {branches: ['main']}\njobs:\n  Generate:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Build site\n        run: pkgdown::build_site_github_pages(install = TRUE, dest_dir = \"public\")\n        shell: Rscript {0}\n      - name: Deploy to GitHub pages\n        if: github.event_name == 'push'\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          keep_files: true\n\nAdvanced Usage: AdmiralCI’s pkgdown Workflow"
+  },
+  {
+    "objectID": "index.html#we-got-8-whats-next",
+    "href": "index.html#we-got-8-whats-next",
+    "title": "CI/CD Workshop for R Packages",
+    "section": "We got 8! What’s next?",
+    "text": "We got 8! What’s next?\n\nFurther Reading\n\nGitHub Actions\nGitLab CI\n\nAdvanced Examples\n\nr-lib/actions\n{admiralci}\nDocker\n\nPresentation built with Quarto\n\n\n\n\n<CI-CD GitHub>"
+  }
+]
