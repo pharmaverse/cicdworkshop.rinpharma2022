@@ -1,4 +1,4 @@
-name: Publish Workshop Slides
+name: Publish Presentation Slides
 
 on:
   workflow_dispatch:
@@ -6,10 +6,8 @@ on:
     branches:
      - main
     paths:
+      - 'presentation/**'
       - 'workshop/**'
-
-env:
-  QUARTO_DIR: workshop
 
 jobs:
   publish:
@@ -19,6 +17,11 @@ jobs:
       image: rocker/tidyverse:latest
     permissions:
       contents: write
+    strategy:
+      matrix:
+        QUARTO_DIR:
+          - presentation
+          - workshop
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -26,11 +29,11 @@ jobs:
       - name: Render Quarto Project
         run: quarto render --output-dir _site
         shell: bash
-        working-directory: ${{ env.QUARTO_DIR }}
+        working-directory: ${{ matrix.QUARTO_DIR }}
 
       - name: Publish Project
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./${{ env.QUARTO_DIR }}/_site
-          destination_dir: ${{ env.QUARTO_DIR }}
+          publish_dir: ./${{ matrix.QUARTO_DIR }}/_site
+          destination_dir: ${{ matrix.QUARTO_DIR }}
