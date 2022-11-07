@@ -39,6 +39,9 @@
   <a class="nav-link" href="presentation/index.html">Presentation</a>
 </li>
 <li class="nav-item">
+  <a class="nav-link" href="workshop/index.html">Workshop</a>
+</li>
+<li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
 <li class="nav-item">
@@ -105,7 +108,7 @@ One or more words are misspelled in the <code>NEWS.md</code> file.
 <details><summary>
 Click here for the solution ✅
 </summary>
-The word <code>linked</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>. Fix the spelling first in the <code>NEWS.md</code> file. Next, simply run <code>spelling::update_wordlist(confirm=“Yes”)</code> to add technical jargon to the wordlist.
+The word <code>link</code> is misspelled as <code>linke</code> in <code>NEWS.md</code>. The word <code>strangephrase</code> should be <code>strange phrase</code> in <code>NEWS.md</code>. Fix the spelling first in the <code>NEWS.md</code> file. Next, simply run <code>spelling::update_wordlist(confirm=“Yes”)</code> to add technical jargon to the wordlist.
 </details>
 </div>
 <div class="section level3">
@@ -135,7 +138,7 @@ The issue is manifested in the <code>R/hello.R</code> file.
 <details><summary>
 Click here for the solution ✅
 </summary>
-Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/hello.R</code> file for the <code>linter_ex()</code> function. Run <code>styler::style_file(“R/hello.R”)</code> to fix style issues, if any. Then, run <code><a href="https://lintr.r-lib.org/reference/lint.html" class="external-link">lintr::lint_package()</a></code> iteratively to determine whether the issue has been resolved.
+Reduce the number of if statements to reduce the cyclomatic complexity in the <code>R/hello.R</code> file for the <code>linter_ex()</code> function. Run <code>styler::style_file(“R/hello.R”)</code> to fix style issues, if any. Then, run <code>lintr::lint_package()</code> iteratively to determine whether the issue has been resolved.
 </details>
 </div>
 <div class="section level3">
@@ -145,12 +148,12 @@ Reduce the number of if statements to reduce the cyclomatic complexity in the <c
 <details><summary>
 Click here for a hint 🔎
 </summary>
-Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()/code&gt; function.
-</code></details><p><br></p>
+Function documentation is not up-to-date for <code>R/cicdworkshop-package.R</code> and the <code>linter_ex()</code> function.
+</details><p><br></p>
 <details><summary>
 Click here for the solution ✅
 </summary>
-Simply run <code>roxygen2::roxygenize(‘.’, roclets = c(‘rd’, ‘collate’, ‘namespace’))</code> to automatically update all man pages.
+Simply run <code>roxygen2::roxygenize(‘.’, roclets = c(‘rd’, ‘collate’, ‘namespace’))</code> or <code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code> to automatically update all man pages.
 </details>
 </div>
 <div class="section level3">
@@ -164,7 +167,7 @@ Add a simple unit test for the <code>linter_ex()</code> function defined in the 
 </details><p><br></p>
 <details><summary>
 Click here for the solution ✅
-</summary><p>Run <code><a href="http://covr.r-lib.org/reference/package_coverage.html" class="external-link">covr::package_coverage()</a></code> to note the current code coverage.</p>
+</summary><p>Run <code>covr::package_coverage()</code> to note the current code coverage.</p>
 <p>In the <code>tests/testthat/test-hello.R</code> file, add the following test:</p>
 <pre>
 test_that("linter_ex is surprised", {
@@ -175,7 +178,7 @@ test_that("linter_ex is surprised", {
 })
 </pre>
 <p>Run tests locally by executing <code><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">devtools::test()</a></code> to make sure that the tests succeed.</p>
-Then, run <code><a href="http://covr.r-lib.org/reference/package_coverage.html" class="external-link">covr::package_coverage()</a></code> to see that the code coverage has increased.
+Then, run <code>covr::package_coverage()</code> to see that the code coverage has increased.
 </details>
 </div>
 <div class="section level3">
@@ -190,7 +193,7 @@ Update the <code>_pkgdown.yml</code> and add the <b>pkgdown</b> workflow.
 <details><summary>
 Click here for the solution ✅
 </summary>
-Update the <code>url</code> by replacing <code>pharmaverse</code> with your GitHub username.
+Update the <code>url</code> by replacing <code>pharmaverse</code> with your GitHub username and repository name.
 </details>
 </div>
 </div>
