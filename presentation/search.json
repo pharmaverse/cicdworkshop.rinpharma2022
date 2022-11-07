@@ -53,6 +53,13 @@
     "href": "index.html#other-notes",
     "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
     "section": "Other notes",
-    "text": "Other notes\nCover the basics of CI/CD.\nExplain the benefits of using CI/CD.\nHow do repetitive tasks get done automatically.\nFighting the limitations of CRAN, Checking in-house environments\nCI/CD for Assessment, validation.\nFrom a Pharma perspective, how does it do it.\nProblem, solution approach to the problem: Solutions per project. And as part of the solution, discuss features that were used?\n\n\n\n<CI-CD GitHub>"
+    "text": "Other notes\nCover the basics of CI/CD.\nExplain the benefits of using CI/CD.\nHow do repetitive tasks get done automatically.\nFighting the limitations of CRAN, Checking in-house environments\nCI/CD for Assessment, validation.\nFrom a Pharma perspective, how does it do it.\nProblem, solution approach to the problem: Solutions per project. And as part of the solution, discuss features that were used?"
+  },
+  {
+    "objectID": "index.html#from-cgp",
+    "href": "index.html#from-cgp",
+    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
+    "section": "From CGP",
+    "text": "From CGP\nIssue: People not re-running document and manuals / namespace being out of date solution: CICD test to re-run document and throw an error if git status is not clean\nIssue: CRAN limits runs to 10 minutes Solutions: Extract vignettes to “as-is” instead of being built on the fly. CICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)\nExtraction of long running unit tests into their own “extended” set of tests. CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes\nIssue Unit tests take a long while to run due to the need to compile code Solution Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version\nIssue: Need to give confidence that our package is reliable Solution: CICD “validation” job to create a small report that emulates the sort of validation reports that get made locally\nIssue: Need to ensure code works on internal servers Solution DockerFile that emulates internal servers + cicd job to ensure code works in it\nIssue: Need to ensure code works on CRAN Solution: Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible.\n\n\n\n<CI-CD GitHub>"
   }
 ]
