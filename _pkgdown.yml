@@ -8,8 +8,11 @@ news:
   cran_dates: true
 navbar:
   structure:
-    left: [presentation, reference, articles, news]
+    left: [presentation, workshop, reference, articles, news]
   components:
     presentation:
       text: Presentation
       href: presentation/index.html
+    workshop:
+      text: Workshop
+      href: workshop/index.html

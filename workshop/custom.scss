@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+
+$code-color: #ff2405;
+
+/*-- scss:rules --*/
+
+.reveal .slide-number {
+  color: $link-color;
+}
+
+.reveal .slides section .fragment.semi-fade-out {
+	opacity: 1;
+	visibility: inherit;
+
+	&.visible {
+		opacity: 0.25;
+		visibility: inherit;
+	}
+}
+
+.sectionhead {
+  font-size: 1em;
+  text-align: center;
+  color: $presentation-heading-color;
+  font-family: $presentation-heading-font;
+  background-color: $body-bg;
+  margin: 2px;
+  padding: 2px 2px 2px 2px;
+  width: 120px;
+  border-left: 5px solid;
+}
+
+.blackbox {
+  color: #000000;
+  background-color: transparent;
+  margin: 1px;
+  padding: 5px 2px 5px 2px;
+  height: 205px;
+  border: 2px solid;
+}
+
+.reveal pre.sourceCode code {
+    background-color: #fff;
+    padding: 6px 9px;
+    max-height: 550px;
+    white-space: pre;
+}

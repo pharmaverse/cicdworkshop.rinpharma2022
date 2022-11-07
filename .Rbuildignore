@@ -10,3 +10,4 @@ LICENSE.*
 ^cicdworkshop\.Rcheck$
 ^cicdworkshop.*\.tar\.gz$
 ^cicdworkshop.*\.tgz$
+^workshop$

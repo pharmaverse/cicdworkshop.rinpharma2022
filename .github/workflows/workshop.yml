@@ -1,4 +1,4 @@
-name: Publish Presentation Slides
+name: Publish Workshop Slides
 
 on:
   workflow_dispatch:
@@ -6,10 +6,10 @@ on:
     branches:
      - main
     paths:
-      - 'presentation/**'
+      - 'workshop/**'
 
 env:
-  QUARTO_DIR: presentation
+  QUARTO_DIR: workshop
 
 jobs:
   publish:
