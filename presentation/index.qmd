@@ -40,6 +40,25 @@ render_file <- function(filepath, language = "yaml") {
 * Continuous Integration (CI): Frequent merging of several small changes into a main branch
 * Continuous Delivery (CD): Repeatable deployment process when deciding to deploy
 
+CI/CD bridges the gaps between development and operation activities and teams by **enforcing automation** in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables
+
+::: footer
+[Wikipedia: CI/CD](https://en.wikipedia.org/wiki/CI/CD#cite_note-2)
+:::
+
+## Does it help?
+
+<div class="centre">
+![](automation.png)
+</div>
+
+::: {.incremental}
+- ...Yes!  Yes, it does!!
+:::
+
+::: footer
+[XKCD](https://xkcd.com/1319/)
+:::
 
 ## Why use CI/CD at all?
 
@@ -51,18 +70,40 @@ render_file <- function(filepath, language = "yaml") {
 - Measure test coverage for new code 
 - Keep docs up-to-date
 
-## What does CI/CD for R packages look like?
+## What could CI/CD for R packages look like?
 
-- Running tests and checks against R packages
-
+::: columns
+::: {.column width="45%"}
+::: {.incremental}
 1. Unit Tests 
 2. Link & URL Checks
 3. Spelling Checks
 4. Static Code Analysis
+
+:::
+:::
+
+::: {.column width="45%"}
+::: {.incremental}
 5. Manual Pages
 6. Code Style
 7. Test Coverage
 8. Publishing a pkgdown site
+
+<br>
+<br>
+
+We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
+:::
+:::
+:::
+
+<br>
+<br>
+
+::: {.incremental}
+
+:::
 
 ## Testing
 
