@@ -4,7 +4,14 @@
     "href": "index.html#what-is-cicd",
     "title": "CI/CD in the Pharmaverse",
     "section": "What is CI/CD?",
-    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy"
+    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy\n\nCI/CD bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables\n\nWikipedia: CI/CD"
+  },
+  {
+    "objectID": "index.html#does-it-help",
+    "href": "index.html#does-it-help",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Does it help?",
+    "text": "Does it help?\n\n\n\n\n\n…Yes! Yes, it does!!\n\n\n\nXKCD"
   },
   {
     "objectID": "index.html#why-use-cicd-at-all",
@@ -14,11 +21,11 @@
     "text": "Why use CI/CD at all?\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Pull Requests/Merge Requests\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date"
   },
   {
-    "objectID": "index.html#what-does-cicd-for-r-packages-look-like",
-    "href": "index.html#what-does-cicd-for-r-packages-look-like",
+    "objectID": "index.html#what-could-cicd-for-r-packages-look-like",
+    "href": "index.html#what-could-cicd-for-r-packages-look-like",
     "title": "CI/CD in the Pharmaverse",
-    "section": "What does CI/CD for R packages look like?",
-    "text": "What does CI/CD for R packages look like?\n\nRunning tests and checks against R packages\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\nManual Pages\nCode Style\nTest Coverage\nPublishing a pkgdown site"
+    "section": "What could CI/CD for R packages look like?",
+    "text": "What could CI/CD for R packages look like?\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\n\n\nManual Pages\nCode Style\nTest Coverage\nPublishing a pkgdown site\n\n \nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
     "objectID": "index.html#testing",

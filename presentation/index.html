@@ -401,6 +401,24 @@
 <li>Continuous Integration (CI): Frequent merging of several small changes into a main branch</li>
 <li>Continuous Delivery (CD): Repeatable deployment process when deciding to deploy</li>
 </ul>
+<p>CI/CD bridges the gaps between development and operation activities and teams by <strong>enforcing automation</strong> in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables</p>
+<div class="footer">
+<p><a href="https://en.wikipedia.org/wiki/CI/CD#cite_note-2">Wikipedia: CI/CD</a></p>
+</div>
+</section>
+<section id="does-it-help" class="slide level2">
+<h2>Does it help?</h2>
+<div class="centre">
+<p><img data-src="automation.png"></p>
+</div>
+<div>
+<ul>
+<li class="fragment">…Yes! Yes, it does!!</li>
+</ul>
+</div>
+<div class="footer">
+<p><a href="https://xkcd.com/1319/">XKCD</a></p>
+</div>
 </section>
 <section id="why-use-cicd-at-all" class="slide level2">
 <h2>Why use CI/CD at all?</h2>
@@ -414,21 +432,35 @@
 <li>Keep docs up-to-date</li>
 </ul>
 </section>
-<section id="what-does-cicd-for-r-packages-look-like" class="slide level2">
-<h2>What does CI/CD for R packages look like?</h2>
-<ul>
-<li>Running tests and checks against R packages</li>
-</ul>
+<section id="what-could-cicd-for-r-packages-look-like" class="slide level2">
+<h2>What could CI/CD for R packages look like?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div>
 <ol type="1">
-<li>Unit Tests</li>
-<li>Link &amp; URL Checks</li>
-<li>Spelling Checks</li>
-<li>Static Code Analysis</li>
-<li>Manual Pages</li>
-<li>Code Style</li>
-<li>Test Coverage</li>
-<li>Publishing a pkgdown site</li>
+<li class="fragment">Unit Tests</li>
+<li class="fragment">Link &amp; URL Checks</li>
+<li class="fragment">Spelling Checks</li>
+<li class="fragment">Static Code Analysis</li>
 </ol>
+</div>
+</div><div class="column" style="width:45%;">
+<div>
+<ol start="5" type="1">
+<li class="fragment">Manual Pages</li>
+<li class="fragment">Code Style</li>
+<li class="fragment">Test Coverage</li>
+<li class="fragment">Publishing a pkgdown site</li>
+</ol>
+<p><br> <br></p>
+<p>We just did all these in the R/Pharma Workshop: <a href="https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide">Intro to CI/CD for R Packages</a></p>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<div>
+
+</div>
 </section>
 <section id="testing" class="slide level2">
 <h2>Testing</h2>
