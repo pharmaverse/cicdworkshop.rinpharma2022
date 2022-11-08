@@ -76,15 +76,20 @@ CI/CD bridges the gaps between development and operation activities and teams by
 
 ## How does CI/CD help R packages?
 
+::: {.incremental}
 - Catch issues (bugs) early on 
 - User base on multiple OSes and multiple R versions
-- Faster turnaround on Pull Requests/Merge Requests
+- Faster turnaround on Code Review
 - Multiple Contributors on your R Package
 - Enforce style conventions and preferences 
 - Measure test coverage for new code 
 - Keep docs up-to-date
+- And we can just keep going!
+:::
 
-## What could CI/CD for R packages look like?
+## What could standard CI/CD for R packages look like?
+
+* Not all R packages are the same, but they are still pretty similar!
 
 ::: columns
 ::: {.column width="45%"}
@@ -103,21 +108,18 @@ CI/CD bridges the gaps between development and operation activities and teams by
 6. Code Style
 7. Test Coverage
 8. Publishing a pkgdown site
-
-<br>
-<br>
-
-We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
 :::
 :::
-:::
-
 <br>
 <br>
 
+::: {.column width="100%"}
 ::: {.incremental}
-
+* We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
 :::
+:::
+:::
+
 
 ## Testing
 
@@ -152,6 +154,8 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 - Links
   - [CDISC](https://www.cdisc.org/)
   - [https://github.com/pharmaverse/admiral](https://github.com/pharmaverse/admiral)
+- **Issue 1:**  Checking ADaM Template code
+- **Issue 2:**  Common CI/CD for family of packages
 :::
 
 ::: {.column width="25%"}
@@ -160,9 +164,57 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ::::
 
 
-## Check Templates
+## Issue 1: Check Templates
 
-For Admiral, how checking ADAM templates works and why it's needed.
+:::: {.columns}
+
+::: {.column width="50%"}
+- Create a reference files to build common ADaM datasets that shows users how to implement our functions
+- Way less text then a Vignette - Code is ready to go and build a dataset!
+- Where we store this code is not check by R-CMD.
+- How to ensure code stays up to date with deprecated functions or unforseen bugs get in?
+- CI/CD for the win!
+
+:::
+
+::: {.column width="50%"}
+![](templates.png)
+:::
+::::
+
+## CI/CD for Templates
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- After a Code Review the template code is executed
+- If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.
+
+:::
+
+::: {.column width="50%"}
+![](template_review.png)
+:::
+::::
+
+## Issue 2: Common CI/CD workflows to admiral extensions
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Create a reference files to build common ADaM datasets that shows users how to implement our functions
+- Way less text then a Vignette - Code is ready to go and build a dataset!
+- Where we store this code is not check by R-CMD.
+- How to ensure code stays up to date with deprecated functions or unforseen bugs get in?
+- CI/CD for the win!
+
+:::
+
+::: {.column width="50%"}
+![](templates.png)
+:::
+:::
+
 
 ## Need to give confidence that our package is reliable
 
