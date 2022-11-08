@@ -120,27 +120,6 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 :::
 
-
-## Testing
-
-### Unit Tests
-
-1. Unit Tests: 
-2. Test Coverage:
-3. Integration tests:
-
-## Static Code Analysis
-
-1. Linting
-2. Spell Check
-3. Link & URL Checks
-
-## Documentation
-
-1. Man pages
-2. pkgdown site
-
-
 # Case Study - admiral
 
 ## About admiral
@@ -368,3 +347,21 @@ DockerFile that emulates internal servers + cicd job to ensure code works in it
 
 Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version
 
+## Testing
+
+### Unit Tests
+
+1. Unit Tests: 
+2. Test Coverage:
+3. Integration tests:
+
+## Static Code Analysis
+
+1. Linting
+2. Spell Check
+3. Link & URL Checks
+
+## Documentation
+
+1. Man pages
+2. pkgdown site
