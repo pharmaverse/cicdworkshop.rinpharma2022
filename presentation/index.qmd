@@ -178,11 +178,30 @@ depending on the size of the data
 
 
 
-## Reducing the Vignette Runtime
+## Reducing the Test Suite Runtime
+<br/>
 
-Windows, Mac etc testing for CRAN compatibility
+```{r}
+#| eval: FALSE
+#| echo: TRUE 
+test_that("Some long running section", {
+  
+    skip_if_not(Sys.getenv("R_TEST_FULL") == "TRUE")
+    
+    # <rest of the test code>
+    
+})
+```
 
+<br/>
 
+```{bash}
+#| eval: FALSE
+#| echo: TRUE 
+on:
+  schedule:
+    - cron: '0 4 1,15 * *'
+```
 
 
 
