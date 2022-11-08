@@ -390,9 +390,6 @@
 <li>pkgdown site</li>
 </ol>
 </section>
-<section id="specific-use-cases" class="slide level2">
-<h2>Specific Use Cases <!-- As a section header --></h2>
-</section>
 <section id="check-templates" class="slide level2">
 <h2>Check Templates</h2>
 <p>For Admiral, how checking ADAM templates works and why it’s needed.</p>
@@ -405,10 +402,84 @@
 <h2>Shiny App Testing</h2>
 <p>How NEST run Shiny apps tests</p>
 </section>
-<section id="need-to-ensure-code-works-on-cran" class="slide level2">
-<h2>Need to ensure code works on CRAN</h2>
+<section>
+<section id="case-study---rbmi" class="title-slide slide level1 center">
+<h1>Case Study - RBMI</h1>
+<!--
+## 
+<div class="section-title">
+Case Study - RBMI
+</div>
+::: {.notes}
+An example of a manually constructed section title but looks like using a single "#" does the
+trick so probs able to just ignore this
+:::
+-->
+</section>
+<section id="about-rbmi" class="slide level2">
+<h2>About RBMI</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>Reference Based Multiple Imputation<br></li>
+<li>Implements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands<br></li>
+<li>Acknowledgements to Alessandro Noci, Marcel Wolbers &amp; Daniel Sabanes Bove<br></li>
+<li>Links
+<ul>
+<li><a href="https://arxiv.org/abs/2109.11162">https://arxiv.org/abs/2109.11162</a></li>
+<li><a href="https://github.com/insightsengineering/rbmi">https://github.com/insightsengineering/rbmi</a></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<p><img data-src="rbmi.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Key component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-development-problems" class="slide level2">
+<h2>Package Development Problems</h2>
+<p><br></p>
+<ul>
+<li>Installation takes &gt;3 minutes to compile STAN code</li>
+<li>Full test suite takes &gt;50 minutes to run</li>
+<li>Vignettes took &gt;5 minutes to run</li>
+<li>Need to release on in-house servers running legacy versions of R</li>
+<li>Many PR’s forgot to run <code>devtools::document()</code></li>
+<li>Many PR’s forgot to rebuild pkgdown site</li>
+</ul>
+<div class="centre">
+<p><img data-src="sad-emoji.png"></p>
+</div>
+<aside class="notes">
+<p>2 key issues that we are about to cover: - Need to get run times down to &lt;10 minutes - Need to ensure package works both on internal server and CRAN</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reducing-the-vignette-runtime" class="slide level2">
+<h2>Reducing the Vignette Runtime</h2>
 <p>Windows, Mac etc testing for CRAN compatibility</p>
-<p>Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible.</p>
 </section>
 <section id="need-to-ensure-code-works-on-internal-servers" class="slide level2">
 <h2>Need to ensure code works on internal servers</h2>
@@ -431,7 +502,7 @@
 <img src="https://avatars.githubusercontent.com/u/84541169" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>&lt;<a href="https://github.com/pharmaverse/cicdworkshop.rinpharma2022">CI-CD GitHub</a>&gt;</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

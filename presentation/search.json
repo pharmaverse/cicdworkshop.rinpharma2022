@@ -42,13 +42,6 @@
     "text": "Documentation\n\nMan pages\npkgdown site"
   },
   {
-    "objectID": "index.html#specific-use-cases",
-    "href": "index.html#specific-use-cases",
-    "title": "CI/CD in the Pharmaverse",
-    "section": "Specific Use Cases ",
-    "text": "Specific Use Cases"
-  },
-  {
     "objectID": "index.html#check-templates",
     "href": "index.html#check-templates",
     "title": "CI/CD in the Pharmaverse",
@@ -70,11 +63,25 @@
     "text": "Shiny App Testing\nHow NEST run Shiny apps tests"
   },
   {
-    "objectID": "index.html#need-to-ensure-code-works-on-cran",
-    "href": "index.html#need-to-ensure-code-works-on-cran",
+    "objectID": "index.html#about-rbmi",
+    "href": "index.html#about-rbmi",
     "title": "CI/CD in the Pharmaverse",
-    "section": "Need to ensure code works on CRAN",
-    "text": "Need to ensure code works on CRAN\nWindows, Mac etc testing for CRAN compatibility\nHave a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible."
+    "section": "About RBMI",
+    "text": "About RBMI\n\n\n\n\nReference Based Multiple Imputation\nImplements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands\nAcknowledgements to Alessandro Noci, Marcel Wolbers & Daniel Sabanes Bove\nLinks\n\nhttps://arxiv.org/abs/2109.11162\nhttps://github.com/insightsengineering/rbmi\n\n\n\n\n\n\n\nKey component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data"
+  },
+  {
+    "objectID": "index.html#package-development-problems",
+    "href": "index.html#package-development-problems",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Package Development Problems",
+    "text": "Package Development Problems\n\n\nInstallation takes >3 minutes to compile STAN code\nFull test suite takes >50 minutes to run\nVignettes took >5 minutes to run\nNeed to release on in-house servers running legacy versions of R\nMany PR’s forgot to run devtools::document()\nMany PR’s forgot to rebuild pkgdown site\n\n\n\n\n\n2 key issues that we are about to cover: - Need to get run times down to <10 minutes - Need to ensure package works both on internal server and CRAN"
+  },
+  {
+    "objectID": "index.html#reducing-the-vignette-runtime",
+    "href": "index.html#reducing-the-vignette-runtime",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Reducing the Vignette Runtime",
+    "text": "Reducing the Vignette Runtime\nWindows, Mac etc testing for CRAN compatibility"
   },
   {
     "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",
