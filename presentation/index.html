@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.189">
 
-  <title>CI/CD in the Pharmaverse</title>
+  <title>CI/CD in the {pharmaverse}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -389,7 +389,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">CI/CD in the Pharmaverse</h1>
+  <h1 class="title">CI/CD in the {pharmaverse}</h1>
   <p class="subtitle"></p><p>R/Pharma</p>
 <p>November 10th, 2022</p>
 <p>Ben Straub (GSK) &amp; Craig Gower-Page (Roche)</p><p></p>
@@ -402,8 +402,19 @@
 <li>Continuous Delivery (CD): Repeatable deployment process when deciding to deploy</li>
 </ul>
 <p>CI/CD bridges the gaps between development and operation activities and teams by <strong>enforcing automation</strong> in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="cicd.jpg"></p>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment"><img data-src="pharmaverse.png"></li>
+</ul>
+</div>
+</div>
+</div>
 <div class="footer">
-<p><a href="https://en.wikipedia.org/wiki/CI/CD#cite_note-2">Wikipedia: CI/CD</a></p>
+<p><a href="https://en.wikipedia.org/wiki/CI/CD#cite_note-2">Wikipedia: CI/CD</a> <a href="https://github.com/pharmaverse">{pharmaverse}</a></p>
 </div>
 </section>
 <section id="does-it-help" class="slide level2">
@@ -420,8 +431,8 @@
 <p><a href="https://xkcd.com/1319/">XKCD</a></p>
 </div>
 </section>
-<section id="why-use-cicd-at-all" class="slide level2">
-<h2>Why use CI/CD at all?</h2>
+<section id="how-does-cicd-help-r-packages" class="slide level2">
+<h2>How does CI/CD help R packages?</h2>
 <ul>
 <li>Catch issues (bugs) early on</li>
 <li>User base on multiple OSes and multiple R versions</li>
@@ -486,6 +497,30 @@
 <li>pkgdown site</li>
 </ol>
 </section>
+<section>
+<section id="case-study---admiral" class="title-slide slide level1 center">
+<h1>Case Study - admiral</h1>
+
+</section>
+<section id="about-admiral" class="slide level2">
+<h2>About admiral</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>To provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br></li>
+<li>ADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials</li>
+<li>Links
+<ul>
+<li><a href="https://www.cdisc.org/">CDISC</a></li>
+<li><a href="https://github.com/pharmaverse/admiral">https://github.com/pharmaverse/admiral</a></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<p><img data-src="hex-admiral.png"></p>
+</div>
+</div>
+</section>
 <section id="check-templates" class="slide level2">
 <h2>Check Templates</h2>
 <p>For Admiral, how checking ADAM templates works and why it’s needed.</p>
@@ -497,7 +532,7 @@
 <section id="shiny-app-testing" class="slide level2">
 <h2>Shiny App Testing</h2>
 <p>How NEST run Shiny apps tests</p>
-</section>
+</section></section>
 <section>
 <section id="case-study---rbmi" class="title-slide slide level1 center">
 <h1>Case Study - RBMI</h1>

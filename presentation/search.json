@@ -2,112 +2,119 @@
   {
     "objectID": "index.html#what-is-cicd",
     "href": "index.html#what-is-cicd",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "What is CI/CD?",
-    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy\n\nCI/CD bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables\n\nWikipedia: CI/CD"
+    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy\n\nCI/CD bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables\n\n\n\n\n\n\n\n\n\n\n\n\nWikipedia: CI/CD {pharmaverse}"
   },
   {
     "objectID": "index.html#does-it-help",
     "href": "index.html#does-it-help",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Does it help?",
     "text": "Does it help?\n\n\n\n\n\n…Yes! Yes, it does!!\n\n\n\nXKCD"
   },
   {
-    "objectID": "index.html#why-use-cicd-at-all",
-    "href": "index.html#why-use-cicd-at-all",
-    "title": "CI/CD in the Pharmaverse",
-    "section": "Why use CI/CD at all?",
-    "text": "Why use CI/CD at all?\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Pull Requests/Merge Requests\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date"
+    "objectID": "index.html#how-does-cicd-help-r-packages",
+    "href": "index.html#how-does-cicd-help-r-packages",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "How does CI/CD help R packages?",
+    "text": "How does CI/CD help R packages?\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Pull Requests/Merge Requests\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date"
   },
   {
     "objectID": "index.html#what-could-cicd-for-r-packages-look-like",
     "href": "index.html#what-could-cicd-for-r-packages-look-like",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "What could CI/CD for R packages look like?",
     "text": "What could CI/CD for R packages look like?\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\n\n\nManual Pages\nCode Style\nTest Coverage\nPublishing a pkgdown site\n\n \nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
     "objectID": "index.html#testing",
     "href": "index.html#testing",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Testing",
     "text": "Testing\nUnit Tests\n\nUnit Tests:\nTest Coverage:\nIntegration tests:"
   },
   {
     "objectID": "index.html#static-code-analysis",
     "href": "index.html#static-code-analysis",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Static Code Analysis",
     "text": "Static Code Analysis\n\nLinting\nSpell Check\nLink & URL Checks"
   },
   {
     "objectID": "index.html#documentation",
     "href": "index.html#documentation",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Documentation",
     "text": "Documentation\n\nMan pages\npkgdown site"
   },
   {
+    "objectID": "index.html#about-admiral",
+    "href": "index.html#about-admiral",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "About admiral",
+    "text": "About admiral\n\n\n\n\nTo provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.\nADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials\nLinks\n\nCDISC\nhttps://github.com/pharmaverse/admiral"
+  },
+  {
     "objectID": "index.html#check-templates",
     "href": "index.html#check-templates",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Check Templates",
     "text": "Check Templates\nFor Admiral, how checking ADAM templates works and why it’s needed."
   },
   {
     "objectID": "index.html#need-to-give-confidence-that-our-package-is-reliable",
     "href": "index.html#need-to-give-confidence-that-our-package-is-reliable",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Need to give confidence that our package is reliable",
     "text": "Need to give confidence that our package is reliable\nCICD “validation” job to create a small report that emulates the sort of validation reports that get made locally"
   },
   {
     "objectID": "index.html#shiny-app-testing",
     "href": "index.html#shiny-app-testing",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Shiny App Testing",
     "text": "Shiny App Testing\nHow NEST run Shiny apps tests"
   },
   {
     "objectID": "index.html#about-rbmi",
     "href": "index.html#about-rbmi",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "About RBMI",
     "text": "About RBMI\n\n\n\n\nReference Based Multiple Imputation\nImplements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands\nAcknowledgements to Alessandro Noci, Marcel Wolbers & Daniel Sabanes Bove\nLinks\n\nhttps://arxiv.org/abs/2109.11162\nhttps://github.com/insightsengineering/rbmi\n\n\n\n\n\n\n\nKey component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data"
   },
   {
     "objectID": "index.html#package-development-problems",
     "href": "index.html#package-development-problems",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Package Development Problems",
     "text": "Package Development Problems\n\n\nInstallation takes >3 minutes to compile STAN code\nFull test suite takes >50 minutes to run\nVignettes took >5 minutes to run\nNeed to release on in-house servers running legacy versions of R\nMany PR’s forgot to run devtools::document()\nMany PR’s forgot to rebuild pkgdown site\n\n\n\n\n\n2 key issues that we are about to cover: - Need to get run times down to <10 minutes - Need to ensure package works both on internal server and CRAN"
   },
   {
     "objectID": "index.html#reducing-the-test-suite-runtime",
     "href": "index.html#reducing-the-test-suite-runtime",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Reducing the Test Suite Runtime",
     "text": "Reducing the Test Suite Runtime\n\ntest_that(\"Some long running section\", {\n  \n    skip_if_not(Sys.getenv(\"R_TEST_FULL\") == \"TRUE\")\n    \n    # <rest of the test code>\n    \n})\n\non:\n  schedule:\n    - cron: '0 4 1,15 * *'"
   },
   {
     "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",
     "href": "index.html#need-to-ensure-code-works-on-internal-servers",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Need to ensure code works on internal servers",
     "text": "Need to ensure code works on internal servers\nDockerFile that emulates internal servers + cicd job to ensure code works in it"
   },
   {
     "objectID": "index.html#cran-limits-runs-to-10-minutes",
     "href": "index.html#cran-limits-runs-to-10-minutes",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "CRAN limits runs to 10 minutes",
     "text": "CRAN limits runs to 10 minutes\n\nExtract vignettes to “as-is” instead of being built on the fly\nCICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)\nExtraction of long running unit tests into their own “extended” set of tests\nCRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes"
   },
   {
     "objectID": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
     "href": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
-    "title": "CI/CD in the Pharmaverse",
+    "title": "CI/CD in the {pharmaverse}",
     "section": "Unit tests take a long while to run due to the need to compile code",
     "text": "Unit tests take a long while to run due to the need to compile code\nCache the src/ directory so that it is restored on each run (cache done separately per OS / R-version\n\n\n\n<CI-CD GitHub>"
   }
