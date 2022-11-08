@@ -466,7 +466,7 @@
 <ol start="5" type="1">
 <li class="fragment">Manual Pages</li>
 <li class="fragment">Code Style</li>
-<li class="fragment">Test Coverage</li>
+<li class="fragment">R-CMD check</li>
 <li class="fragment">Publishing a pkgdown site</li>
 </ol>
 </div>
@@ -514,7 +514,7 @@
 <div class="columns">
 <div class="column" style="width:75%;">
 <ul>
-<li>To provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br></li>
+<li>Provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br></li>
 <li>ADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials</li>
 <li>Links
 <ul>
@@ -522,7 +522,7 @@
 <li><a href="https://github.com/pharmaverse/admiral">https://github.com/pharmaverse/admiral</a></li>
 </ul></li>
 <li><strong>Issue 1:</strong> Checking ADaM Template code</li>
-<li><strong>Issue 2:</strong> Common CI/CD for family of packages</li>
+<li><strong>Issue 2:</strong> Common CI/CD for the admiral family of packages</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <p><img data-src="hex-admiral.png"></p>
@@ -532,14 +532,18 @@
 <section id="issue-1-check-templates" class="slide level2">
 <h2>Issue 1: Check Templates</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
+<div>
 <ul>
-<li>Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
-<li>Way less text then a Vignette - Code is ready to go and build a dataset!</li>
-<li>Where we store this code is not check by R-CMD.</li>
-<li>How to ensure code stays up to date with deprecated functions or unforseen bugs get in?</li>
-<li>CI/CD for the win!</li>
+<li class="fragment">Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
+<li class="fragment">Way less text then a Vignette - Code is ready to go and build a dataset!</li>
+<li class="fragment">Where we store this code is not check by R-CMD.</li>
+<li class="fragment">How to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?</li>
+<li class="fragment">CI/CD for the win!</li>
 </ul>
+</div>
+</div><div class="column" style="width:10%;">
+
 </div><div class="column" style="width:50%;">
 <p><img data-src="templates.png"></p>
 </div>
@@ -558,19 +562,37 @@
 </div>
 </div>
 </section>
-<section id="issue-2-common-cicd-workflows-to-admiral-extensions" class="slide level2">
-<h2>Issue 2: Common CI/CD workflows to admiral extensions</h2>
+<section id="issue-2-admiral-upstream-and-downstream-dependencies" class="slide level2">
+<h2>Issue 2: admiral upstream and downstream dependencies</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 <ul>
-<li>Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
-<li>Way less text then a Vignette - Code is ready to go and build a dataset!</li>
-<li>Where we store this code is not check by R-CMD.</li>
-<li>How to ensure code stays up to date with deprecated functions or unforseen bugs get in?</li>
-<li>CI/CD for the win!</li>
+<li>As you can imagine there can be a lot of different types of ADaMs!</li>
+<li>Extension packages focus on specific disease areas like oncology</li>
+<li>The admiral family has a package for developers, template R package repo, dummy data</li>
+<li>Eek!! How to keep this all in line!</li>
 </ul>
+</div><div class="column" style="width:10%;">
+
 </div><div class="column" style="width:50%;">
-<p><img data-src="templates.png"></p>
+<p><img data-src="admiralext.png"></p>
+</div>
+</div>
+</section>
+<section id="issue-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies" class="slide level2">
+<h2>Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>As you can imagine there can be a lot of different types of ADaMs!</li>
+<li>Extension packages focus on specific disease areas like oncology</li>
+<li>The admiral family has a package for developers, template R package repo, dummy data</li>
+<li>Eek!! How to keep this all in line!</li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:50%;">
+<p><img data-src="admiralci.png"></p>
 </div>
 </div>
 </section>
