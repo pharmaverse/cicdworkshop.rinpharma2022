@@ -77,11 +77,11 @@
     "text": "Package Development Problems\n\n\nInstallation takes >3 minutes to compile STAN code\nFull test suite takes >50 minutes to run\nVignettes took >5 minutes to run\nNeed to release on in-house servers running legacy versions of R\nMany PR’s forgot to run devtools::document()\nMany PR’s forgot to rebuild pkgdown site\n\n\n\n\n\n2 key issues that we are about to cover: - Need to get run times down to <10 minutes - Need to ensure package works both on internal server and CRAN"
   },
   {
-    "objectID": "index.html#reducing-the-vignette-runtime",
-    "href": "index.html#reducing-the-vignette-runtime",
+    "objectID": "index.html#reducing-the-test-suite-runtime",
+    "href": "index.html#reducing-the-test-suite-runtime",
     "title": "CI/CD in the Pharmaverse",
-    "section": "Reducing the Vignette Runtime",
-    "text": "Reducing the Vignette Runtime\nWindows, Mac etc testing for CRAN compatibility"
+    "section": "Reducing the Test Suite Runtime",
+    "text": "Reducing the Test Suite Runtime\n\ntest_that(\"Some long running section\", {\n  \n    skip_if_not(Sys.getenv(\"R_TEST_FULL\") == \"TRUE\")\n    \n    # <rest of the test code>\n    \n})\n\non:\n  schedule:\n    - cron: '0 4 1,15 * *'"
   },
   {
     "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",
