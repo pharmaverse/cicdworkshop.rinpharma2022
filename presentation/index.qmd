@@ -1,5 +1,5 @@
 ---
-title: "CI/CD in the Pharmaverse"
+title: "CI/CD in the {pharmaverse}"
 subtitle: |
   R/Pharma
 
@@ -35,15 +35,29 @@ render_file <- function(filepath, language = "yaml") {
 }
 ```
 
-## What is CI/CD?
+## What is CI/CD? 
 
 * Continuous Integration (CI): Frequent merging of several small changes into a main branch
 * Continuous Delivery (CD): Repeatable deployment process when deciding to deploy
 
 CI/CD bridges the gaps between development and operation activities and teams by **enforcing automation** in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables
 
+::: columns
+::: {.column width="50%"}
+![](cicd.jpg)
+
+:::
+
+::: {.column width="50%"}
+::: {.incremental}
+- ![](pharmaverse.png)
+:::
+:::
+:::
+
+
 ::: footer
-[Wikipedia: CI/CD](https://en.wikipedia.org/wiki/CI/CD#cite_note-2)
+[Wikipedia: CI/CD](https://en.wikipedia.org/wiki/CI/CD#cite_note-2) [{pharmaverse}](https://github.com/pharmaverse)
 :::
 
 ## Does it help?
@@ -60,7 +74,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 [XKCD](https://xkcd.com/1319/)
 :::
 
-## Why use CI/CD at all?
+## How does CI/CD help R packages?
 
 - Catch issues (bugs) early on 
 - User base on multiple OSes and multiple R versions
@@ -125,9 +139,25 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 2. pkgdown site
 
 
+# Case Study - admiral
 
+## About admiral
+<br/>
 
+:::: {.columns}
 
+::: {.column width="75%"}
+- To provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br/>
+- ADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials
+- Links
+  - [CDISC](https://www.cdisc.org/)
+  - [https://github.com/pharmaverse/admiral](https://github.com/pharmaverse/admiral)
+:::
+
+::: {.column width="25%"}
+![](hex-admiral.png)
+:::
+::::
 
 
 ## Check Templates
