@@ -28,27 +28,6 @@
     "text": "What could standard CI/CD for R packages look like?\n\nNot all R packages are the same, but they are still pretty similar!\n\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n\n \n\n\nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
-    "objectID": "index.html#testing",
-    "href": "index.html#testing",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Testing",
-    "text": "Testing\nUnit Tests\n\nUnit Tests:\nTest Coverage:\nIntegration tests:"
-  },
-  {
-    "objectID": "index.html#static-code-analysis",
-    "href": "index.html#static-code-analysis",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Static Code Analysis",
-    "text": "Static Code Analysis\n\nLinting\nSpell Check\nLink & URL Checks"
-  },
-  {
-    "objectID": "index.html#documentation",
-    "href": "index.html#documentation",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Documentation",
-    "text": "Documentation\n\nMan pages\npkgdown site"
-  },
-  {
     "objectID": "index.html#about-admiral",
     "href": "index.html#about-admiral",
     "title": "CI/CD in the {pharmaverse}",
@@ -137,6 +116,27 @@
     "href": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Unit tests take a long while to run due to the need to compile code",
-    "text": "Unit tests take a long while to run due to the need to compile code\nCache the src/ directory so that it is restored on each run (cache done separately per OS / R-version\n\n\n\n<CI-CD GitHub>"
+    "text": "Unit tests take a long while to run due to the need to compile code\nCache the src/ directory so that it is restored on each run (cache done separately per OS / R-version"
+  },
+  {
+    "objectID": "index.html#testing",
+    "href": "index.html#testing",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Testing",
+    "text": "Testing\nUnit Tests\n\nUnit Tests:\nTest Coverage:\nIntegration tests:"
+  },
+  {
+    "objectID": "index.html#static-code-analysis",
+    "href": "index.html#static-code-analysis",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Static Code Analysis",
+    "text": "Static Code Analysis\n\nLinting\nSpell Check\nLink & URL Checks"
+  },
+  {
+    "objectID": "index.html#documentation",
+    "href": "index.html#documentation",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Documentation",
+    "text": "Documentation\n\nMan pages\npkgdown site\n\n\n\n\n<CI-CD GitHub>"
   }
 ]
