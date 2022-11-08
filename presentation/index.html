@@ -433,18 +433,24 @@
 </section>
 <section id="how-does-cicd-help-r-packages" class="slide level2">
 <h2>How does CI/CD help R packages?</h2>
+<div>
 <ul>
-<li>Catch issues (bugs) early on</li>
-<li>User base on multiple OSes and multiple R versions</li>
-<li>Faster turnaround on Pull Requests/Merge Requests</li>
-<li>Multiple Contributors on your R Package</li>
-<li>Enforce style conventions and preferences</li>
-<li>Measure test coverage for new code</li>
-<li>Keep docs up-to-date</li>
+<li class="fragment">Catch issues (bugs) early on</li>
+<li class="fragment">User base on multiple OSes and multiple R versions</li>
+<li class="fragment">Faster turnaround on Code Review</li>
+<li class="fragment">Multiple Contributors on your R Package</li>
+<li class="fragment">Enforce style conventions and preferences</li>
+<li class="fragment">Measure test coverage for new code</li>
+<li class="fragment">Keep docs up-to-date</li>
+<li class="fragment">And we can just keep going!</li>
 </ul>
+</div>
 </section>
-<section id="what-could-cicd-for-r-packages-look-like" class="slide level2">
-<h2>What could CI/CD for R packages look like?</h2>
+<section id="what-could-standard-cicd-for-r-packages-look-like" class="slide level2">
+<h2>What could standard CI/CD for R packages look like?</h2>
+<ul>
+<li>Not all R packages are the same, but they are still pretty similar!</li>
+</ul>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div>
@@ -463,14 +469,14 @@
 <li class="fragment">Test Coverage</li>
 <li class="fragment">Publishing a pkgdown site</li>
 </ol>
-<p><br> <br></p>
-<p>We just did all these in the R/Pharma Workshop: <a href="https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide">Intro to CI/CD for R Packages</a></p>
 </div>
-</div>
-</div>
-<p><br> <br></p>
+</div><p><br> <br></p><div class="column" style="width:100%;">
 <div>
-
+<ul>
+<li class="fragment">We just did all these in the R/Pharma Workshop: <a href="https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide">Intro to CI/CD for R Packages</a></li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <section id="testing" class="slide level2">
@@ -515,15 +521,58 @@
 <li><a href="https://www.cdisc.org/">CDISC</a></li>
 <li><a href="https://github.com/pharmaverse/admiral">https://github.com/pharmaverse/admiral</a></li>
 </ul></li>
+<li><strong>Issue 1:</strong> Checking ADaM Template code</li>
+<li><strong>Issue 2:</strong> Common CI/CD for family of packages</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <p><img data-src="hex-admiral.png"></p>
 </div>
 </div>
 </section>
-<section id="check-templates" class="slide level2">
-<h2>Check Templates</h2>
-<p>For Admiral, how checking ADAM templates works and why it’s needed.</p>
+<section id="issue-1-check-templates" class="slide level2">
+<h2>Issue 1: Check Templates</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
+<li>Way less text then a Vignette - Code is ready to go and build a dataset!</li>
+<li>Where we store this code is not check by R-CMD.</li>
+<li>How to ensure code stays up to date with deprecated functions or unforseen bugs get in?</li>
+<li>CI/CD for the win!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="templates.png"></p>
+</div>
+</div>
+</section>
+<section id="cicd-for-templates" class="slide level2">
+<h2>CI/CD for Templates</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>After a Code Review the template code is executed</li>
+<li>If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="template_review.png"></p>
+</div>
+</div>
+</section>
+<section id="issue-2-common-cicd-workflows-to-admiral-extensions" class="slide level2">
+<h2>Issue 2: Common CI/CD workflows to admiral extensions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
+<li>Way less text then a Vignette - Code is ready to go and build a dataset!</li>
+<li>Where we store this code is not check by R-CMD.</li>
+<li>How to ensure code stays up to date with deprecated functions or unforseen bugs get in?</li>
+<li>CI/CD for the win!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="templates.png"></p>
+</div>
+</div>
 </section>
 <section id="need-to-give-confidence-that-our-package-is-reliable" class="slide level2">
 <h2>Need to give confidence that our package is reliable</h2>
