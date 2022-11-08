@@ -45,3 +45,28 @@ $code-color: #ff2405;
     max-height: 550px;
     white-space: pre;
 }
+
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  font-size: 60px;
+}
+
+
+.centre {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-top: 0.6em !important;
+}
+
+:root {
+  --r-main-font-size: 28px;
+}
+
