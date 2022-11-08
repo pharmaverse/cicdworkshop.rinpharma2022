@@ -2,64 +2,99 @@
   {
     "objectID": "index.html#what-is-cicd",
     "href": "index.html#what-is-cicd",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
+    "title": "CI/CD in the Pharmaverse",
     "section": "What is CI/CD?",
-    "text": "What is CI/CD?"
+    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy"
   },
   {
-    "objectID": "index.html#benefits-of-using-cicd",
-    "href": "index.html#benefits-of-using-cicd",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "Benefits of using CI/CD",
-    "text": "Benefits of using CI/CD\n\n\n\n\nMultiple Contributors on your R Package ⌨️\nUser base on multiple OSes and multiple R versions \nFaster turnaround on Pull Requests ☑️\n\n\n\n\n\nCatch issues (bugs) early on \nEnforce style conventions and preferences \nMeasure test coverage for new code \nKeep docs up-to-date"
+    "objectID": "index.html#why-use-cicd-at-all",
+    "href": "index.html#why-use-cicd-at-all",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Why use CI/CD at all?",
+    "text": "Why use CI/CD at all?\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Pull Requests/Merge Requests\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date"
   },
   {
-    "objectID": "index.html#use-cases-where-cicd-was-beneficial",
-    "href": "index.html#use-cases-where-cicd-was-beneficial",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "Use cases where CI/CD was beneficial",
-    "text": "Use cases where CI/CD was beneficial\nFor Admiral, NEST and RBMI."
+    "objectID": "index.html#what-does-cicd-for-r-packages-look-like",
+    "href": "index.html#what-does-cicd-for-r-packages-look-like",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "What does CI/CD for R packages look like?",
+    "text": "What does CI/CD for R packages look like?\n\nRunning tests and checks against R packages\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\nManual Pages\nCode Style\nTest Coverage\nPublishing a pkgdown site"
   },
   {
-    "objectID": "index.html#package-integrity-checks",
-    "href": "index.html#package-integrity-checks",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "Package Integrity Checks",
-    "text": "Package Integrity Checks\nCommon workflows\n\n\n\n\nUnit Tests     \nLink & URL Checks    \nSpelling Checks    \nStatic Code Analysis    \n\n\n\n\n\nManual Pages    \nCode Style    \nTest Coverage    \nPublishing a pkgdown site"
+    "objectID": "index.html#testing",
+    "href": "index.html#testing",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Testing",
+    "text": "Testing\nUnit Tests\n\nUnit Tests:\nTest Coverage:\nIntegration tests:"
+  },
+  {
+    "objectID": "index.html#static-code-analysis",
+    "href": "index.html#static-code-analysis",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Static Code Analysis",
+    "text": "Static Code Analysis\n\nLinting\nSpell Check\nLink & URL Checks"
+  },
+  {
+    "objectID": "index.html#documentation",
+    "href": "index.html#documentation",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Documentation",
+    "text": "Documentation\n\nMan pages\npkgdown site"
+  },
+  {
+    "objectID": "index.html#specific-use-cases",
+    "href": "index.html#specific-use-cases",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Specific Use Cases ",
+    "text": "Specific Use Cases"
   },
   {
     "objectID": "index.html#check-templates",
     "href": "index.html#check-templates",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
+    "title": "CI/CD in the Pharmaverse",
     "section": "Check Templates",
     "text": "Check Templates\nFor Admiral, how checking ADAM templates works and why it’s needed."
   },
   {
+    "objectID": "index.html#need-to-give-confidence-that-our-package-is-reliable",
+    "href": "index.html#need-to-give-confidence-that-our-package-is-reliable",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Need to give confidence that our package is reliable",
+    "text": "Need to give confidence that our package is reliable\nCICD “validation” job to create a small report that emulates the sort of validation reports that get made locally"
+  },
+  {
     "objectID": "index.html#shiny-app-testing",
     "href": "index.html#shiny-app-testing",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
+    "title": "CI/CD in the Pharmaverse",
     "section": "Shiny App Testing",
     "text": "Shiny App Testing\nHow NEST run Shiny apps tests"
   },
   {
-    "objectID": "index.html#cross-sytem-checks",
-    "href": "index.html#cross-sytem-checks",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "Cross-sytem checks",
-    "text": "Cross-sytem checks\nWindows, Mac etc testing for CRAN compatibility"
+    "objectID": "index.html#need-to-ensure-code-works-on-cran",
+    "href": "index.html#need-to-ensure-code-works-on-cran",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Need to ensure code works on CRAN",
+    "text": "Need to ensure code works on CRAN\nWindows, Mac etc testing for CRAN compatibility\nHave a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible."
   },
   {
-    "objectID": "index.html#other-notes",
-    "href": "index.html#other-notes",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "Other notes",
-    "text": "Other notes\nCover the basics of CI/CD.\nExplain the benefits of using CI/CD.\nHow do repetitive tasks get done automatically.\nFighting the limitations of CRAN, Checking in-house environments\nCI/CD for Assessment, validation.\nFrom a Pharma perspective, how does it do it.\nProblem, solution approach to the problem: Solutions per project. And as part of the solution, discuss features that were used?"
+    "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",
+    "href": "index.html#need-to-ensure-code-works-on-internal-servers",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Need to ensure code works on internal servers",
+    "text": "Need to ensure code works on internal servers\nDockerFile that emulates internal servers + cicd job to ensure code works in it"
   },
   {
-    "objectID": "index.html#from-cgp",
-    "href": "index.html#from-cgp",
-    "title": "How CI/CD Enhances the Development of R packages in the Pharmaverse",
-    "section": "From CGP",
-    "text": "From CGP\nIssue: People not re-running document and manuals / namespace being out of date solution: CICD test to re-run document and throw an error if git status is not clean\nIssue: CRAN limits runs to 10 minutes Solutions: Extract vignettes to “as-is” instead of being built on the fly. CICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)\nExtraction of long running unit tests into their own “extended” set of tests. CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes\nIssue Unit tests take a long while to run due to the need to compile code Solution Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version\nIssue: Need to give confidence that our package is reliable Solution: CICD “validation” job to create a small report that emulates the sort of validation reports that get made locally\nIssue: Need to ensure code works on internal servers Solution DockerFile that emulates internal servers + cicd job to ensure code works in it\nIssue: Need to ensure code works on CRAN Solution: Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible.\n\n\n\n<CI-CD GitHub>"
+    "objectID": "index.html#cran-limits-runs-to-10-minutes",
+    "href": "index.html#cran-limits-runs-to-10-minutes",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "CRAN limits runs to 10 minutes",
+    "text": "CRAN limits runs to 10 minutes\n\nExtract vignettes to “as-is” instead of being built on the fly\nCICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)\nExtraction of long running unit tests into their own “extended” set of tests\nCRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes"
+  },
+  {
+    "objectID": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
+    "href": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
+    "title": "CI/CD in the Pharmaverse",
+    "section": "Unit tests take a long while to run due to the need to compile code",
+    "text": "Unit tests take a long while to run due to the need to compile code\nCache the src/ directory so that it is restored on each run (cache done separately per OS / R-version\n\n\n\n<CI-CD GitHub>"
   }
 ]

@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.189">
 
-  <title>How CI/CD Enhances the Development of R packages in the Pharmaverse</title>
+  <title>CI/CD in the Pharmaverse</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">How CI/CD Enhances the Development of R packages in the Pharmaverse</h1>
+  <h1 class="title">CI/CD in the Pharmaverse</h1>
   <p class="subtitle"></p><p>R/Pharma</p>
 <p>November 10th, 2022</p>
 <p>Ben Straub (GSK) &amp; Craig Gower-Page (Roche)</p><p></p>
@@ -333,90 +333,99 @@
 
 <section id="what-is-cicd" class="slide level2">
 <h2>What is CI/CD?</h2>
-</section>
-<section id="benefits-of-using-cicd" class="slide level2">
-<h2>Benefits of using CI/CD</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div>
 <ul>
-<li class="fragment">Multiple Contributors on your R Package ⌨️</li>
-<li class="fragment">User base on multiple OSes and multiple R versions <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M144 160c-44.2 0-80-35.8-80-80S99.8 0 144 0s80 35.8 80 80s-35.8 80-80 80zm368 0c-44.2 0-80-35.8-80-80s35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM416 224c0 53-43 96-96 96s-96-43-96-96s43-96 96-96s96 43 96 96zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg></li>
-<li class="fragment">Faster turnaround on Pull Requests ☑️</li>
+<li>Continuous Integration (CI): Frequent merging of several small changes into a main branch</li>
+<li>Continuous Delivery (CD): Repeatable deployment process when deciding to deploy</li>
 </ul>
-</div>
-</div><div class="column" style="width:45%;">
-<div>
+</section>
+<section id="why-use-cicd-at-all" class="slide level2">
+<h2>Why use CI/CD at all?</h2>
 <ul>
-<li class="fragment">Catch issues (bugs) early on <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7 .7 1.3 1.4 1.9 2.1c14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4c.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7 .7-1.4 1.3-2.1 1.9c6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H416c0 24.6-5.5 47.8-15.4 68.6c2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16V479.2c-34.5-3.4-65.8-17.8-90.3-39.6L86.6 502.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H96.3c1.1-14.1 5-27.5 11.1-39.5c-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"></path></svg></li>
-<li class="fragment">Enforce style conventions and preferences <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM325.8 139.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-21.4 21.4-71-71 21.4-21.4c15.6-15.6 40.9-15.6 56.6 0zM119.9 289L225.1 183.8l71 71L190.9 359.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"></path></svg></li>
-<li class="fragment">Measure test coverage for new code <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></li>
-<li class="fragment">Keep docs up-to-date <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></li>
+<li>Catch issues (bugs) early on</li>
+<li>User base on multiple OSes and multiple R versions</li>
+<li>Faster turnaround on Pull Requests/Merge Requests</li>
+<li>Multiple Contributors on your R Package</li>
+<li>Enforce style conventions and preferences</li>
+<li>Measure test coverage for new code</li>
+<li>Keep docs up-to-date</li>
 </ul>
-</div>
-</div>
-</div>
 </section>
-<section id="use-cases-where-cicd-was-beneficial" class="slide level2">
-<h2>Use cases where CI/CD was beneficial</h2>
-<p>For Admiral, NEST and RBMI.</p>
-</section>
-<section id="package-integrity-checks" class="slide level2">
-<h2>Package Integrity Checks</h2>
-<p>Common workflows</p>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div>
+<section id="what-does-cicd-for-r-packages-look-like" class="slide level2">
+<h2>What does CI/CD for R packages look like?</h2>
+<ul>
+<li>Running tests and checks against R packages</li>
+</ul>
 <ol type="1">
-<li class="fragment">Unit Tests &nbsp; &nbsp; <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></li>
-<li class="fragment">Link &amp; URL Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></li>
-<li class="fragment">Spelling Checks &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg></li>
-<li class="fragment">Static Code Analysis &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"></path></svg></li>
+<li>Unit Tests</li>
+<li>Link &amp; URL Checks</li>
+<li>Spelling Checks</li>
+<li>Static Code Analysis</li>
+<li>Manual Pages</li>
+<li>Code Style</li>
+<li>Test Coverage</li>
+<li>Publishing a pkgdown site</li>
 </ol>
-</div>
-</div><div class="column" style="width:45%;">
-<div>
-<ol start="5" type="1">
-<li class="fragment">Manual Pages &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></li>
-<li class="fragment">Code Style &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"></path></svg></li>
-<li class="fragment">Test Coverage &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M176 8c-6.6 0-12.4 4-14.9 10.1l-29.4 74L55.6 68.9c-6.3-1.9-13.1 .2-17.2 5.3s-4.6 12.2-1.4 17.9l39.5 69.1L10.9 206.4c-5.4 3.7-8 10.3-6.5 16.7s6.7 11.2 13.1 12.2l78.7 12.2L90.6 327c-.5 6.5 3.1 12.7 9 15.5s12.9 1.8 17.8-2.6l35.3-32.5 9.5-35.4 10.4-38.6c8-29.9 30.5-52.1 57.9-60.9l41-59.2c11.3-16.3 26.4-28.9 43.5-37.2c-.4-.6-.8-1.2-1.3-1.8c-4.1-5.1-10.9-7.2-17.2-5.3L220.3 92.1l-29.4-74C188.4 12 182.6 8 176 8zM367.7 161.5l135.6 36.3c6.5 1.8 11.3 7.4 11.8 14.2l4.6 56.5-201.5-54 32.2-46.6c3.8-5.6 10.8-8.1 17.3-6.4zm-69.9-30l-47.9 69.3c-21.6 3-40.3 18.6-46.3 41l-10.4 38.6-16.6 61.8-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9 247.3 66.3-8.3 30.9c-4.6 17.1 5.6 34.6 22.6 39.2l15.5 4.1c17.1 4.6 34.6-5.6 39.2-22.6l8.3-30.9L595 388l10.4-38.6c6-22.4-2.5-45.2-19.6-58.7l-6.8-84c-2.7-33.7-26.4-62-59-70.8L384.2 99.7c-32.7-8.8-67.3 4-86.5 31.8zM268.3 308.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4s-16.6 20.4-29.4 17zM545 358.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4s16.6-20.4 29.4-17s20.4 16.6 17 29.4z"></path></svg></li>
-<li class="fragment">Publishing a pkgdown site &nbsp; &nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"></path></svg></li>
+</section>
+<section id="testing" class="slide level2">
+<h2>Testing</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<ol type="1">
+<li>Unit Tests:</li>
+<li>Test Coverage:</li>
+<li>Integration tests:</li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+<section id="static-code-analysis" class="slide level2">
+<h2>Static Code Analysis</h2>
+<ol type="1">
+<li>Linting</li>
+<li>Spell Check</li>
+<li>Link &amp; URL Checks</li>
+</ol>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<ol type="1">
+<li>Man pages</li>
+<li>pkgdown site</li>
+</ol>
+</section>
+<section id="specific-use-cases" class="slide level2">
+<h2>Specific Use Cases <!-- As a section header --></h2>
 </section>
 <section id="check-templates" class="slide level2">
 <h2>Check Templates</h2>
 <p>For Admiral, how checking ADAM templates works and why it’s needed.</p>
 </section>
+<section id="need-to-give-confidence-that-our-package-is-reliable" class="slide level2">
+<h2>Need to give confidence that our package is reliable</h2>
+<p>CICD “validation” job to create a small report that emulates the sort of validation reports that get made locally</p>
+</section>
 <section id="shiny-app-testing" class="slide level2">
 <h2>Shiny App Testing</h2>
 <p>How NEST run Shiny apps tests</p>
 </section>
-<section id="cross-sytem-checks" class="slide level2">
-<h2>Cross-sytem checks</h2>
+<section id="need-to-ensure-code-works-on-cran" class="slide level2">
+<h2>Need to ensure code works on CRAN</h2>
 <p>Windows, Mac etc testing for CRAN compatibility</p>
+<p>Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible.</p>
 </section>
-<section id="other-notes" class="slide level2">
-<h2>Other notes</h2>
-<p>Cover the basics of CI/CD.</p>
-<p>Explain the benefits of using CI/CD.</p>
-<p>How do repetitive tasks get done automatically.</p>
-<p>Fighting the limitations of CRAN, Checking in-house environments</p>
-<p>CI/CD for Assessment, validation.</p>
-<p>From a Pharma perspective, how does it do it.</p>
-<p>Problem, solution approach to the problem: Solutions per project. And as part of the solution, discuss features that were used?</p>
+<section id="need-to-ensure-code-works-on-internal-servers" class="slide level2">
+<h2>Need to ensure code works on internal servers</h2>
+<p>DockerFile that emulates internal servers + cicd job to ensure code works in it</p>
 </section>
-<section id="from-cgp" class="slide level2">
-<h2>From CGP</h2>
-<p>Issue: People not re-running document and manuals / namespace being out of date solution: CICD test to re-run document and throw an error if git status is not clean</p>
-<p>Issue: CRAN limits runs to 10 minutes Solutions: Extract vignettes to “as-is” instead of being built on the fly. CICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)</p>
-<p>Extraction of long running unit tests into their own “extended” set of tests. CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes</p>
-<p>Issue Unit tests take a long while to run due to the need to compile code Solution Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version</p>
-<p>Issue: Need to give confidence that our package is reliable Solution: CICD “validation” job to create a small report that emulates the sort of validation reports that get made locally</p>
-<p>Issue: Need to ensure code works on internal servers Solution DockerFile that emulates internal servers + cicd job to ensure code works in it</p>
-<p>Issue: Need to ensure code works on CRAN Solution: Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible.</p>
+<section id="cran-limits-runs-to-10-minutes" class="slide level2">
+<h2>CRAN limits runs to 10 minutes</h2>
+<ul>
+<li>Extract vignettes to “as-is” instead of being built on the fly</li>
+<li>CICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)</li>
+<li>Extraction of long running unit tests into their own “extended” set of tests</li>
+<li>CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes</li>
+</ul>
+</section>
+<section id="unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code" class="slide level2">
+<h2>Unit tests take a long while to run due to the need to compile code</h2>
+<p>Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version</p>
 
 
 <img src="https://avatars.githubusercontent.com/u/84541169" class="slide-logo r-stretch"><div class="footer footer-default">
