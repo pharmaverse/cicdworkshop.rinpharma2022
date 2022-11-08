@@ -106,7 +106,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 ::: {.incremental}
 5. Manual Pages
 6. Code Style
-7. Test Coverage
+7. R-CMD check 
 8. Publishing a pkgdown site
 :::
 :::
@@ -149,13 +149,13 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::: {.columns}
 
 ::: {.column width="75%"}
-- To provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br/>
+- Provide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.<br/>
 - ADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials
 - Links
   - [CDISC](https://www.cdisc.org/)
   - [https://github.com/pharmaverse/admiral](https://github.com/pharmaverse/admiral)
 - **Issue 1:**  Checking ADaM Template code
-- **Issue 2:**  Common CI/CD for family of packages
+- **Issue 2:**  Common CI/CD for the admiral family of packages
 :::
 
 ::: {.column width="25%"}
@@ -168,13 +168,17 @@ CI/CD bridges the gaps between development and operation activities and teams by
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="40%"}
+::: {.incremental}
 - Create a reference files to build common ADaM datasets that shows users how to implement our functions
 - Way less text then a Vignette - Code is ready to go and build a dataset!
 - Where we store this code is not check by R-CMD.
-- How to ensure code stays up to date with deprecated functions or unforseen bugs get in?
+- How to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?
 - CI/CD for the win!
+:::
+:::
 
+::: {.column width="10%"}
 :::
 
 ::: {.column width="50%"}
@@ -189,7 +193,6 @@ CI/CD bridges the gaps between development and operation activities and teams by
 ::: {.column width="50%"}
 - After a Code Review the template code is executed
 - If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.
-
 :::
 
 ::: {.column width="50%"}
@@ -197,21 +200,41 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 ::::
 
-## Issue 2: Common CI/CD workflows to admiral extensions
+## Issue 2: admiral upstream and downstream dependencies
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- Create a reference files to build common ADaM datasets that shows users how to implement our functions
-- Way less text then a Vignette - Code is ready to go and build a dataset!
-- Where we store this code is not check by R-CMD.
-- How to ensure code stays up to date with deprecated functions or unforseen bugs get in?
-- CI/CD for the win!
+::: {.column width="40%"}
+- As you can imagine there can be a lot of different types of ADaMs!
+- Extension packages focus on specific disease areas like oncology
+- The admiral family has a package for developers, template R package repo, dummy data
+- Eek!!  How to keep this all in line!
+:::
 
+::: {.column width="10%"}
 :::
 
 ::: {.column width="50%"}
-![](templates.png)
+![](admiralext.png)
+:::
+:::
+
+## Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- As you can imagine there can be a lot of different types of ADaMs!
+- Extension packages focus on specific disease areas like oncology
+- The admiral family has a package for developers, template R package repo, dummy data
+- Eek!!  How to keep this all in line!
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+![](admiralci.png)
 :::
 :::
 
