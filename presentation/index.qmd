@@ -1,5 +1,5 @@
 ---
-title: "How CI/CD Enhances the Development of R packages in the Pharmaverse"
+title: "CI/CD in the Pharmaverse"
 subtitle: |
   R/Pharma
 
@@ -37,130 +37,89 @@ render_file <- function(filepath, language = "yaml") {
 
 ## What is CI/CD?
 
-## Benefits of using CI/CD
+* Continuous Integration (CI): Frequent merging of several small changes into a main branch
+* Continuous Delivery (CD): Repeatable deployment process when deciding to deploy
 
-::: columns
-::: {.column width="45%"}
-::: {.incremental}
-- Multiple Contributors on your R Package ⌨️
-- User base on multiple OSes and multiple R versions `r fontawesome::fa("users", "green")`
-- Faster turnaround on Pull Requests ☑️
-:::
-:::
 
-::: {.column width="45%"}
-::: {.incremental}
-- Catch issues (bugs) early on `r fontawesome::fa("bug", "red")`
-- Enforce style conventions and preferences `r fontawesome::fa("pencil-square", "green")`
-- Measure test coverage for new code `r fontawesome::fa("car-burst", "green")`
-- Keep docs up-to-date `r fontawesome::fa("book", "red")`
-:::
-:::
-:::
+## Why use CI/CD at all?
 
-## Use cases where CI/CD was beneficial
+- Catch issues (bugs) early on 
+- User base on multiple OSes and multiple R versions
+- Faster turnaround on Pull Requests/Merge Requests
+- Multiple Contributors on your R Package
+- Enforce style conventions and preferences 
+- Measure test coverage for new code 
+- Keep docs up-to-date
 
-For Admiral, NEST and RBMI.
+## What does CI/CD for R packages look like?
 
-## Package Integrity Checks
+- Running tests and checks against R packages
 
-Common workflows
+1. Unit Tests 
+2. Link & URL Checks
+3. Spelling Checks
+4. Static Code Analysis
+5. Manual Pages
+6. Code Style
+7. Test Coverage
+8. Publishing a pkgdown site
 
-::: columns
-::: {.column width="45%"}
-::: {.incremental}
-1. Unit Tests &nbsp; &nbsp; `r fontawesome::fa("code", "red")`
-2. Link & URL Checks &nbsp; &nbsp;`r fontawesome::fa("link", "green")`
-3. Spelling Checks &nbsp; &nbsp;`r fontawesome::fa("pen", "blue")`
-4. Static Code Analysis &nbsp; &nbsp;`r fontawesome::fa("file-lines", "red")`
-:::
-:::
+## Testing
 
-::: {.column width="45%"}
-::: {.incremental}
-5. Manual Pages &nbsp; &nbsp;`r fontawesome::fa("book", "green")`
-6. Code Style &nbsp; &nbsp;`r fontawesome::fa("scroll", "red")`
-7. Test Coverage &nbsp; &nbsp;`r fontawesome::fa("car-burst", "green")`
-8. Publishing a pkgdown site &nbsp; &nbsp;`r fontawesome::fa("wifi", "blue")`
-:::
-:::
-:::
+### Unit Tests
+
+1. Unit Tests: 
+2. Test Coverage:
+3. Integration tests:
+
+## Static Code Analysis
+
+1. Linting
+2. Spell Check
+3. Link & URL Checks
+
+## Documentation
+
+1. Man pages
+2. pkgdown site
+
+## Specific Use Cases <!-- As a section header -->
 
 
 ## Check Templates
 
 For Admiral, how checking ADAM templates works and why it's needed.
 
+## Need to give confidence that our package is reliable
+
+CICD "validation" job to create a small report that emulates the sort of validation reports that get made locally
+
+
 ## Shiny App Testing
 
 How NEST run Shiny apps tests
 
-## Cross-sytem checks
+## Need to ensure code works on CRAN
 
 Windows, Mac etc testing for CRAN compatibility
 
-## Other notes
-
-Cover the basics of CI/CD.
-
-Explain the benefits of using CI/CD.
-
-How do repetitive tasks get done automatically.
-
-Fighting the limitations of CRAN,
-Checking in-house environments
+Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible. 
 
 
-CI/CD for Assessment, validation.
+## Need to ensure code works on internal servers
 
-From  a Pharma perspective, how does it do it.
-
-
-Problem, solution approach to the problem: Solutions per project.
-And as part of the solution, discuss features that were used?
-
-## From CGP
-
-Issue:
-People not re-running document and manuals / namespace being out of date
-solution:
-CICD test to re-run document and throw an error if git status is not clean
- 
- 
- 
-Issue:
-CRAN limits runs to 10 minutes
-Solutions:
-Extract vignettes to "as-is" instead of being built on the fly. CICD test to then re-build vignettes to make sure they don't error  (rather than being done in the CRAN-check)
-  
-Extraction of long running unit tests into their own "extended" set of tests. CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes
-  
- 
- 
- 
-Issue
-Unit tests take a long while to run due to the need to compile code
-Solution
-Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version
- 
- 
- 
-Issue:
-Need to give confidence that our package is reliable
-Solution:
-CICD "validation" job to create a small report that emulates the sort of validation reports that get made locally
- 
- 
- 
-Issue:
-Need to ensure code works on internal servers
-Solution
 DockerFile that emulates internal servers + cicd job to ensure code works in it
  
- 
+
+## CRAN limits runs to 10 minutes
+
+- Extract vignettes to "as-is" instead of being built on the fly
+- CICD test to then re-build vignettes to make sure they don't error  (rather than being done in the CRAN-check)
+- Extraction of long running unit tests into their own "extended" set of tests
+- CRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes
 
 
-Issue:
-Need to ensure code works on CRAN
-Solution:
-Have a manually triggered job that runs on servers that try to emulate CRANS servers as closely as possible. 
+## Unit tests take a long while to run due to the need to compile code
+
+Cache the src/ directory so that it is restored on each run (cache done separately per OS / R-version
+
