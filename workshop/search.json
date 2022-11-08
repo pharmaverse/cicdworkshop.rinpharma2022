@@ -165,7 +165,7 @@
     "href": "index.html#manual-pages-workflow",
     "title": "CI/CD Workshop for R Packages",
     "section": "Manual Pages Workflow ",
-    "text": "Manual Pages Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: ROxygen\non:\n  pull_request: {branches: ['main']}\njobs:\n  ManPages:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Roxygen check\n        run: |\n          git config --global --add safe.directory $(pwd)\n          R -s -e \"roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))\"\n          if [[ -n `git status -s | grep -E \"man|DESCRIPTION\"` ]]; then\n            echo \"❌ Manual pages are NOT up-to-date ❌\" && exit 1\n          fi\n          echo \"Manual pages are up-to-date 😇\"\n        shell: bash\n\nAdvanced Usage: AdmiralCI’s roxygen Workflow"
+    "text": "Manual Pages Workflow \n\n\n1 2 3 4 5 6 7 8\n\n\nname: ROxygen\non:\n  pull_request: {branches: ['main']}\njobs:\n  ManPages:\n    runs-on: ubuntu-latest\n    container: {image: \"rocker/tidyverse:4.2.1\"}\n    steps:\n      - name: Checkout repo\n        uses: actions/checkout@v3\n      - name: Roxygen check\n        run: |\n          git config --global --add safe.directory $(pwd)\n          R -s -e \"roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))\"\n          if [[ -n `git status -s | grep -E \"man|DESCRIPTION|NAMESPACE\"` ]]; then\n            echo \"❌ Manual pages are NOT up-to-date ❌\" && exit 1\n          fi\n          echo \"Manual pages are up-to-date 😇\"\n        shell: bash\n\nAdvanced Usage: AdmiralCI’s roxygen Workflow"
   },
   {
     "objectID": "index.html#test-coverage",

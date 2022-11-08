@@ -903,7 +903,7 @@
 <span id="cb9-12"><a href="#cb9-12"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
 <span id="cb9-13"><a href="#cb9-13"></a>          git config --global --add safe.directory $(pwd)</span>
 <span id="cb9-14"><a href="#cb9-14"></a>          R -s -e "roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace'))"</span>
-<span id="cb9-15"><a href="#cb9-15"></a>          if [[ -n `git status -s | grep -E "man|DESCRIPTION"` ]]; then</span>
+<span id="cb9-15"><a href="#cb9-15"></a>          if [[ -n `git status -s | grep -E "man|DESCRIPTION|NAMESPACE"` ]]; then</span>
 <span id="cb9-16"><a href="#cb9-16"></a>            echo "❌ Manual pages are NOT up-to-date ❌" &amp;&amp; exit 1</span>
 <span id="cb9-17"><a href="#cb9-17"></a>          fi</span>
 <span id="cb9-18"><a href="#cb9-18"></a>          echo "Manual pages are up-to-date 😇"</span>
