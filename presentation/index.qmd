@@ -233,16 +233,6 @@ How NEST run Shiny apps tests
 # Case Study - rbmi
 
 
-<!--
-## 
-<div class="section-title">
-Case Study - RBMI
-</div>
-::: {.notes}
-An example of a manually constructed section title but looks like using a single "#" does the
-trick so probs able to just ignore this
-:::
--->
 
 
 
@@ -324,15 +314,11 @@ test_that("Some long running section", {
 
 <br/>
 
-
-
 ::: {.fragment}
 ::: {.file-name}
 `.github/workflows/on_biweekly.yaml`
 :::
-```{bash}
-#| eval: false
-#| echo: true 
+```yaml
 on:
   schedule:
     - cron: '0 4 1,15 * *'
@@ -357,11 +343,8 @@ jobs:
 
 
 
-## Solution 1 - Reducing the Test Suite Runtime
-
+## Solution 1 - Reducing the Test Suite Runtime {visibility="uncounted"}
 <br/>
-
-
 
 ::: {.file-name}
 `.vscode/tasks.json`
@@ -429,7 +412,7 @@ output:
 ```
 
 
-## Solution 2 - Reducing the Vignette Runtime
+## Solution 2 - Reducing the Vignette Runtime {visibility="uncounted"}
 
 <br/>
 
@@ -437,9 +420,7 @@ output:
 ::: {.file-name}
 `.github/workflow/on_pr.yaml`
 :::
-```{bash}
-#| eval: FALSE
-#| echo: TRUE 
+```yaml
   vignettes:
     runs-on: ubuntu-latest
     container:
@@ -459,14 +440,102 @@ output:
 
 
 
-## Solution 3 - Reducing code compilation time
+
+
+
+## Solution 3 - Reducing code Compilation Time
+<br/>
+
+::: {.file-name}
+`.github/actions/build-src/action.yml`
+:::
+```yaml
+    - name: Cache Compiled Stan Code
+      id: cache-pkgs
+      uses: actions/cache@v3
+      with:
+        path: src/*
+```
+
+::: {.centre}
+![](images/github-cache-build.png){style="height:350px"}
+:::
+
+
+## Solution 4 - Testing Against In-House Servers
+<br/>
+
+::: {.centre}
+![](images/rbmi-docker-image.png){style="height:600px"}
+:::
+
+::: {.notes}
+- Use of docker files to emulate our in-house servers
+- Had double benefit of drastically reducing package install times on standard push / pr builds
+as all required dependencies are already installed and ready to go
+:::
+
+
+## Solution 4 - Testing Against In-House Servers {visibility="uncounted"}
+<br/>
+
+::: {.file-name}
+`.github/workflows/build_docker.yaml`
+:::
+```yaml
+on:
+  push:
+    paths:
+      - 'misc/docker/**'
+
+jobs:
+  build:
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      
+      - name: Build and push image 
+        uses: docker/build-push-action@v2
+```
+
+
+## Solution 4 - Testing Against In-House Servers {visibility="uncounted"}
+<br/>
+
+::: {.file-name}
+`.github/workflows/on_pr_main.yaml`
+:::
+
+```yaml
+jobs:
+  rcmdcheck:
+    strategy:
+      matrix:
+       config:
+        - { image: "ghcr.io/insightsengineering/rbmi:r404"}
+        - { image: "ghcr.io/insightsengineering/rbmi:r410"}
+        - { image: "ghcr.io/insightsengineering/rbmi:latest"}
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.config.image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Build src
+        uses: ./.github/actions/build-src
+        
+      - name: Check
+        uses: ./.github/actions/rcmdcheck
+```
 
 
 
 
-
-
-
+<!--    Legacy slides
 
 ## Need to ensure code works on internal servers
 
@@ -503,3 +572,16 @@ Cache the src/ directory so that it is restored on each run (cache done separate
 
 1. Man pages
 2. pkgdown site
+
+-->
+
+<!--
+## 
+<div class="section-title">
+Case Study - RBMI
+</div>
+::: {.notes}
+An example of a manually constructed section title but looks like using a single "#" does the
+trick so probs able to just ignore this
+:::
+-->
