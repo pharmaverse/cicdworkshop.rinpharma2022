@@ -232,12 +232,6 @@ How NEST run Shiny apps tests
 
 # Case Study - rbmi
 
-
-
-
-
-
-
 ## About RBMI
 <br/>
 
@@ -578,7 +572,10 @@ that we want to ensure we can support
 - Automatically deploying VADs to your database / data repository upon sucsessful PROD run
 
 
+# Close out
+
 <!--    Legacy slides
+
 
 ## Need to ensure code works on internal servers
 
