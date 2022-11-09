@@ -25,7 +25,7 @@
     "href": "index.html#what-could-standard-cicd-for-r-packages-look-like",
     "title": "CI/CD in the {pharmaverse}",
     "section": "What could standard CI/CD for R packages look like?",
-    "text": "What could standard CI/CD for R packages look like?\n\nNot all R packages are the same, but they are still pretty similar!\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n \n\nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
+    "text": "What could standard CI/CD for R packages look like?\nNot all R packages are the same, but they are still pretty similar!\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n \nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
     "objectID": "index.html#about-admiral",
@@ -166,5 +166,12 @@
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 4 - Testing Against In-House Servers",
     "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/on_pr_main.yaml\n\njobs:\n  rcmdcheck:\n    strategy:\n      matrix:\n       config:\n        - { image: \"ghcr.io/insightsengineering/rbmi:r404\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:r410\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:latest\"}\n    runs-on: ubuntu-latest\n    container:\n      image: ${{ matrix.config.image }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n        \n      - name: Build src\n        uses: ./.github/actions/build-src\n        \n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\nFinal bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support"
+  },
+  {
+    "objectID": "index.html#additional-materials",
+    "href": "index.html#additional-materials",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\n\nFurther Reading\n\nGitHub Actions\nGitLab CI\n\nAdvanced Examples\n\nr-lib/actions\n{admiralci}\nDocker\n\nPresentation built with Quarto\nR/Pharma 2022 CI/CD Workshop\nThis Presentation\n\n\n\n\n\n\n<CI-CD GitHub>"
   }
 ]
