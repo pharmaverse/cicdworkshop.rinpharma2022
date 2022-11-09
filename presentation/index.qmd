@@ -340,6 +340,8 @@ jobs:
 ## Solution 1 - Reducing the Test Suite Runtime {visibility="uncounted"}
 <br/>
 
+<!-- TODO - Potentially can drop this slide, doesn't add value and am short on time -->
+
 ::: {.file-name}
 `.vscode/tasks.json`
 :::
