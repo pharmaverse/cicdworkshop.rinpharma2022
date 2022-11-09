@@ -711,7 +711,22 @@
 <span id="cb3-11"><a href="#cb3-11"></a>    <span class="ot">]</span></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="images/vscode-tests.png" class="r-stretch"></section>
+<img data-src="images/vscode-tests.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>Small plug for VScode that you can use it to execute tasks where you fix the environment variable in order to run the full test suite locally</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="solution-2---reducing-the-vignette-runtime" class="slide level2">
 <h2>Solution 2 - Reducing the Vignette Runtime</h2>
 <p><br></p>
@@ -738,6 +753,24 @@
 </div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">%\VignetteIndexEntry{rbmi:</span> Quickstart}</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="ex">%\VignetteEngine{R.rsp::asis}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<ul>
+<li>Use of R.rsp package to use “asis” vignette builder</li>
+<li>This is where we make the vignettes locally in advance and directly add them to the repo</li>
+<li>When R “builds” the vignette it simply just uses the pre-built file asis without re-running it</li>
+<li>This opens up a problem though of how do we know if the vignette is up-to-date or even runs properly anymore?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="solution-2---reducing-the-vignette-runtime-1" class="slide level2" data-visibility="uncounted">
 <h2>Solution 2 - Reducing the Vignette Runtime</h2>
@@ -758,6 +791,24 @@
 <div class="centre">
 <p><img data-src="images/github-vignette-ticks.png"></p>
 </div>
+<aside class="notes">
+<ul>
+<li>We thus have a dedicated CICD job specifically to re-build the vignette.</li>
+<li>This way Vignette execution is doing in parallel to the running of the test suite</li>
+<li>Trade off here though is that it means our vignettes are never executed on CRANs servers</li>
+<li>This trade-off can be partially mitigated by setting up our own CICD process to use a variety of different OS’s / machine builds</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="solution-3---reducing-code-compilation-time" class="slide level2">
 <h2>Solution 3 - Reducing code Compilation Time</h2>
@@ -773,6 +824,24 @@
 <div class="centre">
 <p><img data-src="images/github-cache-build.png" style="height:350px"></p>
 </div>
+<aside class="notes">
+<ul>
+<li>Main point is compiling code (in our case stan code) can take a ton of time</li>
+<li>We use githubs cache feature to restore the compiled code from previous builds to save that time</li>
+<li>Con is that care with the configuration is required to ensure you aren’t loading say MAC binaries on a windows image</li>
+<li>Screenshot just shows the run time of the compile code “build src” is very low compared to the usual 2-5 minutes</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="solution-4---testing-against-in-house-servers" class="slide level2">
 <h2>Solution 4 - Testing Against In-House Servers</h2>
@@ -819,6 +888,22 @@
 <span id="cb9-14"><a href="#cb9-14"></a><span class="at">      </span></span>
 <span id="cb9-15"><a href="#cb9-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push image </span></span>
 <span id="cb9-16"><a href="#cb9-16"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<ul>
+<li>Main point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occured in the docker directory</li>
+<li>The Job code is pretty redundent here as it misses a load of stuff to ensure if can fit on the screen however hopefully it just gives some flavour of a job to build a docker file</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="solution-4---testing-against-in-house-servers-2" class="slide level2" data-visibility="uncounted">
 <h2>Solution 4 - Testing Against In-House Servers</h2>
@@ -846,6 +931,25 @@
 <span id="cb10-18"><a href="#cb10-18"></a><span class="at">        </span></span>
 <span id="cb10-19"><a href="#cb10-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
 <span id="cb10-20"><a href="#cb10-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<ul>
+<li>Final bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="backup---non-r-package-uses-of-cicd" class="slide level2">
+<h2>Backup - Non R Package uses of CI/CD</h2>
+<p><br> - automatically re-running your analysis on a code change (or sub-sections) - automatically deploying TLGs to your document repository upon succsessul PROD run - Automatically deploying VADs to your database / data repository upon sucsessful PROD run</p>
 <!--    Legacy slides
 
 ## Need to ensure code works on internal servers
