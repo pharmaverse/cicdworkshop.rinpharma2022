@@ -307,8 +307,8 @@ depending on the size of the data
 <br/>
 
 ```{r}
-#| eval: FALSE
-#| echo: TRUE 
+#| eval: false
+#| echo: true 
 test_that("Some long running section", {
   
     skip_if_not(Sys.getenv("R_TEST_FULL") == "TRUE")
@@ -321,8 +321,8 @@ test_that("Some long running section", {
 <br/>
 
 ```{bash}
-#| eval: FALSE
-#| echo: TRUE 
+#| eval: false
+#| echo: true 
 on:
   schedule:
     - cron: '0 4 1,15 * *'
