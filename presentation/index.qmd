@@ -567,12 +567,6 @@ that we want to ensure we can support
 :::
 
 
-## Backup - Non R Package uses of CI/CD
-<br/>
-- automatically re-running your analysis on a code change (or sub-sections)
-- automatically deploying TLGs to your document repository upon succsessul PROD run
-- Automatically deploying VADs to your database / data repository upon sucsessful PROD run
-
 
 # Close out
 
