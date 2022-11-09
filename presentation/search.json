@@ -122,49 +122,28 @@
     "objectID": "index.html#solution-3---reducing-code-compilation-time",
     "href": "index.html#solution-3---reducing-code-compilation-time",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 3 - Reducing code compilation time",
-    "text": "Solution 3 - Reducing code compilation time"
+    "section": "Solution 3 - Reducing code Compilation Time",
+    "text": "Solution 3 - Reducing code Compilation Time\n\n\n.github/actions/build-src/action.yml\n\n    - name: Cache Compiled Stan Code\n      id: cache-pkgs\n      uses: actions/cache@v3\n      with:\n        path: src/*"
   },
   {
-    "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",
-    "href": "index.html#need-to-ensure-code-works-on-internal-servers",
+    "objectID": "index.html#solution-4---testing-against-in-house-servers",
+    "href": "index.html#solution-4---testing-against-in-house-servers",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Need to ensure code works on internal servers",
-    "text": "Need to ensure code works on internal servers\nDockerFile that emulates internal servers + cicd job to ensure code works in it"
+    "section": "Solution 4 - Testing Against In-House Servers",
+    "text": "Solution 4 - Testing Against In-House Servers\n\n\n\n\n\n\nUse of docker files to emulate our in-house servers\nHad double benefit of drastically reducing package install times on standard push / pr builds as all required dependencies are already installed and ready to go"
   },
   {
-    "objectID": "index.html#cran-limits-runs-to-10-minutes",
-    "href": "index.html#cran-limits-runs-to-10-minutes",
+    "objectID": "index.html#solution-4---testing-against-in-house-servers-1",
+    "href": "index.html#solution-4---testing-against-in-house-servers-1",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "CRAN limits runs to 10 minutes",
-    "text": "CRAN limits runs to 10 minutes\n\nExtract vignettes to “as-is” instead of being built on the fly\nCICD test to then re-build vignettes to make sure they don’t error (rather than being done in the CRAN-check)\nExtraction of long running unit tests into their own “extended” set of tests\nCRON CICD job that will run the extended unit tests (which last an hour) whilst regular set of unit tests run fine in a couple of minutes"
+    "section": "Solution 4 - Testing Against In-House Servers",
+    "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/build_docker.yaml\n\non:\n  push:\n    paths:\n      - 'misc/docker/**'\n\njobs:\n  build:\n    steps:\n      - name: Checkout repository \n        uses: actions/checkout@v2\n      \n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n      \n      - name: Build and push image \n        uses: docker/build-push-action@v2"
   },
   {
-    "objectID": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
-    "href": "index.html#unit-tests-take-a-long-while-to-run-due-to-the-need-to-compile-code",
+    "objectID": "index.html#solution-4---testing-against-in-house-servers-2",
+    "href": "index.html#solution-4---testing-against-in-house-servers-2",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Unit tests take a long while to run due to the need to compile code",
-    "text": "Unit tests take a long while to run due to the need to compile code\nCache the src/ directory so that it is restored on each run (cache done separately per OS / R-version"
-  },
-  {
-    "objectID": "index.html#testing",
-    "href": "index.html#testing",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Testing",
-    "text": "Testing\nUnit Tests\n\nUnit Tests:\nTest Coverage:\nIntegration tests:"
-  },
-  {
-    "objectID": "index.html#static-code-analysis",
-    "href": "index.html#static-code-analysis",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Static Code Analysis",
-    "text": "Static Code Analysis\n\nLinting\nSpell Check\nLink & URL Checks"
-  },
-  {
-    "objectID": "index.html#documentation",
-    "href": "index.html#documentation",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Documentation",
-    "text": "Documentation\n\nMan pages\npkgdown site\n\n\n\n\n<CI-CD GitHub>"
+    "section": "Solution 4 - Testing Against In-House Servers",
+    "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/on_pr_main.yaml\n\njobs:\n  rcmdcheck:\n    strategy:\n      matrix:\n       config:\n        - { image: \"ghcr.io/insightsengineering/rbmi:r404\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:r410\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:latest\"}\n    runs-on: ubuntu-latest\n    container:\n      image: ${{ matrix.config.image }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n        \n      - name: Build src\n        uses: ./.github/actions/build-src\n        \n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\n\n\n\n<CI-CD GitHub>"
   }
 ]
