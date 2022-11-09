@@ -381,7 +381,7 @@ jobs:
     ]
 }
 ```
-![](2022-11-09-10-47-55.png)
+![](vscode-tests.png.png)
 
 
 ## Solution 2 - Reducing the Vignette Runtime
@@ -454,7 +454,7 @@ output:
 
 
 ::: {.centre}
-![](2022-11-09-10-25-26.png)
+![](github-vignette-ticks.png.png)
 :::
 
 
