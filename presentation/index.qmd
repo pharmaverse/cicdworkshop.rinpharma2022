@@ -47,13 +47,13 @@ CI/CD bridges the gaps between development and operation activities and teams by
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.centre}
-![](cicd.jpg)
+![](images/cicd.jpg)
 :::
 :::
 
 ::: {.column width="50%"}
 ::: {.centre}
-![](pharmaverse.png)
+![](images/pharmaverse.png)
 :::
 :::
 :::
@@ -66,7 +66,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 ## Does it help?
 
 <div class="centre">
-![](automation.png)
+![](images/automation.png)
 </div>
 
 ::: {.incremental}
@@ -136,7 +136,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 ::: {.column width="25%"}
-![](hex-admiral.png)
+![](images/hex-admiral.png)
 :::
 ::::
 
@@ -157,7 +157,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 ::: {.column width="50%"}
-![](templates.png)
+![](images/templates.png)
 :::
 ::::
 
@@ -171,7 +171,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 ::: {.column width="50%"}
-![](template_review.png)
+![](images/template_review.png)
 :::
 ::::
 
@@ -190,7 +190,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 ::: {.column width="50%"}
-![](admiralext.png)
+![](images/admiralext.png)
 :::
 :::
 
@@ -209,7 +209,7 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 ::: {.column width="50%"}
-![](admiralci.png)
+![](images/admiralci.png)
 :::
 :::
 
@@ -263,7 +263,7 @@ trick so probs able to just ignore this
 :::
 
 ::: {.column width="25%"}
-![](rbmi.png)
+![](images/rbmi.png)
 :::
 ::::
 
@@ -290,7 +290,7 @@ depending on the size of the data
 - Many PR's forgot to rebuild pkgdown site
 
 <div class="centre">
-![](sad-emoji.png)
+![](images/sad-emoji.png)
 </div>
 
 ::: {.notes}
@@ -381,7 +381,7 @@ jobs:
     ]
 }
 ```
-![](vscode-tests.png.png)
+![](images/vscode-tests.png)
 
 
 ## Solution 2 - Reducing the Vignette Runtime
@@ -454,7 +454,7 @@ output:
 
 
 ::: {.centre}
-![](github-vignette-ticks.png.png)
+![](images/github-vignette-ticks.png)
 :::
 
 
