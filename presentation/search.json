@@ -4,7 +4,7 @@
     "href": "index.html#what-is-cicd",
     "title": "CI/CD in the {pharmaverse}",
     "section": "What is CI/CD?",
-    "text": "What is CI/CD?\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy\n\nCI/CD bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables\n\n\n\n\n\n\n\n\n\n\n\n\nWikipedia: CI/CD {pharmaverse}"
+    "text": "What is CI/CD?\n\n\nContinuous Integration (CI): Frequent merging of several small changes into a main branch\n\n\n\n\nContinuous Delivery (CD): Repeatable deployment process when deciding to deploy\n\n\n\nCI/CD bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWikipedia: CI/CD {pharmaverse}"
   },
   {
     "objectID": "index.html#does-it-help",
