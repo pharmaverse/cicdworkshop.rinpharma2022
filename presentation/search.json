@@ -80,8 +80,8 @@
     "objectID": "index.html#about-rbmi",
     "href": "index.html#about-rbmi",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "About RBMI",
-    "text": "About RBMI\n\n\n\n\nReference Based Multiple Imputation\nImplements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands\nAcknowledgements to Alessandro Noci, Marcel Wolbers & Daniel Sabanes Bove\nLinks\n\nhttps://arxiv.org/abs/2109.11162\nhttps://github.com/insightsengineering/rbmi\n\n\n\n\n\n\n\nKey component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data"
+    "section": "About rbmi",
+    "text": "About rbmi\n\n\n\n\nReference Based Multiple Imputation\nImplements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands\nAcknowledgements to Alessandro Noci, Marcel Wolbers & Daniel Sabanes Bove\nLinks\n\nhttps://arxiv.org/abs/2109.11162\nhttps://github.com/insightsengineering/rbmi\n\n\n\n\n\n\n\nKey component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data"
   },
   {
     "objectID": "index.html#package-development-problems",
