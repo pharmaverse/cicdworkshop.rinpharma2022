@@ -11,7 +11,7 @@
     "href": "index.html#does-it-help",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Does it help?",
-    "text": "Does it help?\n\n\n\n\n\n…Yes! Yes, it does!!\n\n\n\nXKCD"
+    "text": "Does it help?\n\n\n\n\n…Yes! Yes, it does!!\n\n\nXKCD"
   },
   {
     "objectID": "index.html#how-does-cicd-help-r-packages",
@@ -61,6 +61,13 @@
     "title": "CI/CD in the {pharmaverse}",
     "section": "Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies",
     "text": "Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies\n\n\n\nAs you can imagine there can be a lot of different types of ADaMs!\nExtension packages focus on specific disease areas like oncology\nThe admiral family has a package for developers, template R package repo, dummy data\nEek!! How to keep this all in line!"
+  },
+  {
+    "objectID": "index.html#about-nest",
+    "href": "index.html#about-nest",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "About NEST",
+    "text": "About NEST\nTODO"
   },
   {
     "objectID": "index.html#need-to-give-confidence-that-our-package-is-reliable",
