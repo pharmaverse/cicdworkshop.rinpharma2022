@@ -311,8 +311,8 @@ depending on the size of the data
 `tests/testthat/test-bigtest.R`
 :::
 ```{r}
-#| eval: FALSE
-#| echo: TRUE 
+#| eval: false
+#| echo: true 
 test_that("Some long running section", {
   
     skip_if_not(Sys.getenv("R_TEST_FULL") == "TRUE")
@@ -331,8 +331,8 @@ test_that("Some long running section", {
 `.github/workflows/on_biweekly.yaml`
 :::
 ```{bash}
-#| eval: FALSE
-#| echo: TRUE 
+#| eval: false
+#| echo: true 
 on:
   schedule:
     - cron: '0 4 1,15 * *'
