@@ -25,7 +25,7 @@
     "href": "index.html#what-could-standard-cicd-for-r-packages-look-like",
     "title": "CI/CD in the {pharmaverse}",
     "section": "What could standard CI/CD for R packages look like?",
-    "text": "What could standard CI/CD for R packages look like?\n\nNot all R packages are the same, but they are still pretty similar!\n\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n\n \n\n\nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
+    "text": "What could standard CI/CD for R packages look like?\n\nNot all R packages are the same, but they are still pretty similar!\n\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n \n\nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
     "objectID": "index.html#about-admiral",
@@ -39,7 +39,7 @@
     "href": "index.html#issue-1-check-templates",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Issue 1: Check Templates",
-    "text": "Issue 1: Check Templates\n\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text then a Vignette - Code is ready to go and build a dataset!\nWhere we store this code is not check by R-CMD.\nHow to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?\nCI/CD for the win!"
+    "text": "Issue 1: Check Templates\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text then a Vignette - Code is ready to go and build a dataset!\nWhere we store this code is not check by R-CMD.\nHow to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?\nCI/CD for the win!"
   },
   {
     "objectID": "index.html#cicd-for-templates",
@@ -91,11 +91,39 @@
     "text": "Package Development Problems\n\n\nInstallation takes >3 minutes to compile STAN code\nFull test suite takes >50 minutes to run\nVignettes took >5 minutes to run\nNeed to release on in-house servers running legacy versions of R\nMany PR’s forgot to run devtools::document()\nMany PR’s forgot to rebuild pkgdown site\n\n\n\n\n\n2 key issues that we are about to cover: - Need to get run times down to <10 minutes - Need to ensure package works both on internal server and CRAN"
   },
   {
-    "objectID": "index.html#reducing-the-test-suite-runtime",
-    "href": "index.html#reducing-the-test-suite-runtime",
+    "objectID": "index.html#solution-1---reducing-the-test-suite-runtime",
+    "href": "index.html#solution-1---reducing-the-test-suite-runtime",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Reducing the Test Suite Runtime",
-    "text": "Reducing the Test Suite Runtime\n\ntest_that(\"Some long running section\", {\n  \n    skip_if_not(Sys.getenv(\"R_TEST_FULL\") == \"TRUE\")\n    \n    # <rest of the test code>\n    \n})\n\non:\n  schedule:\n    - cron: '0 4 1,15 * *'"
+    "section": "Solution 1 - Reducing the Test Suite Runtime",
+    "text": "Solution 1 - Reducing the Test Suite Runtime\n\n\ntests/testthat/test-bigtest.R\n\ntest_that(\"Some long running section\", {\n  \n    skip_if_not(Sys.getenv(\"R_TEST_FULL\") == \"TRUE\")\n    \n    # <rest of the test code>\n    \n})\n\n\n\n.github/workflows/on_biweekly.yaml\n\non:\n  schedule:\n    - cron: '0 4 1,15 * *'\n\njobs:\n  rcmdcheck-main:\n    env:\n      R_TEST_FULL: 'TRUE' \n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\n\nUse of skip-if-not + environment variable to conditionally control which tests get executed\nUse of CICD to ensure that the skipped tests do still get run on a period basis"
+  },
+  {
+    "objectID": "index.html#solution-1---reducing-the-test-suite-runtime-1",
+    "href": "index.html#solution-1---reducing-the-test-suite-runtime-1",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Solution 1 - Reducing the Test Suite Runtime",
+    "text": "Solution 1 - Reducing the Test Suite Runtime\n\n\n.vscode/tasks.json\n\n{\n    \"version\": \"2.0.0\",\n    \"tasks\": [\n        {\n            \"label\": \"R - testthat (FULL)\",\n            \"command\": \"Rscript\",\n            \"options\": { \"env\": { \"R_TEST_FULL\" : \"TRUE\" } },\n            \"args\": [\"-e\", \"devtools::test()\"],\n            \"group\": \"test\"\n        }\n    ]\n}"
+  },
+  {
+    "objectID": "index.html#solution-2---reducing-the-vignette-runtime",
+    "href": "index.html#solution-2---reducing-the-vignette-runtime",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Solution 2 - Reducing the Vignette Runtime",
+    "text": "Solution 2 - Reducing the Vignette Runtime\n\n\nDESCRIPTION\n\nSuggests: R.rsp\nVignetteBuilder: R.rsp\n\n\nvignettes/quickstart.Rmd\n\n---\ntitle: \"rbmi: Quickstart\"\nauthor: Craig Gower-Page, Alessandro Noci, and Marcel Wolbers\noutput: \n  bookdown::html_document2:\n    toc: true\n    toc_depth: 4\n---\n\n\nvignettes/quickstart.html.asis\n\n%\\VignetteIndexEntry{rbmi: Quickstart}\n%\\VignetteEngine{R.rsp::asis}"
+  },
+  {
+    "objectID": "index.html#solution-2---reducing-the-vignette-runtime-1",
+    "href": "index.html#solution-2---reducing-the-vignette-runtime-1",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Solution 2 - Reducing the Vignette Runtime",
+    "text": "Solution 2 - Reducing the Vignette Runtime\n\n\n.github/workflow/on_pr.yaml\n\n  vignettes:\n    runs-on: ubuntu-latest\n    container:\n      image: \"ghcr.io/insightsengineering/rbmi:latest\"\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - name: Build Vignettes\n        run: |\n          Rscript ./vignettes/build.R"
+  },
+  {
+    "objectID": "index.html#solution-3---reducing-code-compilation-time",
+    "href": "index.html#solution-3---reducing-code-compilation-time",
+    "title": "CI/CD in the {pharmaverse}",
+    "section": "Solution 3 - Reducing code compilation time",
+    "text": "Solution 3 - Reducing code compilation time"
   },
   {
     "objectID": "index.html#need-to-ensure-code-works-on-internal-servers",

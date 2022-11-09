@@ -395,6 +395,11 @@
 <p>Ben Straub (GSK) &amp; Craig Gower-Page (Roche)</p><p></p>
 </section>
 
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
+
+</section>
 <section id="what-is-cicd" class="slide level2">
 <h2>What is CI/CD?</h2>
 <ul>
@@ -404,12 +409,12 @@
 <p>CI/CD bridges the gaps between development and operation activities and teams by <strong>enforcing automation</strong> in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables</p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="centre">
 <p><img data-src="cicd.jpg"></p>
+</div>
 </div><div class="column" style="width:50%;">
-<div>
-<ul>
-<li class="fragment"><img data-src="pharmaverse.png"></li>
-</ul>
+<div class="centre">
+<p><img data-src="pharmaverse.png"></p>
 </div>
 </div>
 </div>
@@ -453,32 +458,26 @@
 </ul>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div>
 <ol type="1">
 <li class="fragment">Unit Tests</li>
 <li class="fragment">Link &amp; URL Checks</li>
 <li class="fragment">Spelling Checks</li>
 <li class="fragment">Static Code Analysis</li>
 </ol>
-</div>
 </div><div class="column" style="width:45%;">
-<div>
 <ol start="5" type="1">
 <li class="fragment">Manual Pages</li>
 <li class="fragment">Code Style</li>
 <li class="fragment">R-CMD check</li>
 <li class="fragment">Publishing a pkgdown site</li>
 </ol>
-</div>
 </div><p><br> <br></p><div class="column" style="width:100%;">
-<div>
 <ul>
 <li class="fragment">We just did all these in the R/Pharma Workshop: <a href="https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide">Intro to CI/CD for R Packages</a></li>
 </ul>
 </div>
 </div>
-</div>
-</section>
+</section></section>
 <section>
 <section id="case-study---admiral" class="title-slide slide level1 center">
 <h1>Case Study - admiral</h1>
@@ -509,7 +508,6 @@
 <h2>Issue 1: Check Templates</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div>
 <ul>
 <li class="fragment">Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
 <li class="fragment">Way less text then a Vignette - Code is ready to go and build a dataset!</li>
@@ -517,7 +515,6 @@
 <li class="fragment">How to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?</li>
 <li class="fragment">CI/CD for the win!</li>
 </ul>
-</div>
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:50%;">
@@ -582,7 +579,7 @@
 </section></section>
 <section>
 <section id="case-study---rbmi" class="title-slide slide level1 center">
-<h1>Case Study - RBMI</h1>
+<h1>Case Study - rbmi</h1>
 <!--
 ## 
 <div class="section-title">
@@ -655,9 +652,12 @@ trick so probs able to just ignore this
           display:block!important;
       }</style></aside>
 </section>
-<section id="reducing-the-test-suite-runtime" class="slide level2">
-<h2>Reducing the Test Suite Runtime</h2>
+<section id="solution-1---reducing-the-test-suite-runtime" class="slide level2">
+<h2>Solution 1 - Reducing the Test Suite Runtime</h2>
 <p><br></p>
+<div class="file-name">
+<p><code>tests/testthat/test-bigtest.R</code></p>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">test_that</span>(<span class="st">"Some long running section"</span>, {</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  </span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="fu">skip_if_not</span>(<span class="fu">Sys.getenv</span>(<span class="st">"R_TEST_FULL"</span>) <span class="sc">==</span> <span class="st">"TRUE"</span>)</span>
@@ -666,9 +666,110 @@ trick so probs able to just ignore this
 <span id="cb1-6"><a href="#cb1-6"></a>    </span>
 <span id="cb1-7"><a href="#cb1-7"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
+<div class="fragment">
+<div class="file-name">
+<p><code>.github/workflows/on_biweekly.yaml</code></p>
+</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">on:</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="ex">schedule:</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="ex">-</span> cron: <span class="st">'0 4 1,15 * *'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="ex">-</span> cron: <span class="st">'0 4 1,15 * *'</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">jobs:</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="ex">rcmdcheck-main:</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="ex">env:</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>      <span class="ex">R_TEST_FULL:</span> <span class="st">'TRUE'</span> </span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="ex">steps:</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>      <span class="ex">-</span> name: Checkout</span>
+<span id="cb2-11"><a href="#cb2-11"></a>        <span class="ex">uses:</span> actions/checkout@v3</span>
+<span id="cb2-12"><a href="#cb2-12"></a>      <span class="ex">-</span> name: Check</span>
+<span id="cb2-13"><a href="#cb2-13"></a>        <span class="ex">uses:</span> ./.github/actions/rcmdcheck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>Use of skip-if-not + environment variable to conditionally control which tests get executed</li>
+<li>Use of CICD to ensure that the skipped tests do still get run on a period basis</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="solution-1---reducing-the-test-suite-runtime-1" class="slide level2">
+<h2>Solution 1 - Reducing the Test Suite Runtime</h2>
+<p><br></p>
+<div class="file-name">
+<p><code>.vscode/tasks.json</code></p>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"2.0.0"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="dt">"tasks"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>        <span class="fu">{</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>            <span class="dt">"label"</span><span class="fu">:</span> <span class="st">"R - testthat (FULL)"</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"Rscript"</span><span class="fu">,</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>            <span class="dt">"options"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"env"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"R_TEST_FULL"</span> <span class="fu">:</span> <span class="st">"TRUE"</span> <span class="fu">}</span> <span class="fu">},</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"-e"</span><span class="ot">,</span> <span class="st">"devtools::test()"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>            <span class="dt">"group"</span><span class="fu">:</span> <span class="st">"test"</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>        <span class="fu">}</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>    <span class="ot">]</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="vscode-tests.png.png" class="r-stretch"></section>
+<section id="solution-2---reducing-the-vignette-runtime" class="slide level2">
+<h2>Solution 2 - Reducing the Vignette Runtime</h2>
+<p><br></p>
+<div class="file-name">
+<p><code>DESCRIPTION</code></p>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">Suggests:</span> R.rsp</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">VignetteBuilder:</span> R.rsp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="file-name">
+<p><code>vignettes/quickstart.Rmd</code></p>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">title:</span> <span class="st">"rbmi: Quickstart"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">author:</span> Craig Gower-Page, Alessandro Noci, and Marcel Wolbers</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="ex">output:</span> </span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="ex">bookdown::html_document2:</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="ex">toc:</span> true</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="ex">toc_depth:</span> 4</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="ex">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="file-name">
+<p><code>vignettes/quickstart.html.asis</code></p>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">%\VignetteIndexEntry{rbmi:</span> Quickstart}</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">%\VignetteEngine{R.rsp::asis}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-2---reducing-the-vignette-runtime-1" class="slide level2">
+<h2>Solution 2 - Reducing the Vignette Runtime</h2>
+<p><br></p>
+<div class="file-name">
+<p><code>.github/workflow/on_pr.yaml</code></p>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a>  <span class="ex">vignettes:</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="ex">runs-on:</span> ubuntu-latest</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="ex">container:</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>      <span class="ex">image:</span> <span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="ex">steps:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>      <span class="ex">-</span> name: Checkout</span>
+<span id="cb7-7"><a href="#cb7-7"></a>        <span class="ex">uses:</span> actions/checkout@v3</span>
+<span id="cb7-8"><a href="#cb7-8"></a>      <span class="ex">-</span> name: Build Vignettes</span>
+<span id="cb7-9"><a href="#cb7-9"></a>        <span class="ex">run:</span> <span class="kw">|</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>          <span class="ex">Rscript</span> ./vignettes/build.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="centre">
+<p><img data-src="github-vignette-ticks.png.png"></p>
+</div>
+</section>
+<section id="solution-3---reducing-code-compilation-time" class="slide level2">
+<h2>Solution 3 - Reducing code compilation time</h2>
 </section>
 <section id="need-to-ensure-code-works-on-internal-servers" class="slide level2">
 <h2>Need to ensure code works on internal servers</h2>
