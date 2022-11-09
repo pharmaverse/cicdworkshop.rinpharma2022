@@ -232,7 +232,7 @@ How NEST run Shiny apps tests
 
 # Case Study - rbmi
 
-## About RBMI
+## About rbmi
 <br/>
 
 :::: {.columns}
