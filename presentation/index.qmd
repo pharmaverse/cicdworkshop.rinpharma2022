@@ -367,6 +367,11 @@ jobs:
 ![](images/vscode-tests.png)
 
 
+::: {.notes}
+- Small plug for VScode that you can use it to execute tasks where you fix the environment
+variable in order to run the full test suite locally
+:::
+
 ## Solution 2 - Reducing the Vignette Runtime
 
 <br/>
@@ -411,6 +416,14 @@ output:
 %\VignetteEngine{R.rsp::asis}
 ```
 
+::: {.notes}
+- Use of R.rsp package  to use "asis" vignette builder
+- This is where we make the vignettes locally in advance and directly add them to the repo
+- When R "builds" the vignette it simply just uses the pre-built file asis without re-running it
+- This opens up a problem though of how do we know if the vignette is up-to-date or even runs properly
+anymore?
+:::
+
 
 ## Solution 2 - Reducing the Vignette Runtime {visibility="uncounted"}
 
@@ -438,7 +451,13 @@ output:
 ![](images/github-vignette-ticks.png)
 :::
 
-
+::: {.notes}
+- We thus have a dedicated CICD job specifically to re-build the vignette. 
+- This way Vignette execution is doing in parallel to the running of the test suite
+- Trade off here though is that it means our vignettes are never executed on CRANs servers
+- This trade-off can be partially mitigated by setting up our own CICD process to use a variety of
+different OS's / machine builds
+:::
 
 
 
@@ -461,6 +480,14 @@ output:
 ![](images/github-cache-build.png){style="height:350px"}
 :::
 
+::: {.notes}
+- Main point is compiling code (in our case stan code) can take a ton of time
+- We use githubs cache feature to restore the compiled code from previous builds to save that time
+- Con is that care with the configuration is required to ensure you aren't loading say MAC binaries
+on a windows image
+- Screenshot just shows the run time of the compile code "build src" is very low compared to the 
+usual 2-5 minutes
+:::
 
 ## Solution 4 - Testing Against In-House Servers
 <br/>
@@ -500,7 +527,12 @@ jobs:
       - name: Build and push image 
         uses: docker/build-push-action@v2
 ```
-
+::: {.notes}
+- Main point here is the targeted use of "paths" to only rebuild and redeploy our docker images
+when a change has occured in the docker directory
+- The Job code is pretty redundent here as it misses a load of stuff to ensure if can fit on the 
+screen however hopefully it just gives some flavour of a job to build a docker file
+:::
 
 ## Solution 4 - Testing Against In-House Servers {visibility="uncounted"}
 <br/>
@@ -532,7 +564,18 @@ jobs:
         uses: ./.github/actions/rcmdcheck
 ```
 
+::: {.notes}
+- Final bit on this is just to highlight that we can use githubs matrix feature
+to ensure that our job is run against all the different combination of images and r versions
+that we want to ensure we can support
+:::
 
+
+## Backup - Non R Package uses of CI/CD
+<br/>
+- automatically re-running your analysis on a code change (or sub-sections)
+- automatically deploying TLGs to your document repository upon succsessul PROD run
+- Automatically deploying VADs to your database / data repository upon sucsessful PROD run
 
 
 <!--    Legacy slides
