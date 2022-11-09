@@ -35,6 +35,8 @@ render_file <- function(filepath, language = "yaml") {
 }
 ```
 
+# Introduction
+
 ## What is CI/CD? 
 
 * Continuous Integration (CI): Frequent merging of several small changes into a main branch
@@ -42,15 +44,16 @@ render_file <- function(filepath, language = "yaml") {
 
 CI/CD bridges the gaps between development and operation activities and teams by **enforcing automation** in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables
 
-::: columns
+::: {.columns}
 ::: {.column width="50%"}
+::: {.centre}
 ![](cicd.jpg)
-
+:::
 :::
 
 ::: {.column width="50%"}
-::: {.incremental}
-- ![](pharmaverse.png)
+::: {.centre}
+![](pharmaverse.png)
 :::
 :::
 :::
@@ -87,36 +90,31 @@ CI/CD bridges the gaps between development and operation activities and teams by
 - And we can just keep going!
 :::
 
+
+
 ## What could standard CI/CD for R packages look like?
 
 * Not all R packages are the same, but they are still pretty similar!
 
-::: columns
-::: {.column width="45%"}
-::: {.incremental}
+::: {.columns}
+::: {.column width="45%" .incremental}
 1. Unit Tests 
 2. Link & URL Checks
 3. Spelling Checks
 4. Static Code Analysis
-
-:::
 :::
 
-::: {.column width="45%"}
-::: {.incremental}
+::: {.column width="45%" .incremental}
 5. Manual Pages
 6. Code Style
 7. R-CMD check 
 8. Publishing a pkgdown site
 :::
-:::
 <br>
 <br>
 
-::: {.column width="100%"}
-::: {.incremental}
+::: {.column width="100%" .incremental}
 * We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
-:::
 :::
 :::
 
@@ -147,14 +145,12 @@ CI/CD bridges the gaps between development and operation activities and teams by
 
 :::: {.columns}
 
-::: {.column width="40%"}
-::: {.incremental}
+::: {.column width="40%" .incremental}
 - Create a reference files to build common ADaM datasets that shows users how to implement our functions
 - Way less text then a Vignette - Code is ready to go and build a dataset!
 - Where we store this code is not check by R-CMD.
 - How to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?
 - CI/CD for the win!
-:::
 :::
 
 ::: {.column width="10%"}
@@ -229,7 +225,12 @@ How NEST run Shiny apps tests
 
 
 
-# Case Study - RBMI
+
+
+
+
+
+# Case Study - rbmi
 
 
 <!--
@@ -303,9 +304,12 @@ depending on the size of the data
 
 
 
-## Reducing the Test Suite Runtime
+## Solution 1 - Reducing the Test Suite Runtime
 <br/>
 
+::: {.file-name}
+`tests/testthat/test-bigtest.R`
+:::
 ```{r}
 #| eval: FALSE
 #| echo: TRUE 
@@ -320,13 +324,147 @@ test_that("Some long running section", {
 
 <br/>
 
+
+
+::: {.fragment}
+::: {.file-name}
+`.github/workflows/on_biweekly.yaml`
+:::
 ```{bash}
 #| eval: FALSE
 #| echo: TRUE 
 on:
   schedule:
     - cron: '0 4 1,15 * *'
+
+jobs:
+  rcmdcheck-main:
+    env:
+      R_TEST_FULL: 'TRUE' 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check
+        uses: ./.github/actions/rcmdcheck
 ```
+:::
+
+::: {.notes}
+- Use of skip-if-not + environment variable to conditionally control which tests get executed
+- Use of CICD to ensure that the skipped tests do still get run on a period basis
+:::
+
+
+
+
+## Solution 1 - Reducing the Test Suite Runtime
+
+<br/>
+
+
+
+::: {.file-name}
+`.vscode/tasks.json`
+:::
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "R - testthat (FULL)",
+            "command": "Rscript",
+            "options": { "env": { "R_TEST_FULL" : "TRUE" } },
+            "args": ["-e", "devtools::test()"],
+            "group": "test"
+        }
+    ]
+}
+```
+![](2022-11-09-10-47-55.png)
+
+
+## Solution 2 - Reducing the Vignette Runtime
+
+<br/>
+
+::: {.file-name}
+`DESCRIPTION`
+:::
+```{bash}
+#| eval: FALSE
+#| echo: TRUE 
+Suggests: R.rsp
+VignetteBuilder: R.rsp
+```
+
+<br/>
+
+::: {.file-name}
+`vignettes/quickstart.Rmd`
+:::
+```{bash}
+#| eval: FALSE
+#| echo: TRUE 
+---
+title: "rbmi: Quickstart"
+author: Craig Gower-Page, Alessandro Noci, and Marcel Wolbers
+output: 
+  bookdown::html_document2:
+    toc: true
+    toc_depth: 4
+---
+```
+
+<br/>
+
+::: {.file-name}
+`vignettes/quickstart.html.asis`
+:::
+```{bash}
+#| eval: FALSE
+#| echo: TRUE 
+%\VignetteIndexEntry{rbmi: Quickstart}
+%\VignetteEngine{R.rsp::asis}
+```
+
+
+## Solution 2 - Reducing the Vignette Runtime
+
+<br/>
+
+
+::: {.file-name}
+`.github/workflow/on_pr.yaml`
+:::
+```{bash}
+#| eval: FALSE
+#| echo: TRUE 
+  vignettes:
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/insightsengineering/rbmi:latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build Vignettes
+        run: |
+          Rscript ./vignettes/build.R
+```
+
+
+::: {.centre}
+![](2022-11-09-10-25-26.png)
+:::
+
+
+
+## Solution 3 - Reducing code compilation time
+
+
+
+
+
 
 
 
