@@ -151,6 +151,6 @@
     "href": "index.html#backup---non-r-package-uses-of-cicd",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Backup - Non R Package uses of CI/CD",
-    "text": "Backup - Non R Package uses of CI/CD\n - automatically re-running your analysis on a code change (or sub-sections) - automatically deploying TLGs to your document repository upon succsessul PROD run - Automatically deploying VADs to your database / data repository upon sucsessful PROD run\n\n\n\n\n\n<CI-CD GitHub>"
+    "text": "Backup - Non R Package uses of CI/CD\n - automatically re-running your analysis on a code change (or sub-sections) - automatically deploying TLGs to your document repository upon succsessul PROD run - Automatically deploying VADs to your database / data repository upon sucsessful PROD run"
   }
 ]
