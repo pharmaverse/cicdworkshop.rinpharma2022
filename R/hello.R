@@ -8,7 +8,7 @@
 #' @examples
 #' hello()
 hello <- function() {
-  message("Welcome to the R/Pharma CI/CD workshop!" )
+  message("Welcome to the R/Pharma CI/CD workshop!")
 }
 
 #' Linting for Cyclomatic Complexity
