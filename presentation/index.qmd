@@ -81,8 +81,9 @@ CI/CD bridges the gaps between development and operation activities and teams by
 ![](images/automation.png)
 </div>
 
-::: {.incremental}
-- ...Yes!  Yes, it does!!
+
+::: {.fragment}
+...Yes!  Yes, it does!!
 :::
 
 ::: footer
@@ -226,6 +227,20 @@ CI/CD bridges the gaps between development and operation activities and teams by
 :::
 
 
+
+
+
+
+
+
+
+# Case Study - NEST
+
+## About NEST
+
+TODO
+
+
 ## Need to give confidence that our package is reliable
 
 CICD "validation" job to create a small report that emulates the sort of validation reports that get made locally
@@ -234,7 +249,6 @@ CICD "validation" job to create a small report that emulates the sort of validat
 ## Shiny App Testing
 
 How NEST run Shiny apps tests
-
 
 
 
