@@ -103,11 +103,12 @@ CI/CD bridges the gaps between development and operation activities and teams by
 - And we can just keep going!
 :::
 
+<!-- TODO add standard package logo or something -->
 
 
 ## What could standard CI/CD for R packages look like?
 
-* Not all R packages are the same, but they are still pretty similar!
+Not all R packages are the same, but they are still pretty similar!
 
 ::: {.columns}
 ::: {.column width="45%" .incremental}
@@ -126,8 +127,8 @@ CI/CD bridges the gaps between development and operation activities and teams by
 <br>
 <br>
 
-::: {.column width="100%" .incremental}
-* We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
+::: {.column width="100%" .fragment}
+We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
 :::
 :::
 
@@ -594,9 +595,22 @@ that we want to ensure we can support
 
 
 
-# Close out
 
 
+## Additional Materials
+<br/>
+
+- Further Reading
+  - [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+  - [GitLab CI](https://docs.gitlab.com/ee/ci/)
+- Advanced Examples
+  - [r-lib/actions](https://github.com/r-lib/actions)
+  - [`{admiralci}`](https://github.com/pharmaverse/admiralci)
+  - [Docker](https://www.docker.com/)
+- Presentation built with [Quarto](https://quarto.org/)
+
+- [R/Pharma 2022 CI/CD Workshop](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/)
+- [This Presentation](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/presentation/)
 
 
 <!--    Legacy slides
