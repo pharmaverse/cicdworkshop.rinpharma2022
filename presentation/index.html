@@ -522,7 +522,7 @@
 <li class="fragment">Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
 <li class="fragment">Way less text then a Vignette - Code is ready to go and build a dataset!</li>
 <li class="fragment">Where we store this code is not check by R-CMD.</li>
-<li class="fragment">How to ensure code stays up to date with deprecated functions or unforseen bugs get in from functions working together?</li>
+<li class="fragment">How to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?</li>
 <li class="fragment">CI/CD for the win!</li>
 </ul>
 </div><div class="column" style="width:10%;">
@@ -586,15 +586,74 @@
 </section>
 <section id="about-nest" class="slide level2">
 <h2>About NEST</h2>
-<p>TODO</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>A collection of R packages for creating TLGs/TFLs and exploratory clinical trials data visualization<br></li>
+<li><code>tern</code> for creating TLGs<br></li>
+<li><code>teal</code> for creating exploratory web applications for analyzing clinical trial data<br></li>
+<li>Links
+<ul>
+<li><a href="https://github.com/Roche/rtables">rtables</a></li>
+<li><a href="https://github.com/insightsengineering/">NEST GitHub Organization</a></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<p><img data-src="https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/nest.png"></p>
+</div>
+</div>
 </section>
-<section id="need-to-give-confidence-that-our-package-is-reliable" class="slide level2">
-<h2>Need to give confidence that our package is reliable</h2>
-<p>CICD “validation” job to create a small report that emulates the sort of validation reports that get made locally</p>
+<section id="package-development-problems" class="slide level2">
+<h2>Package Development Problems</h2>
+<p><br></p>
+<ul>
+<li>Lots of co-dependent packages that need to be tested as a cohort</li>
+<li>Testing and deploying <code>teal</code> web applications</li>
+<li>Validation of all packages to adhere to regulatory standards</li>
+</ul>
+<div class="centre">
+<p><img data-src="images/sad-emoji.png"></p>
+</div>
 </section>
-<section id="shiny-app-testing" class="slide level2">
-<h2>Shiny App Testing</h2>
-<p>How NEST run Shiny apps tests</p>
+<section id="solution-1---testing-packages-as-a-cohort" class="slide level2">
+<h2>Solution 1 - Testing packages as a cohort</h2>
+<ul>
+<li>For a given package in development, it will be need to be tested against the latest updates that take place in upstream dependencies</li>
+<li>Monorepo emulation via a git branch naming strategy can be achieved by using the <a href="https://github.com/openpharma/staged.dependencies">staged.dependencies R package</a> and the <a href="https://github.com/insightsengineering/staged-dependencies-action">staged.dependencies GitHub Action</a>.</li>
+</ul>
+<div class="centre">
+<p><img data-src="https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/staged.dependencies.png"></p>
+</div>
+</section>
+<section id="solution-2---shiny-app-testing-deployment" class="slide level2">
+<h2>Solution 2 - Shiny App Testing &amp; Deployment</h2>
+<ul>
+<li>Statistical Programmers and Analysts create Shiny web apps that are created via the <code>teal</code> framework for analyzing data</li>
+<li>They are tested continuously via a CI pipeline that uses the <a href="https://cran.r-project.org/web/packages/shinytest2/index.html"><code>shinytest2</code></a> R package</li>
+<li>They are deployed to an RSConnect or Shiny Server instance via a continuous deployment pipeline
+<ul>
+<li>With the help of the <a href="https://cran.r-project.org/web/packages/rsconnect/index.html">rsconnect</a> and <a href="https://cran.r-project.org/web/packages/connectapi/index.html">connectapi</a> R packages</li>
+</ul></li>
+</ul>
+<div class="centre">
+<p><img data-src="https://rstudio.github.io/shinytest2/articles/images/record-simple-app.png"></p>
+</div>
+</section>
+<section id="solution-3---validating-r-packages" class="slide level2">
+<h2>Solution 3 - Validating R Packages</h2>
+<ul>
+<li>R packages are validated by an internal validation team that uses CI/CD pipelines to automatically
+<ul>
+<li>accept new package submissions via a form</li>
+<li>running tests against the new package to ensure package integrity</li>
+<li>enforcing certain criteria to make sure that the new package is meeting regulatory quality requirements</li>
+</ul></li>
+<li>Also validated externally via an open source project called <a href="https://github.com/insightsengineering/thevalidatoR">thevalidatoR</a></li>
+</ul>
+<div class="centre">
+<p><img data-src="images/rbmi-validation-report.png"></p>
+</div>
 </section></section>
 <section>
 <section id="case-study---rbmi" class="title-slide slide level1 center">
@@ -634,7 +693,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="package-development-problems" class="slide level2">
+<section id="package-development-problems-1" class="slide level2">
 <h2>Package Development Problems</h2>
 <p><br></p>
 <ul>
@@ -669,12 +728,10 @@
 <p><code>tests/testthat/test-bigtest.R</code></p>
 </div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">test_that</span>(<span class="st">"Some long running section"</span>, {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  </span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="fu">skip_if_not</span>(<span class="fu">Sys.getenv</span>(<span class="st">"R_TEST_FULL"</span>) <span class="sc">==</span> <span class="st">"TRUE"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a>    </span>
-<span id="cb1-5"><a href="#cb1-5"></a>    <span class="co"># &lt;rest of the test code&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>    </span>
-<span id="cb1-7"><a href="#cb1-7"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">skip_if_not</span>(<span class="fu">Sys.getenv</span>(<span class="st">"R_TEST_FULL"</span>) <span class="sc">==</span> <span class="st">"TRUE"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="co"># &lt;rest of the test code&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="fragment">
 <div class="file-name">
@@ -910,8 +967,8 @@
 <span id="cb9-16"><a href="#cb9-16"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
-<li>Main point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occured in the docker directory</li>
-<li>The Job code is pretty redundent here as it misses a load of stuff to ensure if can fit on the screen however hopefully it just gives some flavour of a job to build a docker file</li>
+<li>Main point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occurred in the docker directory</li>
+<li>The Job code is pretty redundant here as it misses a load of stuff to ensure if can fit on the screen however hopefully it just gives some flavour of a job to build a docker file</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
