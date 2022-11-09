@@ -39,21 +39,33 @@ render_file <- function(filepath, language = "yaml") {
 
 ## What is CI/CD? 
 
-* Continuous Integration (CI): Frequent merging of several small changes into a main branch
-* Continuous Delivery (CD): Repeatable deployment process when deciding to deploy
 
+::: {.fragment}
+* Continuous Integration (CI): Frequent merging of several small changes into a main branch
+:::
+
+::: {.fragment}
+* Continuous Delivery (CD): Repeatable deployment process when deciding to deploy
+:::
+
+::: {.fragment}
 CI/CD bridges the gaps between development and operation activities and teams by **enforcing automation** in building, testing and deployment of applications. CI/CD services compile the incremental code changes made by developers, then link and package them into software deliverables
+:::
 
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.centre}
+::: {.fragment}
 ![](images/cicd.jpg)
+:::
 :::
 :::
 
 ::: {.column width="50%"}
 ::: {.centre}
+::: {.fragment}
 ![](images/pharmaverse.png)
+:::
 :::
 :::
 :::
@@ -569,6 +581,9 @@ that we want to ensure we can support
 
 
 # Close out
+
+
+
 
 <!--    Legacy slides
 
