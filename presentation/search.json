@@ -74,28 +74,28 @@
     "href": "index.html#package-development-problems",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Package Development Problems",
-    "text": "Package Development Problems\n\n\nLots of co-dependent packages that need to be tested as a cohort\nTesting and deploying teal web applications\nValidation of all packages to adhere to regulatory standards"
+    "text": "Package Development Problems\n\n\n\nLots of co-dependent packages that need to be tested as a cohort\nTesting Shiny web applications based on the teal framework\nDeploying Shiny web applications built with teal\nValidation of all packages to\n\nadhere to regulatory standards\nso they can be deployed on regulatory compute environments"
   },
   {
     "objectID": "index.html#solution-1---testing-packages-as-a-cohort",
     "href": "index.html#solution-1---testing-packages-as-a-cohort",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 1 - Testing packages as a cohort",
-    "text": "Solution 1 - Testing packages as a cohort\n\nFor a given package in development, it will be need to be tested against the latest updates that take place in upstream dependencies\nMonorepo emulation via a git branch naming strategy can be achieved by using the staged.dependencies R package and the staged.dependencies GitHub Action."
+    "text": "Solution 1 - Testing packages as a cohort\n\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
   },
   {
     "objectID": "index.html#solution-2---shiny-app-testing-deployment",
     "href": "index.html#solution-2---shiny-app-testing-deployment",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 2 - Shiny App Testing & Deployment",
-    "text": "Solution 2 - Shiny App Testing & Deployment\n\nStatistical Programmers and Analysts create Shiny web apps that are created via the teal framework for analyzing data\nThey are tested continuously via a CI pipeline that uses the shinytest2 R package\nThey are deployed to an RSConnect or Shiny Server instance via a continuous deployment pipeline\n\nWith the help of the rsconnect and connectapi R packages"
+    "text": "Solution 2 - Shiny App Testing & Deployment\n\n\n\n\n\nAnalysts create Shiny web apps that are created via the teal framework for analyzing data\nApps are tested via a CI pipeline that uses the shinytest2 R package\nApps deployed to an RSConnect Server instance via a CD pipeline\n\nWith the help of the rsconnect and connectapi R packages"
   },
   {
     "objectID": "index.html#solution-3---validating-r-packages",
     "href": "index.html#solution-3---validating-r-packages",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 3 - Validating R Packages",
-    "text": "Solution 3 - Validating R Packages\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing certain criteria to make sure that the new package is meeting regulatory quality requirements\n\nAlso validated externally via an open source project called thevalidatoR"
+    "text": "Solution 3 - Validating R Packages\n\n\n\n\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing criteria to ensure that the package meets regulatory requirements\n\nAlso validated externally via an open source project called thevalidatoR"
   },
   {
     "objectID": "index.html#about-rbmi",
