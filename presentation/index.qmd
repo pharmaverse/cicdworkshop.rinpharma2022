@@ -138,7 +138,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 
 ::: {.column width="40%" .incremental}
 - Create a reference files to build common ADaM datasets that shows users how to implement our functions
-- Way less text then a Vignette - Code is ready to go and build a dataset
+- Way less text than a Vignette - Code is ready to go and build a dataset
 - Where we store this code is not checked by R-CMD
 - How to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?
 - CI/CD for the win!
@@ -197,8 +197,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ::: {.column width="40%"}
 - Using `admiralci`, we have a common set of CI/CD workflows
 - Developers moving between packages are familiar with these workflows
-- Common documentation between packages for CI/CD workflows - easy to maintain
-- 
+- Common documentation between packages for CI/CD workflows - easy to maintain and provide to new contributors
 :::
 
 ::: {.column width="10%"}
