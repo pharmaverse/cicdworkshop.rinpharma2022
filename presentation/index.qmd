@@ -105,31 +105,8 @@ CI/CD bridges the gaps between development and operation activities and teams by
 
 <!-- TODO add standard package logo or something -->
 
-
-## What could standard CI/CD for R packages look like?
-
-Not all R packages are the same, but they are still pretty similar!
-
-::: {.columns}
-::: {.column width="45%" .incremental}
-1. Unit Tests 
-2. Link & URL Checks
-3. Spelling Checks
-4. Static Code Analysis
-:::
-
-::: {.column width="45%" .incremental}
-5. Manual Pages
-6. Code Style
-7. R-CMD check 
-8. Publishing a pkgdown site
-:::
-<br>
-<br>
-
 ::: {.column width="100%" .fragment}
 We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide)
-:::
 :::
 
 # Case Study - admiral
@@ -146,7 +123,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
   - [CDISC](https://www.cdisc.org/)
   - [https://github.com/pharmaverse/admiral](https://github.com/pharmaverse/admiral)
 - **Issue 1:**  Checking ADaM Template code
-- **Issue 2:**  Common CI/CD for the admiral family of packages
+- **Issue 2:**  Common CI/CD workflows for the `admiral` family of packages
 :::
 
 ::: {.column width="25%"}
@@ -155,14 +132,14 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ::::
 
 
-## Issue 1: Check Templates
+## Issue 1: How to Check our Template Code
 
 :::: {.columns}
 
 ::: {.column width="40%" .incremental}
 - Create a reference files to build common ADaM datasets that shows users how to implement our functions
-- Way less text then a Vignette - Code is ready to go and build a dataset!
-- Where we store this code is not check by R-CMD.
+- Way less text then a Vignette - Code is ready to go and build a dataset
+- Where we store this code is not checked by R-CMD
 - How to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?
 - CI/CD for the win!
 :::
@@ -175,17 +152,23 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 ::::
 
-## CI/CD for Templates
+## Soultion 1: CI/CD for Templates
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- After a Code Review the template code is executed
+::: {.column width="50%" .incremental}
+- Dedicated CI/CD workflow that executes the Template code
+- Once a Code Review is completed the `Check Template` Workflow is executed
 - If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.
 :::
 
 ::: {.column width="50%"}
-![](images/template_review.png)
+
+::: {.file-name}
+.github/workflows/check-templates.yml
+:::
+
+![](images/check_templates.png)
 :::
 ::::
 
@@ -193,30 +176,29 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="40%" .incremental}
 - As you can imagine there can be a lot of different types of ADaMs!
 - Extension packages focus on specific disease areas like oncology
-- The admiral family has a package for developers, template R package repo, dummy data
+- The `admiral` family has a package for developers, template R package repo and dummy data
 - Eek!!  How to keep this all in line!
 :::
 
-::: {.column width="10%"}
-:::
 
-::: {.column width="50%"}
+
+::: {.column width="60%"}
 ![](images/admiralext.png)
 :::
 :::
 
-## Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies
+## Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies
 
 :::: {.columns}
 
 ::: {.column width="40%"}
-- As you can imagine there can be a lot of different types of ADaMs!
-- Extension packages focus on specific disease areas like oncology
-- The admiral family has a package for developers, template R package repo, dummy data
-- Eek!!  How to keep this all in line!
+- Using `admiralci`, we have a common set of CI/CD workflows
+- Developers moving between packages are familiar with these workflows
+- Common documentation between packages for CI/CD workflows - easy to maintain
+- 
 :::
 
 ::: {.column width="10%"}
