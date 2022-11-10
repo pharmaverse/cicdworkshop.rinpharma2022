@@ -461,28 +461,8 @@
 </ul>
 </div>
 <!-- TODO add standard package logo or something -->
-</section>
-<section id="what-could-standard-cicd-for-r-packages-look-like" class="slide level2">
-<h2>What could standard CI/CD for R packages look like?</h2>
-<p>Not all R packages are the same, but they are still pretty similar!</p>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ol type="1">
-<li class="fragment">Unit Tests</li>
-<li class="fragment">Link &amp; URL Checks</li>
-<li class="fragment">Spelling Checks</li>
-<li class="fragment">Static Code Analysis</li>
-</ol>
-</div><div class="column" style="width:45%;">
-<ol start="5" type="1">
-<li class="fragment">Manual Pages</li>
-<li class="fragment">Code Style</li>
-<li class="fragment">R-CMD check</li>
-<li class="fragment">Publishing a pkgdown site</li>
-</ol>
-</div><p><br> <br></p><div class="column fragment" style="width:100%;">
+<div class="column fragment" style="width:100%;">
 <p>We just did all these in the R/Pharma Workshop: <a href="https://pharmaverse.github.io/cicdworkshop.rinpharma2022/workshop/index.html#/title-slide">Intro to CI/CD for R Packages</a></p>
-</div>
 </div>
 </section></section>
 <section>
@@ -504,21 +484,21 @@
 <li><a href="https://github.com/pharmaverse/admiral">https://github.com/pharmaverse/admiral</a></li>
 </ul></li>
 <li><strong>Issue 1:</strong> Checking ADaM Template code</li>
-<li><strong>Issue 2:</strong> Common CI/CD for the admiral family of packages</li>
+<li><strong>Issue 2:</strong> Common CI/CD workflows for the <code>admiral</code> family of packages</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <p><img data-src="images/hex-admiral.png"></p>
 </div>
 </div>
 </section>
-<section id="issue-1-check-templates" class="slide level2">
-<h2>Issue 1: Check Templates</h2>
+<section id="issue-1-how-to-check-our-template-code" class="slide level2">
+<h2>Issue 1: How to Check our Template Code</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
 <li class="fragment">Create a reference files to build common ADaM datasets that shows users how to implement our functions</li>
-<li class="fragment">Way less text then a Vignette - Code is ready to go and build a dataset!</li>
-<li class="fragment">Where we store this code is not check by R-CMD.</li>
+<li class="fragment">Way less text then a Vignette - Code is ready to go and build a dataset</li>
+<li class="fragment">Where we store this code is not checked by R-CMD</li>
 <li class="fragment">How to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?</li>
 <li class="fragment">CI/CD for the win!</li>
 </ul>
@@ -529,16 +509,20 @@
 </div>
 </div>
 </section>
-<section id="cicd-for-templates" class="slide level2">
-<h2>CI/CD for Templates</h2>
+<section id="soultion-1-cicd-for-templates" class="slide level2">
+<h2>Soultion 1: CI/CD for Templates</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>After a Code Review the template code is executed</li>
-<li>If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.</li>
+<li class="fragment">Dedicated CI/CD workflow that executes the Template code</li>
+<li class="fragment">Once a Code Review is completed the <code>Check Template</code> Workflow is executed</li>
+<li class="fragment">If any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/template_review.png"></p>
+<div class="file-name">
+<p>.github/workflows/check-templates.yml</p>
+</div>
+<p><img data-src="images/check_templates.png"></p>
 </div>
 </div>
 </section>
@@ -547,27 +531,25 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>As you can imagine there can be a lot of different types of ADaMs!</li>
-<li>Extension packages focus on specific disease areas like oncology</li>
-<li>The admiral family has a package for developers, template R package repo, dummy data</li>
-<li>Eek!! How to keep this all in line!</li>
+<li class="fragment">As you can imagine there can be a lot of different types of ADaMs!</li>
+<li class="fragment">Extension packages focus on specific disease areas like oncology</li>
+<li class="fragment">The <code>admiral</code> family has a package for developers, template R package repo and dummy data</li>
+<li class="fragment">Eek!! How to keep this all in line!</li>
 </ul>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:60%;">
 <p><img data-src="images/admiralext.png"></p>
 </div>
 </div>
 </section>
-<section id="issue-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies" class="slide level2">
-<h2>Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies</h2>
+<section id="solution-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies" class="slide level2">
+<h2>Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>As you can imagine there can be a lot of different types of ADaMs!</li>
-<li>Extension packages focus on specific disease areas like oncology</li>
-<li>The admiral family has a package for developers, template R package repo, dummy data</li>
-<li>Eek!! How to keep this all in line!</li>
+<li>Using <code>admiralci</code>, we have a common set of CI/CD workflows</li>
+<li>Developers moving between packages are familiar with these workflows</li>
+<li>Common documentation between packages for CI/CD workflows - easy to maintain</li>
+<li></li>
 </ul>
 </div><div class="column" style="width:10%;">
 

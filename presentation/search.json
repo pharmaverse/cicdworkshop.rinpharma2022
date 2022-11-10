@@ -18,49 +18,42 @@
     "href": "index.html#how-does-cicd-help-r-packages",
     "title": "CI/CD in the {pharmaverse}",
     "section": "How does CI/CD help R packages?",
-    "text": "How does CI/CD help R packages?\n\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Code Review\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date\nAnd we can just keep going!"
-  },
-  {
-    "objectID": "index.html#what-could-standard-cicd-for-r-packages-look-like",
-    "href": "index.html#what-could-standard-cicd-for-r-packages-look-like",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "What could standard CI/CD for R packages look like?",
-    "text": "What could standard CI/CD for R packages look like?\nNot all R packages are the same, but they are still pretty similar!\n\n\n\nUnit Tests\nLink & URL Checks\nSpelling Checks\nStatic Code Analysis\n\n\n\nManual Pages\nCode Style\nR-CMD check\nPublishing a pkgdown site\n\n \nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
+    "text": "How does CI/CD help R packages?\n\n\nCatch issues (bugs) early on\nUser base on multiple OSes and multiple R versions\nFaster turnaround on Code Review\nMultiple Contributors on your R Package\nEnforce style conventions and preferences\nMeasure test coverage for new code\nKeep docs up-to-date\nAnd we can just keep going!\n\n\n\n\nWe just did all these in the R/Pharma Workshop: Intro to CI/CD for R Packages"
   },
   {
     "objectID": "index.html#about-admiral",
     "href": "index.html#about-admiral",
     "title": "CI/CD in the {pharmaverse}",
     "section": "About admiral",
-    "text": "About admiral\n\n\n\n\nProvide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.\nADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials\nLinks\n\nCDISC\nhttps://github.com/pharmaverse/admiral\n\nIssue 1: Checking ADaM Template code\nIssue 2: Common CI/CD for the admiral family of packages"
+    "text": "About admiral\n\n\n\n\nProvide an open source, modularized toolbox that enables the pharmaceutical programming community to develop ADaM datasets in R.\nADaM is one of the required standards for data submission to FDA (U.S.) and PMDA (Japan) for clinical trials\nLinks\n\nCDISC\nhttps://github.com/pharmaverse/admiral\n\nIssue 1: Checking ADaM Template code\nIssue 2: Common CI/CD workflows for the admiral family of packages"
   },
   {
-    "objectID": "index.html#issue-1-check-templates",
-    "href": "index.html#issue-1-check-templates",
+    "objectID": "index.html#issue-1-how-to-check-our-template-code",
+    "href": "index.html#issue-1-how-to-check-our-template-code",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Issue 1: Check Templates",
-    "text": "Issue 1: Check Templates\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text then a Vignette - Code is ready to go and build a dataset!\nWhere we store this code is not check by R-CMD.\nHow to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?\nCI/CD for the win!"
+    "section": "Issue 1: How to Check our Template Code",
+    "text": "Issue 1: How to Check our Template Code\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text then a Vignette - Code is ready to go and build a dataset\nWhere we store this code is not checked by R-CMD\nHow to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?\nCI/CD for the win!"
   },
   {
-    "objectID": "index.html#cicd-for-templates",
-    "href": "index.html#cicd-for-templates",
+    "objectID": "index.html#soultion-1-cicd-for-templates",
+    "href": "index.html#soultion-1-cicd-for-templates",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "CI/CD for Templates",
-    "text": "CI/CD for Templates\n\n\n\nAfter a Code Review the template code is executed\nIf any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning."
+    "section": "Soultion 1: CI/CD for Templates",
+    "text": "Soultion 1: CI/CD for Templates\n\n\n\nDedicated CI/CD workflow that executes the Template code\nOnce a Code Review is completed the Check Template Workflow is executed\nIf any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.\n\n\n\n.github/workflows/check-templates.yml"
   },
   {
     "objectID": "index.html#issue-2-admiral-upstream-and-downstream-dependencies",
     "href": "index.html#issue-2-admiral-upstream-and-downstream-dependencies",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Issue 2: admiral upstream and downstream dependencies",
-    "text": "Issue 2: admiral upstream and downstream dependencies\n\n\n\nAs you can imagine there can be a lot of different types of ADaMs!\nExtension packages focus on specific disease areas like oncology\nThe admiral family has a package for developers, template R package repo, dummy data\nEek!! How to keep this all in line!"
+    "text": "Issue 2: admiral upstream and downstream dependencies\n\n\n\nAs you can imagine there can be a lot of different types of ADaMs!\nExtension packages focus on specific disease areas like oncology\nThe admiral family has a package for developers, template R package repo and dummy data\nEek!! How to keep this all in line!"
   },
   {
-    "objectID": "index.html#issue-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies",
-    "href": "index.html#issue-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies",
+    "objectID": "index.html#solution-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies",
+    "href": "index.html#solution-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies",
-    "text": "Issue 2: Common CI/CD workflows for admiral upstream and downstream dependencies\n\n\n\nAs you can imagine there can be a lot of different types of ADaMs!\nExtension packages focus on specific disease areas like oncology\nThe admiral family has a package for developers, template R package repo, dummy data\nEek!! How to keep this all in line!"
+    "section": "Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies",
+    "text": "Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies\n\n\n\nUsing admiralci, we have a common set of CI/CD workflows\nDevelopers moving between packages are familiar with these workflows\nCommon documentation between packages for CI/CD workflows - easy to maintain"
   },
   {
     "objectID": "index.html#about-nest",
