@@ -152,7 +152,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 ::::
 
-## Soultion 1: CI/CD for Templates
+## Solution 1: CI/CD for Templates
 
 :::: {.columns}
 
@@ -235,38 +235,38 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ## Package Development Problems
 <br/>
 
-::: {.incremental}
+
 - Lots of co-dependent packages that need to be tested as a cohort
 - Testing Shiny web applications based on the `teal` framework
 - Deploying Shiny web applications built with `teal`
 - Validation of all packages to
   - adhere to regulatory standards
   - so they can be deployed on regulatory compute environments
-:::
 
-::: {.fragment}
+
+
 ::: {.centre}
 ![](images/sad-emoji.png)
 :::
-:::
+
 
 ## Solution 1 - Testing packages as a cohort
 
 <br/>
 
-::: {.incremental}
+
 - An in-development package must be tested against the latest versions of upstream dependencies
 - Monorepo emulation via a git branch naming strategy is achieved by using
   - the [staged.dependencies R package](https://github.com/openpharma/staged.dependencies)
   - and the [staged.dependencies GitHub Action](https://github.com/insightsengineering/staged-dependencies-action)
 - Testing as a cohort can be done at any stage (eg. development, pre-release, release)
-:::
 
-::: {.fragment}
+
+
 ::: {.centre}
 ![](https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/staged.dependencies.png)
 :::
-:::
+
 
 ## Solution 2 - Shiny App Testing & Deployment
 
@@ -275,21 +275,21 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::: {.columns}
 
 ::: {.column width="45%"}
-::: {.incremental}
+
 - Analysts create Shiny web apps that are created via the `teal` framework for analyzing data
 - Apps are tested via a CI pipeline that uses the [`shinytest2`](https://cran.r-project.org/web/packages/shinytest2/index.html) R package
 - Apps deployed to an RSConnect Server instance via a CD pipeline
   - With the help of the [`rsconnect`](https://cran.r-project.org/web/packages/rsconnect/index.html) and [`connectapi`](https://cran.r-project.org/web/packages/connectapi/index.html) R packages
-:::
+
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="50%"}
-::: {.fragment}
+
 ![](images/shinytest2.png)
-:::
+
 :::
 
 ::::
@@ -301,19 +301,19 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::: {.columns}
 
 ::: {.column width="60%"}
-::: {.incremental}
+
 - R packages are validated by an internal validation team that uses CI/CD pipelines to automatically
   - accept new package submissions via a form
   - running tests against the new package to ensure package integrity
   - enforcing criteria to ensure that the package meets regulatory requirements
 - Also validated externally via an open source project called [thevalidatoR](https://github.com/insightsengineering/thevalidatoR)
-:::
+
 :::
 
 ::: {.column width="40%"}
-::: {.fragment}
+
 ![](images/validation-report.png)
-:::
+
 :::
 
 ::::
@@ -423,39 +423,22 @@ jobs:
 
 
 
-## Solution 1 - Reducing the Test Suite Runtime {visibility="uncounted"}
-<br/>
-
-<!-- TODO - Potentially can drop this slide, doesn't add value and am short on time -->
-
-::: {.file-name}
-`.vscode/tasks.json`
-:::
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "R - testthat (FULL)",
-            "command": "Rscript",
-            "options": { "env": { "R_TEST_FULL" : "TRUE" } },
-            "args": ["-e", "devtools::test()"],
-            "group": "test"
-        }
-    ]
-}
-```
-![](images/vscode-tests.png)
-
-
-::: {.notes}
-- Small plug for VScode that you can use it to execute tasks where you fix the environment
-variable in order to run the full test suite locally
-:::
-
 ## Solution 2 - Reducing the Vignette Runtime
 
+<br/>
+
+
+
+```text
+.
+├── DESCRIPTION
+├── R/
+├── tests/
+└── vignettes/
+    ├── quickstart.Rmd
+    ├── quickstart.html
+    └── quickstart.html.asis
+```
 <br/>
 
 ::: {.file-name}
@@ -470,23 +453,6 @@ VignetteBuilder: R.rsp
 
 <br/>
 
-::: {.file-name}
-`vignettes/quickstart.Rmd`
-:::
-```{bash}
-#| eval: FALSE
-#| echo: TRUE 
----
-title: "rbmi: Quickstart"
-author: Craig Gower-Page, Alessandro Noci, and Marcel Wolbers
-output: 
-  bookdown::html_document2:
-    toc: true
-    toc_depth: 4
----
-```
-
-<br/>
 
 ::: {.file-name}
 `vignettes/quickstart.html.asis`
