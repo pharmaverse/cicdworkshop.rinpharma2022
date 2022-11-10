@@ -63,32 +63,25 @@
     "text": "About NEST\n\n\n\n\nA collection of R packages for creating TLGs/TFLs and exploratory clinical trials data visualization\ntern for creating TLGs\nteal for creating exploratory web applications for analyzing clinical trial data\nLinks\n\nrtables\nNEST GitHub Organization"
   },
   {
-    "objectID": "index.html#package-development-problems",
-    "href": "index.html#package-development-problems",
+    "objectID": "index.html#use-case-1---testing-packages-as-a-cohort",
+    "href": "index.html#use-case-1---testing-packages-as-a-cohort",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Package Development Problems",
-    "text": "Package Development Problems\n\n\nLots of co-dependent packages that need to be tested as a cohort\nTesting Shiny web applications based on the teal framework\nDeploying Shiny web applications built with teal\nValidation of all packages to\n\nadhere to regulatory standards\nso they can be deployed on regulatory compute environments"
+    "section": "Use Case 1 - Testing Packages as a Cohort",
+    "text": "Use Case 1 - Testing Packages as a Cohort\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
   },
   {
-    "objectID": "index.html#solution-1---testing-packages-as-a-cohort",
-    "href": "index.html#solution-1---testing-packages-as-a-cohort",
+    "objectID": "index.html#use-case-2---shiny-app-testing-deployment",
+    "href": "index.html#use-case-2---shiny-app-testing-deployment",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 1 - Testing Packages as a Cohort",
-    "text": "Solution 1 - Testing Packages as a Cohort\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
+    "section": "Use Case 2 - Shiny App Testing & Deployment",
+    "text": "Use Case 2 - Shiny App Testing & Deployment\n\n\n\n\nAnalysts create Shiny web apps via the teal framework for analyzing data\nApps are tested via a CI pipeline that uses the shinytest2 R package\nApps deployed to an RSConnect Server instance via a CD pipeline\n\nWith the help of the rsconnect and connectapi R packages"
   },
   {
-    "objectID": "index.html#solution-2---shiny-app-testing-deployment",
-    "href": "index.html#solution-2---shiny-app-testing-deployment",
+    "objectID": "index.html#use-case-3---validating-r-packages",
+    "href": "index.html#use-case-3---validating-r-packages",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 2 - Shiny App Testing & Deployment",
-    "text": "Solution 2 - Shiny App Testing & Deployment\n\n\n\n\nAnalysts create Shiny web apps via the teal framework for analyzing data\nApps are tested via a CI pipeline that uses the shinytest2 R package\nApps deployed to an RSConnect Server instance via a CD pipeline\n\nWith the help of the rsconnect and connectapi R packages"
-  },
-  {
-    "objectID": "index.html#solution-3---validating-r-packages",
-    "href": "index.html#solution-3---validating-r-packages",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 3 - Validating R Packages",
-    "text": "Solution 3 - Validating R Packages\n\n\n\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing criteria to ensure that the package meets regulatory requirements\n\nAlso validated externally via an open source project called thevalidatoR"
+    "section": "Use Case 3 - Validating R Packages",
+    "text": "Use Case 3 - Validating R Packages\n\n\n\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing criteria to ensure that the package meets regulatory requirements\n\nAlso validated externally via an open source project called thevalidatoR"
   },
   {
     "objectID": "index.html#about-rbmi",
@@ -98,8 +91,8 @@
     "text": "About rbmi\n\n\n\n\nReference Based Multiple Imputation\nImplements imputation for longitudinal data in accordance with the ICH E9(R1) Addendum on Estimands\nAcknowledgements to Alessandro Noci, Marcel Wolbers & Daniel Sabanes Bove\nLinks\n\nhttps://arxiv.org/abs/2109.11162\nhttps://github.com/insightsengineering/rbmi\n\n\n\n\n\n\n\nKey component of the package is that many of the methods rely on resampling techniques to generate confidence intervals. This requires fitting potentially 1000’s of MMRM models which means run times tend to be in the order of minutes to hours for a full run of the package depending on the size of the data"
   },
   {
-    "objectID": "index.html#package-development-problems-1",
-    "href": "index.html#package-development-problems-1",
+    "objectID": "index.html#package-development-problems",
+    "href": "index.html#package-development-problems",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Package Development Problems",
     "text": "Package Development Problems\n\n\nInstallation takes >3 minutes to compile STAN code\nFull test suite takes >50 minutes to run\nVignettes took >5 minutes to run\nNeed to release on in-house servers running legacy versions of R\nMany PR’s forgot to run devtools::document()\nMany PR’s forgot to rebuild pkgdown site\n\n\n\n\n\n2 key issues that we are about to cover: - Need to get run times down to <10 minutes - Need to ensure package works both on internal server and CRAN"
