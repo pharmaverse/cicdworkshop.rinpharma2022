@@ -840,42 +840,35 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- ## Solution 3 - Reducing code Compilation Time
+<br/>
+
+::: {.file-name}
+`.github/actions/build-src/action.yml`
+:::
+```yaml
+    - name: Cache Compiled Stan Code
+      id: cache-pkgs
+      uses: actions/cache@v3
+      with:
+        path: src/*
+```
+
+::: {.centre}
+![](images/github-cache-build.png){style="height:350px"}
+:::
+
+::: {.notes}
+- Main point is compiling code (in our case stan code) can take a ton of time
+- We use githubs cache feature to restore the compiled code from previous builds to save that time
+- Con is that care with the configuration is required to ensure you aren't loading say MAC binaries
+on a windows image
+- Screenshot just shows the run time of the compile code "build src" is very low compared to the 
+usual 2-5 minutes
+::: -->
 </section>
-<section id="solution-3---reducing-code-compilation-time" class="slide level2">
-<h2>Solution 3 - Reducing code Compilation Time</h2>
-<p><br></p>
-<div class="file-name">
-<p><code>.github/actions/build-src/action.yml</code></p>
-</div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Cache Compiled Stan Code</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> cache-pkgs</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/cache@v3</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="at">        </span><span class="fu">path</span><span class="kw">:</span><span class="at"> src/*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="centre">
-<p><img data-src="images/github-cache-build.png" style="height:350px"></p>
-</div>
-<aside class="notes">
-<ul>
-<li>Main point is compiling code (in our case stan code) can take a ton of time</li>
-<li>We use githubs cache feature to restore the compiled code from previous builds to save that time</li>
-<li>Con is that care with the configuration is required to ensure you aren’t loading say MAC binaries on a windows image</li>
-<li>Screenshot just shows the run time of the compile code “build src” is very low compared to the usual 2-5 minutes</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="solution-4---testing-against-in-house-servers" class="slide level2">
-<h2>Solution 4 - Testing Against In-House Servers</h2>
+<section id="solution-3---testing-against-in-house-servers" class="slide level2">
+<h2>Solution 3 - Testing Against In-House Servers</h2>
 <p><br></p>
 <div class="centre">
 <p><img data-src="images/rbmi-docker-image.png" style="height:600px"></p>
@@ -927,32 +920,32 @@ when a change has occurred in the docker directory
 screen however hopefully it just gives some flavour of a job to build a docker file
 ::: -->
 </section>
-<section id="solution-4---testing-against-in-house-servers-1" class="slide level2" data-visibility="uncounted">
-<h2>Solution 4 - Testing Against In-House Servers</h2>
+<section id="solution-3---testing-against-in-house-servers-1" class="slide level2" data-visibility="uncounted">
+<h2>Solution 3 - Testing Against In-House Servers</h2>
 <p><br></p>
 <div class="file-name">
 <p><code>.github/workflows/on_pr_main.yaml</code></p>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="at">        </span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
-<span id="cb8-18"><a href="#cb8-18"></a><span class="at">        </span></span>
-<span id="cb8-19"><a href="#cb8-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
-<span id="cb8-20"><a href="#cb8-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="at">        </span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="at">        </span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Final bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support</li>

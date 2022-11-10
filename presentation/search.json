@@ -119,25 +119,18 @@
     "text": "Solution 2 - Reducing the Vignette Runtime\n\n\n.github/workflow/on_pr.yaml\n\n  vignettes:\n    runs-on: ubuntu-latest\n    container:\n      image: \"ghcr.io/insightsengineering/rbmi:latest\"\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - name: Build Vignettes\n        run: |\n          Rscript ./vignettes/build.R\n\n\n\n\n\nWe thus have a dedicated CICD job specifically to re-build the vignette.\nThis way Vignette execution is doing in parallel to the running of the test suite\nTrade off here though is that it means our vignettes are never executed on CRANs servers\nThis trade-off can be partially mitigated by setting up our own CICD process to use a variety of different OS’s / machine builds"
   },
   {
-    "objectID": "index.html#solution-3---reducing-code-compilation-time",
-    "href": "index.html#solution-3---reducing-code-compilation-time",
+    "objectID": "index.html#solution-3---testing-against-in-house-servers",
+    "href": "index.html#solution-3---testing-against-in-house-servers",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 3 - Reducing code Compilation Time",
-    "text": "Solution 3 - Reducing code Compilation Time\n\n\n.github/actions/build-src/action.yml\n\n    - name: Cache Compiled Stan Code\n      id: cache-pkgs\n      uses: actions/cache@v3\n      with:\n        path: src/*\n\n\n\n\n\nMain point is compiling code (in our case stan code) can take a ton of time\nWe use githubs cache feature to restore the compiled code from previous builds to save that time\nCon is that care with the configuration is required to ensure you aren’t loading say MAC binaries on a windows image\nScreenshot just shows the run time of the compile code “build src” is very low compared to the usual 2-5 minutes"
+    "section": "Solution 3 - Testing Against In-House Servers",
+    "text": "Solution 3 - Testing Against In-House Servers\n\n\n\n\n\n\nUse of docker files to emulate our in-house servers\nHad double benefit of drastically reducing package install times on standard push / pr builds as all required dependencies are already installed and ready to go"
   },
   {
-    "objectID": "index.html#solution-4---testing-against-in-house-servers",
-    "href": "index.html#solution-4---testing-against-in-house-servers",
+    "objectID": "index.html#solution-3---testing-against-in-house-servers-1",
+    "href": "index.html#solution-3---testing-against-in-house-servers-1",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 4 - Testing Against In-House Servers",
-    "text": "Solution 4 - Testing Against In-House Servers\n\n\n\n\n\n\nUse of docker files to emulate our in-house servers\nHad double benefit of drastically reducing package install times on standard push / pr builds as all required dependencies are already installed and ready to go"
-  },
-  {
-    "objectID": "index.html#solution-4---testing-against-in-house-servers-1",
-    "href": "index.html#solution-4---testing-against-in-house-servers-1",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 4 - Testing Against In-House Servers",
-    "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/on_pr_main.yaml\n\njobs:\n  rcmdcheck:\n    strategy:\n      matrix:\n       config:\n        - { image: \"ghcr.io/insightsengineering/rbmi:r404\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:r410\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:latest\"}\n    runs-on: ubuntu-latest\n    container:\n      image: ${{ matrix.config.image }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n        \n      - name: Build src\n        uses: ./.github/actions/build-src\n        \n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\nFinal bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support"
+    "section": "Solution 3 - Testing Against In-House Servers",
+    "text": "Solution 3 - Testing Against In-House Servers\n\n\n.github/workflows/on_pr_main.yaml\n\njobs:\n  rcmdcheck:\n    strategy:\n      matrix:\n       config:\n        - { image: \"ghcr.io/insightsengineering/rbmi:r404\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:r410\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:latest\"}\n    runs-on: ubuntu-latest\n    container:\n      image: ${{ matrix.config.image }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n        \n      - name: Build src\n        uses: ./.github/actions/build-src\n        \n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\nFinal bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support"
   },
   {
     "objectID": "index.html#additional-materials",
