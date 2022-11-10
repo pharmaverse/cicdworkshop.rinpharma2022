@@ -276,7 +276,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 
 ::: {.column width="45%"}
 
-- Analysts create Shiny web apps that are created via the `teal` framework for analyzing data
+- Analysts create Shiny web apps via the `teal` framework for analyzing data
 - Apps are tested via a CI pipeline that uses the [`shinytest2`](https://cran.r-project.org/web/packages/shinytest2/index.html) R package
 - Apps deployed to an RSConnect Server instance via a CD pipeline
   - With the help of the [`rsconnect`](https://cran.r-project.org/web/packages/rsconnect/index.html) and [`connectapi`](https://cran.r-project.org/web/packages/connectapi/index.html) R packages
