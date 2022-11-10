@@ -250,7 +250,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 :::
 
-## Solution 1 - Testing packages as a cohort
+## Solution 1 - Testing Packages as a Cohort
 
 <br/>
 
@@ -264,7 +264,11 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 
 ::: {.fragment}
 ::: {.centre}
-![](https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/staged.dependencies.png)
+<img
+  src="https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/staged.dependencies.png" 
+  width="175" 
+  height="175"
+/>
 :::
 :::
 
