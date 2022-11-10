@@ -509,8 +509,8 @@
 </div>
 </div>
 </section>
-<section id="soultion-1-cicd-for-templates" class="slide level2">
-<h2>Soultion 1: CI/CD for Templates</h2>
+<section id="solution-1-cicd-for-templates" class="slide level2">
+<h2>Solution 1: CI/CD for Templates</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -585,42 +585,34 @@
 <section id="package-development-problems" class="slide level2">
 <h2>Package Development Problems</h2>
 <p><br></p>
-<div>
 <ul>
-<li class="fragment">Lots of co-dependent packages that need to be tested as a cohort</li>
-<li class="fragment">Testing Shiny web applications based on the <code>teal</code> framework</li>
-<li class="fragment">Deploying Shiny web applications built with <code>teal</code></li>
-<li class="fragment">Validation of all packages to
+<li>Lots of co-dependent packages that need to be tested as a cohort</li>
+<li>Testing Shiny web applications based on the <code>teal</code> framework</li>
+<li>Deploying Shiny web applications built with <code>teal</code></li>
+<li>Validation of all packages to
 <ul>
-<li class="fragment">adhere to regulatory standards</li>
-<li class="fragment">so they can be deployed on regulatory compute environments</li>
+<li>adhere to regulatory standards</li>
+<li>so they can be deployed on regulatory compute environments</li>
 </ul></li>
 </ul>
-</div>
-<div class="fragment">
 <div class="centre">
 <p><img data-src="images/sad-emoji.png"></p>
-</div>
 </div>
 </section>
 <section id="solution-1---testing-packages-as-a-cohort" class="slide level2">
 <h2>Solution 1 - Testing Packages as a Cohort</h2>
 <p><br></p>
-<div>
 <ul>
-<li class="fragment">An in-development package must be tested against the latest versions of upstream dependencies</li>
-<li class="fragment">Monorepo emulation via a git branch naming strategy is achieved by using
+<li>An in-development package must be tested against the latest versions of upstream dependencies</li>
+<li>Monorepo emulation via a git branch naming strategy is achieved by using
 <ul>
-<li class="fragment">the <a href="https://github.com/openpharma/staged.dependencies">staged.dependencies R package</a></li>
-<li class="fragment">and the <a href="https://github.com/insightsengineering/staged-dependencies-action">staged.dependencies GitHub Action</a></li>
+<li>the <a href="https://github.com/openpharma/staged.dependencies">staged.dependencies R package</a></li>
+<li>and the <a href="https://github.com/insightsengineering/staged-dependencies-action">staged.dependencies GitHub Action</a></li>
 </ul></li>
-<li class="fragment">Testing as a cohort can be done at any stage (eg. development, pre-release, release)</li>
+<li>Testing as a cohort can be done at any stage (eg. development, pre-release, release)</li>
 </ul>
-</div>
-<div class="fragment">
 <div class="centre">
 <p><img src="https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/staged.dependencies.png" width="175" height="175"></p>
-</div>
 </div>
 </section>
 <section id="solution-2---shiny-app-testing-deployment" class="slide level2">
@@ -628,22 +620,18 @@
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div>
 <ul>
-<li class="fragment">Analysts create Shiny web apps that are created via the <code>teal</code> framework for analyzing data</li>
-<li class="fragment">Apps are tested via a CI pipeline that uses the <a href="https://cran.r-project.org/web/packages/shinytest2/index.html"><code>shinytest2</code></a> R package</li>
-<li class="fragment">Apps deployed to an RSConnect Server instance via a CD pipeline
+<li>Analysts create Shiny web apps via the <code>teal</code> framework for analyzing data</li>
+<li>Apps are tested via a CI pipeline that uses the <a href="https://cran.r-project.org/web/packages/shinytest2/index.html"><code>shinytest2</code></a> R package</li>
+<li>Apps deployed to an RSConnect Server instance via a CD pipeline
 <ul>
-<li class="fragment">With the help of the <a href="https://cran.r-project.org/web/packages/rsconnect/index.html"><code>rsconnect</code></a> and <a href="https://cran.r-project.org/web/packages/connectapi/index.html"><code>connectapi</code></a> R packages</li>
+<li>With the help of the <a href="https://cran.r-project.org/web/packages/rsconnect/index.html"><code>rsconnect</code></a> and <a href="https://cran.r-project.org/web/packages/connectapi/index.html"><code>connectapi</code></a> R packages</li>
 </ul></li>
 </ul>
-</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
-<div class="fragment">
 <p><img data-src="images/shinytest2.png"></p>
-</div>
 </div>
 </div>
 </section>
@@ -652,21 +640,17 @@
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div>
 <ul>
-<li class="fragment">R packages are validated by an internal validation team that uses CI/CD pipelines to automatically
+<li>R packages are validated by an internal validation team that uses CI/CD pipelines to automatically
 <ul>
-<li class="fragment">accept new package submissions via a form</li>
-<li class="fragment">running tests against the new package to ensure package integrity</li>
-<li class="fragment">enforcing criteria to ensure that the package meets regulatory requirements</li>
+<li>accept new package submissions via a form</li>
+<li>running tests against the new package to ensure package integrity</li>
+<li>enforcing criteria to ensure that the package meets regulatory requirements</li>
 </ul></li>
-<li class="fragment">Also validated externally via an open source project called <a href="https://github.com/insightsengineering/thevalidatoR">thevalidatoR</a></li>
+<li>Also validated externally via an open source project called <a href="https://github.com/insightsengineering/thevalidatoR">thevalidatoR</a></li>
 </ul>
-</div>
 </div><div class="column" style="width:40%;">
-<div class="fragment">
 <p><img data-src="images/validation-report.png"></p>
-</div>
 </div>
 </div>
 </section></section>
@@ -783,44 +767,17 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="solution-1---reducing-the-test-suite-runtime-1" class="slide level2" data-visibility="uncounted">
-<h2>Solution 1 - Reducing the Test Suite Runtime</h2>
-<p><br></p>
-<!-- TODO - Potentially can drop this slide, doesn't add value and am short on time -->
-<div class="file-name">
-<p><code>.vscode/tasks.json</code></p>
-</div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">{</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"2.0.0"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="dt">"tasks"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>        <span class="fu">{</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>            <span class="dt">"label"</span><span class="fu">:</span> <span class="st">"R - testthat (FULL)"</span><span class="fu">,</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"Rscript"</span><span class="fu">,</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>            <span class="dt">"options"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"env"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"R_TEST_FULL"</span> <span class="fu">:</span> <span class="st">"TRUE"</span> <span class="fu">}</span> <span class="fu">},</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"-e"</span><span class="ot">,</span> <span class="st">"devtools::test()"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>            <span class="dt">"group"</span><span class="fu">:</span> <span class="st">"test"</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>        <span class="fu">}</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>    <span class="ot">]</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-<img data-src="images/vscode-tests.png" class="r-stretch"><aside class="notes">
-<ul>
-<li>Small plug for VScode that you can use it to execute tasks where you fix the environment variable in order to run the full test suite locally</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="solution-2---reducing-the-vignette-runtime" class="slide level2">
 <h2>Solution 2 - Reducing the Vignette Runtime</h2>
+<p><br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>.</span>
+<span id="cb3-2"><a href="#cb3-2"></a>├── DESCRIPTION</span>
+<span id="cb3-3"><a href="#cb3-3"></a>├── R/</span>
+<span id="cb3-4"><a href="#cb3-4"></a>├── tests/</span>
+<span id="cb3-5"><a href="#cb3-5"></a>└── vignettes/</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    ├── quickstart.Rmd</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    ├── quickstart.html</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    └── quickstart.html.asis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="file-name">
 <p><code>DESCRIPTION</code></p>
@@ -829,22 +786,10 @@
 <span id="cb4-2"><a href="#cb4-2"></a><span class="ex">VignetteBuilder:</span> R.rsp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="file-name">
-<p><code>vignettes/quickstart.Rmd</code></p>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">title:</span> <span class="st">"rbmi: Quickstart"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">author:</span> Craig Gower-Page, Alessandro Noci, and Marcel Wolbers</span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="ex">output:</span> </span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="ex">bookdown::html_document2:</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="ex">toc:</span> true</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="ex">toc_depth:</span> 4</span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="ex">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="file-name">
 <p><code>vignettes/quickstart.html.asis</code></p>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">%\VignetteIndexEntry{rbmi:</span> Quickstart}</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">%\VignetteEngine{R.rsp::asis}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">%\VignetteIndexEntry{rbmi:</span> Quickstart}</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">%\VignetteEngine{R.rsp::asis}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Use of R.rsp package to use “asis” vignette builder</li>
@@ -870,16 +815,16 @@
 <div class="file-name">
 <p><code>.github/workflow/on_pr.yaml</code></p>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">  </span><span class="fu">vignettes</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build Vignettes</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>          Rscript ./vignettes/build.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="at">  </span><span class="fu">vignettes</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build Vignettes</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>          Rscript ./vignettes/build.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="centre">
 <p><img data-src="images/github-vignette-ticks.png"></p>
 </div>
@@ -908,11 +853,11 @@
 <div class="file-name">
 <p><code>.github/actions/build-src/action.yml</code></p>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Cache Compiled Stan Code</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> cache-pkgs</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/cache@v3</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="at">        </span><span class="fu">path</span><span class="kw">:</span><span class="at"> src/*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Cache Compiled Stan Code</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> cache-pkgs</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/cache@v3</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">        </span><span class="fu">path</span><span class="kw">:</span><span class="at"> src/*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="centre">
 <p><img data-src="images/github-cache-build.png" style="height:350px"></p>
 </div>
@@ -964,22 +909,22 @@
 <div class="file-name">
 <p><code>.github/workflows/build_docker.yaml</code></p>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'misc/docker/**'</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository </span></span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="at">      </span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Docker Buildx</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/setup-buildx-action@v1</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="at">      </span></span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push image </span></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'misc/docker/**'</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository </span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Docker Buildx</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/setup-buildx-action@v1</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="at">      </span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push image </span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Main point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occurred in the docker directory</li>
@@ -1003,26 +948,26 @@
 <div class="file-name">
 <p><code>.github/workflows/on_pr_main.yaml</code></p>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a><span class="at">        </span></span>
-<span id="cb10-16"><a href="#cb10-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="at">        </span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="at">        </span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="at">        </span></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Final bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support</li>

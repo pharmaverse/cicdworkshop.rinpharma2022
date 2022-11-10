@@ -35,11 +35,11 @@
     "text": "Issue 1: How to Check our Template Code\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text than a Vignette - Code is ready to go and build a dataset\nWhere we store this code is not checked by R-CMD\nHow to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?\nCI/CD for the win!"
   },
   {
-    "objectID": "index.html#soultion-1-cicd-for-templates",
-    "href": "index.html#soultion-1-cicd-for-templates",
+    "objectID": "index.html#solution-1-cicd-for-templates",
+    "href": "index.html#solution-1-cicd-for-templates",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Soultion 1: CI/CD for Templates",
-    "text": "Soultion 1: CI/CD for Templates\n\n\n\nDedicated CI/CD workflow that executes the Template code\nOnce a Code Review is completed the Check Template Workflow is executed\nIf any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.\n\n\n\n.github/workflows/check-templates.yml"
+    "section": "Solution 1: CI/CD for Templates",
+    "text": "Solution 1: CI/CD for Templates\n\n\n\nDedicated CI/CD workflow that executes the Template code\nOnce a Code Review is completed the Check Template Workflow is executed\nIf any errors or warnings are detected the CI/CD check fails and the contributor must fix the error or warning.\n\n\n\n.github/workflows/check-templates.yml"
   },
   {
     "objectID": "index.html#issue-2-admiral-upstream-and-downstream-dependencies",
@@ -67,28 +67,28 @@
     "href": "index.html#package-development-problems",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Package Development Problems",
-    "text": "Package Development Problems\n\n\n\nLots of co-dependent packages that need to be tested as a cohort\nTesting Shiny web applications based on the teal framework\nDeploying Shiny web applications built with teal\nValidation of all packages to\n\nadhere to regulatory standards\nso they can be deployed on regulatory compute environments"
+    "text": "Package Development Problems\n\n\nLots of co-dependent packages that need to be tested as a cohort\nTesting Shiny web applications based on the teal framework\nDeploying Shiny web applications built with teal\nValidation of all packages to\n\nadhere to regulatory standards\nso they can be deployed on regulatory compute environments"
   },
   {
     "objectID": "index.html#solution-1---testing-packages-as-a-cohort",
     "href": "index.html#solution-1---testing-packages-as-a-cohort",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 1 - Testing Packages as a Cohort",
-    "text": "Solution 1 - Testing Packages as a Cohort\n\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
+    "text": "Solution 1 - Testing Packages as a Cohort\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
   },
   {
     "objectID": "index.html#solution-2---shiny-app-testing-deployment",
     "href": "index.html#solution-2---shiny-app-testing-deployment",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 2 - Shiny App Testing & Deployment",
-    "text": "Solution 2 - Shiny App Testing & Deployment\n\n\n\n\n\nAnalysts create Shiny web apps that are created via the teal framework for analyzing data\nApps are tested via a CI pipeline that uses the shinytest2 R package\nApps deployed to an RSConnect Server instance via a CD pipeline\n\nWith the help of the rsconnect and connectapi R packages"
+    "text": "Solution 2 - Shiny App Testing & Deployment\n\n\n\n\nAnalysts create Shiny web apps via the teal framework for analyzing data\nApps are tested via a CI pipeline that uses the shinytest2 R package\nApps deployed to an RSConnect Server instance via a CD pipeline\n\nWith the help of the rsconnect and connectapi R packages"
   },
   {
     "objectID": "index.html#solution-3---validating-r-packages",
     "href": "index.html#solution-3---validating-r-packages",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 3 - Validating R Packages",
-    "text": "Solution 3 - Validating R Packages\n\n\n\n\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing criteria to ensure that the package meets regulatory requirements\n\nAlso validated externally via an open source project called thevalidatoR"
+    "text": "Solution 3 - Validating R Packages\n\n\n\n\nR packages are validated by an internal validation team that uses CI/CD pipelines to automatically\n\naccept new package submissions via a form\nrunning tests against the new package to ensure package integrity\nenforcing criteria to ensure that the package meets regulatory requirements\n\nAlso validated externally via an open source project called thevalidatoR"
   },
   {
     "objectID": "index.html#about-rbmi",
@@ -112,18 +112,11 @@
     "text": "Solution 1 - Reducing the Test Suite Runtime\n\n\ntests/testthat/test-bigtest.R\n\ntest_that(\"Some long running section\", {\n  skip_if_not(Sys.getenv(\"R_TEST_FULL\") == \"TRUE\")\n\n  # <rest of the test code>\n})\n\n\n\n.github/workflows/on_biweekly.yaml\n\non:\n  schedule:\n    - cron: '0 4 1,15 * *'\n\njobs:\n  rcmdcheck-main:\n    env:\n      R_TEST_FULL: 'TRUE' \n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\n\nUse of skip-if-not + environment variable to conditionally control which tests get executed\nUse of CICD to ensure that the skipped tests do still get run on a period basis"
   },
   {
-    "objectID": "index.html#solution-1---reducing-the-test-suite-runtime-1",
-    "href": "index.html#solution-1---reducing-the-test-suite-runtime-1",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 1 - Reducing the Test Suite Runtime",
-    "text": "Solution 1 - Reducing the Test Suite Runtime\n\n\n\n.vscode/tasks.json\n\n{\n    \"version\": \"2.0.0\",\n    \"tasks\": [\n        {\n            \"label\": \"R - testthat (FULL)\",\n            \"command\": \"Rscript\",\n            \"options\": { \"env\": { \"R_TEST_FULL\" : \"TRUE\" } },\n            \"args\": [\"-e\", \"devtools::test()\"],\n            \"group\": \"test\"\n        }\n    ]\n}\n\n\n\nSmall plug for VScode that you can use it to execute tasks where you fix the environment variable in order to run the full test suite locally"
-  },
-  {
     "objectID": "index.html#solution-2---reducing-the-vignette-runtime",
     "href": "index.html#solution-2---reducing-the-vignette-runtime",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 2 - Reducing the Vignette Runtime",
-    "text": "Solution 2 - Reducing the Vignette Runtime\n\n\nDESCRIPTION\n\nSuggests: R.rsp\nVignetteBuilder: R.rsp\n\n\nvignettes/quickstart.Rmd\n\n---\ntitle: \"rbmi: Quickstart\"\nauthor: Craig Gower-Page, Alessandro Noci, and Marcel Wolbers\noutput: \n  bookdown::html_document2:\n    toc: true\n    toc_depth: 4\n---\n\n\nvignettes/quickstart.html.asis\n\n%\\VignetteIndexEntry{rbmi: Quickstart}\n%\\VignetteEngine{R.rsp::asis}\n\n\nUse of R.rsp package to use “asis” vignette builder\nThis is where we make the vignettes locally in advance and directly add them to the repo\nWhen R “builds” the vignette it simply just uses the pre-built file asis without re-running it\nThis opens up a problem though of how do we know if the vignette is up-to-date or even runs properly anymore?"
+    "text": "Solution 2 - Reducing the Vignette Runtime\n\n.\n├── DESCRIPTION\n├── R/\n├── tests/\n└── vignettes/\n    ├── quickstart.Rmd\n    ├── quickstart.html\n    └── quickstart.html.asis\n\n\nDESCRIPTION\n\nSuggests: R.rsp\nVignetteBuilder: R.rsp\n\n\nvignettes/quickstart.html.asis\n\n%\\VignetteIndexEntry{rbmi: Quickstart}\n%\\VignetteEngine{R.rsp::asis}\n\n\nUse of R.rsp package to use “asis” vignette builder\nThis is where we make the vignettes locally in advance and directly add them to the repo\nWhen R “builds” the vignette it simply just uses the pre-built file asis without re-running it\nThis opens up a problem though of how do we know if the vignette is up-to-date or even runs properly anymore?"
   },
   {
     "objectID": "index.html#solution-2---reducing-the-vignette-runtime-1",
