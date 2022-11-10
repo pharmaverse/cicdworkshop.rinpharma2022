@@ -73,8 +73,8 @@
     "objectID": "index.html#solution-1---testing-packages-as-a-cohort",
     "href": "index.html#solution-1---testing-packages-as-a-cohort",
     "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 1 - Testing packages as a cohort",
-    "text": "Solution 1 - Testing packages as a cohort\n\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
+    "section": "Solution 1 - Testing Packages as a Cohort",
+    "text": "Solution 1 - Testing Packages as a Cohort\n\n\n\nAn in-development package must be tested against the latest versions of upstream dependencies\nMonorepo emulation via a git branch naming strategy is achieved by using\n\nthe staged.dependencies R package\nand the staged.dependencies GitHub Action\n\nTesting as a cohort can be done at any stage (eg. development, pre-release, release)"
   },
   {
     "objectID": "index.html#solution-2---shiny-app-testing-deployment",
