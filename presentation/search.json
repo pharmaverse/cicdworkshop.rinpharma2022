@@ -137,13 +137,6 @@
     "href": "index.html#solution-4---testing-against-in-house-servers-1",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 4 - Testing Against In-House Servers",
-    "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/build_docker.yaml\n\non:\n  push:\n    paths:\n      - 'misc/docker/**'\n\njobs:\n  build:\n    steps:\n      - name: Checkout repository \n        uses: actions/checkout@v2\n      \n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n      \n      - name: Build and push image \n        uses: docker/build-push-action@v2\n\n\nMain point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occurred in the docker directory\nThe Job code is pretty redundant here as it misses a load of stuff to ensure if can fit on the screen however hopefully it just gives some flavour of a job to build a docker file"
-  },
-  {
-    "objectID": "index.html#solution-4---testing-against-in-house-servers-2",
-    "href": "index.html#solution-4---testing-against-in-house-servers-2",
-    "title": "CI/CD in the {pharmaverse}",
-    "section": "Solution 4 - Testing Against In-House Servers",
     "text": "Solution 4 - Testing Against In-House Servers\n\n\n.github/workflows/on_pr_main.yaml\n\njobs:\n  rcmdcheck:\n    strategy:\n      matrix:\n       config:\n        - { image: \"ghcr.io/insightsengineering/rbmi:r404\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:r410\"}\n        - { image: \"ghcr.io/insightsengineering/rbmi:latest\"}\n    runs-on: ubuntu-latest\n    container:\n      image: ${{ matrix.config.image }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n        \n      - name: Build src\n        uses: ./.github/actions/build-src\n        \n      - name: Check\n        uses: ./.github/actions/rcmdcheck\n\n\nFinal bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support"
   },
   {

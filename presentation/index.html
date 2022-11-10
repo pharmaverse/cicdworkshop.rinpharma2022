@@ -896,72 +896,63 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- ## Solution 4 - Testing Against In-House Servers {visibility="uncounted"}
+<br/>
+
+::: {.file-name}
+`.github/workflows/build_docker.yaml`
+:::
+```yaml
+on:
+  push:
+    paths:
+      - 'misc/docker/**'
+
+jobs:
+  build:
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      
+      - name: Build and push image 
+        uses: docker/build-push-action@v2
+```
+::: {.notes}
+- Main point here is the targeted use of "paths" to only rebuild and redeploy our docker images
+when a change has occurred in the docker directory
+- The Job code is pretty redundant here as it misses a load of stuff to ensure if can fit on the 
+screen however hopefully it just gives some flavour of a job to build a docker file
+::: -->
 </section>
 <section id="solution-4---testing-against-in-house-servers-1" class="slide level2" data-visibility="uncounted">
 <h2>Solution 4 - Testing Against In-House Servers</h2>
 <p><br></p>
 <div class="file-name">
-<p><code>.github/workflows/build_docker.yaml</code></p>
-</div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'misc/docker/**'</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository </span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Docker Buildx</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/setup-buildx-action@v1</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="at">      </span></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push image </span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<aside class="notes">
-<ul>
-<li>Main point here is the targeted use of “paths” to only rebuild and redeploy our docker images when a change has occurred in the docker directory</li>
-<li>The Job code is pretty redundant here as it misses a load of stuff to ensure if can fit on the screen however hopefully it just gives some flavour of a job to build a docker file</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="solution-4---testing-against-in-house-servers-2" class="slide level2" data-visibility="uncounted">
-<h2>Solution 4 - Testing Against In-House Servers</h2>
-<p><br></p>
-<div class="file-name">
 <p><code>.github/workflows/on_pr_main.yaml</code></p>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="at">        </span></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
-<span id="cb9-17"><a href="#cb9-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
-<span id="cb9-18"><a href="#cb9-18"></a><span class="at">        </span></span>
-<span id="cb9-19"><a href="#cb9-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
-<span id="cb9-20"><a href="#cb9-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">rcmdcheck</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="at">       </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r404"</span><span class="kw">}</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:r410"</span><span class="kw">}</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at"> </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"ghcr.io/insightsengineering/rbmi:latest"</span><span class="kw">}</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">    </span><span class="fu">container</span><span class="kw">:</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ${{ matrix.config.image }}</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="at">        </span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build src</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/build-src</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="at">        </span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> ./.github/actions/rcmdcheck</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Final bit on this is just to highlight that we can use githubs matrix feature to ensure that our job is run against all the different combination of images and r versions that we want to ensure we can support</li>
