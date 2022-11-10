@@ -32,7 +32,7 @@
     "href": "index.html#issue-1-how-to-check-our-template-code",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Issue 1: How to Check our Template Code",
-    "text": "Issue 1: How to Check our Template Code\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text then a Vignette - Code is ready to go and build a dataset\nWhere we store this code is not checked by R-CMD\nHow to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?\nCI/CD for the win!"
+    "text": "Issue 1: How to Check our Template Code\n\n\n\nCreate a reference files to build common ADaM datasets that shows users how to implement our functions\nWay less text than a Vignette - Code is ready to go and build a dataset\nWhere we store this code is not checked by R-CMD\nHow to ensure code stays up to date with deprecated functions or unforeseen bugs get in from functions working together?\nCI/CD for the win!"
   },
   {
     "objectID": "index.html#soultion-1-cicd-for-templates",
@@ -53,7 +53,7 @@
     "href": "index.html#solution-2-common-cicd-workflows-for-admiral-upstream-and-downstream-dependencies",
     "title": "CI/CD in the {pharmaverse}",
     "section": "Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies",
-    "text": "Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies\n\n\n\nUsing admiralci, we have a common set of CI/CD workflows\nDevelopers moving between packages are familiar with these workflows\nCommon documentation between packages for CI/CD workflows - easy to maintain"
+    "text": "Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies\n\n\n\nUsing admiralci, we have a common set of CI/CD workflows\nDevelopers moving between packages are familiar with these workflows\nCommon documentation between packages for CI/CD workflows - easy to maintain and provide to new contributors"
   },
   {
     "objectID": "index.html#about-nest",
