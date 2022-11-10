@@ -1,16 +1,29 @@
 name: pkgdown
+
 on:
-  push: {branches: ['main']}
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'presentation/**'
+      - 'workshop/**'
+      - '.lintr'
+      - '*.Rproj'
+
 jobs:
   Generate:
     runs-on: ubuntu-latest
-    container: {image: "rocker/tidyverse:4.2.1"}
+    container:
+      image: "rocker/tidyverse:4.2.1"
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Build site
         run: pkgdown::build_site_github_pages(install = TRUE, dest_dir = "public")
         shell: Rscript {0}
+
       - name: Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v3
         with:
