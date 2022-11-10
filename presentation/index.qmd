@@ -232,25 +232,22 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ::::
 
 
-## Package Development Problems
+<!-- ## Package Development Problems
 <br/>
-
-
 - Lots of co-dependent packages that need to be tested as a cohort
 - Testing Shiny web applications based on the `teal` framework
 - Deploying Shiny web applications built with `teal`
 - Validation of all packages to
   - adhere to regulatory standards
   - so they can be deployed on regulatory compute environments
-
-
-
 ::: {.centre}
 ![](images/sad-emoji.png)
-:::
+::: -->
 
 
-## Solution 1 - Testing Packages as a Cohort
+
+
+## Use Case 1 - Testing Packages as a Cohort
 
 <br/>
 
@@ -272,7 +269,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 
 
-## Solution 2 - Shiny App Testing & Deployment
+## Use Case 2 - Shiny App Testing & Deployment
 
 <br/>
 
@@ -298,7 +295,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 
 ::::
 
-## Solution 3 - Validating R Packages
+## Use Case 3 - Validating R Packages
 
 <br/>
 
