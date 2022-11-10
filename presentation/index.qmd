@@ -35,7 +35,6 @@ render_file <- function(filepath, language = "yaml") {
 }
 ```
 
-# Introduction
 
 ## What is CI/CD? 
 
