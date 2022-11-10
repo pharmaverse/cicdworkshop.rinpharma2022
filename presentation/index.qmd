@@ -132,7 +132,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 ::::
 
 
-## Issue 1: How to Check our Template Code
+## Issue 1 - How to Check our Template Code
 
 :::: {.columns}
 
@@ -152,7 +152,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 ::::
 
-## Solution 1: CI/CD for Templates
+## Solution 1 - CI/CD for Templates
 
 :::: {.columns}
 
@@ -172,7 +172,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 ::::
 
-## Issue 2: admiral upstream and downstream dependencies
+## Issue 2 - admiral upstream and downstream dependencies
 
 :::: {.columns}
 
@@ -190,7 +190,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 :::
 :::
 
-## Solution 2: Common CI/CD workflows for admiral upstream and downstream dependencies
+## Solution 2 - Common CI/CD workflows for admiral upstream and downstream dependencies
 
 :::: {.columns}
 
