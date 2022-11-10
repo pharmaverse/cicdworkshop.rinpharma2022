@@ -511,7 +511,7 @@ different OS's / machine builds
 
 
 
-## Solution 3 - Reducing code Compilation Time
+<!-- ## Solution 3 - Reducing code Compilation Time
 <br/>
 
 ::: {.file-name}
@@ -536,9 +536,11 @@ different OS's / machine builds
 on a windows image
 - Screenshot just shows the run time of the compile code "build src" is very low compared to the 
 usual 2-5 minutes
-:::
+::: -->
 
-## Solution 4 - Testing Against In-House Servers
+
+
+## Solution 3 - Testing Against In-House Servers
 <br/>
 
 ::: {.centre}
@@ -586,7 +588,7 @@ screen however hopefully it just gives some flavour of a job to build a docker f
 
 
 
-## Solution 4 - Testing Against In-House Servers {visibility="uncounted"}
+## Solution 3 - Testing Against In-House Servers {visibility="uncounted"}
 <br/>
 
 ::: {.file-name}
