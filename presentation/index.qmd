@@ -221,7 +221,7 @@ We just did all these in the R/Pharma Workshop: [Intro to CI/CD for R Packages](
 - `tern` for creating TLGs<br/>
 - `teal` for creating exploratory web applications for analyzing clinical trial data<br/>
 - Links
-  - [rtables](https://github.com/Roche/rtables)
+  - [rtables](https://github.com/insightsengineering/rtables)
   - [NEST GitHub Organization](https://github.com/insightsengineering/)
 :::
 
